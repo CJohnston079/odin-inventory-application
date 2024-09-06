@@ -1,0 +1,51 @@
+:root {
+	--emphasis-hue: 0;
+
+	--cl-emphasis: hsl(var(--emphasis-hue), 30%, 50%);
+	--cl-emphasis-shade: hsl(var(--emphasis-hue), 30%, 85%);
+	--cl-background: white;
+	--cl-background-shade: hsl(0, 0%, 95%);
+	--cl-background-shade-2: hsl(0, 0%, 90%);
+	--cl-midground: hsl(0, 0%, 50%);
+	--cl-foreground: black;
+	--cl-foreground-shade: hsl(0, 0%, 15%);
+	--cl-foreground-shade-2: hsl(0, 0%, 30%);
+
+	--box-shadow-dark: 2px 2px 8px hsl(0, 0%, 0%, 0.1);
+	--box-shadow-light: 2px 2px 8px hsl(0, 0%, 0%, 0.5);
+	--box-shadow: var(--box-shadow-dark);
+
+	--br-light: 0.25rem;
+	--br-mid: 0.5rem;
+	--br-heavy: 1rem;
+
+	color-scheme: light dark;
+
+	font-family: sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-optical-sizing: auto;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	line-height: 1.5;
+	color: var(--cl-foreground);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background-color: var(--cl-background);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--cl-emphasis: var(--cl-emphasis-vivid);
+		--cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 5%);
+		--cl-background: hsl(0, 0%, 20%);
+		--cl-background-shade: hsl(0, 0%, 10%);
+		--cl-background-shade-2: hsl(0, 0%, 5%);
+		--cl-midground: hsl(0, 0%, 50%);
+		--cl-foreground: white;
+		--cl-foreground-shade: hsl(0, 0%, 95%);
+		--cl-foreground-shade-2: hsl(0, 0%, 90%);
+	}
+}
