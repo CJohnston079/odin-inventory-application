@@ -26,14 +26,19 @@ async function main() {
 		ssl: isProduction ? { rejectUnauthorized: false } : false,
 	});
 
-	await client.connect();
+	try {
+		await client.connect();
 
-	const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
-	await client.query(schema);
-	console.log("Schema created successfully");
-	await client.end();
+		const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
+		await client.query(schema);
+		console.log("Schema created successfully");
 
-	console.log("Seeding complete");
+		console.log("Seeding complete");
+	} catch (e) {
+		console.log("An error occurred during seeding", e);
+	} finally {
+		await client.end();
+	}
 }
 
 main();
