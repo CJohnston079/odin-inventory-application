@@ -3,7 +3,10 @@
 const { Client } = require("pg");
 const fs = require("fs").promises;
 const path = require("path");
+
 require("dotenv").config();
+
+const { insertAuthors } = require("./seedData");
 
 const isProduction = process.env.NODE_ENV === "production";
 const sslConfig = isProduction ? "?sslmode=require" : "";
@@ -32,6 +35,8 @@ async function main() {
 		const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
 		await client.query(schema);
 		console.log("Schema created successfully");
+
+		await insertAuthors(client);
 
 		console.log("Seeding complete");
 	} catch (e) {
