@@ -1,0 +1,86 @@
+[
+	{
+		"genreName": "Adventure",
+		"genreDescription": "Adventure fiction is a genre that features stories of exciting journeys, risky pursuits, and exploration. It often involves protagonists facing challenges in unknown or dangerous environments."
+	},
+	{
+		"genreName": "Autobiography",
+		"genreDescription": "An autobiography is a non-fiction genre in which the author recounts their own life experiences, offering personal insights and a chronological account of their history."
+	},
+	{
+		"genreName": "Epic",
+		"genreDescription": "Epic fiction is characterized by long narratives, often set in the past, involving heroes on grand quests or battles, highlighting themes of heroism, fate, and cultural identity."
+	},
+	{
+		"genreName": "Essay",
+		"genreDescription": "Essays are short, non-fiction works that explore a specific subject or idea, often from the author’s personal perspective, using analysis, argumentation, or reflection."
+	},
+	{
+		"genreName": "Fantasy",
+		"genreDescription": "Fantasy is a genre that features magical or supernatural elements, often set in imaginary worlds. It frequently includes mythical creatures, enchanted landscapes, and heroes undertaking quests."
+	},
+	{
+		"genreName": "Feminism",
+		"genreDescription": "Feminist literature centers on issues of gender equality, women's rights, and the social structures that impact women, often challenging societal norms and advocating for social change."
+	},
+	{
+		"genreName": "Gothic",
+		"genreDescription": "Gothic fiction is a genre characterized by dark, mysterious settings, often involving haunted castles, supernatural elements, and themes of horror, romance, and psychological terror."
+	},
+	{
+		"genreName": "Historical",
+		"genreDescription": "Historical fiction takes place in a past setting, often incorporating real historical events, figures, or time periods, blending historical accuracy with imaginative storytelling."
+	},
+	{
+		"genreName": "Horror",
+		"genreDescription": "Horror is a genre designed to evoke fear, dread, or shock in readers, often through supernatural elements, psychological terror, or gruesome and terrifying scenarios."
+	},
+	{
+		"genreName": "Memoir",
+		"genreDescription": "A memoir is a non-fiction genre in which the author reflects on personal experiences and life events, typically focusing on a specific theme or period of their life."
+	},
+	{
+		"genreName": "Modernist",
+		"genreDescription": "Modernist literature is a genre that emerged in the late 19th and early 20th centuries, characterized by a break from traditional narrative forms and an exploration of inner consciousness, fragmented structure, and existential themes."
+	},
+	{
+		"genreName": "Mystery",
+		"genreDescription": "Mystery fiction revolves around solving a puzzle or crime, typically involving a detective or investigator uncovering clues to resolve a suspenseful and complex situation."
+	},
+	{
+		"genreName": "Philosophical",
+		"genreDescription": "Philosophical fiction explores fundamental questions about existence, ethics, reality, and knowledge, often weaving abstract or theoretical ideas into the plot or character development."
+	},
+	{
+		"genreName": "Political",
+		"genreDescription": "Political literature focuses on social, governmental, and ideological issues, often engaging with power structures, political movements, and the critique of existing systems."
+	},
+	{
+		"genreName": "Romance",
+		"genreDescription": "Romance fiction centers around romantic relationships, focusing on themes of love, passion, and emotional connection, often with a narrative arc leading to a satisfying resolution."
+	},
+	{
+		"genreName": "Science Fiction",
+		"genreDescription": "Science fiction explores futuristic or speculative themes, often involving advanced technology, space exploration, time travel, and scientific possibilities beyond the current reality."
+	},
+	{
+		"genreName": "Short Story",
+		"genreDescription": "A short story is a brief work of fiction, typically focused on a single event, character, or theme. It often delivers a powerful narrative in a condensed form."
+	},
+	{
+		"genreName": "Suspense",
+		"genreDescription": "Suspense fiction builds tension and anticipation, keeping readers on edge as they await the resolution of a high-stakes situation or dramatic conflict."
+	},
+	{
+		"genreName": "Thriller",
+		"genreDescription": "Thriller fiction is known for fast-paced, high-stakes plots that involve danger, excitement, and often espionage or crime, keeping readers engaged with twists and intense action."
+	},
+	{
+		"genreName": "Travel Writing",
+		"genreDescription": "Travel writing is a non-fiction genre that recounts the author's journeys, often offering insights into different cultures, places, and personal experiences in unfamiliar settings."
+	},
+	{
+		"genreName": "Young Adult",
+		"genreDescription": "Young adult fiction is aimed at a teenage audience and often focuses on coming-of-age themes, identity, relationships, and emotional growth, while still appealing to adult readers."
+	}
+]

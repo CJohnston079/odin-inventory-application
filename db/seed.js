@@ -6,7 +6,7 @@ const path = require("path");
 
 require("dotenv").config();
 
-const { insertAuthors } = require("./seedData");
+const { insertAuthors, insertGenres } = require("./seedData");
 
 const isProduction = process.env.NODE_ENV === "production";
 const sslConfig = isProduction ? "?sslmode=require" : "";
@@ -37,6 +37,7 @@ async function main() {
 		console.log("Schema created successfully");
 
 		await insertAuthors(client);
+		await insertGenres(client);
 
 		console.log("Seeding complete");
 	} catch (e) {
