@@ -9,6 +9,7 @@ require("dotenv").config();
 const { insertAuthors } = require("./seedData");
 const { insertGenres } = require("./seedData");
 const { insertLanguages } = require("./seedData");
+const { insertBooks } = require("./seedData");
 
 const isProduction = process.env.NODE_ENV === "production";
 const sslConfig = isProduction ? "?sslmode=require" : "";
@@ -41,6 +42,7 @@ async function main() {
 		await insertAuthors(client);
 		await insertGenres(client);
 		await insertLanguages(client);
+		await insertBooks(client);
 
 		console.log("Seeding complete");
 	} catch (e) {
