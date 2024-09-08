@@ -1,0 +1,1088 @@
+[
+	{
+		"book_title": "Things Fall Apart",
+		"author": "Chinua Achebe",
+		"publication_year": "1958-06-17",
+		"category": "fiction"
+	},
+	{
+		"book_title": "No Longer at Ease",
+		"author": "Chinua Achebe",
+		"publication_year": "1960-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Arrow of God",
+		"author": "Chinua Achebe",
+		"publication_year": "1964-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Man of the People",
+		"author": "Chinua Achebe",
+		"publication_year": "1966-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Anthills of the Savannah",
+		"author": "Chinua Achebe",
+		"publication_year": "1987-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The House of the Spirits",
+		"author": "Isabel Allende",
+		"publication_year": "1982-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Of Love and Shadows",
+		"author": "Isabel Allende",
+		"publication_year": "1984-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Eva Luna",
+		"author": "Isabel Allende",
+		"publication_year": "1987-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Daughter of Fortune",
+		"author": "Isabel Allende",
+		"publication_year": "1999-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Portrait in Sepia",
+		"author": "Isabel Allende",
+		"publication_year": "2000-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Japanese Lover",
+		"author": "Isabel Allende",
+		"publication_year": "2015-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Long Petal of the Sea",
+		"author": "Isabel Allende",
+		"publication_year": "2019-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Macunaíma",
+		"author": "Mário de Andrade",
+		"publication_year": "1928-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Pauliceia Desvairada",
+		"author": "Mário de Andrade",
+		"publication_year": "1922-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Contos Novos",
+		"author": "Mário de Andrade",
+		"publication_year": "1947-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Handmaid's Tale",
+		"author": "Margaret Atwood",
+		"publication_year": "1985-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Oryx and Crake",
+		"author": "Margaret Atwood",
+		"publication_year": "2003-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Blind Assassin",
+		"author": "Margaret Atwood",
+		"publication_year": "2000-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Alias Grace",
+		"author": "Margaret Atwood",
+		"publication_year": "1996-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Testaments",
+		"author": "Margaret Atwood",
+		"publication_year": "2019-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Cat's Eye",
+		"author": "Margaret Atwood",
+		"publication_year": "1988-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Surfacing",
+		"author": "Margaret Atwood",
+		"publication_year": "1972-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Ficciones",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1944-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Labyrinths",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1962-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Aleph",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1949-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Dreamtigers",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1960-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Universal History of Infamy",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1935-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Book of Imaginary Beings",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1957-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Garden of Forking Paths",
+		"author": "Jorge Luis Borges",
+		"publication_year": "1941-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Jane Eyre",
+		"author": "Charlotte Brontë",
+		"publication_year": "1847-10-16",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Shirley",
+		"author": "Charlotte Brontë",
+		"publication_year": "1849-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Villette",
+		"author": "Charlotte Brontë",
+		"publication_year": "1853-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Professor",
+		"author": "Charlotte Brontë",
+		"publication_year": "1857-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Murder on the Orient Express",
+		"author": "Agatha Christie",
+		"publication_year": "1934-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Murder of Roger Ackroyd",
+		"author": "Agatha Christie",
+		"publication_year": "1926-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "And Then There Were None",
+		"author": "Agatha Christie",
+		"publication_year": "1939-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The ABC Murders",
+		"author": "Agatha Christie",
+		"publication_year": "1936-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Death on the Nile",
+		"author": "Agatha Christie",
+		"publication_year": "1937-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Mysterious Affair at Styles",
+		"author": "Agatha Christie",
+		"publication_year": "1920-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Mousetrap",
+		"author": "Agatha Christie",
+		"publication_year": "1952-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Crime and Punishment",
+		"author": "Fyodor Dostoevsky",
+		"publication_year": "1866-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Brothers Karamazov",
+		"author": "Fyodor Dostoevsky",
+		"publication_year": "1880-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Idiot",
+		"author": "Fyodor Dostoevsky",
+		"publication_year": "1869-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Demons",
+		"author": "Fyodor Dostoevsky",
+		"publication_year": "1872-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Notes from Underground",
+		"author": "Fyodor Dostoevsky",
+		"publication_year": "1864-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Gambler",
+		"author": "Fyodor Dostoevsky",
+		"publication_year": "1867-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Name of the Rose",
+		"author": "Umberto Eco",
+		"publication_year": "1980-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Foucault's Pendulum",
+		"author": "Umberto Eco",
+		"publication_year": "1988-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Prague Cemetery",
+		"author": "Umberto Eco",
+		"publication_year": "2010-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Island of the Day Before",
+		"author": "Umberto Eco",
+		"publication_year": "1994-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Baudolino",
+		"author": "Umberto Eco",
+		"publication_year": "2000-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Mysterious Flame of Queen Loana",
+		"author": "Umberto Eco",
+		"publication_year": "2004-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Siddhartha",
+		"author": "Hermann Hesse",
+		"publication_year": "1922-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Steppenwolf",
+		"author": "Hermann Hesse",
+		"publication_year": "1927-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Glass Bead Game",
+		"author": "Hermann Hesse",
+		"publication_year": "1943-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Demian",
+		"author": "Hermann Hesse",
+		"publication_year": "1919-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Narcissus and Goldmund",
+		"author": "Hermann Hesse",
+		"publication_year": "1930-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Les Misérables",
+		"author": "Victor Hugo",
+		"publication_year": "1862-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Hunchback of Notre-Dame",
+		"author": "Victor Hugo",
+		"publication_year": "1831-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Man Who Laughs",
+		"author": "Victor Hugo",
+		"publication_year": "1869-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Toilers of the Sea",
+		"author": "Victor Hugo",
+		"publication_year": "1866-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Ninety-Three",
+		"author": "Victor Hugo",
+		"publication_year": "1874-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Ulysses",
+		"author": "James Joyce",
+		"publication_year": "1922-02-02",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Dubliners",
+		"author": "James Joyce",
+		"publication_year": "1914-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Portrait of the Artist as a Young Man",
+		"author": "James Joyce",
+		"publication_year": "1916-12-29",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Finnegans Wake",
+		"author": "James Joyce",
+		"publication_year": "1939-05-04",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Exiles",
+		"author": "James Joyce",
+		"publication_year": "1918-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Personal Matter",
+		"author": "Kenzaburō Ōe",
+		"publication_year": "1964-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Silent Cry",
+		"author": "Kenzaburō Ōe",
+		"publication_year": "1967-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Rouse Up O Young Men of the New Age!",
+		"author": "Kenzaburō Ōe",
+		"publication_year": "1983-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Changeling",
+		"author": "Kenzaburō Ōe",
+		"publication_year": "1970-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Teach Us to Outgrow Our Madness",
+		"author": "Kenzaburō Ōe",
+		"publication_year": "1969-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Nip the Buds, Shoot the Kids",
+		"author": "Kenzaburō Ōe",
+		"publication_year": "1958-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "One Hundred Years of Solitude",
+		"author": "Gabriel García Márquez",
+		"publication_year": "1967-05-30",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Love in the Time of Cholera",
+		"author": "Gabriel García Márquez",
+		"publication_year": "1985-03-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Chronicle of a Death Foretold",
+		"author": "Gabriel García Márquez",
+		"publication_year": "1981-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The General in His Labyrinth",
+		"author": "Gabriel García Márquez",
+		"publication_year": "1989-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Of Love and Other Demons",
+		"author": "Gabriel García Márquez",
+		"publication_year": "1994-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "No One Writes to the Colonel",
+		"author": "Gabriel García Márquez",
+		"publication_year": "1961-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Burger's Daughter",
+		"author": "Nadine Gordimer",
+		"publication_year": "1979-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "July's People",
+		"author": "Nadine Gordimer",
+		"publication_year": "1981-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Conservationist",
+		"author": "Nadine Gordimer",
+		"publication_year": "1974-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "None to Accompany Me",
+		"author": "Nadine Gordimer",
+		"publication_year": "1994-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Pickup",
+		"author": "Nadine Gordimer",
+		"publication_year": "2001-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Get a Life",
+		"author": "Nadine Gordimer",
+		"publication_year": "1981-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Old Man and the Sea",
+		"author": "Ernest Hemingway",
+		"publication_year": "1952-09-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Farewell to Arms",
+		"author": "Ernest Hemingway",
+		"publication_year": "1929-09-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "For Whom the Bell Tolls",
+		"author": "Ernest Hemingway",
+		"publication_year": "1940-10-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Sun Also Rises",
+		"author": "Ernest Hemingway",
+		"publication_year": "1926-10-22",
+		"category": "fiction"
+	},
+	{
+		"book_title": "To Have and Have Not",
+		"author": "Ernest Hemingway",
+		"publication_year": "1937-10-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "In Our Time",
+		"author": "Ernest Hemingway",
+		"publication_year": "1925-09-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Norwegian Wood",
+		"author": "Haruki Murakami",
+		"publication_year": "1987-09-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Kafka on the Shore",
+		"author": "Haruki Murakami",
+		"publication_year": "2002-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "1Q84",
+		"author": "Haruki Murakami",
+		"publication_year": "2009-05-29",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Wind-Up Bird Chronicle",
+		"author": "Haruki Murakami",
+		"publication_year": "1994-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Wild Sheep Chase",
+		"author": "Haruki Murakami",
+		"publication_year": "1982-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Hard-Boiled Wonderland and the End of the World",
+		"author": "Haruki Murakami",
+		"publication_year": "1985-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Men Without Women",
+		"author": "Haruki Murakami",
+		"publication_year": "1927-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Hunger Angel",
+		"author": "Herta Müller",
+		"publication_year": "2009-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Land of Green Plums",
+		"author": "Herta Müller",
+		"publication_year": "1994-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Passport",
+		"author": "Herta Müller",
+		"publication_year": "1986-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Nadirs",
+		"author": "Herta Müller",
+		"publication_year": "1983-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Fox Was Ever the Hunter",
+		"author": "Herta Müller",
+		"publication_year": "1991-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Herztier",
+		"author": "Herta Müller",
+		"publication_year": "2000-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Dear Life",
+		"author": "Alice Munro",
+		"publication_year": "2012-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Runaway",
+		"author": "Alice Munro",
+		"publication_year": "2004-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Hateship, Friendship, Courtship, Loveship, Marriage",
+		"author": "Alice Munro",
+		"publication_year": "2001-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Moons of Jupiter",
+		"author": "Alice Munro",
+		"publication_year": "1982-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The View from Castle Rock",
+		"author": "Alice Munro",
+		"publication_year": "2006-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Lives of Girls and Women",
+		"author": "Alice Munro",
+		"publication_year": "1971-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Dance of the Happy Shades",
+		"author": "Alice Munro",
+		"publication_year": "1968-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Blindness",
+		"author": "José Saramago",
+		"publication_year": "1995-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Gospel According to Jesus Christ",
+		"author": "José Saramago",
+		"publication_year": "1991-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Year of the Death of Ricardo Reis",
+		"author": "José Saramago",
+		"publication_year": "1984-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "All the Names",
+		"author": "José Saramago",
+		"publication_year": "1997-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Baltasar and Blimunda",
+		"author": "José Saramago",
+		"publication_year": "1982-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Double",
+		"author": "José Saramago",
+		"publication_year": "1846-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Frankenstein",
+		"author": "Mary Shelley",
+		"publication_year": "1818-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Last Man",
+		"author": "Mary Shelley",
+		"publication_year": "1826-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Mathilda",
+		"author": "Mary Shelley",
+		"publication_year": "1959-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Valperga",
+		"author": "Mary Shelley",
+		"publication_year": "1823-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Lodore",
+		"author": "Mary Shelley",
+		"publication_year": "1835-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Second Sex",
+		"author": "Simone de Beauvoir",
+		"publication_year": "1949-01-01",
+		"category": "non-fiction"
+	},
+	{
+		"book_title": "The Mandarins",
+		"author": "Simone de Beauvoir",
+		"publication_year": "1954-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Memoirs of a Dutiful Daughter",
+		"author": "Simone de Beauvoir",
+		"publication_year": "1958-01-01",
+		"category": "non-fiction"
+	},
+	{
+		"book_title": "She Came to Stay",
+		"author": "Simone de Beauvoir",
+		"publication_year": "1943-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Woman Destroyed",
+		"author": "Simone de Beauvoir",
+		"publication_year": "1967-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Hour of the Star",
+		"author": "Clarice Lispector",
+		"publication_year": "1977-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Near to the Wild Heart",
+		"author": "Clarice Lispector",
+		"publication_year": "1943-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Passion According to G.H.",
+		"author": "Clarice Lispector",
+		"publication_year": "1964-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Agua Viva",
+		"author": "Clarice Lispector",
+		"publication_year": "1973-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Family Ties",
+		"author": "Clarice Lispector",
+		"publication_year": "2000-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Wonderful Adventures of Nils",
+		"author": "Selma Lagerlöf",
+		"publication_year": "1906-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Jerusalem",
+		"author": "Selma Lagerlöf",
+		"publication_year": "1928-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Gösta Berling's Saga",
+		"author": "Selma Lagerlöf",
+		"publication_year": "1891-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Emperor of Portugallia",
+		"author": "Selma Lagerlöf",
+		"publication_year": "1879-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Ring of the Löwenskölds",
+		"author": "Selma Lagerlöf",
+		"publication_year": "1925-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Golden Notebook",
+		"author": "Doris Lessing",
+		"publication_year": "1962-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Grass Is Singing",
+		"author": "Doris Lessing",
+		"publication_year": "1950-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Fifth Child",
+		"author": "Doris Lessing",
+		"publication_year": "1988-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Memoirs of a Survivor",
+		"author": "Doris Lessing",
+		"publication_year": "1974-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Good Terrorist",
+		"author": "Doris Lessing",
+		"publication_year": "1985-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Kitchen",
+		"author": "Banana Yoshimoto",
+		"publication_year": "1988-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Goodbye Tsugumi",
+		"author": "Banana Yoshimoto",
+		"publication_year": "1982-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Amrita",
+		"author": "Banana Yoshimoto",
+		"publication_year": "1986-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Lizard",
+		"author": "Banana Yoshimoto",
+		"publication_year": "1965-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Lake",
+		"author": "Banana Yoshimoto",
+		"publication_year": "1964-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Beloved",
+		"author": "Toni Morrison",
+		"publication_year": "1987-09-16",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Bluest Eye",
+		"author": "Toni Morrison",
+		"publication_year": "1970-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Song of Solomon",
+		"author": "Toni Morrison",
+		"publication_year": "1977-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Sula",
+		"author": "Toni Morrison",
+		"publication_year": "1973-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Jazz",
+		"author": "Toni Morrison",
+		"publication_year": "1992-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Paradise",
+		"author": "Toni Morrison",
+		"publication_year": "1998-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Half of a Yellow Sun",
+		"author": "Chimamanda Ngozi Adichie",
+		"publication_year": "2006-09-12",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Americanah",
+		"author": "Chimamanda Ngozi Adichie",
+		"publication_year": "2013-05-14",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Purple Hibiscus",
+		"author": "Chimamanda Ngozi Adichie",
+		"publication_year": "2003-09-30",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Thing Around Your Neck",
+		"author": "Chimamanda Ngozi Adichie",
+		"publication_year": "2009-05-12",
+		"category": "fiction"
+	},
+	{
+		"book_title": "We Should All Be Feminists",
+		"author": "Chimamanda Ngozi Adichie",
+		"publication_year": "2014-03-04",
+		"category": "non-fiction"
+	},
+	{
+		"book_title": "The Hobbit",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "1937-09-21",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Fellowship of the Ring",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "1954-07-29",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Two Towers",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "1954-11-11",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Return of the King",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "1955-10-20",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Silmarillion",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "1977-09-15",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Children of Húrin",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "2007-04-17",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Unfinished Tales",
+		"author": "J. R. R. Tolkien",
+		"publication_year": "1980-11-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "War and Peace",
+		"author": "Leo Tolstoy",
+		"publication_year": "1869-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Anna Karenina",
+		"author": "Leo Tolstoy",
+		"publication_year": "1877-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Death of Ivan Ilyich",
+		"author": "Leo Tolstoy",
+		"publication_year": "1886-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Resurrection",
+		"author": "Leo Tolstoy",
+		"publication_year": "1899-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Hadji Murat",
+		"author": "Leo Tolstoy",
+		"publication_year": "1904-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Adventures of Huckleberry Finn",
+		"author": "Mark Twain",
+		"publication_year": "1884-12-10",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Adventures of Tom Sawyer",
+		"author": "Mark Twain",
+		"publication_year": "1876-06-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Prince and the Pauper",
+		"author": "Mark Twain",
+		"publication_year": "1881-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Connecticut Yankee in King Arthur's Court",
+		"author": "Mark Twain",
+		"publication_year": "1889-01-01",
+		"category": "fiction"
+	},
+	{
+		"book_title": "The Innocents Abroad",
+		"author": "Mark Twain",
+		"publication_year": "1869-01-01",
+		"category": "non-fiction"
+	},
+	{
+		"book_title": "Life on the Mississippi",
+		"author": "Mark Twain",
+		"publication_year": "1883-01-01",
+		"category": "non-fiction"
+	},
+	{
+		"book_title": "Mrs. Dalloway",
+		"author": "Virginia Woolf",
+		"publication_year": "1925-05-14",
+		"category": "fiction"
+	},
+	{
+		"book_title": "To the Lighthouse",
+		"author": "Virginia Woolf",
+		"publication_year": "1927-05-05",
+		"category": "fiction"
+	},
+	{
+		"book_title": "Orlando",
+		"author": "Virginia Woolf",
+		"publication_year": "1928-10-11",
+		"category": "fiction"
+	},
+	{
+		"book_title": "A Room of One's Own",
+		"author": "Virginia Woolf",
+		"publication_year": "1929-10-24",
+		"category": "non-fiction"
+	},
+	{
+		"book_title": "The Waves",
+		"author": "Virginia Woolf",
+		"publication_year": "1931-10-01",
+		"category": "fiction"
+	}
+]

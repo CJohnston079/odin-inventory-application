@@ -26,8 +26,9 @@ CREATE TABLE IF NOT EXISTS dim_languages (
 
 CREATE TABLE IF NOT EXISTS fact_books (
   book_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  book_title VARCHAR(64),
   author_id INT REFERENCES dim_authors(author_id),
-  publication_year INT CHECK (publication_year <= EXTRACT(YEAR FROM CURRENT_DATE)),
+  publication_year DATE,
   category TEXT CHECK (category IN ('fiction', 'non-fiction'))
 );
 
