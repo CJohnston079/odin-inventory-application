@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node app.js",
 		"dev": "node --watch app.js",
-		"seed": "node db/seed.js"
+		"seed": "node db/seed.js",
+		"queryDb": "psql -d odin_inventory_app -c \"$QUERY\" > query.txt"
 	},
 	"keywords": [],
 	"author": "",
