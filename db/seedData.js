@@ -49,24 +49,65 @@ async function insertBooks(client) {
 
 	for (const book of books) {
 		const author = book.author;
-		const author_id_query = await client.query(
+		const authorIdQuery = await client.query(
 			"SELECT author_id FROM dim_authors WHERE (first_name || ' ' || last_name) = $1",
 			[author]
 		);
 
-		if (author_id_query.rows.length === 0) {
+		if (authorIdQuery.rows.length === 0) {
 			console.log(`Author not found for surname: ${author}`);
 			continue;
 		}
 
-		const author_id = author_id_query.rows[0].author_id;
+		const authorId = authorIdQuery.rows[0].author_id;
 
 		await client.query(
 			"INSERT INTO fact_books (book_title, author_id, publication_year, category) VALUES ($1, $2, $3, $4)",
-			[book.bookTitle, author_id, book.publicationYear, book.category]
+			[book.bookTitle, authorId, book.publicationYear, book.category]
 		);
 	}
 	console.log("Books inserted successfully");
+}
+
+async function insertBookGenres(client) {
+	const filePath = path.join(__dirname, "data", "books.json");
+	const data = await fs.readFile(filePath, "utf8");
+	const books = JSON.parse(data);
+
+	for (const book of books) {
+		const genres = book.genres;
+		const bookTitle = book.bookTitle;
+		const bookIdQuery = await client.query("SELECT book_id FROM fact_books WHERE book_title = $1", [
+			bookTitle,
+		]);
+
+		if (bookIdQuery.rows.length === 0) {
+			console.log(`Book ID not found for title: ${bookTitle}`);
+			continue;
+		}
+
+		const bookId = bookIdQuery.rows[0].book_id;
+
+		for (const genre of genres) {
+			const genreIdQuery = await client.query(
+				"SELECT genre_id FROM dim_genres WHERE genre_name = $1",
+				[genre]
+			);
+
+			if (genreIdQuery.rows.length === 0) {
+				console.log(`Genre ID not found for genre: ${genre}`);
+				continue;
+			}
+
+			const genreId = genreIdQuery.rows[0].genre_id;
+
+			await client.query("INSERT INTO book_genres (book_id, genre_id) VALUES ($1, $2)", [
+				Number(bookId),
+				Number(genreId),
+			]);
+		}
+	}
+	console.log("Book genres inserted successfully");
 }
 
 module.exports = {
@@ -74,4 +115,5 @@ module.exports = {
 	insertGenres,
 	insertLanguages,
 	insertBooks,
+	insertBookGenres,
 };
