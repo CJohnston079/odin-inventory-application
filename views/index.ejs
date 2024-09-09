@@ -8,5 +8,15 @@
 	</head>
 	<body>
 		<h1><%= title %></h1>
+		<ul>
+			<% books.map((book) => { %>
+			<li>
+				<p><b>Title:</b> <%= book.book_title %></p>
+				<p><b>Author:</b> <%= book.author %></p>
+				<p><b>Published:</b> <%= book.publication_year %></p>
+				<p><b>Category:</b> <%- book.category %></p>
+			</li>
+			<% }) %>
+		</ul>
 	</body>
 </html>
