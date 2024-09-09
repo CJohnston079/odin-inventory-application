@@ -8,6 +8,10 @@
 		"genreDescription": "An autobiography is a non-fiction genre in which the author recounts their own life experiences, offering personal insights and a chronological account of their history."
 	},
 	{
+		"genreName": "Comedy",
+		"genreDescription": "Comdedies have a light or humorous tone that depict amusing incidents and characters."
+	},
+	{
 		"genreName": "Epic",
 		"genreDescription": "Epic fiction is characterized by long narratives, often set in the past, involving heroes on grand quests or battles, highlighting themes of heroism, fate, and cultural identity."
 	},
@@ -36,6 +40,10 @@
 		"genreDescription": "Horror is a genre designed to evoke fear, dread, or shock in readers, often through supernatural elements, psychological terror, or gruesome and terrifying scenarios."
 	},
 	{
+		"genreName": "Magical Realism",
+		"genreDescription": "Magical realism is chiefly a Latin-American narrative strategy that is characterized by the matter-of-fact inclusion of fantastic or mythical elements into seemingly realistic fiction."
+	},
+	{
 		"genreName": "Memoir",
 		"genreDescription": "A memoir is a non-fiction genre in which the author reflects on personal experiences and life events, typically focusing on a specific theme or period of their life."
 	},
@@ -52,12 +60,24 @@
 		"genreDescription": "Philosophical fiction explores fundamental questions about existence, ethics, reality, and knowledge, often weaving abstract or theoretical ideas into the plot or character development."
 	},
 	{
+		"genreName": "Psychological Fiction",
+		"genreDescription": "A work of fiction in which the thoughts, feelings, and motivations of the characters are of equal or greater interest than is the external action of the narrative"
+	},
+	{
 		"genreName": "Political",
 		"genreDescription": "Political literature focuses on social, governmental, and ideological issues, often engaging with power structures, political movements, and the critique of existing systems."
 	},
 	{
+		"genreName": "Religious Fiction",
+		"genreDescription": "Religious fiction is fiction that is inspired by religious texts or other elements of a religion."
+	},
+	{
 		"genreName": "Romance",
 		"genreDescription": "Romance fiction centers around romantic relationships, focusing on themes of love, passion, and emotional connection, often with a narrative arc leading to a satisfying resolution."
+	},
+	{
+		"genreName": "Satire",
+		"genreDescription": "The use of humour, irony, exaggeration, or ridicule to expose and criticize people's stupidity or vices, particularly in the context of contemporary politics and other topical issues."
 	},
 	{
 		"genreName": "Science Fiction",
@@ -80,7 +100,15 @@
 		"genreDescription": "Travel writing is a non-fiction genre that recounts the author's journeys, often offering insights into different cultures, places, and personal experiences in unfamiliar settings."
 	},
 	{
+		"genreName": "Tragedy",
+		"genreDescription": "Drama based on human suffering and, mainly, the terrible or sorrowful events that befall a main character or cast of characters"
+	},
+	{
 		"genreName": "Young Adult",
 		"genreDescription": "Young adult fiction is aimed at a teenage audience and often focuses on coming-of-age themes, identity, relationships, and emotional growth, while still appealing to adult readers."
+	},
+	{
+		"genreName": "War",
+		"genreDescription": "The war genre focuses on the experiences of soldiers and civilians during times of war. These stories often explore themes of heroism, sacrifice, loss, and the impact of war on individuals and society."
 	}
 ]
