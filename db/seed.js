@@ -11,6 +11,7 @@ const { insertGenres } = require("./seedData");
 const { insertLanguages } = require("./seedData");
 const { insertBooks } = require("./seedData");
 const { insertBookGenres } = require("./seedData");
+const { insertBookLanguages } = require("./seedData");
 
 const isProduction = process.env.NODE_ENV === "production";
 const sslConfig = isProduction ? "?sslmode=require" : "";
@@ -45,6 +46,7 @@ async function main() {
 		await insertLanguages(client);
 		await insertBooks(client);
 		await insertBookGenres(client);
+		await insertBookLanguages(client);
 
 		console.log("Seeding complete");
 	} catch (e) {
