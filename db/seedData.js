@@ -63,7 +63,7 @@ async function insertBooks(client) {
 
 		await client.query(
 			"INSERT INTO fact_books (book_title, author_id, publication_year, category) VALUES ($1, $2, $3, $4)",
-			[book.book_title, author_id, book.publication_year, book.category]
+			[book.bookTitle, author_id, book.publicationYear, book.category]
 		);
 	}
 	console.log("Books inserted successfully");

@@ -1,1088 +1,1450 @@
 [
 	{
-		"book_title": "Things Fall Apart",
+		"bookTitle": "A Man of the People",
 		"author": "Chinua Achebe",
-		"publication_year": "1958-06-17",
-		"category": "fiction"
+		"publicationYear": "1966-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Satire"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "No Longer at Ease",
+		"bookTitle": "Anthills of the Savannah",
 		"author": "Chinua Achebe",
-		"publication_year": "1960-01-01",
-		"category": "fiction"
+		"publicationYear": "1987-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Tragedy"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Arrow of God",
+		"bookTitle": "Arrow of God",
 		"author": "Chinua Achebe",
-		"publication_year": "1964-01-01",
-		"category": "fiction"
+		"publicationYear": "1964-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Tragedy"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "A Man of the People",
+		"bookTitle": "Daughter of Fortune",
+		"author": "Isabel Allende",
+		"publicationYear": "1999-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance", "Adventure"],
+		"languages": ["English", "Spanish"]
+	},
+	{
+		"bookTitle": "Eva Luna",
+		"author": "Isabel Allende",
+		"publicationYear": "1987-01-01",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Romance", "Political"],
+		"languages": ["English", "Spanish"]
+	},
+	{
+		"bookTitle": "Of Love and Shadows",
+		"author": "Isabel Allende",
+		"publicationYear": "1984-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Romance"],
+		"languages": ["English", "Spanish"]
+	},
+	{
+		"bookTitle": "No Longer at Ease",
 		"author": "Chinua Achebe",
-		"publication_year": "1966-01-01",
-		"category": "fiction"
+		"publicationYear": "1960-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Tragedy"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Anthills of the Savannah",
+		"bookTitle": "The House of the Spirits",
+		"author": "Isabel Allende",
+		"publicationYear": "1982-01-01",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Historical"],
+		"languages": ["English", "Spanish"]
+	},
+	{
+		"bookTitle": "Things Fall Apart",
 		"author": "Chinua Achebe",
-		"publication_year": "1987-01-01",
-		"category": "fiction"
+		"publicationYear": "1958-06-17",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Tragedy"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The House of the Spirits",
+		"bookTitle": "Portrait in Sepia",
 		"author": "Isabel Allende",
-		"publication_year": "1982-01-01",
-		"category": "fiction"
+		"publicationYear": "2000-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Of Love and Shadows",
+		"bookTitle": "The Japanese Lover",
 		"author": "Isabel Allende",
-		"publication_year": "1984-01-01",
-		"category": "fiction"
+		"publicationYear": "2015-01-01",
+		"category": "fiction",
+		"genres": ["Romance", "Historical"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Eva Luna",
+		"bookTitle": "A Long Petal of the Sea",
 		"author": "Isabel Allende",
-		"publication_year": "1987-01-01",
-		"category": "fiction"
+		"publicationYear": "2019-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Romance"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Daughter of Fortune",
-		"author": "Isabel Allende",
-		"publication_year": "1999-01-01",
-		"category": "fiction"
-	},
-	{
-		"book_title": "Portrait in Sepia",
-		"author": "Isabel Allende",
-		"publication_year": "2000-01-01",
-		"category": "fiction"
-	},
-	{
-		"book_title": "The Japanese Lover",
-		"author": "Isabel Allende",
-		"publication_year": "2015-01-01",
-		"category": "fiction"
-	},
-	{
-		"book_title": "A Long Petal of the Sea",
-		"author": "Isabel Allende",
-		"publication_year": "2019-01-01",
-		"category": "fiction"
-	},
-	{
-		"book_title": "Macunaíma",
+		"bookTitle": "Macunaíma",
 		"author": "Mário de Andrade",
-		"publication_year": "1928-01-01",
-		"category": "fiction"
+		"publicationYear": "1928-01-01",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Adventure"],
+		"languages": ["English", "Portuguese"]
 	},
 	{
-		"book_title": "Pauliceia Desvairada",
+		"bookTitle": "Pauliceia Desvairada",
 		"author": "Mário de Andrade",
-		"publication_year": "1922-01-01",
-		"category": "fiction"
+		"publicationYear": "1922-01-01",
+		"category": "fiction",
+		"genres": ["Modernist", "Epic"],
+		"languages": ["English", "Portuguese"]
 	},
 	{
-		"book_title": "Contos Novos",
+		"bookTitle": "Contos Novos",
 		"author": "Mário de Andrade",
-		"publication_year": "1947-01-01",
-		"category": "fiction"
+		"publicationYear": "1947-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Modernist"],
+		"languages": ["English", "Portuguese"]
 	},
 	{
-		"book_title": "The Handmaid's Tale",
+		"bookTitle": "The Handmaid's Tale",
 		"author": "Margaret Atwood",
-		"publication_year": "1985-01-01",
-		"category": "fiction"
+		"publicationYear": "1985-01-01",
+		"category": "fiction",
+		"genres": ["Science Fiction", "Political", "Feminism"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Oryx and Crake",
+		"bookTitle": "Oryx and Crake",
 		"author": "Margaret Atwood",
-		"publication_year": "2003-01-01",
-		"category": "fiction"
+		"publicationYear": "2003-01-01",
+		"category": "fiction",
+		"genres": ["Science Fiction", "Thriller", "Dystopia"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The Blind Assassin",
+		"bookTitle": "The Blind Assassin",
 		"author": "Margaret Atwood",
-		"publication_year": "2000-01-01",
-		"category": "fiction"
+		"publicationYear": "2000-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Psychological Fiction"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Alias Grace",
+		"bookTitle": "Alias Grace",
 		"author": "Margaret Atwood",
-		"publication_year": "1996-01-01",
-		"category": "fiction"
+		"publicationYear": "1996-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Mystery"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The Testaments",
+		"bookTitle": "The Testaments",
 		"author": "Margaret Atwood",
-		"publication_year": "2019-01-01",
-		"category": "fiction"
+		"publicationYear": "2019-01-01",
+		"category": "fiction",
+		"genres": ["Science Fiction", "Political", "Feminism"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Cat's Eye",
+		"bookTitle": "Cat's Eye",
 		"author": "Margaret Atwood",
-		"publication_year": "1988-01-01",
-		"category": "fiction"
+		"publicationYear": "1988-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Feminism"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Surfacing",
+		"bookTitle": "Surfacing",
 		"author": "Margaret Atwood",
-		"publication_year": "1972-01-01",
-		"category": "fiction"
+		"publicationYear": "1972-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Political"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Ficciones",
+		"bookTitle": "Ficciones",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1944-01-01",
-		"category": "fiction"
+		"publicationYear": "1944-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Fantasy", "Short Story"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Labyrinths",
+		"bookTitle": "Labyrinths",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1962-01-01",
-		"category": "fiction"
+		"publicationYear": "1962-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Fantasy", "Short Story"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "The Aleph",
+		"bookTitle": "The Aleph",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1949-01-01",
-		"category": "fiction"
+		"publicationYear": "1949-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Fantasy", "Short Story"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Dreamtigers",
+		"bookTitle": "Dreamtigers",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1960-01-01",
-		"category": "fiction"
+		"publicationYear": "1960-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Fantasy", "Short Story"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "A Universal History of Infamy",
+		"bookTitle": "A Universal History of Infamy",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1935-01-01",
-		"category": "fiction"
+		"publicationYear": "1935-01-01",
+		"category": "fiction",
+		"genres": ["Fantasy", "Short Story"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "The Book of Imaginary Beings",
+		"bookTitle": "The Book of Imaginary Beings",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1957-01-01",
-		"category": "fiction"
+		"publicationYear": "1957-01-01",
+		"category": "fiction",
+		"genres": ["Fantasy"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "The Garden of Forking Paths",
+		"bookTitle": "The Garden of Forking Paths",
 		"author": "Jorge Luis Borges",
-		"publication_year": "1941-01-01",
-		"category": "fiction"
+		"publicationYear": "1941-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Fantasy", "Short Story"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Jane Eyre",
+		"bookTitle": "Jane Eyre",
 		"author": "Charlotte Brontë",
-		"publication_year": "1847-10-16",
-		"category": "fiction"
+		"publicationYear": "1847-10-16",
+		"category": "fiction",
+		"genres": ["Gothic", "Romance"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Shirley",
+		"bookTitle": "Shirley",
 		"author": "Charlotte Brontë",
-		"publication_year": "1849-01-01",
-		"category": "fiction"
+		"publicationYear": "1849-01-01",
+		"category": "fiction",
+		"genres": ["Romance", "Political"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Villette",
+		"bookTitle": "Villette",
 		"author": "Charlotte Brontë",
-		"publication_year": "1853-01-01",
-		"category": "fiction"
+		"publicationYear": "1853-01-01",
+		"category": "fiction",
+		"genres": ["Gothic", "Psychological Fiction"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The Professor",
+		"bookTitle": "The Professor",
 		"author": "Charlotte Brontë",
-		"publication_year": "1857-01-01",
-		"category": "fiction"
+		"publicationYear": "1857-01-01",
+		"category": "fiction",
+		"genres": ["Romance"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Murder on the Orient Express",
+		"bookTitle": "Murder on the Orient Express",
 		"author": "Agatha Christie",
-		"publication_year": "1934-01-01",
-		"category": "fiction"
+		"publicationYear": "1934-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The Murder of Roger Ackroyd",
+		"bookTitle": "The Murder of Roger Ackroyd",
 		"author": "Agatha Christie",
-		"publication_year": "1926-01-01",
-		"category": "fiction"
+		"publicationYear": "1926-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "And Then There Were None",
+		"bookTitle": "And Then There Were None",
 		"author": "Agatha Christie",
-		"publication_year": "1939-01-01",
-		"category": "fiction"
+		"publicationYear": "1939-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense", "Thriller"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The ABC Murders",
+		"bookTitle": "The ABC Murders",
 		"author": "Agatha Christie",
-		"publication_year": "1936-01-01",
-		"category": "fiction"
+		"publicationYear": "1936-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Death on the Nile",
+		"bookTitle": "Death on the Nile",
 		"author": "Agatha Christie",
-		"publication_year": "1937-01-01",
-		"category": "fiction"
+		"publicationYear": "1937-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The Mysterious Affair at Styles",
+		"bookTitle": "The Mysterious Affair at Styles",
 		"author": "Agatha Christie",
-		"publication_year": "1920-01-01",
-		"category": "fiction"
+		"publicationYear": "1920-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "The Mousetrap",
+		"bookTitle": "The Mousetrap",
 		"author": "Agatha Christie",
-		"publication_year": "1952-01-01",
-		"category": "fiction"
+		"publicationYear": "1952-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Suspense"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Crime and Punishment",
+		"bookTitle": "Crime and Punishment",
 		"author": "Fyodor Dostoevsky",
-		"publication_year": "1866-01-01",
-		"category": "fiction"
+		"publicationYear": "1866-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical"],
+		"languages": ["English", "French", "German", "Russian"]
 	},
 	{
-		"book_title": "The Brothers Karamazov",
+		"bookTitle": "The Brothers Karamazov",
 		"author": "Fyodor Dostoevsky",
-		"publication_year": "1880-01-01",
-		"category": "fiction"
+		"publicationYear": "1880-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical", "Tragedy"],
+		"languages": ["English", "French", "German", "Russian"]
 	},
 	{
-		"book_title": "The Idiot",
+		"bookTitle": "The Idiot",
 		"author": "Fyodor Dostoevsky",
-		"publication_year": "1869-01-01",
-		"category": "fiction"
+		"publicationYear": "1869-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical", "Tragedy"],
+		"languages": ["English", "French", "German", "Russian"]
 	},
 	{
-		"book_title": "Demons",
+		"bookTitle": "Demons",
 		"author": "Fyodor Dostoevsky",
-		"publication_year": "1872-01-01",
-		"category": "fiction"
+		"publicationYear": "1872-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Philosophical"],
+		"languages": ["English", "French", "German", "Russian"]
 	},
 	{
-		"book_title": "Notes from Underground",
+		"bookTitle": "Notes from Underground",
 		"author": "Fyodor Dostoevsky",
-		"publication_year": "1864-01-01",
-		"category": "fiction"
+		"publicationYear": "1864-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "French", "German", "Russian"]
 	},
 	{
-		"book_title": "The Gambler",
+		"bookTitle": "The Gambler",
 		"author": "Fyodor Dostoevsky",
-		"publication_year": "1867-01-01",
-		"category": "fiction"
+		"publicationYear": "1867-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction"],
+		"languages": ["English", "French", "German", "Russian"]
 	},
 	{
-		"book_title": "The Name of the Rose",
+		"bookTitle": "The Name of the Rose",
 		"author": "Umberto Eco",
-		"publication_year": "1980-01-01",
-		"category": "fiction"
+		"publicationYear": "1980-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Philosophical", "Historical"],
+		"languages": ["English", "French", "German", "Italian"]
 	},
 	{
-		"book_title": "Foucault's Pendulum",
+		"bookTitle": "Foucault's Pendulum",
 		"author": "Umberto Eco",
-		"publication_year": "1988-01-01",
-		"category": "fiction"
+		"publicationYear": "1988-01-01",
+		"category": "fiction",
+		"genres": ["Mystery", "Philosophical", "Thriller"],
+		"languages": ["English", "French", "German", "Italian"]
 	},
 	{
-		"book_title": "The Prague Cemetery",
+		"bookTitle": "The Prague Cemetery",
 		"author": "Umberto Eco",
-		"publication_year": "2010-01-01",
-		"category": "fiction"
+		"publicationYear": "2010-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Mystery"],
+		"languages": ["English", "French", "German", "Italian"]
 	},
 	{
-		"book_title": "The Island of the Day Before",
+		"bookTitle": "The Island of the Day Before",
 		"author": "Umberto Eco",
-		"publication_year": "1994-01-01",
-		"category": "fiction"
+		"publicationYear": "1994-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Philosophical", "Romance"],
+		"languages": ["English", "French", "German", "Italian"]
 	},
 	{
-		"book_title": "Baudolino",
+		"bookTitle": "Baudolino",
 		"author": "Umberto Eco",
-		"publication_year": "2000-01-01",
-		"category": "fiction"
+		"publicationYear": "2000-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Adventure", "Fantasy"],
+		"languages": ["English", "French", "German", "Italian"]
 	},
 	{
-		"book_title": "The Mysterious Flame of Queen Loana",
+		"bookTitle": "The Mysterious Flame of Queen Loana",
 		"author": "Umberto Eco",
-		"publication_year": "2004-01-01",
-		"category": "fiction"
+		"publicationYear": "2004-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Historical"],
+		"languages": ["English", "French", "German", "Italian"]
 	},
 	{
-		"book_title": "Siddhartha",
+		"bookTitle": "Siddhartha",
 		"author": "Hermann Hesse",
-		"publication_year": "1922-01-01",
-		"category": "fiction"
+		"publicationYear": "1922-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Steppenwolf",
+		"bookTitle": "Steppenwolf",
 		"author": "Hermann Hesse",
-		"publication_year": "1927-01-01",
-		"category": "fiction"
+		"publicationYear": "1927-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "The Glass Bead Game",
+		"bookTitle": "The Glass Bead Game",
 		"author": "Hermann Hesse",
-		"publication_year": "1943-01-01",
-		"category": "fiction"
+		"publicationYear": "1943-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Science Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Demian",
+		"bookTitle": "Demian",
 		"author": "Hermann Hesse",
-		"publication_year": "1919-01-01",
-		"category": "fiction"
+		"publicationYear": "1919-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Narcissus and Goldmund",
+		"bookTitle": "Narcissus and Goldmund",
 		"author": "Hermann Hesse",
-		"publication_year": "1930-01-01",
-		"category": "fiction"
+		"publicationYear": "1930-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Les Misérables",
+		"bookTitle": "Les Misérables",
 		"author": "Victor Hugo",
-		"publication_year": "1862-01-01",
-		"category": "fiction"
+		"publicationYear": "1862-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Hunchback of Notre-Dame",
+		"bookTitle": "The Hunchback of Notre-Dame",
 		"author": "Victor Hugo",
-		"publication_year": "1831-01-01",
-		"category": "fiction"
+		"publicationYear": "1831-01-01",
+		"category": "fiction",
+		"genres": ["Gothic", "Romance", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Man Who Laughs",
+		"bookTitle": "The Man Who Laughs",
 		"author": "Victor Hugo",
-		"publication_year": "1869-01-01",
-		"category": "fiction"
+		"publicationYear": "1869-01-01",
+		"category": "fiction",
+		"genres": ["Gothic", "Romance", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Toilers of the Sea",
+		"bookTitle": "Toilers of the Sea",
 		"author": "Victor Hugo",
-		"publication_year": "1866-01-01",
-		"category": "fiction"
+		"publicationYear": "1866-01-01",
+		"category": "fiction",
+		"genres": ["Adventure", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Ninety-Three",
+		"bookTitle": "Ninety-Three",
 		"author": "Victor Hugo",
-		"publication_year": "1874-01-01",
-		"category": "fiction"
+		"publicationYear": "1874-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Ulysses",
+		"bookTitle": "Ulysses",
 		"author": "James Joyce",
-		"publication_year": "1922-02-02",
-		"category": "fiction"
+		"publicationYear": "1922-02-02",
+		"category": "fiction",
+		"genres": ["Modernist", "Psychological Fiction"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "Dubliners",
+		"bookTitle": "Dubliners",
 		"author": "James Joyce",
-		"publication_year": "1914-01-01",
-		"category": "fiction"
+		"publicationYear": "1914-01-01",
+		"category": "fiction",
+		"genres": ["Modernist", "Short Story"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "A Portrait of the Artist as a Young Man",
+		"bookTitle": "A Portrait of the Artist as a Young Man",
 		"author": "James Joyce",
-		"publication_year": "1916-12-29",
-		"category": "fiction"
+		"publicationYear": "1916-12-29",
+		"category": "fiction",
+		"genres": ["Modernist", "Psychological Fiction"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "Finnegans Wake",
+		"bookTitle": "Finnegans Wake",
 		"author": "James Joyce",
-		"publication_year": "1939-05-04",
-		"category": "fiction"
+		"publicationYear": "1939-05-04",
+		"category": "fiction",
+		"genres": ["Modernist", "Psychological Fiction"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "Exiles",
+		"bookTitle": "Exiles",
 		"author": "James Joyce",
-		"publication_year": "1918-01-01",
-		"category": "fiction"
+		"publicationYear": "1918-01-01",
+		"category": "fiction",
+		"genres": ["Modernist", "Psychological Fiction", "Drama"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "A Personal Matter",
+		"bookTitle": "A Personal Matter",
 		"author": "Kenzaburō Ōe",
-		"publication_year": "1964-01-01",
-		"category": "fiction"
+		"publicationYear": "1964-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Silent Cry",
+		"bookTitle": "The Silent Cry",
 		"author": "Kenzaburō Ōe",
-		"publication_year": "1967-01-01",
-		"category": "fiction"
+		"publicationYear": "1967-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "Rouse Up O Young Men of the New Age!",
+		"bookTitle": "Rouse Up O Young Men of the New Age!",
 		"author": "Kenzaburō Ōe",
-		"publication_year": "1983-01-01",
-		"category": "fiction"
+		"publicationYear": "1983-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Changeling",
+		"bookTitle": "The Changeling",
 		"author": "Kenzaburō Ōe",
-		"publication_year": "1970-01-01",
-		"category": "fiction"
+		"publicationYear": "1970-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French", "German", "Spanish"]
 	},
 	{
-		"book_title": "Teach Us to Outgrow Our Madness",
+		"bookTitle": "Teach Us to Outgrow Our Madness",
 		"author": "Kenzaburō Ōe",
-		"publication_year": "1969-01-01",
-		"category": "fiction"
+		"publicationYear": "1969-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Short Story"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "Nip the Buds, Shoot the Kids",
+		"bookTitle": "Nip the Buds, Shoot the Kids",
 		"author": "Kenzaburō Ōe",
-		"publication_year": "1958-01-01",
-		"category": "fiction"
+		"publicationYear": "1958-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "One Hundred Years of Solitude",
+		"bookTitle": "One Hundred Years of Solitude",
 		"author": "Gabriel García Márquez",
-		"publication_year": "1967-05-30",
-		"category": "fiction"
+		"publicationYear": "1967-05-30",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Historical", "Tragedy"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Love in the Time of Cholera",
+		"bookTitle": "Love in the Time of Cholera",
 		"author": "Gabriel García Márquez",
-		"publication_year": "1985-03-01",
-		"category": "fiction"
+		"publicationYear": "1985-03-01",
+		"category": "fiction",
+		"genres": ["Romance", "Historical", "Tragedy"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Chronicle of a Death Foretold",
+		"bookTitle": "Chronicle of a Death Foretold",
 		"author": "Gabriel García Márquez",
-		"publication_year": "1981-01-01",
-		"category": "fiction"
+		"publicationYear": "1981-01-01",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Mystery", "Tragedy"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "The General in His Labyrinth",
+		"bookTitle": "The General in His Labyrinth",
 		"author": "Gabriel García Márquez",
-		"publication_year": "1989-01-01",
-		"category": "fiction"
+		"publicationYear": "1989-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Tragedy"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Of Love and Other Demons",
+		"bookTitle": "Of Love and Other Demons",
 		"author": "Gabriel García Márquez",
-		"publication_year": "1994-01-01",
-		"category": "fiction"
+		"publicationYear": "1994-01-01",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Romance", "Tragedy"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "No One Writes to the Colonel",
+		"bookTitle": "No One Writes to the Colonel",
 		"author": "Gabriel García Márquez",
-		"publication_year": "1961-01-01",
-		"category": "fiction"
+		"publicationYear": "1961-01-01",
+		"category": "fiction",
+		"genres": ["Magical Realism", "Political"],
+		"languages": ["English", "Spanish"]
 	},
 	{
-		"book_title": "Burger's Daughter",
+		"bookTitle": "Burger's Daughter",
 		"author": "Nadine Gordimer",
-		"publication_year": "1979-01-01",
-		"category": "fiction"
+		"publicationYear": "1979-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "July's People",
+		"bookTitle": "July's People",
 		"author": "Nadine Gordimer",
-		"publication_year": "1981-01-01",
-		"category": "fiction"
+		"publicationYear": "1981-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Conservationist",
+		"bookTitle": "The Conservationist",
 		"author": "Nadine Gordimer",
-		"publication_year": "1974-01-01",
-		"category": "fiction"
+		"publicationYear": "1974-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "None to Accompany Me",
+		"bookTitle": "None to Accompany Me",
 		"author": "Nadine Gordimer",
-		"publication_year": "1994-01-01",
-		"category": "fiction"
+		"publicationYear": "1994-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Pickup",
+		"bookTitle": "The Pickup",
 		"author": "Nadine Gordimer",
-		"publication_year": "2001-01-01",
-		"category": "fiction"
+		"publicationYear": "2001-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Romance"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Get a Life",
+		"bookTitle": "Get a Life",
 		"author": "Nadine Gordimer",
-		"publication_year": "1981-01-01",
-		"category": "fiction"
+		"publicationYear": "1981-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Old Man and the Sea",
+		"bookTitle": "The Old Man and the Sea",
 		"author": "Ernest Hemingway",
-		"publication_year": "1952-09-01",
-		"category": "fiction"
+		"publicationYear": "1952-09-01",
+		"category": "fiction",
+		"genres": ["Adventure", "Tragedy"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "A Farewell to Arms",
+		"bookTitle": "A Farewell to Arms",
 		"author": "Ernest Hemingway",
-		"publication_year": "1929-09-01",
-		"category": "fiction"
+		"publicationYear": "1929-09-01",
+		"category": "fiction",
+		"genres": ["Romance", "War", "Tragedy"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "For Whom the Bell Tolls",
+		"bookTitle": "For Whom the Bell Tolls",
 		"author": "Ernest Hemingway",
-		"publication_year": "1940-10-01",
-		"category": "fiction"
+		"publicationYear": "1940-10-01",
+		"category": "fiction",
+		"genres": ["War", "Romance", "Tragedy"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "The Sun Also Rises",
+		"bookTitle": "The Sun Also Rises",
 		"author": "Ernest Hemingway",
-		"publication_year": "1926-10-22",
-		"category": "fiction"
+		"publicationYear": "1926-10-22",
+		"category": "fiction",
+		"genres": ["Romance", "Adventure", "Modernist"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "To Have and Have Not",
+		"bookTitle": "To Have and Have Not",
 		"author": "Ernest Hemingway",
-		"publication_year": "1937-10-01",
-		"category": "fiction"
+		"publicationYear": "1937-10-01",
+		"category": "fiction",
+		"genres": ["Adventure", "Political"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "In Our Time",
+		"bookTitle": "In Our Time",
 		"author": "Ernest Hemingway",
-		"publication_year": "1925-09-01",
-		"category": "fiction"
+		"publicationYear": "1925-09-01",
+		"category": "fiction",
+		"genres": ["War", "Short Story", "Modernist"],
+		"languages": ["English", "French", "Spanish"]
 	},
 	{
-		"book_title": "Norwegian Wood",
+		"bookTitle": "Norwegian Wood",
 		"author": "Haruki Murakami",
-		"publication_year": "1987-09-01",
-		"category": "fiction"
+		"publicationYear": "1987-09-01",
+		"category": "fiction",
+		"genres": ["Romance", "Psychological Fiction"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Kafka on the Shore",
+		"bookTitle": "Kafka on the Shore",
 		"author": "Haruki Murakami",
-		"publication_year": "2002-01-01",
-		"category": "fiction"
+		"publicationYear": "2002-01-01",
+		"category": "fiction",
+		"genres": ["Fantasy", "Psychological Fiction"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "1Q84",
+		"bookTitle": "1Q84",
 		"author": "Haruki Murakami",
-		"publication_year": "2009-05-29",
-		"category": "fiction"
+		"publicationYear": "2009-05-29",
+		"category": "fiction",
+		"genres": ["Fantasy", "Science Fiction", "Romance"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "The Wind-Up Bird Chronicle",
+		"bookTitle": "The Wind-Up Bird Chronicle",
 		"author": "Haruki Murakami",
-		"publication_year": "1994-01-01",
-		"category": "fiction"
+		"publicationYear": "1994-01-01",
+		"category": "fiction",
+		"genres": ["Fantasy", "Psychological Fiction", "Mystery"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "A Wild Sheep Chase",
+		"bookTitle": "A Wild Sheep Chase",
 		"author": "Haruki Murakami",
-		"publication_year": "1982-01-01",
-		"category": "fiction"
+		"publicationYear": "1982-01-01",
+		"category": "fiction",
+		"genres": ["Fantasy", "Mystery", "Psychological Fiction"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Hard-Boiled Wonderland and the End of the World",
+		"bookTitle": "Hard-Boiled Wonderland and the End of the World",
 		"author": "Haruki Murakami",
-		"publication_year": "1985-01-01",
-		"category": "fiction"
+		"publicationYear": "1985-01-01",
+		"category": "fiction",
+		"genres": ["Science Fiction", "Fantasy", "Psychological Fiction"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Men Without Women",
+		"bookTitle": "Men Without Women",
 		"author": "Haruki Murakami",
-		"publication_year": "1927-01-01",
-		"category": "fiction"
+		"publicationYear": "1927-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "The Hunger Angel",
+		"bookTitle": "The Hunger Angel",
 		"author": "Herta Müller",
-		"publication_year": "2009-01-01",
-		"category": "fiction"
+		"publicationYear": "2009-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Historical"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "The Land of Green Plums",
+		"bookTitle": "The Land of Green Plums",
 		"author": "Herta Müller",
-		"publication_year": "1994-01-01",
-		"category": "fiction"
+		"publicationYear": "1994-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Political"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "The Passport",
+		"bookTitle": "The Passport",
 		"author": "Herta Müller",
-		"publication_year": "1986-01-01",
-		"category": "fiction"
+		"publicationYear": "1986-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Nadirs",
+		"bookTitle": "Nadirs",
 		"author": "Herta Müller",
-		"publication_year": "1983-01-01",
-		"category": "fiction"
+		"publicationYear": "1983-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "The Fox Was Ever the Hunter",
+		"bookTitle": "The Fox Was Ever the Hunter",
 		"author": "Herta Müller",
-		"publication_year": "1991-01-01",
-		"category": "fiction"
+		"publicationYear": "1991-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Herztier",
+		"bookTitle": "Herztier",
 		"author": "Herta Müller",
-		"publication_year": "2000-01-01",
-		"category": "fiction"
+		"publicationYear": "2000-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "German"]
 	},
 	{
-		"book_title": "Dear Life",
+		"bookTitle": "Dear Life",
 		"author": "Alice Munro",
-		"publication_year": "2012-01-01",
-		"category": "fiction"
+		"publicationYear": "2012-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Runaway",
+		"bookTitle": "Runaway",
 		"author": "Alice Munro",
-		"publication_year": "2004-01-01",
-		"category": "fiction"
+		"publicationYear": "2004-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Hateship, Friendship, Courtship, Loveship, Marriage",
+		"bookTitle": "Hateship, Friendship, Courtship, Loveship, Marriage",
 		"author": "Alice Munro",
-		"publication_year": "2001-01-01",
-		"category": "fiction"
+		"publicationYear": "2001-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Moons of Jupiter",
+		"bookTitle": "The Moons of Jupiter",
 		"author": "Alice Munro",
-		"publication_year": "1982-01-01",
-		"category": "fiction"
+		"publicationYear": "1982-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The View from Castle Rock",
+		"bookTitle": "The View from Castle Rock",
 		"author": "Alice Munro",
-		"publication_year": "2006-01-01",
-		"category": "fiction"
+		"publicationYear": "2006-01-01",
+		"category": "fiction",
+		"genres": ["Memoir", "Short Story"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Lives of Girls and Women",
+		"bookTitle": "Lives of Girls and Women",
 		"author": "Alice Munro",
-		"publication_year": "1971-01-01",
-		"category": "fiction"
+		"publicationYear": "1971-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Dance of the Happy Shades",
+		"bookTitle": "Dance of the Happy Shades",
 		"author": "Alice Munro",
-		"publication_year": "1968-01-01",
-		"category": "fiction"
+		"publicationYear": "1968-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Blindness",
+		"bookTitle": "Blindness",
 		"author": "José Saramago",
-		"publication_year": "1995-01-01",
-		"category": "fiction"
+		"publicationYear": "1995-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Political", "Science Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Gospel According to Jesus Christ",
+		"bookTitle": "The Gospel According to Jesus Christ",
 		"author": "José Saramago",
-		"publication_year": "1991-01-01",
-		"category": "fiction"
+		"publicationYear": "1991-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Historical", "Religious Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Year of the Death of Ricardo Reis",
+		"bookTitle": "The Year of the Death of Ricardo Reis",
 		"author": "José Saramago",
-		"publication_year": "1984-01-01",
-		"category": "fiction"
+		"publicationYear": "1984-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Historical", "Political"],
+		"languages": ["English", "Portuguese"]
 	},
 	{
-		"book_title": "All the Names",
+		"bookTitle": "All the Names",
 		"author": "José Saramago",
-		"publication_year": "1997-01-01",
-		"category": "fiction"
+		"publicationYear": "1997-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "Portuguese"]
 	},
 	{
-		"book_title": "Baltasar and Blimunda",
+		"bookTitle": "Baltasar and Blimunda",
 		"author": "José Saramago",
-		"publication_year": "1982-01-01",
-		"category": "fiction"
+		"publicationYear": "1982-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Magical Realism"],
+		"languages": ["English", "Portuguese"]
 	},
 	{
-		"book_title": "The Double",
+		"bookTitle": "The Double",
 		"author": "José Saramago",
-		"publication_year": "1846-01-01",
-		"category": "fiction"
+		"publicationYear": "1846-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Frankenstein",
+		"bookTitle": "Frankenstein",
 		"author": "Mary Shelley",
-		"publication_year": "1818-01-01",
-		"category": "fiction"
+		"publicationYear": "1818-01-01",
+		"category": "fiction",
+		"genres": ["Gothic", "Science Fiction", "Horror"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Last Man",
+		"bookTitle": "The Last Man",
 		"author": "Mary Shelley",
-		"publication_year": "1826-01-01",
-		"category": "fiction"
+		"publicationYear": "1826-01-01",
+		"category": "fiction",
+		"genres": ["Science Fiction", "Gothic", "Apocalyptic"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Mathilda",
+		"bookTitle": "Mathilda",
 		"author": "Mary Shelley",
-		"publication_year": "1959-01-01",
-		"category": "fiction"
+		"publicationYear": "1959-01-01",
+		"category": "fiction",
+		"genres": ["Gothic", "Romance", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Valperga",
+		"bookTitle": "Valperga",
 		"author": "Mary Shelley",
-		"publication_year": "1823-01-01",
-		"category": "fiction"
+		"publicationYear": "1823-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance", "Gothic"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Lodore",
+		"bookTitle": "Lodore",
 		"author": "Mary Shelley",
-		"publication_year": "1835-01-01",
-		"category": "fiction"
+		"publicationYear": "1835-01-01",
+		"category": "fiction",
+		"genres": ["Gothic", "Romance", "Political"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Second Sex",
+		"bookTitle": "The Second Sex",
 		"author": "Simone de Beauvoir",
-		"publication_year": "1949-01-01",
-		"category": "non-fiction"
+		"publicationYear": "1949-01-01",
+		"category": "non-fiction",
+		"genres": ["Essay", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Mandarins",
+		"bookTitle": "The Mandarins",
 		"author": "Simone de Beauvoir",
-		"publication_year": "1954-01-01",
-		"category": "fiction"
+		"publicationYear": "1954-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Philosophical", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Memoirs of a Dutiful Daughter",
+		"bookTitle": "Memoirs of a Dutiful Daughter",
 		"author": "Simone de Beauvoir",
-		"publication_year": "1958-01-01",
-		"category": "non-fiction"
+		"publicationYear": "1958-01-01",
+		"category": "non-fiction",
+		"genres": ["Memoir", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "She Came to Stay",
+		"bookTitle": "She Came to Stay",
 		"author": "Simone de Beauvoir",
-		"publication_year": "1943-01-01",
-		"category": "fiction"
+		"publicationYear": "1943-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Woman Destroyed",
+		"bookTitle": "The Woman Destroyed",
 		"author": "Simone de Beauvoir",
-		"publication_year": "1967-01-01",
-		"category": "fiction"
+		"publicationYear": "1967-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Hour of the Star",
+		"bookTitle": "The Hour of the Star",
 		"author": "Clarice Lispector",
-		"publication_year": "1977-01-01",
-		"category": "fiction"
+		"publicationYear": "1977-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Near to the Wild Heart",
+		"bookTitle": "Near to the Wild Heart",
 		"author": "Clarice Lispector",
-		"publication_year": "1943-01-01",
-		"category": "fiction"
+		"publicationYear": "1943-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Passion According to G.H.",
+		"bookTitle": "The Passion According to G.H.",
 		"author": "Clarice Lispector",
-		"publication_year": "1964-01-01",
-		"category": "fiction"
+		"publicationYear": "1964-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Philosophical"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Agua Viva",
+		"bookTitle": "Agua Viva",
 		"author": "Clarice Lispector",
-		"publication_year": "1973-01-01",
-		"category": "fiction"
+		"publicationYear": "1973-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Family Ties",
+		"bookTitle": "Family Ties",
 		"author": "Clarice Lispector",
-		"publication_year": "2000-01-01",
-		"category": "fiction"
+		"publicationYear": "2000-01-01",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Wonderful Adventures of Nils",
+		"bookTitle": "The Wonderful Adventures of Nils",
 		"author": "Selma Lagerlöf",
-		"publication_year": "1906-01-01",
-		"category": "fiction"
+		"publicationYear": "1906-01-01",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure"],
+		"languages": ["English", "Swedish"]
 	},
 	{
-		"book_title": "Jerusalem",
+		"bookTitle": "Jerusalem",
 		"author": "Selma Lagerlöf",
-		"publication_year": "1928-01-01",
-		"category": "fiction"
+		"publicationYear": "1928-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Psychological Fiction"],
+		"languages": ["English", "Swedish"]
 	},
 	{
-		"book_title": "Gösta Berling's Saga",
+		"bookTitle": "Gösta Berling's Saga",
 		"author": "Selma Lagerlöf",
-		"publication_year": "1891-01-01",
-		"category": "fiction"
+		"publicationYear": "1891-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance", "Epic"],
+		"languages": ["English", "Swedish"]
 	},
 	{
-		"book_title": "The Emperor of Portugallia",
+		"bookTitle": "The Emperor of Portugallia",
 		"author": "Selma Lagerlöf",
-		"publication_year": "1879-01-01",
-		"category": "fiction"
+		"publicationYear": "1879-01-01",
+		"category": "fiction",
+		"genres": ["Romance", "Psychological Fiction"],
+		"languages": ["English", "Swedish"]
 	},
 	{
-		"book_title": "The Ring of the Löwenskölds",
+		"bookTitle": "The Ring of the Löwenskölds",
 		"author": "Selma Lagerlöf",
-		"publication_year": "1925-01-01",
-		"category": "fiction"
+		"publicationYear": "1925-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance"],
+		"languages": ["English", "Swedish"]
 	},
 	{
-		"book_title": "The Golden Notebook",
+		"bookTitle": "The Golden Notebook",
 		"author": "Doris Lessing",
-		"publication_year": "1962-01-01",
-		"category": "fiction"
+		"publicationYear": "1962-01-01",
+		"category": "fiction",
+		"genres": ["Feminism", "Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Grass Is Singing",
+		"bookTitle": "The Grass Is Singing",
 		"author": "Doris Lessing",
-		"publication_year": "1950-01-01",
-		"category": "fiction"
+		"publicationYear": "1950-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Fifth Child",
+		"bookTitle": "The Fifth Child",
 		"author": "Doris Lessing",
-		"publication_year": "1988-01-01",
-		"category": "fiction"
+		"publicationYear": "1988-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Tragedy", "Horror"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Memoirs of a Survivor",
+		"bookTitle": "Memoirs of a Survivor",
 		"author": "Doris Lessing",
-		"publication_year": "1974-01-01",
-		"category": "fiction"
+		"publicationYear": "1974-01-01",
+		"category": "fiction",
+		"genres": ["Science Fiction", "Psychological Fiction", "Political"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Good Terrorist",
+		"bookTitle": "The Good Terrorist",
 		"author": "Doris Lessing",
-		"publication_year": "1985-01-01",
-		"category": "fiction"
+		"publicationYear": "1985-01-01",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Kitchen",
+		"bookTitle": "Kitchen",
 		"author": "Banana Yoshimoto",
-		"publication_year": "1988-01-01",
-		"category": "fiction"
+		"publicationYear": "1988-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Romance"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Goodbye Tsugumi",
+		"bookTitle": "Goodbye Tsugumi",
 		"author": "Banana Yoshimoto",
-		"publication_year": "1982-01-01",
-		"category": "fiction"
+		"publicationYear": "1982-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Romance"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Amrita",
+		"bookTitle": "Amrita",
 		"author": "Banana Yoshimoto",
-		"publication_year": "1986-01-01",
-		"category": "fiction"
+		"publicationYear": "1986-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Romance"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Lizard",
+		"bookTitle": "Lizard",
 		"author": "Banana Yoshimoto",
-		"publication_year": "1965-01-01",
-		"category": "fiction"
+		"publicationYear": "1965-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Short Story"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "The Lake",
+		"bookTitle": "The Lake",
 		"author": "Banana Yoshimoto",
-		"publication_year": "1964-01-01",
-		"category": "fiction"
+		"publicationYear": "1964-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Romance"],
+		"languages": ["English", "Japanese"]
 	},
 	{
-		"book_title": "Beloved",
+		"bookTitle": "Beloved",
 		"author": "Toni Morrison",
-		"publication_year": "1987-09-16",
-		"category": "fiction"
+		"publicationYear": "1987-09-16",
+		"category": "fiction",
+		"genres": ["Historical", "Psychological Fiction", "Gothic"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Bluest Eye",
+		"bookTitle": "The Bluest Eye",
 		"author": "Toni Morrison",
-		"publication_year": "1970-01-01",
-		"category": "fiction"
+		"publicationYear": "1970-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Tragedy", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Song of Solomon",
+		"bookTitle": "Song of Solomon",
 		"author": "Toni Morrison",
-		"publication_year": "1977-01-01",
-		"category": "fiction"
+		"publicationYear": "1977-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Psychological Fiction", "Political"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Sula",
+		"bookTitle": "Sula",
 		"author": "Toni Morrison",
-		"publication_year": "1973-01-01",
-		"category": "fiction"
+		"publicationYear": "1973-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Feminism", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Jazz",
+		"bookTitle": "Jazz",
 		"author": "Toni Morrison",
-		"publication_year": "1992-01-01",
-		"category": "fiction"
+		"publicationYear": "1992-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Paradise",
+		"bookTitle": "Paradise",
 		"author": "Toni Morrison",
-		"publication_year": "1998-01-01",
-		"category": "fiction"
+		"publicationYear": "1998-01-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Feminism", "Political"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Half of a Yellow Sun",
+		"bookTitle": "Half of a Yellow Sun",
 		"author": "Chimamanda Ngozi Adichie",
-		"publication_year": "2006-09-12",
-		"category": "fiction"
+		"publicationYear": "2006-09-12",
+		"category": "fiction",
+		"genres": ["Historical", "Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Americanah",
+		"bookTitle": "Americanah",
 		"author": "Chimamanda Ngozi Adichie",
-		"publication_year": "2013-05-14",
-		"category": "fiction"
+		"publicationYear": "2013-05-14",
+		"category": "fiction",
+		"genres": ["Romance", "Political", "Psychological Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Purple Hibiscus",
+		"bookTitle": "Purple Hibiscus",
 		"author": "Chimamanda Ngozi Adichie",
-		"publication_year": "2003-09-30",
-		"category": "fiction"
+		"publicationYear": "2003-09-30",
+		"category": "fiction",
+		"genres": ["Political", "Psychological Fiction", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Thing Around Your Neck",
+		"bookTitle": "The Thing Around Your Neck",
 		"author": "Chimamanda Ngozi Adichie",
-		"publication_year": "2009-05-12",
-		"category": "fiction"
+		"publicationYear": "2009-05-12",
+		"category": "fiction",
+		"genres": ["Short Story", "Psychological Fiction", "Political"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "We Should All Be Feminists",
+		"bookTitle": "We Should All Be Feminists",
 		"author": "Chimamanda Ngozi Adichie",
-		"publication_year": "2014-03-04",
-		"category": "non-fiction"
+		"publicationYear": "2014-03-04",
+		"category": "non-fiction",
+		"genres": ["Essay", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Hobbit",
+		"bookTitle": "The Hobbit",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "1937-09-21",
-		"category": "fiction"
+		"publicationYear": "1937-09-21",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Fellowship of the Ring",
+		"bookTitle": "The Fellowship of the Ring",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "1954-07-29",
-		"category": "fiction"
+		"publicationYear": "1954-07-29",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Two Towers",
+		"bookTitle": "The Two Towers",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "1954-11-11",
-		"category": "fiction"
+		"publicationYear": "1954-11-11",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Return of the King",
+		"bookTitle": "The Return of the King",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "1955-10-20",
-		"category": "fiction"
+		"publicationYear": "1955-10-20",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Silmarillion",
+		"bookTitle": "The Silmarillion",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "1977-09-15",
-		"category": "fiction"
+		"publicationYear": "1977-09-15",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "The Children of Húrin",
+		"bookTitle": "The Children of Húrin",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "2007-04-17",
-		"category": "fiction"
+		"publicationYear": "2007-04-17",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic", "Tragedy"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "Unfinished Tales",
+		"bookTitle": "Unfinished Tales",
 		"author": "J. R. R. Tolkien",
-		"publication_year": "1980-11-01",
-		"category": "fiction"
+		"publicationYear": "1980-11-01",
+		"category": "fiction",
+		"genres": ["Fantasy", "Adventure", "Epic"],
+		"languages": ["English", "French", "German"]
 	},
 	{
-		"book_title": "War and Peace",
+		"bookTitle": "War and Peace",
 		"author": "Leo Tolstoy",
-		"publication_year": "1869-01-01",
-		"category": "fiction"
+		"publicationYear": "1869-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Romance", "Epic"],
+		"languages": ["English", "French", "Russian"]
 	},
 	{
-		"book_title": "Anna Karenina",
+		"bookTitle": "Anna Karenina",
 		"author": "Leo Tolstoy",
-		"publication_year": "1877-01-01",
-		"category": "fiction"
+		"publicationYear": "1877-01-01",
+		"category": "fiction",
+		"genres": ["Romance", "Psychological Fiction", "Tragedy"],
+		"languages": ["English", "French", "Russian"]
 	},
 	{
-		"book_title": "The Death of Ivan Ilyich",
+		"bookTitle": "The Death of Ivan Ilyich",
 		"author": "Leo Tolstoy",
-		"publication_year": "1886-01-01",
-		"category": "fiction"
+		"publicationYear": "1886-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Psychological Fiction"],
+		"languages": ["English", "French", "Russian"]
 	},
 	{
-		"book_title": "Resurrection",
+		"bookTitle": "Resurrection",
 		"author": "Leo Tolstoy",
-		"publication_year": "1899-01-01",
-		"category": "fiction"
+		"publicationYear": "1899-01-01",
+		"category": "fiction",
+		"genres": ["Philosophical", "Historical", "Political"],
+		"languages": ["English", "French", "Russian"]
 	},
 	{
-		"book_title": "Hadji Murat",
+		"bookTitle": "Hadji Murat",
 		"author": "Leo Tolstoy",
-		"publication_year": "1904-01-01",
-		"category": "fiction"
+		"publicationYear": "1904-01-01",
+		"category": "fiction",
+		"genres": ["Historical", "Adventure"],
+		"languages": ["English", "French", "Russian"]
 	},
 	{
-		"book_title": "The Adventures of Huckleberry Finn",
+		"bookTitle": "The Adventures of Huckleberry Finn",
 		"author": "Mark Twain",
-		"publication_year": "1884-12-10",
-		"category": "fiction"
+		"publicationYear": "1884-12-10",
+		"category": "fiction",
+		"genres": ["Adventure", "Historical", "Young Adult"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Adventures of Tom Sawyer",
+		"bookTitle": "The Adventures of Tom Sawyer",
 		"author": "Mark Twain",
-		"publication_year": "1876-06-01",
-		"category": "fiction"
+		"publicationYear": "1876-06-01",
+		"category": "fiction",
+		"genres": ["Adventure", "Historical", "Young Adult"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Prince and the Pauper",
+		"bookTitle": "The Prince and the Pauper",
 		"author": "Mark Twain",
-		"publication_year": "1881-01-01",
-		"category": "fiction"
+		"publicationYear": "1881-01-01",
+		"category": "fiction",
+		"genres": ["Adventure", "Historical", "Young Adult"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "A Connecticut Yankee in King Arthur's Court",
+		"bookTitle": "A Connecticut Yankee in King Arthur's Court",
 		"author": "Mark Twain",
-		"publication_year": "1889-01-01",
-		"category": "fiction"
+		"publicationYear": "1889-01-01",
+		"category": "fiction",
+		"genres": ["Adventure", "Historical", "Science Fiction"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Innocents Abroad",
+		"bookTitle": "The Innocents Abroad",
 		"author": "Mark Twain",
-		"publication_year": "1869-01-01",
-		"category": "non-fiction"
+		"publicationYear": "1869-01-01",
+		"category": "non-fiction",
+		"genres": ["Travel Writing", "Comedy"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Life on the Mississippi",
+		"bookTitle": "Life on the Mississippi",
 		"author": "Mark Twain",
-		"publication_year": "1883-01-01",
-		"category": "non-fiction"
+		"publicationYear": "1883-01-01",
+		"category": "non-fiction",
+		"genres": ["Memoir", "Adventure", "Travel Writing"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Mrs. Dalloway",
+		"bookTitle": "Mrs. Dalloway",
 		"author": "Virginia Woolf",
-		"publication_year": "1925-05-14",
-		"category": "fiction"
+		"publicationYear": "1925-05-14",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Modernist"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "To the Lighthouse",
+		"bookTitle": "To the Lighthouse",
 		"author": "Virginia Woolf",
-		"publication_year": "1927-05-05",
-		"category": "fiction"
+		"publicationYear": "1927-05-05",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Modernist"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "Orlando",
+		"bookTitle": "Orlando",
 		"author": "Virginia Woolf",
-		"publication_year": "1928-10-11",
-		"category": "fiction"
+		"publicationYear": "1928-10-11",
+		"category": "fiction",
+		"genres": ["Romance", "Fantasy", "Modernist"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "A Room of One's Own",
+		"bookTitle": "A Room of One's Own",
 		"author": "Virginia Woolf",
-		"publication_year": "1929-10-24",
-		"category": "non-fiction"
+		"publicationYear": "1929-10-24",
+		"category": "non-fiction",
+		"genres": ["Essay", "Feminism"],
+		"languages": ["English", "French"]
 	},
 	{
-		"book_title": "The Waves",
+		"bookTitle": "The Waves",
 		"author": "Virginia Woolf",
-		"publication_year": "1931-10-01",
-		"category": "fiction"
+		"publicationYear": "1931-10-01",
+		"category": "fiction",
+		"genres": ["Psychological Fiction", "Modernist"],
+		"languages": ["English", "French"]
 	}
 ]
