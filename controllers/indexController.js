@@ -10,4 +10,9 @@ async function getAllAuthors(req, res) {
 	res.render("allAuthors", { title: "Authors", authors });
 }
 
-module.exports = { getAllBooks, getAllAuthors };
+async function getAllGenres(req, res) {
+	const genres = await db.getAllGenres();
+	res.render("allGenres", { title: "Genres", genres });
+}
+
+module.exports = { getAllBooks, getAllAuthors, getAllGenres };

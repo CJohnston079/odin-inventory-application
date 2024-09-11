@@ -4,6 +4,6 @@ const controller = require("../controllers/indexController");
 
 router.get("/", controller.getAllBooks);
 router.get("/authors", controller.getAllAuthors);
-// router.get("/genres", controller.getAllGenres);
+router.get("/genres", controller.getAllGenres);
 
 module.exports = router;

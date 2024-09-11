@@ -16,7 +16,15 @@ async function getAllAuthors() {
 	return rows;
 }
 
+async function getAllGenres() {
+	const { rows } = await pool.query(`
+		SELECT genre_name AS genre FROM dim_genres;
+	`);
+	return rows;
+}
+
 module.exports = {
 	getAllBooks,
 	getAllAuthors,
+	getAllGenres,
 };
