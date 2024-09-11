@@ -3,192 +3,224 @@
 		"firstName": "Chinua",
 		"lastName": "Achebe",
 		"dateOfBirth": "1930-11-16",
-		"nationality": "Nigerian"
+		"nationality": "Nigerian",
+		"slug": "chinua-achebe"
 	},
 	{
 		"firstName": "Isabel",
 		"lastName": "Allende",
 		"dateOfBirth": "1942-08-02",
-		"nationality": "Chilean"
+		"nationality": "Chilean",
+		"slug": "isabel-allende"
 	},
 	{
 		"firstName": "Mário",
 		"lastName": "de Andrade",
 		"dateOfBirth": "1893-10-09",
-		"nationality": "Brazilian"
+		"nationality": "Brazilian",
+		"slug": "mario-de-andrade"
 	},
 	{
 		"firstName": "Margaret",
 		"lastName": "Atwood",
 		"dateOfBirth": "1939-11-18",
-		"nationality": "Canadian"
+		"nationality": "Canadian",
+		"slug": "margaret-atwood"
 	},
 	{
 		"firstName": "Jorge Luis",
 		"lastName": "Borges",
 		"dateOfBirth": "1899-08-24",
-		"nationality": "Argentinian"
+		"nationality": "Argentinian",
+		"slug": "jorge-luis-borges"
 	},
 	{
 		"firstName": "Charlotte",
 		"lastName": "Brontë",
 		"dateOfBirth": "1816-04-21",
-		"nationality": "British"
+		"nationality": "British",
+		"slug": "charlotte-bronte"
 	},
 	{
 		"firstName": "Agatha",
 		"lastName": "Christie",
 		"dateOfBirth": "1890-09-15",
-		"nationality": "British"
+		"nationality": "British",
+		"slug": "agatha-christie"
 	},
 	{
 		"firstName": "Fyodor",
 		"lastName": "Dostoevsky",
 		"dateOfBirth": "1821-11-11",
-		"nationality": "Russian"
+		"nationality": "Russian",
+		"slug": "fyodor-dostoevsky"
 	},
 	{
 		"firstName": "Umberto",
 		"lastName": "Eco",
 		"dateOfBirth": "1932-01-05",
-		"nationality": "Italian"
+		"nationality": "Italian",
+		"slug": "umberto-eco"
 	},
 	{
 		"firstName": "Hermann",
 		"lastName": "Hesse",
 		"dateOfBirth": "1877-07-02",
-		"nationality": "German"
+		"nationality": "German",
+		"slug": "hermann-hesse"
 	},
 	{
 		"firstName": "Victor",
 		"lastName": "Hugo",
 		"dateOfBirth": "1802-02-26",
-		"nationality": "French"
+		"nationality": "French",
+		"slug": "victor-hugo"
 	},
 	{
 		"firstName": "James",
 		"lastName": "Joyce",
 		"dateOfBirth": "1882-02-02",
-		"nationality": "Irish"
+		"nationality": "Irish",
+		"slug": "james-joyce"
 	},
 	{
 		"firstName": "Kenzaburō",
 		"lastName": "Ōe",
 		"dateOfBirth": "1935-01-31",
-		"nationality": "Japanese"
+		"nationality": "Japanese",
+		"slug": "kenzaburo-oe"
 	},
 	{
 		"firstName": "Gabriel",
 		"lastName": "García Márquez",
 		"dateOfBirth": "1927-03-06",
-		"nationality": "Colombian"
+		"nationality": "Colombian",
+		"slug": "gabriel-garcia-marquez"
 	},
 	{
 		"firstName": "Nadine",
 		"lastName": "Gordimer",
 		"dateOfBirth": "1923-11-20",
-		"nationality": "South African"
+		"nationality": "South African",
+		"slug": "nadine-gordimer"
 	},
 	{
 		"firstName": "Ernest",
 		"lastName": "Hemingway",
 		"dateOfBirth": "1899-07-21",
-		"nationality": "American"
+		"nationality": "American",
+		"slug": "ernest-hemingway"
 	},
 	{
 		"firstName": "Haruki",
 		"lastName": "Murakami",
 		"dateOfBirth": "1949-01-12",
-		"nationality": "Japanese"
+		"nationality": "Japanese",
+		"slug": "haruki-murakami"
 	},
 	{
 		"firstName": "Herta",
 		"lastName": "Müller",
 		"dateOfBirth": "1953-08-17",
-		"nationality": "German"
+		"nationality": "German",
+		"slug": "herta-muller"
 	},
 	{
 		"firstName": "Alice",
 		"lastName": "Munro",
 		"dateOfBirth": "1931-07-10",
-		"nationality": "Canadian"
+		"nationality": "Canadian",
+		"slug": "alice-munro"
 	},
 	{
 		"firstName": "José",
 		"lastName": "Saramago",
 		"dateOfBirth": "1922-11-16",
-		"nationality": "Portuguese"
+		"nationality": "Portuguese",
+		"slug": "jose-saramago"
 	},
 	{
 		"firstName": "Mary",
 		"lastName": "Shelley",
 		"dateOfBirth": "1797-08-30",
-		"nationality": "British"
+		"nationality": "British",
+		"slug": "mary-shelley"
 	},
 	{
 		"firstName": "Simone",
 		"lastName": "de Beauvoir",
 		"dateOfBirth": "1908-01-09",
-		"nationality": "French"
+		"nationality": "French",
+		"slug": "simone-de-beauvoir"
 	},
 	{
 		"firstName": "Clarice",
 		"lastName": "Lispector",
 		"dateOfBirth": "1920-12-10",
-		"nationality": "Brazilian"
+		"nationality": "Brazilian",
+		"slug": "clarice-lispector"
 	},
 	{
 		"firstName": "Selma",
 		"lastName": "Lagerlöf",
 		"dateOfBirth": "1858-11-20",
-		"nationality": "Swedish"
+		"nationality": "Swedish",
+		"slug": "selma-lagerlof"
 	},
 	{
 		"firstName": "Doris",
 		"lastName": "Lessing",
 		"dateOfBirth": "1919-10-22",
-		"nationality": "British"
+		"nationality": "British",
+		"slug": "doris-lessing"
 	},
 	{
 		"firstName": "Banana",
 		"lastName": "Yoshimoto",
 		"dateOfBirth": "1964-07-24",
-		"nationality": "Japanese"
+		"nationality": "Japanese",
+		"slug": "banana-yoshimoto"
 	},
 	{
 		"firstName": "Toni",
 		"lastName": "Morrison",
 		"dateOfBirth": "1931-02-18",
-		"nationality": "American"
+		"nationality": "American",
+		"slug": "toni-morrison"
 	},
 	{
 		"firstName": "Chimamanda",
 		"lastName": "Ngozi Adichie",
 		"dateOfBirth": "1977-09-15",
-		"nationality": "Nigerian"
+		"nationality": "Nigerian",
+		"slug": "chimamanda-ngozi-adichie"
 	},
 	{
 		"firstName": "J. R. R.",
 		"lastName": "Tolkien",
 		"dateOfBirth": "1892-01-03",
-		"nationality": "British"
+		"nationality": "British",
+		"slug": "j.-r.-r.-tolkien"
 	},
 	{
 		"firstName": "Leo",
 		"lastName": "Tolstoy",
 		"dateOfBirth": "1828-09-09",
-		"nationality": "Russian"
+		"nationality": "Russian",
+		"slug": "leo-tolstoy"
 	},
 	{
 		"firstName": "Mark",
 		"lastName": "Twain",
 		"dateOfBirth": "1835-11-30",
-		"nationality": "American"
+		"nationality": "American",
+		"slug": "mark-twain"
 	},
 	{
 		"firstName": "Virginia",
 		"lastName": "Woolf",
 		"dateOfBirth": "1882-01-25",
-		"nationality": "British"
+		"nationality": "British",
+		"slug": "virginia-woolf"
 	}
 ]

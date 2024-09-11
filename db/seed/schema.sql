@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS dim_authors (
   first_name VARCHAR(32),
   last_name VARCHAR(32),
   date_of_birth DATE,
-  nationality VARCHAR(32)
+  nationality VARCHAR(32),
+  slug VARCHAR(64)
 );
 
 CREATE TABLE IF NOT EXISTS dim_genres (

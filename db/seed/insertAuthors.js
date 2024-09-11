@@ -8,8 +8,8 @@ async function insertAuthors(client) {
 
 	for (const author of authors) {
 		await client.query(
-			"INSERT INTO dim_authors (first_name, last_name, date_of_birth, nationality) VALUES ($1, $2, $3, $4)",
-			[author.firstName, author.lastName, author.dateOfBirth, author.nationality]
+			"INSERT INTO dim_authors (first_name, last_name, date_of_birth, nationality, slug) VALUES ($1, $2, $3, $4, $5)",
+			[author.firstName, author.lastName, author.dateOfBirth, author.nationality, author.slug]
 		);
 	}
 	console.log("Authors inserted successfully");
