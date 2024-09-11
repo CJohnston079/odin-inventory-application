@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Inventory | <%= title %></title>
+		<link rel="stylesheet" href="../styles/index.css" />
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/authors">Authors</a>
+			<a href="/genres">Genres</a>
+		</nav>
+		<a href="/back">Back</a>
+		<ul>
+			<h2>All books by <%= author %></h2>
+			<% books.map((book) => { %>
+			<li>
+				<p><b>Title:</b> <%= book.book_title %></p>
+				<p><b>Published:</b> <%= book.publication_year %></p>
+				<p><b>Category:</b> <%- book.category %></p>
+			</li>
+			<% }) %>
+		</ul>
+	</body>
+</html>
