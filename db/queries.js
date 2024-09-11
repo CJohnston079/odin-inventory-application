@@ -9,6 +9,14 @@ async function getAllBooks() {
 	return rows;
 }
 
+async function getAllAuthors() {
+	const { rows } = await pool.query(`
+		SELECT first_name || ' ' || last_name AS author FROM dim_authors;
+	`);
+	return rows;
+}
+
 module.exports = {
 	getAllBooks,
+	getAllAuthors,
 };

@@ -14,14 +14,9 @@
 			<!-- <a href="/genres">Genres</a> -->
 		</nav>
 		<ul>
-			<h2>All books</h2>
-			<% books.map((book) => { %>
-			<li>
-				<p><b>Title:</b> <%= book.book_title %></p>
-				<p><b>Author:</b> <%= book.author %></p>
-				<p><b>Published:</b> <%= book.publication_year %></p>
-				<p><b>Category:</b> <%- book.category %></p>
-			</li>
+			<h2>All authors</h2>
+			<% authors.map((author) => { %>
+			<li><%= author.author %></li>
 			<% }) %>
 		</ul>
 	</body>
