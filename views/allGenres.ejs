@@ -18,6 +18,7 @@
 			<% genres.map((genre) => { %>
 			<li>
 				<a href="/genres/<%= genre.slug %>"><%= genre.genre %></a>
+				(<%= genre.number_of_books %>)
 			</li>
 			<% }) %>
 		</ul>

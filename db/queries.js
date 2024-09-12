@@ -39,7 +39,14 @@ async function getBooksByGenre(genre) {
 
 async function getAllAuthors() {
 	const { rows } = await pool.query(`
-		SELECT first_name || ' ' || last_name AS author_name, slug FROM dim_authors;
+		SELECT
+      da.first_name || ' ' || da.last_name AS author_name,
+      COUNT(fb.book_id) AS number_of_books,
+      da.slug
+    FROM dim_authors da
+    JOIN fact_books fb ON da.author_id = fb.author_id
+    GROUP BY da.first_name, da.last_name, da.slug
+    ORDER BY da.last_name;
 	`);
 	return rows;
 }
@@ -56,7 +63,14 @@ async function getAuthorBySlug(slug) {
 
 async function getAllGenres() {
 	const { rows } = await pool.query(`
-		SELECT genre_name AS genre FROM dim_genres;
+		SELECT
+      dg.genre_name AS genre,
+      COALESCE(COUNT(fb.book_id), 0) AS number_of_books
+    FROM dim_genres dg
+    LEFT JOIN book_genres bg ON dg.genre_id = bg.genre_id
+    LEFT JOIN fact_books fb ON bg.book_id = fb.book_id
+    GROUP BY dg.genre_name
+    ORDER BY dg.genre_name;
 	`);
 	return rows;
 }

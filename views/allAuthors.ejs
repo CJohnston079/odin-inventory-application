@@ -18,6 +18,7 @@
 			<% authors.map((author) => { %>
 			<li>
 				<a href="authors/<%= author.slug %>"><%= author.author_name %></a>
+				(<%= author.number_of_books %>)
 			</li>
 			<% }) %>
 		</ul>
