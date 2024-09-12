@@ -12,12 +12,27 @@ async function getAllBooks() {
 async function getBooksByAuthor(author) {
 	const { rows } = await pool.query(
 		`
-		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
+    SELECT fb.*, da.first_name || ' ' || da.last_name AS author
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
     WHERE da.first_name || ' ' || da.last_name = $1;
 	`,
 		[author]
+	);
+	return rows;
+}
+
+async function getBooksByGenre(genre) {
+	const { rows } = await pool.query(
+		`
+		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
+    FROM fact_books fb
+    JOIN dim_authors da ON fb.author_id = da.author_id
+    JOIN book_genres bg ON fb.book_id = bg.book_id
+    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    WHERE dg.genre_name = $1;
+	`,
+		[genre]
 	);
 	return rows;
 }
@@ -49,6 +64,7 @@ async function getAllGenres() {
 module.exports = {
 	getAllBooks,
 	getBooksByAuthor,
+	getBooksByGenre,
 	getAllAuthors,
 	getAuthorBySlug,
 	getAllGenres,
