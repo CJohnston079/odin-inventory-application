@@ -5,6 +5,12 @@ async function getAllBooks(req, res) {
 	res.render("index", { title: "Home", books });
 }
 
+async function getBook(req, res) {
+	const bookId = req.params.book;
+	const book = (await db.getBook(bookId))[0];
+	res.render("book", { title: book.book_title, book });
+}
+
 async function getBooksByAuthor(req, res) {
 	const authorSlug = req.params.author;
 	const { author } = (await db.getAuthorBySlug(authorSlug))[0];
@@ -33,4 +39,11 @@ async function getAllGenres(req, res) {
 	res.render("allGenres", { title: "Genres", genres });
 }
 
-module.exports = { getAllBooks, getBooksByAuthor, getBooksByGenre, getAllAuthors, getAllGenres };
+module.exports = {
+	getAllBooks,
+	getBook,
+	getBooksByAuthor,
+	getBooksByGenre,
+	getAllAuthors,
+	getAllGenres,
+};

@@ -9,6 +9,19 @@ async function getAllBooks() {
 	return rows;
 }
 
+async function getBook(bookID) {
+	const { rows } = await pool.query(
+		`
+		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
+    FROM fact_books fb
+    JOIN dim_authors da ON fb.author_id = da.author_id
+    WHERE book_id = $1;
+  `,
+		[bookID]
+	);
+	return rows;
+}
+
 async function getBooksByAuthor(author) {
 	const { rows } = await pool.query(
 		`
@@ -77,6 +90,7 @@ async function getAllGenres() {
 
 module.exports = {
 	getAllBooks,
+	getBook,
 	getBooksByAuthor,
 	getBooksByGenre,
 	getAllAuthors,
