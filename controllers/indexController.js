@@ -1,8 +1,12 @@
 const db = require("../db/queries");
 
+function getIndex(req, res) {
+	res.render("index", { title: "Home" });
+}
+
 async function getAllBooks(req, res) {
 	const books = await db.getAllBooks();
-	res.render("index", { title: "Home", books });
+	res.render("allBooks", { title: "Books", books });
 }
 
 async function getBook(req, res) {
@@ -40,6 +44,7 @@ async function getAllGenres(req, res) {
 }
 
 module.exports = {
+	getIndex,
 	getAllBooks,
 	getBook,
 	getBooksByAuthor,
