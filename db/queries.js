@@ -55,21 +55,21 @@ async function getAllAuthors() {
 		SELECT
       da.first_name || ' ' || da.last_name AS author_name,
       COUNT(fb.book_id) AS number_of_books,
-      da.slug
+      da.author_id
     FROM dim_authors da
     JOIN fact_books fb ON da.author_id = fb.author_id
-    GROUP BY da.first_name, da.last_name, da.slug
+    GROUP BY da.first_name, da.last_name, da.author_id
     ORDER BY da.last_name;
 	`);
 	return rows;
 }
 
-async function getAuthorBySlug(slug) {
+async function getAuthorByID(id) {
 	const { rows } = await pool.query(
 		`
-  		SELECT first_name || ' ' || last_name AS author FROM dim_authors WHERE slug = $1;
+  		SELECT first_name || ' ' || last_name AS author FROM dim_authors WHERE author_id = $1;
   `,
-		[slug]
+		[id]
 	);
 	return rows;
 }
@@ -94,6 +94,6 @@ module.exports = {
 	getBooksByAuthor,
 	getBooksByGenre,
 	getAllAuthors,
-	getAuthorBySlug,
+	getAuthorByID,
 	getAllGenres,
 };

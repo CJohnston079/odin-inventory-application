@@ -6,12 +6,11 @@ DROP TABLE IF EXISTS dim_genres;
 DROP TABLE IF EXISTS dim_authors;
 
 CREATE TABLE IF NOT EXISTS dim_authors (
-  author_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  author_id VARCHAR(64) PRIMARY KEY,
   first_name VARCHAR(32),
   last_name VARCHAR(32),
   date_of_birth DATE,
-  nationality VARCHAR(32),
-  slug VARCHAR(64)
+  nationality VARCHAR(32)
 );
 
 CREATE TABLE IF NOT EXISTS dim_genres (
@@ -28,7 +27,7 @@ CREATE TABLE IF NOT EXISTS dim_languages (
 CREATE TABLE IF NOT EXISTS fact_books (
   book_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   book_title VARCHAR(64),
-  author_id INT REFERENCES dim_authors(author_id),
+  author_id VARCHAR(64) REFERENCES dim_authors(author_id),
   publication_year DATE,
   category TEXT CHECK (category IN ('fiction', 'non-fiction'))
 );

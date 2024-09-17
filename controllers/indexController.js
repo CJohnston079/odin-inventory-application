@@ -16,8 +16,8 @@ async function getBook(req, res) {
 }
 
 async function getBooksByAuthor(req, res) {
-	const authorSlug = req.params.author;
-	const { author } = (await db.getAuthorBySlug(authorSlug))[0];
+	const authorID = req.params.author;
+	const { author } = (await db.getAuthorByID(authorID))[0];
 	const books = await db.getBooksByAuthor(author);
 	res.render("author", { title: "Authors", author, books });
 }

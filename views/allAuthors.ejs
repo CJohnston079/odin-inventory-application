@@ -18,7 +18,7 @@
 			<h2>All authors</h2>
 			<% authors.map((author) => { %>
 			<li>
-				<a href="authors/<%= author.slug %>"><%= author.author_name %></a>
+				<a href="authors/<%= author.author_id %>"><%= author.author_name %></a>
 				(<%= author.number_of_books %>)
 			</li>
 			<% }) %>

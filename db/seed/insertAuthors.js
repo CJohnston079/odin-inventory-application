@@ -8,11 +8,11 @@ async function insertAuthors(client) {
 	const authors = JSON.parse(data);
 
 	for (const author of authors) {
-		author.slug = strToSlug(`${author.firstName} ${author.lastName}`);
+		author.id = strToSlug(`${author.firstName} ${author.lastName}`);
 
 		await client.query(
-			"INSERT INTO dim_authors (first_name, last_name, date_of_birth, nationality, slug) VALUES ($1, $2, $3, $4, $5)",
-			[author.firstName, author.lastName, author.dateOfBirth, author.nationality, author.slug]
+			"INSERT INTO dim_authors (author_id, first_name, last_name, date_of_birth, nationality) VALUES ($1, $2, $3, $4, $5)",
+			[author.id, author.firstName, author.lastName, author.dateOfBirth, author.nationality]
 		);
 	}
 	console.log("Authors inserted successfully");
