@@ -9,6 +9,10 @@ async function getAllBooks(req, res) {
 	res.render("allBooks", { title: "Books", books });
 }
 
+function getNewBookForm(req, res) {
+	res.render("newBookForm", { title: "New Book" });
+}
+
 async function getBook(req, res) {
 	const bookId = req.params.book;
 	const book = (await db.getBook(bookId))[0];
@@ -46,6 +50,7 @@ async function getAllGenres(req, res) {
 module.exports = {
 	getIndex,
 	getAllBooks,
+	getNewBookForm,
 	getBook,
 	getBooksByAuthor,
 	getBooksByGenre,

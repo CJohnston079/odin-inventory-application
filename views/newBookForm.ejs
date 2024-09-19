@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Inventory | <%= title %></title>
+		<link rel="stylesheet" href="../styles/index.css" />
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/books">All books</a>
+			<a href="/authors">Authors</a>
+			<a href="/genres">Genres</a>
+		</nav>
+		<a href="/books">Back</a>
+		<form action="/books" method="post">
+			<label for="title">Book title:</label>
+			<input type="text" name="title" id="title" required />
+		</form>
+	</body>
+</html>
