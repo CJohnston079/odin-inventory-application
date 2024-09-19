@@ -15,9 +15,32 @@
 			<a href="/genres">Genres</a>
 		</nav>
 		<a href="/books">Back</a>
-		<form action="/books" method="post">
-			<label for="title">Book title:</label>
-			<input type="text" name="title" id="title" required />
+		<form action="/books" method="post" id="new-book">
+			<ul>
+				<li>
+					<label for="title">Book title:</label>
+					<input type="text" name="title" id="title" required />
+				</li>
+				<li>
+					<label for="author">Author:</label>
+					<input type="text" name="author" id="author" required />
+				</li>
+				<li>
+					<label for="genre">Genre(s):</label>
+					<input type="text" name="genre" id="genre" />
+				</li>
+				<li>
+					<label for="published-year">Published year:</label>
+					<input type="number" name="published-year" id="published-year" max="2024" />
+				</li>
+				<li>
+					<input type="radio" id="fiction" name="isFiction" value="fiction" checked />
+					<label for="fiction">Fiction</label>
+					<input type="radio" id="non-fiction" name="isFiction" value="non-fiction" />
+					<label for="non-fiction">Non-fiction</label>
+				</li>
+			</ul>
+			<button type="submit">Add book</button>
 		</form>
 	</body>
 </html>
