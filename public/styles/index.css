@@ -49,3 +49,7 @@
 		--cl-foreground-shade-2: hsl(0, 0%, 90%);
 	}
 }
+
+.selected {
+	opacity: 0.5;
+}
