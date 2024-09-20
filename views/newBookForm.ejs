@@ -23,12 +23,9 @@
 				</li>
 				<li>
 					<label for="author">Author:</label>
-					<select id="author" name="author" required>
-						<option value="">Select an author</option>
-						<% authors.forEach((author) => { %>
-						<option value="<%= author.id %>"><%= author.name %></option>
-						<% }) %>
-					</select>
+					<input type="hidden" id="author-id" name="author" />
+					<input type="text" id="author-name" required />
+					<ul id="author-suggestions"></ul>
 				</li>
 				<li>
 					<label for="genre">Genre(s):</label>
@@ -48,4 +45,12 @@
 			<button type="submit">Add book</button>
 		</form>
 	</body>
+	<script type="application/json" id="authorsData">
+		<%- JSON.stringify(authors) %>
+	</script>
+	<script type="module">
+		import { getSuggestions } from "../scripts/script.js";
+		const authors = JSON.parse(document.getElementById("authorsData").textContent);
+		showSuggestions("author-name", "author-id", "author-suggestions", authors);
+	</script>
 </html>
