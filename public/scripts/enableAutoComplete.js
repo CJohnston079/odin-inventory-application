@@ -34,7 +34,9 @@ const enableAutoComplete = function (inputElementID, suggestionListID, options) 
 			suggestionList.appendChild(suggestionElement);
 		});
 
-		suggestionList.firstChild.classList.add("selected");
+		if (suggestions.length > 0) {
+			suggestionList.firstChild.classList.add("selected");
+		}
 	};
 
 	inputElement.addEventListener("input", function () {
