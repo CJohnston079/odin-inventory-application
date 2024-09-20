@@ -50,6 +50,17 @@ async function getBooksByGenre(genre) {
 	return rows;
 }
 
+async function getAuthorNames() {
+	const { rows } = await pool.query(`
+    SELECT
+      author_id AS id,
+      first_name || ' ' || last_name AS name
+    FROM dim_authors
+    ORDER BY last_name;
+  `);
+	return rows;
+}
+
 async function getAllAuthors() {
 	const { rows } = await pool.query(`
 		SELECT
@@ -93,6 +104,7 @@ module.exports = {
 	getBook,
 	getBooksByAuthor,
 	getBooksByGenre,
+	getAuthorNames,
 	getAllAuthors,
 	getAuthorByID,
 	getAllGenres,

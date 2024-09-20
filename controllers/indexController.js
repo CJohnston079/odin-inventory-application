@@ -9,8 +9,9 @@ async function getAllBooks(req, res) {
 	res.render("allBooks", { title: "Books", books });
 }
 
-function getNewBookForm(req, res) {
-	res.render("newBookForm", { title: "New Book" });
+async function getNewBookForm(req, res) {
+	const authors = await db.getAuthorNames();
+	res.render("newBookForm", { title: "New Book", authors });
 }
 
 async function getBook(req, res) {

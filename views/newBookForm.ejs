@@ -23,7 +23,12 @@
 				</li>
 				<li>
 					<label for="author">Author:</label>
-					<input type="text" name="author" id="author" required />
+					<select id="author" name="author" required>
+						<option value="">Select an author</option>
+						<% authors.forEach((author) => { %>
+						<option value="<%= author.id %>"><%= author.name %></option>
+						<% }) %>
+					</select>
 				</li>
 				<li>
 					<label for="genre">Genre(s):</label>
