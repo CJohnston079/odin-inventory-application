@@ -1,64 +1,49 @@
-const removeChildren = function (element) {
-	while (element.firstChild) {
-		element.removeChild(element.lastChild);
-	}
-};
-
-const getSuggestions = function (query, options) {
-	const suggestions = options.filter(option => {
-		const str = option.name.toLowerCase();
-		const words = str.split(" ");
-		return str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query));
-	});
-
-	return suggestions;
-};
-
-const renderSuggestions = function (suggestions, suggestionList) {
-	suggestions.forEach(suggestion => {
-		const suggestionElement = document.createElement("li");
-		suggestionElement.classList.add("suggestion");
-		suggestionElement.textContent = suggestion.name;
-
-		suggestionElement.addEventListener("click", function () {
-			inputElement.value = suggestion.name;
-			removeChildren(suggestionList);
-		});
-
-		suggestionList.appendChild(suggestionElement);
-	});
-
-	suggestionList.firstChild.classList.add("selected");
-};
-
-export async function enableAutoComplete(inputElementID, suggestionListId, options) {
+const enableAutoComplete = function (inputElementID, suggestionListID, options) {
 	const inputElement = document.getElementById(inputElementID);
-	const suggestionList = document.getElementById(suggestionListId);
+	const suggestionList = document.getElementById(suggestionListID);
+
 	let selectedIndex = 0;
 
+	const removeChildren = function (element) {
+		while (element.firstChild) {
+			element.removeChild(element.lastChild);
+		}
+	};
+
+	const getSuggestions = function (query) {
+		return options.filter(option => {
+			const str = option.name.toLowerCase();
+			const words = str.split(" ");
+			return str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query));
+		});
+	};
+
+	const renderSuggestions = function (suggestions) {
+		suggestions.forEach(suggestion => {
+			const suggestionElement = document.createElement("li");
+			suggestionElement.classList.add("suggestion");
+			suggestionElement.textContent = suggestion.name;
+
+			suggestionElement.addEventListener("click", function () {
+				inputElement.value = suggestion.name;
+				removeChildren(suggestionList);
+			});
+
+			suggestionList.appendChild(suggestionElement);
+		});
+
+		suggestionList.firstChild.classList.add("selected");
+	};
+
 	inputElement.addEventListener("input", function () {
-		const query = this.value.toLowerCase();
+		const query = inputElement.value.toLowerCase();
 		selectedIndex = 0;
 
 		removeChildren(suggestionList);
 
 		if (query.length > 0) {
-			const suggestions = getSuggestions(query, options);
-			renderSuggestions(suggestions, suggestionList);
-		}
-	});
-
-	inputElement.addEventListener("keydown", function (e) {
-		const suggestions = suggestionList.querySelectorAll(".suggestion");
-		const keyActions = {
-			ArrowDown: () => updateSelection({ suggestions }),
-			ArrowUp: () => updateSelection({ suggestions, incrementSelection: false }),
-			Enter: () => setSelection(suggestions, selectedIndex),
-			Tab: () => setSelection(suggestions, selectedIndex),
-		};
-
-		if (keyActions[e.key]) {
-			keyActions[e.key]();
+			const suggestions = getSuggestions(query);
+			renderSuggestions(suggestions);
 		}
 	});
 
@@ -74,10 +59,26 @@ export async function enableAutoComplete(inputElementID, suggestionListId, optio
 		});
 	};
 
-	const setSelection = function (suggestions, selectedIndex) {
+	const setSelection = function (suggestions) {
 		if (suggestions.length > 0 && selectedIndex > -1) {
 			inputElement.value = suggestions[selectedIndex].textContent;
 			removeChildren(suggestionList);
 		}
 	};
-}
+
+	inputElement.addEventListener("keydown", function (e) {
+		const suggestions = suggestionList.querySelectorAll(".suggestion");
+		const keyActions = {
+			ArrowDown: () => updateSelection({ suggestions }),
+			ArrowUp: () => updateSelection({ suggestions, incrementSelection: false }),
+			Enter: () => setSelection(suggestions, selectedIndex),
+			Tab: () => setSelection(suggestions, selectedIndex),
+		};
+
+		if (keyActions[e.key]) {
+			keyActions[e.key]();
+		}
+	});
+};
+
+export default enableAutoComplete;

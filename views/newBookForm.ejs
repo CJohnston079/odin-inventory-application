@@ -23,7 +23,7 @@
 				</li>
 				<li>
 					<label for="author">Author:</label>
-					<input type="hidden" id="author-id" name="author" />
+					<!-- <input type="hidden" id="author-id" name="author" /> -->
 					<input type="text" id="author-name" required />
 					<ul id="author-suggestions"></ul>
 				</li>
@@ -49,7 +49,7 @@
 		<%- JSON.stringify(authors) %>
 	</script>
 	<script type="module">
-		import { enableAutoComplete } from "../scripts/enableAutoComplete.js";
+		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		const authors = JSON.parse(document.getElementById("authorsData").textContent);
 		enableAutoComplete("author-name", "author-suggestions", authors);
 	</script>
