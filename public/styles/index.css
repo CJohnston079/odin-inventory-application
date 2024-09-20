@@ -50,6 +50,10 @@
 	}
 }
 
-.selected {
+.suggestion {
 	opacity: 0.5;
+}
+
+.selected {
+	opacity: 1;
 }
