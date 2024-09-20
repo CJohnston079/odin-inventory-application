@@ -4,12 +4,31 @@ const removeChildren = function (element) {
 	}
 };
 
-export async function showSuggestions(
-	inputElementId,
-	hiddenInputElementId,
-	suggestionListId,
-	authors
-) {
+const getSuggestions = function (query, options) {
+	const suggestions = options.filter(option => {
+		const str = option.name.toLowerCase();
+		const words = str.split(" ");
+		return str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query));
+	});
+
+	return suggestions;
+};
+
+const renderSuggestions = function (suggestions, suggestionList) {
+	suggestions.forEach(suggestion => {
+		const suggestionElement = document.createElement("li");
+		suggestionElement.textContent = suggestion.name;
+
+		suggestionElement.addEventListener("click", function () {
+			inputElement.value = suggestion.name;
+			removeChildren(suggestionList);
+		});
+
+		suggestionList.appendChild(suggestionElement);
+	});
+};
+
+export async function enableAutoComplete(inputElementId, suggestionListId, options) {
 	const inputElement = document.getElementById(inputElementId);
 	const suggestionList = document.getElementById(suggestionListId);
 	let i = -1;
@@ -21,24 +40,8 @@ export async function showSuggestions(
 		removeChildren(suggestionList);
 
 		if (query.length > 0) {
-			const suggestions = authors.filter(author => {
-				const str = author.name.toLowerCase();
-				const words = str.split(" ");
-				return str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query));
-			});
-
-			suggestions.forEach(suggestion => {
-				const li = document.createElement("li");
-
-				li.textContent = suggestion.name;
-				li.addEventListener("click", function () {
-					document.getElementById(hiddenInputElementId).value = suggestion.id;
-					inputElement.value = suggestion.name;
-
-					removeChildren(suggestionList);
-				});
-				suggestionList.appendChild(li);
-			});
+			const suggestions = getSuggestions(query, options);
+			renderSuggestions(suggestions, suggestionList);
 		}
 	});
 
@@ -68,7 +71,6 @@ export async function showSuggestions(
 		};
 
 		if (keyActions[e.key]) {
-			console.log(e.key);
 			keyActions[e.key]();
 			e.preventDefault();
 		}
@@ -81,7 +83,6 @@ export async function showSuggestions(
 	}
 
 	function selectAuthor(author) {
-		document.getElementById(hiddenInputElementId).value = author.id;
 		inputElement.value = author.name;
 
 		removeChildren(suggestionList);

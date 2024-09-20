@@ -49,8 +49,8 @@
 		<%- JSON.stringify(authors) %>
 	</script>
 	<script type="module">
-		import { getSuggestions } from "../scripts/script.js";
+		import { enableAutoComplete } from "../scripts/enableAutoComplete.js";
 		const authors = JSON.parse(document.getElementById("authorsData").textContent);
-		showSuggestions("author-name", "author-id", "author-suggestions", authors);
+		enableAutoComplete("author-name", "author-suggestions", authors);
 	</script>
 </html>
