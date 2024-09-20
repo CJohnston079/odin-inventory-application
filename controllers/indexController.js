@@ -11,7 +11,8 @@ exports.getAllBooks = async function (req, res) {
 
 exports.getNewBookForm = async function (req, res) {
 	const authors = await db.getAuthorNames();
-	res.render("newBookForm", { title: "New Book", authors });
+	const genres = await db.getGenreNames();
+	res.render("newBookForm", { title: "New Book", authors, genres });
 };
 
 exports.getBook = async function (req, res) {

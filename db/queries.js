@@ -61,6 +61,17 @@ exports.getAuthorNames = async function () {
 	return rows;
 };
 
+exports.getGenreNames = async function () {
+	const { rows } = await pool.query(`
+    SELECT
+      genre_id AS id,
+      genre_name AS name
+    FROM dim_genres
+    ORDER BY genre_name
+	`);
+	return rows;
+};
+
 exports.getAllAuthors = async function () {
 	const { rows } = await pool.query(`
 		SELECT

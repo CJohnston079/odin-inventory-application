@@ -28,8 +28,9 @@
 					<ul id="author-suggestions"></ul>
 				</li>
 				<li>
-					<label for="genre">Genre(s):</label>
-					<input type="text" name="genre" id="genre" />
+					<label for="genres">Genre(s):</label>
+					<input type="text" name="genres" id="genres" />
+					<ul id="genre-suggestions"></ul>
 				</li>
 				<li>
 					<label for="published-year">Published year:</label>
@@ -48,9 +49,16 @@
 	<script type="application/json" id="authorsData">
 		<%- JSON.stringify(authors) %>
 	</script>
+	<script type="application/json" id="genresData">
+		<%- JSON.stringify(genres) %>
+	</script>
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
+
 		const authors = JSON.parse(document.getElementById("authorsData").textContent);
+		const genres = JSON.parse(document.getElementById("genresData").textContent);
+
 		enableAutoComplete("author-name", "author-suggestions", authors);
+		enableAutoComplete("genres", "genre-suggestions", genres);
 	</script>
 </html>
