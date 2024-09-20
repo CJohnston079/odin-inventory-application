@@ -1,4 +1,4 @@
-const strToSlug = function (str) {
+exports.strToSlug = function (str) {
 	return str
 		.toLowerCase()
 		.normalize("NFD")
@@ -8,5 +8,3 @@ const strToSlug = function (str) {
 		.replace(/\s+/g, "-")
 		.replace(/-+/g, "-");
 };
-
-module.exports = { strToSlug };

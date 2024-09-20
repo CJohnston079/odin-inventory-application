@@ -1,15 +1,15 @@
 const pool = require("./pool");
 
-async function getAllBooks() {
+exports.getAllBooks = async function () {
 	const { rows } = await pool.query(`
 		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id;
 	`);
 	return rows;
-}
+};
 
-async function getBook(bookID) {
+exports.getBook = async function (bookID) {
 	const { rows } = await pool.query(
 		`
 		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
@@ -20,9 +20,9 @@ async function getBook(bookID) {
 		[bookID]
 	);
 	return rows;
-}
+};
 
-async function getBooksByAuthor(author) {
+exports.getBooksByAuthor = async function (author) {
 	const { rows } = await pool.query(
 		`
     SELECT fb.*, da.first_name || ' ' || da.last_name AS author
@@ -33,9 +33,9 @@ async function getBooksByAuthor(author) {
 		[author]
 	);
 	return rows;
-}
+};
 
-async function getBooksByGenre(genre) {
+exports.getBooksByGenre = async function (genre) {
 	const { rows } = await pool.query(
 		`
 		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
@@ -48,9 +48,9 @@ async function getBooksByGenre(genre) {
 		[genre]
 	);
 	return rows;
-}
+};
 
-async function getAuthorNames() {
+exports.getAuthorNames = async function () {
 	const { rows } = await pool.query(`
     SELECT
       author_id AS id,
@@ -59,9 +59,9 @@ async function getAuthorNames() {
     ORDER BY last_name;
   `);
 	return rows;
-}
+};
 
-async function getAllAuthors() {
+exports.getAllAuthors = async function () {
 	const { rows } = await pool.query(`
 		SELECT
       da.first_name || ' ' || da.last_name AS author_name,
@@ -73,9 +73,9 @@ async function getAllAuthors() {
     ORDER BY da.last_name;
 	`);
 	return rows;
-}
+};
 
-async function getAuthorByID(id) {
+exports.getAuthorByID = async function (id) {
 	const { rows } = await pool.query(
 		`
   		SELECT first_name || ' ' || last_name AS author FROM dim_authors WHERE author_id = $1;
@@ -83,9 +83,9 @@ async function getAuthorByID(id) {
 		[id]
 	);
 	return rows;
-}
+};
 
-async function getAllGenres() {
+exports.getAllGenres = async function () {
 	const { rows } = await pool.query(`
 		SELECT
       dg.genre_name AS genre,
@@ -97,15 +97,4 @@ async function getAllGenres() {
     ORDER BY dg.genre_name;
 	`);
 	return rows;
-}
-
-module.exports = {
-	getAllBooks,
-	getBook,
-	getBooksByAuthor,
-	getBooksByGenre,
-	getAuthorNames,
-	getAllAuthors,
-	getAuthorByID,
-	getAllGenres,
 };
