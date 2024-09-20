@@ -17,6 +17,7 @@ const getSuggestions = function (query, options) {
 const renderSuggestions = function (suggestions, suggestionList) {
 	suggestions.forEach(suggestion => {
 		const suggestionElement = document.createElement("li");
+		suggestionElement.classList.add("suggestion");
 		suggestionElement.textContent = suggestion.name;
 
 		suggestionElement.addEventListener("click", function () {
@@ -26,16 +27,18 @@ const renderSuggestions = function (suggestions, suggestionList) {
 
 		suggestionList.appendChild(suggestionElement);
 	});
+
+	suggestionList.firstChild.classList.add("selected");
 };
 
-export async function enableAutoComplete(inputElementId, suggestionListId, options) {
-	const inputElement = document.getElementById(inputElementId);
+export async function enableAutoComplete(inputElementID, suggestionListId, options) {
+	const inputElement = document.getElementById(inputElementID);
 	const suggestionList = document.getElementById(suggestionListId);
-	let i = -1;
+	let selectedIndex = 0;
 
 	inputElement.addEventListener("input", function () {
 		const query = this.value.toLowerCase();
-		i = -1;
+		selectedIndex = 0;
 
 		removeChildren(suggestionList);
 
@@ -46,45 +49,35 @@ export async function enableAutoComplete(inputElementId, suggestionListId, optio
 	});
 
 	inputElement.addEventListener("keydown", function (e) {
-		const suggestions = suggestionList.querySelectorAll("li");
-
+		const suggestions = suggestionList.querySelectorAll(".suggestion");
 		const keyActions = {
-			ArrowDown: () => {
-				i = (i + 1) % suggestions.length;
-				updateSelection(suggestions);
-			},
-			ArrowUp: () => {
-				i = (i - 1 + suggestions.length) % suggestions.length;
-				updateSelection(suggestions);
-			},
-			Enter: () => {
-				if (i > -1) {
-					selectAuthor({ name: suggestions[i].textContent });
-				}
-			},
-			Tab: () => {
-				if (i > -1) {
-					selectAuthor({ name: suggestions[i].textContent });
-					e.preventDefault();
-				}
-			},
+			ArrowDown: () => updateSelection({ suggestions }),
+			ArrowUp: () => updateSelection({ suggestions, incrementSelection: false }),
+			Enter: () => setSelection(suggestions, selectedIndex),
+			Tab: () => setSelection(suggestions, selectedIndex),
 		};
 
 		if (keyActions[e.key]) {
 			keyActions[e.key]();
-			e.preventDefault();
 		}
 	});
 
-	function updateSelection(suggestions) {
-		suggestions.forEach((suggestion, index) => {
-			suggestion.classList.toggle("selected", index === i);
+	const updateSelection = function ({ suggestions, incrementSelection = true }) {
+		if (incrementSelection) {
+			selectedIndex = (selectedIndex + 1) % suggestions.length;
+		} else {
+			selectedIndex = selectedIndex = (selectedIndex - 1 + suggestions.length) % suggestions.length;
+		}
+
+		suggestions.forEach((suggestion, i) => {
+			suggestion.classList.toggle("selected", i === selectedIndex);
 		});
-	}
+	};
 
-	function selectAuthor(author) {
-		inputElement.value = author.name;
-
-		removeChildren(suggestionList);
-	}
+	const setSelection = function (suggestions, selectedIndex) {
+		if (suggestions.length > 0 && selectedIndex > -1) {
+			inputElement.value = suggestions[selectedIndex].textContent;
+			removeChildren(suggestionList);
+		}
+	};
 }
