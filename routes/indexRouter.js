@@ -10,6 +10,7 @@ router.get("/authors", controller.getAllAuthors);
 router.get("/authors/new", controller.getNewAuthorForm);
 router.get("/authors/:author", controller.getBooksByAuthor);
 router.get("/genres", controller.getAllGenres);
+router.get("/genres/new", controller.getNewGenreForm);
 router.get("/genres/:genre", controller.getBooksByGenre);
 
 module.exports = router;

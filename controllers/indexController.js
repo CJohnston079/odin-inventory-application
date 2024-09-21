@@ -53,3 +53,7 @@ exports.getAllGenres = async function (req, res) {
 	genres.forEach(genre => (genre.slug = genre.genre.toLowerCase().replaceAll(" ", "-")));
 	res.render("allGenres", { title: "Genres", genres });
 };
+
+exports.getNewGenreForm = function (req, res) {
+	res.render("newGenreForm", { title: "New Genre" });
+};
