@@ -2,193 +2,193 @@
 	{
 		"firstName": "Chinua",
 		"lastName": "Achebe",
-		"dateOfBirth": "1930-11-16",
+		"birthYear": "1930",
 		"nationality": "Nigerian"
 	},
 	{
 		"firstName": "Isabel",
 		"lastName": "Allende",
-		"dateOfBirth": "1942-08-02",
+		"birthYear": "1942",
 		"nationality": "Chilean"
 	},
 	{
 		"firstName": "Mário",
 		"lastName": "de Andrade",
-		"dateOfBirth": "1893-10-09",
+		"birthYear": "1893",
 		"nationality": "Brazilian"
 	},
 	{
 		"firstName": "Margaret",
 		"lastName": "Atwood",
-		"dateOfBirth": "1939-11-18",
+		"birthYear": "1939",
 		"nationality": "Canadian"
 	},
 	{
 		"firstName": "Jorge Luis",
 		"lastName": "Borges",
-		"dateOfBirth": "1899-08-24",
+		"birthYear": "1899",
 		"nationality": "Argentinian"
 	},
 	{
 		"firstName": "Charlotte",
 		"lastName": "Brontë",
-		"dateOfBirth": "1816-04-21",
+		"birthYear": "1816",
 		"nationality": "British"
 	},
 	{
 		"firstName": "Agatha",
 		"lastName": "Christie",
-		"dateOfBirth": "1890-09-15",
+		"birthYear": "1890",
 		"nationality": "British"
 	},
 	{
 		"firstName": "Fyodor",
 		"lastName": "Dostoevsky",
-		"dateOfBirth": "1821-11-11",
+		"birthYear": "1821",
 		"nationality": "Russian"
 	},
 	{
 		"firstName": "Umberto",
 		"lastName": "Eco",
-		"dateOfBirth": "1932-01-05",
+		"birthYear": "1932",
 		"nationality": "Italian"
 	},
 	{
 		"firstName": "Hermann",
 		"lastName": "Hesse",
-		"dateOfBirth": "1877-07-02",
+		"birthYear": "1877",
 		"nationality": "German"
 	},
 	{
 		"firstName": "Victor",
 		"lastName": "Hugo",
-		"dateOfBirth": "1802-02-26",
+		"birthYear": "1802",
 		"nationality": "French"
 	},
 	{
 		"firstName": "James",
 		"lastName": "Joyce",
-		"dateOfBirth": "1882-02-02",
+		"birthYear": "1882",
 		"nationality": "Irish"
 	},
 	{
 		"firstName": "Kenzaburō",
 		"lastName": "Ōe",
-		"dateOfBirth": "1935-01-31",
+		"birthYear": "1935",
 		"nationality": "Japanese"
 	},
 	{
 		"firstName": "Gabriel",
 		"lastName": "García Márquez",
-		"dateOfBirth": "1927-03-06",
+		"birthYear": "1927",
 		"nationality": "Colombian"
 	},
 	{
 		"firstName": "Nadine",
 		"lastName": "Gordimer",
-		"dateOfBirth": "1923-11-20",
+		"birthYear": "1923",
 		"nationality": "South African"
 	},
 	{
 		"firstName": "Ernest",
 		"lastName": "Hemingway",
-		"dateOfBirth": "1899-07-21",
+		"birthYear": "1899",
 		"nationality": "American"
 	},
 	{
 		"firstName": "Haruki",
 		"lastName": "Murakami",
-		"dateOfBirth": "1949-01-12",
+		"birthYear": "1949",
 		"nationality": "Japanese"
 	},
 	{
 		"firstName": "Herta",
 		"lastName": "Müller",
-		"dateOfBirth": "1953-08-17",
+		"birthYear": "1953",
 		"nationality": "German"
 	},
 	{
 		"firstName": "Alice",
 		"lastName": "Munro",
-		"dateOfBirth": "1931-07-10",
+		"birthYear": "1931",
 		"nationality": "Canadian"
 	},
 	{
 		"firstName": "José",
 		"lastName": "Saramago",
-		"dateOfBirth": "1922-11-16",
+		"birthYear": "1922",
 		"nationality": "Portuguese"
 	},
 	{
 		"firstName": "Mary",
 		"lastName": "Shelley",
-		"dateOfBirth": "1797-08-30",
+		"birthYear": "1797",
 		"nationality": "British"
 	},
 	{
 		"firstName": "Simone",
 		"lastName": "de Beauvoir",
-		"dateOfBirth": "1908-01-09",
+		"birthYear": "1908",
 		"nationality": "French"
 	},
 	{
 		"firstName": "Clarice",
 		"lastName": "Lispector",
-		"dateOfBirth": "1920-12-10",
+		"birthYear": "1920",
 		"nationality": "Brazilian"
 	},
 	{
 		"firstName": "Selma",
 		"lastName": "Lagerlöf",
-		"dateOfBirth": "1858-11-20",
+		"birthYear": "1858",
 		"nationality": "Swedish"
 	},
 	{
 		"firstName": "Doris",
 		"lastName": "Lessing",
-		"dateOfBirth": "1919-10-22",
+		"birthYear": "1919",
 		"nationality": "British"
 	},
 	{
 		"firstName": "Banana",
 		"lastName": "Yoshimoto",
-		"dateOfBirth": "1964-07-24",
+		"birthYear": "1964",
 		"nationality": "Japanese"
 	},
 	{
 		"firstName": "Toni",
 		"lastName": "Morrison",
-		"dateOfBirth": "1931-02-18",
+		"birthYear": "1931",
 		"nationality": "American"
 	},
 	{
 		"firstName": "Chimamanda",
 		"lastName": "Ngozi Adichie",
-		"dateOfBirth": "1977-09-15",
+		"birthYear": "1977",
 		"nationality": "Nigerian"
 	},
 	{
 		"firstName": "J. R. R.",
 		"lastName": "Tolkien",
-		"dateOfBirth": "1892-01-03",
+		"birthYear": "1892",
 		"nationality": "British"
 	},
 	{
 		"firstName": "Leo",
 		"lastName": "Tolstoy",
-		"dateOfBirth": "1828-09-09",
+		"birthYear": "1828",
 		"nationality": "Russian"
 	},
 	{
 		"firstName": "Mark",
 		"lastName": "Twain",
-		"dateOfBirth": "1835-11-30",
+		"birthYear": "1835",
 		"nationality": "American"
 	},
 	{
 		"firstName": "Virginia",
 		"lastName": "Woolf",
-		"dateOfBirth": "1882-01-25",
+		"birthYear": "1882",
 		"nationality": "British"
 	}
 ]

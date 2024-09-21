@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS dim_authors (
   author_id VARCHAR(64) PRIMARY KEY,
   first_name VARCHAR(32),
   last_name VARCHAR(32),
-  date_of_birth DATE,
+  birth_year INT,
   nationality VARCHAR(32)
 );
 

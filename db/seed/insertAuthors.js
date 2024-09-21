@@ -11,8 +11,8 @@ async function insertAuthors(client) {
 		author.id = strToSlug(`${author.firstName} ${author.lastName}`);
 
 		await client.query(
-			"INSERT INTO dim_authors (author_id, first_name, last_name, date_of_birth, nationality) VALUES ($1, $2, $3, $4, $5)",
-			[author.id, author.firstName, author.lastName, author.dateOfBirth, author.nationality]
+			"INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality) VALUES ($1, $2, $3, $4, $5)",
+			[author.id, author.firstName, author.lastName, author.birthYear, author.nationality]
 		);
 	}
 	console.log("Authors inserted successfully");
