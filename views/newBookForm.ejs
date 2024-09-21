@@ -60,20 +60,17 @@
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 
-		const authors = JSON.parse(document.getElementById("authorsData").textContent);
-		const genres = JSON.parse(document.getElementById("genresData").textContent);
-
 		enableAutoComplete({
 			inputElementID: "author-name",
 			suggestionListID: "author-suggestions",
-			options: authors,
+			options: JSON.parse(document.getElementById("authorsData").textContent),
 			fieldName: "name",
 		});
 		enableAutoComplete({
 			inputElementID: "genres",
 			suggestionListID: "genre-suggestions",
-			options: genres,
-			fieldName: "name",
+			options: JSON.parse(document.getElementById("genresData").textContent),
+			fieldName: "genre_name",
 		});
 	</script>
 </html>

@@ -65,7 +65,7 @@ exports.getGenreNames = async function () {
 	const { rows } = await pool.query(`
     SELECT
       genre_id AS id,
-      genre_name AS name
+      genre_name
     FROM dim_genres
     ORDER BY genre_name
 	`);
