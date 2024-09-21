@@ -43,6 +43,10 @@ exports.getAllAuthors = async function (req, res) {
 	res.render("allAuthors", { title: "Authors", authors });
 };
 
+exports.getNewAuthorForm = function (req, res) {
+	res.render("newAuthorForm", { title: "New Author" });
+};
+
 exports.getAllGenres = async function (req, res) {
 	const genres = await db.getAllGenres();
 	genres.forEach(genre => (genre.slug = genre.genre.toLowerCase().replaceAll(" ", "-")));
