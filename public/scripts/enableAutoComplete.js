@@ -1,6 +1,6 @@
 import { sanitiseStr } from "./utils.js";
 
-const enableAutoComplete = function (inputElementID, suggestionListID, options) {
+const enableAutoComplete = function ({ inputElementID, suggestionListID, options }) {
 	const inputElement = document.getElementById(inputElementID);
 	const suggestionList = document.getElementById(suggestionListID);
 

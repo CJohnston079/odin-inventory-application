@@ -33,8 +33,13 @@
 					<ul id="genre-suggestions"></ul>
 				</li>
 				<li>
-					<label for="published-year">Published year:</label>
-					<input type="number" name="published-year" id="published-year" max="2024" />
+					<label for="publication-year">Publication year:</label>
+					<input
+						type="number"
+						name="publication-year"
+						id="publication-year"
+						max="<%= new Date().getFullYear() %>"
+					/>
 				</li>
 				<li>
 					<input type="radio" id="fiction" name="isFiction" value="fiction" checked />
@@ -58,7 +63,15 @@
 		const authors = JSON.parse(document.getElementById("authorsData").textContent);
 		const genres = JSON.parse(document.getElementById("genresData").textContent);
 
-		enableAutoComplete("author-name", "author-suggestions", authors);
-		enableAutoComplete("genres", "genre-suggestions", genres);
+		enableAutoComplete({
+			inputElementID: "author-name",
+			suggestionListID: "author-suggestions",
+			options: authors,
+		});
+		enableAutoComplete({
+			inputElementID: "genres",
+			suggestionListID: "genre-suggestions",
+			options: genres,
+		});
 	</script>
 </html>
