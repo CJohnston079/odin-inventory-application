@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const nationalities = require("../db/data/nationalities");
 
 exports.getIndex = function (req, res) {
 	res.render("index", { title: "Home" });
@@ -44,7 +45,7 @@ exports.getAllAuthors = async function (req, res) {
 };
 
 exports.getNewAuthorForm = function (req, res) {
-	res.render("newAuthorForm", { title: "New Author" });
+	res.render("newAuthorForm", { title: "New Author", nationalities });
 };
 
 exports.getAllGenres = async function (req, res) {

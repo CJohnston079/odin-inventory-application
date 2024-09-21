@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Inventory | <%= title %></title>
 		<link rel="stylesheet" href="../styles/index.css" />
+		<title>Inventory | <%= title %></title>
 	</head>
 	<body>
 		<h1><%= title %></h1>
@@ -37,9 +37,23 @@
 				<li>
 					<label for="nationality">Nationality:</label>
 					<input type="text" name="nationality" id="nationality" required />
+					<ul id="nationality-suggestions"></ul>
 				</li>
 			</ul>
 			<button type="submit">Add author</button>
 		</form>
+		<script type="application/json" id="nationalitiesData">
+			<%- JSON.stringify(nationalities) %>
+		</script>
+		<script type="module">
+			import enableAutoComplete from "../scripts/enableAutoComplete.js";
+
+			enableAutoComplete({
+				inputElementID: "nationality",
+				suggestionListID: "nationality-suggestions",
+				options: JSON.parse(document.getElementById("nationalitiesData").textContent),
+				fieldName: "name",
+			});
+		</script>
 	</body>
 </html>
