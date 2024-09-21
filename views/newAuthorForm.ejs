@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Inventory | <%= title %></title>
+		<link rel="stylesheet" href="../styles/index.css" />
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<nav>
+			<a href="/">Home</a>
+			<a href="/books">All books</a>
+			<a href="/authors">Authors</a>
+			<a href="/genres">Genres</a>
+		</nav>
+		<a href="/authors">Back</a>
+		<form action="/authors" method="post" id="new-book">
+			<ul>
+				<li>
+					<label for="first-name">First name:</label>
+					<input type="text" name="first-name" id="first-name" required />
+				</li>
+				<li>
+					<label for="last-name">Surname:</label>
+					<input type="text" name="last-name" id="last-name" required />
+				</li>
+				<li>
+					<label for="birth-year">Birth year:</label>
+					<input
+						type="number"
+						name="birth-year"
+						id="birth-year"
+						max="<%= new Date().getFullYear() %>"
+					/>
+				</li>
+				<li>
+					<label for="nationality">Nationality:</label>
+					<input type="text" name="nationality" id="nationality" required />
+				</li>
+			</ul>
+			<button type="submit">Add author</button>
+		</form>
+	</body>
+</html>
