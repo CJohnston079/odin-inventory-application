@@ -1,6 +1,6 @@
 import { sanitiseStr } from "./utils.js";
 
-const enableAutoComplete = function ({ inputElementID, suggestionListID, options }) {
+const enableAutoComplete = function ({ inputElementID, suggestionListID, options, fieldName }) {
 	const inputElement = document.getElementById(inputElementID);
 	const suggestionList = document.getElementById(suggestionListID);
 
@@ -14,7 +14,7 @@ const enableAutoComplete = function ({ inputElementID, suggestionListID, options
 
 	const getSuggestions = function (query) {
 		return options.filter(option => {
-			const str = sanitiseStr(option.name);
+			const str = sanitiseStr(option[fieldName]);
 			const words = str.split(" ");
 			return str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query));
 		});
@@ -24,10 +24,10 @@ const enableAutoComplete = function ({ inputElementID, suggestionListID, options
 		suggestions.forEach(suggestion => {
 			const suggestionElement = document.createElement("li");
 			suggestionElement.classList.add("suggestion");
-			suggestionElement.textContent = suggestion.name;
+			suggestionElement.textContent = suggestion[fieldName];
 
 			suggestionElement.addEventListener("click", function () {
-				inputElement.value = suggestion.name;
+				inputElement.value = suggestion[fieldName];
 				removeChildren(suggestionList);
 			});
 
