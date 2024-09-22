@@ -7,6 +7,7 @@ router.get("/books", controller.getAllBooks);
 router.get("/books/new", controller.getNewBookForm);
 router.get("/books/:book", controller.getBook);
 router.get("/authors", controller.getAllAuthors);
+router.post("/authors", controller.postNewAuthor);
 router.get("/authors/new", controller.getNewAuthorForm);
 router.get("/authors/:author", controller.getBooksByAuthor);
 router.get("/genres", controller.getAllGenres);

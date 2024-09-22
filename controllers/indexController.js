@@ -48,6 +48,11 @@ exports.getNewAuthorForm = function (req, res) {
 	res.render("newAuthorForm", { title: "New Author", nationalities });
 };
 
+exports.postNewAuthor = async function (req, res) {
+	await db.insertAuthor(req.body);
+	res.redirect("/authors");
+};
+
 exports.getAllGenres = async function (req, res) {
 	const genres = await db.getAllGenres();
 	genres.forEach(genre => (genre.slug = genre.genre.toLowerCase().replaceAll(" ", "-")));
