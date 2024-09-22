@@ -66,12 +66,14 @@
 			suggestionListID: "author-suggestions",
 			options: JSON.parse(document.getElementById("authorsData").textContent),
 			fieldName: "name",
+			addNewRoute: "authors",
 		});
 		enableAutoCompleteMulti({
 			inputElementID: "genres",
 			suggestionListID: "genre-suggestions",
 			options: JSON.parse(document.getElementById("genresData").textContent),
 			fieldName: "genre_name",
+			addNewRoute: "genres",
 		});
 	</script>
 </html>

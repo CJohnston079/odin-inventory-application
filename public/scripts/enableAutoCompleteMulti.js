@@ -5,6 +5,7 @@ const enableAutoCompleteMulti = function ({
 	suggestionListID,
 	options,
 	fieldName,
+	addNewRoute,
 }) {
 	const inputElement = document.getElementById(inputElementID);
 	const suggestionList = document.getElementById(suggestionListID);
@@ -37,6 +38,19 @@ const enableAutoCompleteMulti = function ({
 		input.value = entries.join(", ");
 	};
 
+	const createAddNewElement = function () {
+		const anchorWrapper = document.createElement("li");
+		anchorWrapper.classList.add("add-new");
+
+		const addNewAnchor = document.createElement("a");
+		addNewAnchor.href = `/${addNewRoute}/new`;
+		addNewAnchor.textContent = `Add new ${addNewRoute.slice(0, -1)}`;
+
+		anchorWrapper.appendChild(addNewAnchor);
+
+		return anchorWrapper;
+	};
+
 	const renderSuggestions = function (suggestions) {
 		suggestions.forEach(suggestion => {
 			const suggestionElement = document.createElement("li");
@@ -51,6 +65,11 @@ const enableAutoCompleteMulti = function ({
 
 			suggestionList.appendChild(suggestionElement);
 		});
+
+		if (addNewRoute) {
+			const addNewElement = createAddNewElement();
+			suggestionList.appendChild(addNewElement);
+		}
 
 		if (suggestions.length > 0) {
 			suggestionList.firstChild.classList.add("selected");
