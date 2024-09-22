@@ -122,10 +122,19 @@ const enableAutoCompleteMulti = function ({
 					setSelection(suggestions, e);
 				}
 			},
+			Escape: () => removeChildren(suggestionList),
 		};
 
 		if (keyActions[e.key]) {
 			keyActions[e.key]();
+		}
+	});
+
+	inputElement.addEventListener("blur", () => {
+		if (suggestionList.children.length > 0) {
+			setTimeout(() => {
+				removeChildren(suggestionList);
+			}, 100);
 		}
 	});
 };
