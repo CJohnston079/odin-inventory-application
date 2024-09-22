@@ -59,6 +59,7 @@
 	</script>
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
+		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
 
 		enableAutoComplete({
 			inputElementID: "author-name",
@@ -66,7 +67,7 @@
 			options: JSON.parse(document.getElementById("authorsData").textContent),
 			fieldName: "name",
 		});
-		enableAutoComplete({
+		enableAutoCompleteMulti({
 			inputElementID: "genres",
 			suggestionListID: "genre-suggestions",
 			options: JSON.parse(document.getElementById("genresData").textContent),
