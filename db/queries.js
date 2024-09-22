@@ -80,8 +80,8 @@ exports.getAllAuthors = async function () {
       COUNT(fb.book_id) AS number_of_books,
       da.author_id
     FROM dim_authors da
-    JOIN fact_books fb ON da.author_id = fb.author_id
-    GROUP BY da.first_name, da.last_name, da.author_id
+    LEFT JOIN fact_books fb ON da.author_id = fb.author_id
+    GROUP BY da.author_id
     ORDER BY da.last_name;
 	`);
 	return rows;
@@ -120,8 +120,8 @@ exports.getAllGenres = async function () {
     FROM dim_genres dg
     LEFT JOIN book_genres bg ON dg.genre_id = bg.genre_id
     LEFT JOIN fact_books fb ON bg.book_id = fb.book_id
-    GROUP BY dg.genre_name
-    ORDER BY dg.genre_name;
+    GROUP BY genre
+    ORDER BY genre;
 	`);
 	return rows;
 };
