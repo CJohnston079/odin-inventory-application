@@ -13,11 +13,15 @@ const enableAutoComplete = function ({ inputElementID, suggestionListID, options
 	};
 
 	const getSuggestions = function (query) {
-		return options.filter(option => {
-			const str = sanitiseStr(option[fieldName]);
-			const words = str.split(" ");
-			return str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query));
+		const matchingSuggestions = options.filter(option => {
+			const suggestion = sanitiseStr(option[fieldName]);
+			const suggestions = suggestion.split(" ");
+			return (
+				suggestion.startsWith(query) ||
+				suggestions.some(suggestion => suggestion.toLowerCase().startsWith(query))
+			);
 		});
+		return matchingSuggestions.slice(0, 4);
 	};
 
 	const renderSuggestions = function (suggestions) {

@@ -19,14 +19,16 @@ const enableAutoCompleteMulti = function ({
 
 	const getSuggestions = function (query, entries) {
 		const sanitisedEntries = entries.map(sanitiseStr);
-		return options.filter(option => {
-			const str = sanitiseStr(option[fieldName]);
-			const words = str.split(" ");
+		const matchingSuggestions = options.filter(option => {
+			const suggestion = sanitiseStr(option[fieldName]);
+			const suggestions = suggestion.split(" ");
 			return (
-				!sanitisedEntries.some(entry => words.includes(entry)) &&
-				(str.startsWith(query) || words.some(word => word.toLowerCase().startsWith(query)))
+				!sanitisedEntries.some(entry => suggestions.includes(entry)) &&
+				(suggestion.startsWith(query) ||
+					suggestions.some(word => word.toLowerCase().startsWith(query)))
 			);
 		});
+		return matchingSuggestions.slice(0, 4);
 	};
 
 	const updateInput = function (input, newEntry) {
