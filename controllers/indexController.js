@@ -57,3 +57,8 @@ exports.getAllGenres = async function (req, res) {
 exports.getNewGenreForm = function (req, res) {
 	res.render("newGenreForm", { title: "New Genre" });
 };
+
+exports.postNewGenre = async function (req, res) {
+	await db.insertGenre(req.body);
+	res.redirect("/genres");
+};

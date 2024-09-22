@@ -109,3 +109,13 @@ exports.getAllGenres = async function () {
 	`);
 	return rows;
 };
+
+exports.insertGenre = async function (newGenre) {
+	const genreName = newGenre["genre-name"];
+	const genreDescription = newGenre["genre-description"];
+
+	await pool.query("INSERT INTO dim_genres (genre_name, description) VALUES($1, $2)", [
+		genreName,
+		genreDescription,
+	]);
+};
