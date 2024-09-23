@@ -10,6 +10,45 @@ exports.getAllBooks = async function () {
 	return rows;
 };
 
+exports.insertBook = async function (newBook) {
+	const authorIdQuery = await pool.query(
+		"SELECT author_id FROM dim_authors WHERE (first_name || ' ' || last_name) = $1",
+		[newBook["author-name"]]
+	);
+
+	const authorId = authorIdQuery.rows[0].author_id;
+	const category = newBook["isFiction"] ? "fiction" : "non-fiction";
+
+	await pool.query(
+		"INSERT INTO fact_books (book_title, author_id, publication_year, category) VALUES ($1, $2, $3, $4)",
+		[newBook["title"], authorId, newBook["publication-year"], category]
+	);
+
+	const bookIdQuery = await pool.query("SELECT book_id FROM fact_books WHERE book_title = $1", [
+		newBook["title"],
+	]);
+
+	if (!newBook["genres"]) {
+		return;
+	}
+
+	const genres = newBook["genres"].split(", ");
+
+	for (const genre of genres) {
+		const genreIdQuery = await pool.query("SELECT genre_id FROM dim_genres WHERE genre_name = $1", [
+			genre,
+		]);
+
+		const bookId = bookIdQuery.rows[0].book_id;
+		const genreId = genreIdQuery.rows[0].genre_id;
+
+		await pool.query("INSERT INTO book_genres (book_id, genre_id) VALUES ($1, $2)", [
+			Number(bookId),
+			Number(genreId),
+		]);
+	}
+};
+
 exports.getBook = async function (bookID) {
 	const { rows } = await pool.query(
 		`

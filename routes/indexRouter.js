@@ -4,6 +4,7 @@ const controller = require("../controllers/indexController");
 
 router.get("/", controller.getIndex);
 router.get("/books", controller.getAllBooks);
+router.post("/books", controller.postNewBook);
 router.get("/books/new", controller.getNewBookForm);
 router.get("/books/:book", controller.getBook);
 router.get("/authors", controller.getAllAuthors);

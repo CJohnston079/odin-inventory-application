@@ -10,6 +10,11 @@ exports.getAllBooks = async function (req, res) {
 	res.render("allBooks", { title: "Books", books });
 };
 
+exports.postNewBook = async function (req, res) {
+	await db.insertBook(req.body);
+	res.redirect("/books");
+};
+
 exports.getNewBookForm = async function (req, res) {
 	const authors = await db.getAuthorNames();
 	const genres = await db.getGenreNames();
