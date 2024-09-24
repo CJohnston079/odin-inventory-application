@@ -7,12 +7,12 @@
 		<link rel="stylesheet" href="./styles/index.css" />
 	</head>
 	<body>
-		<h1><%= title %></h1>
+		<%- include('partials/header') %>
+		<h2><%= title %></h2>
 		<nav>
-			<a href="/">Home</a>
-			<a href="/books">All books</a>
-			<a href="/authors">Authors</a>
-			<a href="/genres">Genres</a>
+			<a href="/authors/new">New author</a>
+			<a href="/books/new">New book</a>
+			<a href="/genres/new">New genre</a>
 		</nav>
 	</body>
 </html>

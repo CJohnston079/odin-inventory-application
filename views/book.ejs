@@ -3,21 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Inventory | <%= title %></title>
+		<title>Inventory | <%= book.book_title %></title>
 		<link rel="stylesheet" href="../styles/index.css" />
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/books">All books</a>
-			<a href="/authors">Authors</a>
-			<a href="/genres">Genres</a>
-		</nav>
+		<%- include('partials/header') %>
 		<a href="/books">Back</a>
-		<h2><b>Title:</b> <%= book.book_title %></h2>
-		<p><b>Author:</b> <%= book.author %></p>
-		<p><b>Published:</b> <%= book.publication_year %></p>
-		<p><b>Category:</b> <%- book.category %></p>
+		<h2><%= book.book_title %></h2>
+		<ul>
+			<li><b>Published:</b> <%= book.publication_year %></li>
+			<li><b>Category:</b> <%- book.category %></li>
+			<li><b>Author:</b> <%= book.author %></li>
+		</ul>
 	</body>
 </html>

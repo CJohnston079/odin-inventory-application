@@ -7,16 +7,9 @@
 		<link rel="stylesheet" href="./styles/index.css" />
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/books">All books</a>
-			<a href="/authors">Authors</a>
-			<a href="/genres">Genres</a>
-			<a href="/genres/new">Add new genre</a>
-		</nav>
+		<%- include('partials/header') %>
+		<h2><%= title %></h2>
 		<ul>
-			<h2>All genres</h2>
 			<% genres.map((genre) => { %>
 			<li>
 				<a href="/genres/<%= genre.slug %>"><%= genre.genre %></a>

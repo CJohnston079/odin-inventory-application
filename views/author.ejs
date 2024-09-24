@@ -3,20 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Inventory | <%= title %></title>
+		<title>Inventory | <%= author %></title>
 		<link rel="stylesheet" href="../styles/index.css" />
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/books">All books</a>
-			<a href="/authors">Authors</a>
-			<a href="/genres">Genres</a>
-		</nav>
+		<%- include('partials/header') %>
 		<a href="/authors">Back</a>
+		<h2><%= author %></h2>
 		<ul>
-			<h2>All books by <%= author %></h2>
 			<% books.map((book) => { %>
 			<li>
 				<a href="/books/<%= book.book_id %>">

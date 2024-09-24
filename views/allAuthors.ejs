@@ -7,16 +7,9 @@
 		<link rel="stylesheet" href="./styles/index.css" />
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/books">All books</a>
-			<a href="/authors">Authors</a>
-			<a href="/genres">Genres</a>
-			<a href="/authors/new">Add new author</a>
-		</nav>
+		<%- include('partials/header') %>
+		<h2><%= title %></h2>
 		<ul>
-			<h2>All authors</h2>
 			<% authors.map((author) => { %>
 			<li>
 				<a href="authors/<%= author.author_id %>"><%= author.author_name %></a>

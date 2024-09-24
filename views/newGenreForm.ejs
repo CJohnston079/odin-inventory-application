@@ -7,14 +7,9 @@
 		<title>Inventory | <%= title %></title>
 	</head>
 	<body>
-		<h1><%= title %></h1>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/books">All books</a>
-			<a href="/authors">Authors</a>
-			<a href="/genres">Genres</a>
-		</nav>
+		<%- include('partials/header') %>
 		<a href="/genres">Back</a>
+		<h2><%= title %></h2>
 		<form action="/genres" method="post" id="new-genre">
 			<ul>
 				<li>
