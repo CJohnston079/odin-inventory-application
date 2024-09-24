@@ -7,8 +7,7 @@
 		<title>Inventory | <%= title %></title>
 	</head>
 	<body>
-		<%- include('partials/header') %>
-		<a href="/genres">Back</a>
+		<%- include('partials/header', { backAnchor: true }) %>
 		<h2><%= title %></h2>
 		<form action="/genres" method="post" id="new-genre">
 			<ul>

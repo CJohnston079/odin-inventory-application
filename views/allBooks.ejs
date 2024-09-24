@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="./styles/index.css" />
 	</head>
 	<body>
-		<%- include('partials/header') %>
+		<%- include('partials/header', { backAnchor: false }) %>
 		<h2><%= title %></h2>
 		<ul>
 			<% books.map((book) => { %>
