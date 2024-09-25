@@ -4,6 +4,7 @@ exports.getAllBooks = async function () {
 	const { rows } = await pool.query(`
 		SELECT
       fb.book_id,
+      da.author_id,
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
       fb.publication_year
@@ -32,6 +33,7 @@ exports.getBooksByAuthor = async function (author) {
 		`
     SELECT
       fb.book_id,
+      da.author_id,
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
       fb.publication_year
@@ -49,6 +51,7 @@ exports.getBooksByGenre = async function (genre) {
 		`
     SELECT
       fb.book_id,
+      da.author_id,
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
       fb.publication_year
