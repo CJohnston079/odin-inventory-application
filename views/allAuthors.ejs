@@ -9,13 +9,6 @@
 	<body>
 		<%- include("partials/header") %>
 		<h2><%= title %></h2>
-		<ul>
-			<% authors.map((author) => { %>
-			<li>
-				<a href="authors/<%= author.author_id %>"><%= author.author_name %></a>
-				(<%= author.number_of_books %>)
-			</li>
-			<% }) %>
-		</ul>
+		<%- include("partials/authorsTable") %>
 	</body>
 </html>
