@@ -9,17 +9,24 @@
 	<body>
 		<%- include("partials/header") %>
 		<h2><%= title %></h2>
-		<ul>
-			<% books.map((book) => { %>
-			<li>
-				<a href="/books/<%= book.book_id %>">
-					<p><b>Title:</b> <%= book.book_title %></p>
-					<p><b>Author:</b> <%= book.author %></p>
-					<p><b>Published:</b> <%= book.publication_year %></p>
-					<p><b>Category:</b> <%- book.category %></p>
-				</a>
-			</li>
-			<% }) %>
-		</ul>
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Publication Year</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% books.map((book) => { %>
+				<tr>
+					<td><a href="/books/<%= book.book_id %>"><%= book.title %></a></td>
+					<td><%= book.author %></td>
+					<td><%= book.publication_year %></td>
+					<td><%- book.category %></td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
 	</body>
 </html>

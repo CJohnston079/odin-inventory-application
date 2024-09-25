@@ -2,9 +2,14 @@ const pool = require("../pool");
 
 exports.getAllBooks = async function () {
 	const { rows } = await pool.query(`
-		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
+		SELECT
+      fb.book_id,
+      fb.book_title AS title,
+      da.first_name || ' ' || da.last_name AS author,
+      fb.publication_year
     FROM fact_books fb
-    JOIN dim_authors da ON fb.author_id = da.author_id;
+    JOIN dim_authors da ON fb.author_id = da.author_id
+    ORDER BY title;
 	`);
 	return rows;
 };
