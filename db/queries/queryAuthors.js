@@ -14,13 +14,30 @@ exports.getAuthorNames = async function () {
 
 exports.getAllAuthors = async function () {
 	const { rows } = await pool.query(`
-		SELECT
+    WITH GenreCounts AS (
+      SELECT
+        fb.author_id,
+        dg.genre_name,
+        COUNT(DISTINCT fb.book_id) AS genre_count
+      FROM fact_books fb
+      JOIN book_genres bg ON fb.book_id = bg.book_id
+      JOIN dim_genres dg ON bg.genre_id = dg.genre_id
+      GROUP BY fb.author_id, dg.genre_name
+    )
+    SELECT
+      da.author_id,
       da.first_name || ' ' || da.last_name AS author_name,
-      COUNT(fb.book_id) AS number_of_books,
-      da.author_id
+      da.birth_year,
+      da.nationality,
+      (
+        SELECT STRING_AGG(gc.genre_name, ',' ORDER BY gc.genre_count DESC, gc.genre_name)
+        FROM GenreCounts gc
+        WHERE gc.author_id = da.author_id
+      ) AS genres,
+      COUNT(DISTINCT fb.book_id) AS number_of_books
     FROM dim_authors da
     LEFT JOIN fact_books fb ON da.author_id = fb.author_id
-    GROUP BY da.author_id
+    GROUP BY da.author_id, da.first_name, da.last_name, da.birth_year, da.nationality
     ORDER BY da.last_name;
 	`);
 	return rows;

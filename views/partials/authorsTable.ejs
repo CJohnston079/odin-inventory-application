@@ -2,14 +2,24 @@
 	<thead>
 		<tr>
 			<th>Author</th>
-			<th>Books:</th>
+			<th>Born</th>
+			<th>Nationality</th>
+			<th>Books</th>
+			<th>Genres</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% authors.map(author => { %>
 		<tr>
 			<td><a href="authors/<%= author.author_id %>"><%= author.author_name %></a></td>
+			<td><%= author.birth_year %></td>
+			<td><%= author.nationality %></td>
 			<td><%= author.number_of_books %></td>
+      <td>
+				<% author.genres.split(",").map(genre => { %>
+				<a href="/genres/<%= genre.trim().toLowerCase().replace(" ", "-") %>"><%= genre %></a>
+				<% }) %>
+			</td>
 		</tr>
 		<% }) %>
 	</tbody>

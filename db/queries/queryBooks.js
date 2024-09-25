@@ -8,7 +8,7 @@ exports.getAllBooks = async function () {
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
       fb.publication_year,
-      STRING_AGG(dg.genre_name, ', ') AS genres
+      STRING_AGG(dg.genre_name, ',') AS genres
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
     JOIN book_genres bg ON fb.book_id = bg.book_id
