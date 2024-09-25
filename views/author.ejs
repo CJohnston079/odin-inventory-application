@@ -9,16 +9,6 @@
 	<body>
 		<%- include("partials/header", { backAnchor: true }) %>
 		<h2><%= author %></h2>
-		<ul>
-			<% books.map((book) => { %>
-			<li>
-				<a href="/books/<%= book.book_id %>">
-					<p><b>Title:</b> <%= book.book_title %></p>
-					<p><b>Published:</b> <%= book.publication_year %></p>
-					<p><b>Category:</b> <%- book.category %></p>
-				</a>
-			</li>
-			<% }) %>
-		</ul>
+		<%- include("partials/bookTable", { books }) %>
 	</body>
 </html>

@@ -30,7 +30,11 @@ exports.getBook = async function (bookID) {
 exports.getBooksByAuthor = async function (author) {
 	const { rows } = await pool.query(
 		`
-    SELECT fb.*, da.first_name || ' ' || da.last_name AS author
+    SELECT
+      fb.book_id,
+      fb.book_title AS title,
+      da.first_name || ' ' || da.last_name AS author,
+      fb.publication_year
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
     WHERE da.first_name || ' ' || da.last_name = $1;
@@ -43,7 +47,11 @@ exports.getBooksByAuthor = async function (author) {
 exports.getBooksByGenre = async function (genre) {
 	const { rows } = await pool.query(
 		`
-		SELECT fb.*, da.first_name || ' ' || da.last_name AS author
+    SELECT
+      fb.book_id,
+      fb.book_title AS title,
+      da.first_name || ' ' || da.last_name AS author,
+      fb.publication_year
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
     JOIN book_genres bg ON fb.book_id = bg.book_id
