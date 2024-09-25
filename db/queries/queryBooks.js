@@ -7,9 +7,13 @@ exports.getAllBooks = async function () {
       da.author_id,
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
-      fb.publication_year
+      fb.publication_year,
+      STRING_AGG(dg.genre_name, ', ') AS genres
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
+    JOIN book_genres bg ON fb.book_id = bg.book_id
+    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    GROUP BY fb.book_id, da.author_id
     ORDER BY title;
 	`);
 	return rows;
@@ -36,10 +40,15 @@ exports.getBooksByAuthor = async function (author) {
       da.author_id,
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
-      fb.publication_year
+      fb.publication_year,
+      STRING_AGG(dg.genre_name, ', ') AS genres
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
-    WHERE da.first_name || ' ' || da.last_name = $1;
+    JOIN book_genres bg ON fb.book_id = bg.book_id
+    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    WHERE da.first_name || ' ' || da.last_name = $1
+    GROUP BY fb.book_id, da.author_id
+    ORDER BY title;
 	`,
 		[author]
 	);
@@ -54,12 +63,21 @@ exports.getBooksByGenre = async function (genre) {
       da.author_id,
       fb.book_title AS title,
       da.first_name || ' ' || da.last_name AS author,
-      fb.publication_year
+      fb.publication_year,
+    STRING_AGG(dg.genre_name, ', ') AS genres
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
     JOIN book_genres bg ON fb.book_id = bg.book_id
-    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
-    WHERE dg.genre_name = $1;
+    JOIN dim_genres dg ON bg.genre_id = dg.genre_id
+    WHERE fb.book_id IN (
+      SELECT fb2.book_id
+      FROM fact_books fb2
+      JOIN book_genres bg2 ON fb2.book_id = bg2.book_id
+      JOIN dim_genres dg2 ON bg2.genre_id = dg2.genre_id
+      WHERE dg2.genre_name = $1
+    )
+    GROUP BY fb.book_id, da.author_id
+    ORDER BY title
 	`,
 		[genre]
 	);
