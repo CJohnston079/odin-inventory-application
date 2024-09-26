@@ -9,13 +9,6 @@
 	<body>
 		<%- include("partials/header") %>
 		<h2><%= title %></h2>
-		<ul>
-			<% genres.map((genre) => { %>
-			<li>
-				<a href="/genres/<%= genre.slug %>"><%= genre.genre %></a>
-				(<%= genre.number_of_books %>)
-			</li>
-			<% }) %>
-		</ul>
+		<%- include("partials/genresTable", { genres }) %>
 	</body>
 </html>
