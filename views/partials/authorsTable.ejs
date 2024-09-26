@@ -16,9 +16,11 @@
 			<td><%= author.nationality %></td>
 			<td><%= author.number_of_books %></td>
       <td>
-				<% author.genres.split(",").map(genre => { %>
-				<a href="/genres/<%= genre.trim().toLowerCase().replace(" ", "-") %>"><%= genre %></a>
-				<% }) %>
+        <% if (author.genres) {%>
+          <% author.genres.split(",").map(genre => { %>
+          <a href="/genres/<%= genre.trim().toLowerCase().replace(" ", "-") %>"><%= genre %></a>
+          <% }) %>
+				<% }%>
 			</td>
 		</tr>
 		<% }) %>
