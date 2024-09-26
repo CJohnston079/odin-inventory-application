@@ -3,6 +3,9 @@ require("dotenv").config();
 const express = require("express");
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter");
+const booksRouter = require("./routes/booksRouter");
+const authorsRouter = require("./routes/authorsRouter");
+const genresRouter = require("./routes/genresRouter");
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -12,6 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/books", booksRouter);
+app.use("/authors", authorsRouter);
+app.use("/genres", genresRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server listening on port ${port}`));

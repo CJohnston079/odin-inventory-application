@@ -3,17 +3,5 @@ const router = express.Router();
 const controller = require("../controllers/indexController");
 
 router.get("/", controller.getIndex);
-router.get("/books", controller.getAllBooks);
-router.post("/books", controller.postNewBook);
-router.get("/books/new", controller.getNewBookForm);
-router.get("/books/:book", controller.getBook);
-router.get("/authors", controller.getAllAuthors);
-router.post("/authors", controller.postNewAuthor);
-router.get("/authors/new", controller.getNewAuthorForm);
-router.get("/authors/:author", controller.getBooksByAuthor);
-router.get("/genres", controller.getAllGenres);
-router.post("/genres", controller.postNewGenre);
-router.get("/genres/new", controller.getNewGenreForm);
-router.get("/genres/:genre", controller.getBooksByGenre);
 
 module.exports = router;
