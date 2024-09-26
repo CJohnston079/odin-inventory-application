@@ -1,0 +1,16 @@
+<table>
+	<thead>
+		<tr>
+			<th>Decade</th>
+			<th>Books</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% centuries[century].map((decade) => { %>
+		<tr>
+			<td><%= decade.decade %></td>
+			<td><%= decade.number_of_books %></td>
+		</tr>
+		<% }) %>
+	</tbody>
+</table>
