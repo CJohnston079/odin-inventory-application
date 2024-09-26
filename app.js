@@ -6,6 +6,7 @@ const indexRouter = require("./routes/indexRouter");
 const booksRouter = require("./routes/booksRouter");
 const authorsRouter = require("./routes/authorsRouter");
 const genresRouter = require("./routes/genresRouter");
+const decadesRouter = require("./routes/decadesRouter");
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -18,6 +19,7 @@ app.use("/", indexRouter);
 app.use("/books", booksRouter);
 app.use("/authors", authorsRouter);
 app.use("/genres", genresRouter);
+app.use("/decades", decadesRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server listening on port ${port}`));
