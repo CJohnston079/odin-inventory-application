@@ -13,11 +13,7 @@
 			<td><a href="/books/<%= book.book_id %>"><%= book.title %></a></td>
 			<td><a href="/authors/<%= book.author_id %>"><%= book.author %></a></td>
 			<td><%= book.publication_year %></td>
-			<td>
-				<% book.genres.split(",").map(genre => { %>
-				<a href="/genres/<%= genre.trim().toLowerCase().replace(" ", "-") %>"><%= genre %></a>
-				<% }) %>
-			</td>
+			<%- include("./genresColumn", { data: book }) %>
 		</tr>
 		<% }) %>
 	</tbody>
