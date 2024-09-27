@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS fact_books (
   book_title VARCHAR(64),
   author_id VARCHAR(64) REFERENCES dim_authors(author_id),
   publication_year INT,
-  category TEXT CHECK (category IN ('fiction', 'non-fiction'))
+  is_fiction BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS book_genres (

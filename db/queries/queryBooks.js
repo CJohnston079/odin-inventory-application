@@ -91,11 +91,11 @@ exports.insertBook = async function (newBook) {
 	);
 
 	const authorId = authorIdQuery.rows[0].author_id;
-	const category = newBook["isFiction"] ? "fiction" : "non-fiction";
+	const isFiction = newBook["isFiction"];
 
 	await pool.query(
-		"INSERT INTO fact_books (book_title, author_id, publication_year, category) VALUES ($1, $2, $3, $4)",
-		[newBook["title"], authorId, newBook["publication-year"], category]
+		"INSERT INTO fact_books (book_title, author_id, publication_year, is_fiction) VALUES ($1, $2, $3, $4)",
+		[newBook["title"], authorId, newBook["publication-year"], isFiction]
 	);
 
 	const bookIdQuery = await pool.query("SELECT book_id FROM fact_books WHERE book_title = $1", [
