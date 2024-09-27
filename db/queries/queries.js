@@ -9,6 +9,7 @@ module.exports = {
 	getBooksByGenre: books.getBooksByGenre,
 	insertBook: books.insertBook,
 	getAllDecades: books.getAllDecades,
+	getBooksByDecade: books.getBooksByDecade,
 
 	getAuthorNames: authors.getAuthorNames,
 	getAllAuthors: authors.getAllAuthors,

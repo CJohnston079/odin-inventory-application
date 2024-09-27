@@ -134,3 +134,26 @@ exports.getAllDecades = async function () {
 	`);
 	return rows;
 };
+
+exports.getBooksByDecade = async function (decade) {
+	const { rows } = await pool.query(
+		`
+    SELECT
+      fb.book_id,
+      da.author_id,
+      fb.book_title AS title,
+      da.first_name || ' ' || da.last_name AS author,
+      fb.publication_year,
+      STRING_AGG(dg.genre_name, ',') AS genres
+    FROM fact_books fb
+    JOIN dim_authors da ON fb.author_id = da.author_id
+    JOIN book_genres bg ON fb.book_id = bg.book_id
+    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    WHERE fb.publication_year BETWEEN $1 AND $2
+    GROUP BY fb.book_id, da.author_id
+    ORDER BY title;
+  `,
+		[decade, decade + 9]
+	);
+	return rows;
+};

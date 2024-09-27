@@ -17,12 +17,9 @@ exports.getAllDecades = async function (req, res) {
 	res.render("allDecades", { title: "Decades", centuries });
 };
 
-// exports.getBooksByDecade = async function (req, res) {
-// 	const genreSlug = req.params.genre;
-// 	const genre = genreSlug
-// 		.split("-")
-// 		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-// 		.join(" ");
-// 	const books = await db.getBooksByGenre(genre);
-// 	res.render("genre", { title: "Genres", genre, books });
-// };
+exports.getBooksByDecade = async function (req, res) {
+	const decade = req.params.decade;
+	const decadeNum = Number(decade.replace(/\D/g, ""));
+	const books = await db.getBooksByDecade(decadeNum);
+	res.render("decade", { title: "Decades", decade, books });
+};
