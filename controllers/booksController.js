@@ -1,6 +1,7 @@
 const db = require("../db/queries/queries");
 
 exports.postNewBook = async function (req, res) {
+	console.log("Posting new book:\n", req.body);
 	await db.insertBook(req.body);
 	res.redirect("/books");
 };

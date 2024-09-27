@@ -53,20 +53,49 @@
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
+		import { validateAuthor, validateGenres } from "../scripts/validateInputs.js";
+
+		const authors = JSON.parse(document.getElementById("authorsData").textContent);
+		const genres = JSON.parse(document.getElementById("genresData").textContent);
 
 		enableAutoComplete({
 			inputElementID: "author-name",
 			suggestionListID: "author-suggestions",
-			options: JSON.parse(document.getElementById("authorsData").textContent),
+			options: authors,
 			fieldName: "name",
 			addNewRoute: "authors",
 		});
 		enableAutoCompleteMulti({
 			inputElementID: "genres",
 			suggestionListID: "genre-suggestions",
-			options: JSON.parse(document.getElementById("genresData").textContent),
+			options: genres,
 			fieldName: "genre_name",
 			addNewRoute: "genres",
+		});
+
+		document.querySelector("#new-book").addEventListener("submit", e => {
+			const authorInput = document.querySelector("#author-name");
+			const genresInput = document.querySelector("#genres");
+
+			const authorError = validateAuthor(
+				authorInput.value,
+				authors.map(author => author.name)
+			);
+
+			const genresError = validateGenres(
+				genresInput.value,
+				genres.map(genre => genre.genre_name)
+			);
+
+			if (authorError) {
+				e.preventDefault();
+				alert(authorError);
+			}
+
+			if (genresError) {
+				e.preventDefault();
+				alert(genresError);
+			}
 		});
 	</script>
 </html>
