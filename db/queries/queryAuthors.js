@@ -1,6 +1,23 @@
 const pool = require("../pool");
 const { strToSlug } = require("../../js/utils");
 
+exports.insertAuthor = async function (newAuthor) {
+	const { firstName, lastName, birthYear, nationality } = newAuthor;
+	const authorID = strToSlug(`${firstName} ${lastName}`);
+
+	const query = `
+    INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality)
+    VALUES ($1, $2, $3, $4, $5)
+  `;
+
+	try {
+		await pool.query(query, [authorID, firstName, lastName, birthYear, nationality]);
+	} catch (error) {
+		console.error(`Error inserting author ${firstName} ${lastName}:`, error);
+		throw error;
+	}
+};
+
 exports.getAuthorNames = async function () {
 	const { rows } = await pool.query(`
     SELECT
@@ -51,19 +68,4 @@ exports.getAuthorByID = async function (id) {
 		[id]
 	);
 	return rows;
-};
-
-exports.insertAuthor = async function (newAuthor) {
-	newAuthor.id = strToSlug(`${newAuthor["first-name"]} ${newAuthor["last-name"]}`);
-
-	await pool.query(
-		"INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality) VALUES ($1, $2, $3, $4, $5)",
-		[
-			newAuthor.id,
-			newAuthor["first-name"],
-			newAuthor["last-name"],
-			newAuthor["birth-year"],
-			newAuthor["nationality"],
-		]
-	);
 };

@@ -1,5 +1,18 @@
 const pool = require("../pool");
 
+exports.insertGenre = async function (newGenre) {
+	const { name, description } = newGenre;
+
+	const query = "INSERT INTO dim_genres (genre_name, description) VALUES($1, $2)";
+
+	try {
+		await pool.query(query, [name, description]);
+	} catch (error) {
+		console.error(`Error inserting genre ${name}:`, error);
+		throw error;
+	}
+};
+
 exports.getGenreNames = async function () {
 	const { rows } = await pool.query(`
     SELECT
@@ -23,14 +36,4 @@ exports.getAllGenres = async function () {
     ORDER BY genre;
 	`);
 	return rows;
-};
-
-exports.insertGenre = async function (newGenre) {
-	const genreName = newGenre["genre-name"];
-	const genreDescription = newGenre["genre-description"];
-
-	await pool.query("INSERT INTO dim_genres (genre_name, description) VALUES($1, $2)", [
-		genreName,
-		genreDescription,
-	]);
 };
