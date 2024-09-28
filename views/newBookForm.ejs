@@ -17,7 +17,7 @@
 				</li>
 				<li>
 					<label for="author">Author:</label>
-					<input type="text" name="author-name" id="author-name" required />
+					<input type="text" name="author" id="author" required />
 					<ul id="author-suggestions"></ul>
 				</li>
 				<li>
@@ -59,7 +59,7 @@
 		const genres = JSON.parse(document.getElementById("genresData").textContent);
 
 		enableAutoComplete({
-			inputElementID: "author-name",
+			inputElementID: "author",
 			suggestionListID: "author-suggestions",
 			options: authors,
 			fieldName: "name",
@@ -74,7 +74,7 @@
 		});
 
 		document.querySelector("#new-book").addEventListener("submit", e => {
-			const authorInput = document.querySelector("#author-name");
+			const authorInput = document.querySelector("#author");
 			const genresInput = document.querySelector("#genres");
 
 			const authorError = validateAuthor(

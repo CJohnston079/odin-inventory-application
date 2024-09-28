@@ -85,12 +85,7 @@ exports.getBooksByGenre = async function (genre) {
 };
 
 exports.insertBook = async function (newBook) {
-	const authorIdQuery = await pool.query(
-		"SELECT author_id FROM dim_authors WHERE (first_name || ' ' || last_name) = $1",
-		[newBook["author-name"]]
-	);
-
-	const authorId = authorIdQuery.rows[0].author_id;
+	const authorId = newBook.authorID;
 	const isFiction = newBook["isFiction"];
 
 	await pool.query(

@@ -1,8 +1,13 @@
 const db = require("../db/queries/queries");
+const { strToSlug } = require("../js/utils");
 
 exports.postNewBook = async function (req, res) {
-	console.log("Posting new book:\n", req.body);
-	await db.insertBook(req.body);
+	const newBook = req.body;
+	newBook["authorID"] = strToSlug(newBook.author);
+
+	console.log("Posting new book:\n", newBook);
+
+	await db.insertBook(newBook);
 	res.redirect("/books");
 };
 
