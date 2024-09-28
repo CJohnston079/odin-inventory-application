@@ -101,9 +101,7 @@ exports.insertBook = async function (newBook) {
 		return;
 	}
 
-	const genres = newBook["genres"].split(", ");
-
-	for (const genre of genres) {
+	for (const genre of newBook["genres"]) {
 		const genreIdQuery = await pool.query("SELECT genre_id FROM dim_genres WHERE genre_name = $1", [
 			genre,
 		]);

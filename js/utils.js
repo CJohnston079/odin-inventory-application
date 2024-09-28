@@ -8,3 +8,13 @@ exports.strToSlug = function (str) {
 		.replace(/\s+/g, "-")
 		.replace(/-+/g, "-");
 };
+
+exports.capitaliseArray = function (arr) {
+	return arr.map(str => {
+		const words = str.trim().toLowerCase().split(/\s+/);
+		const capitalisedWords = words
+			.map(word => (word = word.charAt(0).toUpperCase() + word.slice(1)))
+			.join(" ");
+		return capitalisedWords;
+	});
+};

@@ -14,7 +14,10 @@ export const validateAuthor = function (author, authors) {
 };
 
 export const validateGenres = function (genresInput, genres) {
-	const isInDatabase = genresInput.split(",").every(input => checkInputInArray(input, genres));
+	const isInDatabase = genresInput
+		.replace(/,\s*$/, "")
+		.split(",")
+		.every(input => checkInputInArray(input, genres));
 
 	if (!isInDatabase) {
 		return "Genre(s) not found";
