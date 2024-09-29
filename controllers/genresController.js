@@ -8,11 +8,11 @@ exports.postNewGenre = async function (req, res) {
 exports.getAllGenres = async function (req, res) {
 	const genres = await db.getAllGenres();
 	genres.forEach(genre => (genre.slug = genre.genre.toLowerCase().replaceAll(" ", "-")));
-	res.render("allGenres", { title: "Genres", genres });
+	res.render("./genres/genres", { title: "Genres", genres });
 };
 
 exports.getNewGenreForm = function (req, res) {
-	res.render("newGenreForm", { title: "New Genre" });
+	res.render("./genres/newGenre", { title: "New Genre" });
 };
 
 exports.getBooksByGenre = async function (req, res) {
@@ -22,5 +22,5 @@ exports.getBooksByGenre = async function (req, res) {
 		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(" ");
 	const books = await db.getBooksByGenre(genre);
-	res.render("genre", { title: "Genres", genre, books });
+	res.render("./genres/genre", { title: "Genres", genre, books });
 };

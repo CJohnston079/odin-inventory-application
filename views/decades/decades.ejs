@@ -7,8 +7,10 @@
 		<link rel="stylesheet" href="./styles/index.css" />
 	</head>
 	<body>
-		<%- include("partials/header") %>
+		<%- include("../partials/header") %>
 		<h2><%= title %></h2>
-		<%- include("partials/authorsTable") %>
+		<% Object.keys(centuries).forEach((century) => { %>
+		<h3><%= century %>s</h3>
+		<%- include("../partials/decadesTable", { century, decades: centuries[century] }) %> <% }) %>
 	</body>
 </html>

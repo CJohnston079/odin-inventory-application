@@ -14,12 +14,12 @@ exports.getAllDecades = async function (req, res) {
 
 		centuries[century].push(entry);
 	});
-	res.render("allDecades", { title: "Decades", centuries });
+	res.render("./decades/decades", { title: "Decades", centuries });
 };
 
 exports.getBooksByDecade = async function (req, res) {
 	const decade = req.params.decade;
 	const decadeNum = Number(decade.replace(/\D/g, ""));
 	const books = await db.getBooksByDecade(decadeNum);
-	res.render("decade", { title: "Decades", decade, books });
+	res.render("./decades/decade", { title: "Decades", decade, books });
 };
