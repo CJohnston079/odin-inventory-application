@@ -14,15 +14,30 @@
 				<li>
 					<label for="title">Book title:</label>
 					<input type="text" name="title" id="title" required />
+					<span class="field-message"></span>
 				</li>
 				<li>
 					<label for="author">Author:</label>
-					<input type="text" name="author" id="author" required />
+					<input
+						type="text"
+						name="author"
+						id="author"
+						placeholder="Start typing to show suggestions"
+						required
+					/>
+					<span class="field-message"></span>
 					<ul id="author-suggestions"></ul>
 				</li>
 				<li>
 					<label for="genres">Genre(s):</label>
-					<input type="text" name="genres" id="genres" />
+					<input
+						type="text"
+						name="genres"
+						id="genres"
+						placeholder="Start typing to show suggestions"
+						required
+					/>
+					<span class="field-message"></span>
 					<ul id="genre-suggestions"></ul>
 				</li>
 				<li>
@@ -33,6 +48,7 @@
 						id="publication-year"
 						max="<%= new Date().getFullYear() %>"
 					/>
+					<span class="field-message"></span>
 				</li>
 				<li>
 					<input type="radio" id="fiction" name="isFiction" value="true" checked />
@@ -74,8 +90,10 @@
 		});
 
 		document.querySelector("#new-book").addEventListener("submit", e => {
+			const titleInput = document.querySelector("#title");
 			const authorInput = document.querySelector("#author");
 			const genresInput = document.querySelector("#genres");
+			const yearInput = document.querySelector("#publication-year");
 
 			const authorError = validateAuthor(
 				authorInput.value,
@@ -89,12 +107,24 @@
 
 			if (authorError) {
 				e.preventDefault();
-				alert(authorError);
+				const authorsMessage = document.querySelector("#author + .field-message");
+				authorsMessage.textContent = authorError;
+
+				const newAuthorAnchor = document.createElement("a");
+				newAuthorAnchor.href = "../authors/new";
+				newAuthorAnchor.textContent = `Add author +`;
+				authorsMessage.appendChild(newAuthorAnchor);
 			}
 
 			if (genresError) {
 				e.preventDefault();
-				alert(genresError);
+				const genresMessage = document.querySelector("#genres + .field-message");
+				genresMessage.textContent = genresError;
+
+				const newGenreAnchor = document.createElement("a");
+				newGenreAnchor.href = "../genres/new";
+				newGenreAnchor.textContent = `Add genre +`;
+				genresMessage.appendChild(newGenreAnchor);
 			}
 		});
 	</script>
