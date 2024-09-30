@@ -1,5 +1,7 @@
 const capitalise = str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
+exports.slugToStr = str => str.trim().split("-").map(capitalise).join(" ");
+
 exports.capitaliseArray = function (arr) {
 	return arr.map(str => {
 		const words = str.trim().toLowerCase().split(/\s+/);

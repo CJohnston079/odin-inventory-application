@@ -1,4 +1,6 @@
 const db = require("../db/queries/queries");
+const { strToSlug, slugToStr } = require("../js/utils");
+const { capitaliseStr } = require("../js/utils");
 
 exports.postNewGenre = async function (req, res) {
 	await db.insertGenre(req.body);
@@ -7,7 +9,7 @@ exports.postNewGenre = async function (req, res) {
 
 exports.getAllGenres = async function (req, res) {
 	const genres = await db.getAllGenres();
-	genres.forEach(genre => (genre.slug = genre.genre.toLowerCase().replaceAll(" ", "-")));
+	genres.forEach(genre => (genre.slug = strToSlug(genre.genre)));
 	res.render("./genres/genres", { title: "Genres", genres });
 };
 
@@ -17,10 +19,7 @@ exports.getNewGenreForm = function (req, res) {
 
 exports.getBooksByGenre = async function (req, res) {
 	const genreSlug = req.params.genre;
-	const genre = genreSlug
-		.split("-")
-		.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-		.join(" ");
+	const genre = slugToStr(genreSlug);
 	const books = await db.getBooksByGenre(genre);
 	res.render("./genres/genre", { title: "Genres", genre, books });
 };
