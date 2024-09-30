@@ -33,6 +33,20 @@ exports.insertBook = async function (newBook) {
 	}
 };
 
+exports.checkBookTitle = async function (title, authorID) {
+	const query = `
+		SELECT 1 FROM fact_books
+		WHERE book_title = $1
+      AND author_id = $2
+		LIMIT 1;
+	`;
+
+	const result = await pool.query(query, [title, authorID]);
+	const titleExists = result.rowCount > 0;
+
+	return titleExists;
+};
+
 exports.getAllBooks = async function () {
 	const { rows } = await pool.query(`
 		SELECT

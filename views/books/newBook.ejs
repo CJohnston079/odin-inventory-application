@@ -89,8 +89,50 @@
 			addNewRoute: "genres",
 		});
 
-		document.querySelector("#new-book").addEventListener("submit", e => {
+		const checkBookTitle = async function (title, author) {
+			if (!title || !author) {
+				return;
+			}
+
+			try {
+				const url = `check-title?title=${encodeURIComponent(title)}${
+					author ? `&author=${encodeURIComponent(author)}` : ""
+				}`;
+
+				const response = await fetch(url, { mode: "cors" });
+				const data = await response.json();
+
+				if (data.exists) {
+					return `${data.title} by ${data.author} is already added.`;
+				}
+			} catch (err) {
+				console.error("Error checking title:", err);
+			}
+		};
+
+		const handleBlur = async function () {
 			const titleInput = document.querySelector("#title");
+			const authorInput = document.querySelector("#author");
+			const titleMessage = document.querySelector("#title + .field-message");
+
+			if (!authorInput.value) {
+				titleMessage.textContent = "";
+				return;
+			}
+
+			const titleError = await checkBookTitle(titleInput.value, authorInput.value);
+
+			if (titleError) {
+				titleMessage.textContent = titleError;
+			} else {
+				titleMessage.textContent = "";
+			}
+		};
+
+		document.querySelector("#title").addEventListener("blur", handleBlur);
+		document.querySelector("#author").addEventListener("blur", handleBlur);
+
+		document.querySelector("#new-book").addEventListener("submit", e => {
 			const authorInput = document.querySelector("#author");
 			const genresInput = document.querySelector("#genres");
 			const yearInput = document.querySelector("#publication-year");

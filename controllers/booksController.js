@@ -16,6 +16,24 @@ exports.postNewBook = async function (req, res) {
 	res.redirect("/books");
 };
 
+exports.checkBookTitle = async function (req, res) {
+	const title = strToTitleCase(req.query.title);
+	const author = strToTitleCase(req.query.author);
+
+	if (!title || !author) {
+		return res.status(400).json({ error: "Title and author parameters are required" });
+	}
+
+	try {
+		const authorID = strToSlug(author);
+		const exists = await db.checkBookTitle(title, authorID);
+		res.json({ exists, title, author });
+	} catch (err) {
+		console.error(`Error checking title ${title} by author ${author}:`, err);
+		res.status(500).json({ error: "Server error" });
+	}
+};
+
 exports.getAllBooks = async function (req, res) {
 	const books = await db.getAllBooks();
 	res.render("./books/books", { title: "Books", books });

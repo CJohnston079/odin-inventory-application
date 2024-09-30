@@ -10,6 +10,7 @@ module.exports = {
 	insertBook: books.insertBook,
 	getAllDecades: books.getAllDecades,
 	getBooksByDecade: books.getBooksByDecade,
+	checkBookTitle: books.checkBookTitle,
 
 	getAuthorNames: authors.getAuthorNames,
 	getAllAuthors: authors.getAllAuthors,

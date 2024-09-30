@@ -8,7 +8,7 @@
 	<tbody>
 		<% centuries[century].map((decade) => { %>
 		<tr>
-			<td><a href="decades/<%= decade.decade %>"><%= decade.decade %></a></td>
+			<td><a href="decades/<%= decade.decade %>"><%= decade.decade %>s</a></td>
 			<td><%= decade.number_of_books %></td>
 		</tr>
 		<% }) %>
