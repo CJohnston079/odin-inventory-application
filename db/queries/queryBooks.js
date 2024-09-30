@@ -134,7 +134,7 @@ exports.getBooksByGenre = async function (genre) {
 exports.getAllDecades = async function () {
 	const { rows } = await pool.query(`
     SELECT 
-      CONCAT(FLOOR(publication_year / 10) * 10, 's') AS decade,
+      FLOOR(publication_year / 10) * 10 AS decade,
       COUNT(*) AS number_of_books
     FROM fact_books
     GROUP BY decade

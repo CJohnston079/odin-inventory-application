@@ -46,3 +46,20 @@ exports.strToTitleCase = function (str) {
 
 	return titleCaseWords;
 };
+
+exports.groupDecadesByCentury = function (decades) {
+	const groupedDecades = decades.reduce((centuries, decadeEntry) => {
+		const decade = Number(decadeEntry.decade, 10);
+		const century = Math.floor(decade / 100) * 100;
+
+		if (centuries[century]) {
+			centuries[century] = centuries[century].concat([decadeEntry]);
+		} else {
+			centuries[century] = [decadeEntry];
+		}
+
+		return centuries;
+	}, {});
+
+	return groupedDecades;
+};

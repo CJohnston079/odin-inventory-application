@@ -1,19 +1,9 @@
 const db = require("../db/queries/queries");
+const { groupDecadesByCentury } = require("../js/utils");
 
 exports.getAllDecades = async function (req, res) {
-	const data = await db.getAllDecades();
-	const centuries = {};
-
-	data.forEach(entry => {
-		const decade = Number(entry.decade.replace("s", ""), 10);
-		const century = Math.floor(decade / 100) * 100;
-
-		if (!centuries[century]) {
-			centuries[century] = [];
-		}
-
-		centuries[century].push(entry);
-	});
+	const decades = await db.getAllDecades();
+	const centuries = groupDecadesByCentury(decades);
 	res.render("./decades/decades", { title: "Decades", centuries });
 };
 
