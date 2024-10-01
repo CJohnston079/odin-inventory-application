@@ -21,6 +21,24 @@ export const checkAuthor = async function (author) {
 	}
 };
 
+export const checkBookTitle = async function (title, author) {
+	if (!title || !author) {
+		return;
+	}
+
+	try {
+		const url = `check-title?title=${encodeURIComponent(title)}${
+			author ? `&author=${encodeURIComponent(author)}` : ""
+		}`;
+		const response = await fetch(url, { mode: "cors" });
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error checking book ${title} by ${author}:`, err);
+	}
+};
+
 export const validateAuthor = async function (author) {
 	const authorExists = await checkAuthor(author);
 

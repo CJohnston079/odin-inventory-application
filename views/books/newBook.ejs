@@ -69,7 +69,10 @@
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
-		import { checkAuthor, validateAuthor, validateGenres } from "../scripts/validateInputs.js";
+		import { checkAuthor } from "../scripts/validateInputs.js";
+		import { checkBookTitle } from "../scripts/validateInputs.js";
+		import { validateAuthor } from "../scripts/validateInputs.js";
+		import { validateGenres } from "../scripts/validateInputs.js";
 
 		const authors = JSON.parse(document.getElementById("authorsData").textContent);
 		const genres = JSON.parse(document.getElementById("genresData").textContent);
@@ -94,46 +97,27 @@
 		const genresInput = document.querySelector("#genres");
 		const yearInput = document.querySelector("#publication-year");
 
-		const checkBookTitle = async function (title, author) {
-			if (!title || !author) {
-				return;
-			}
-
-			try {
-				const url = `check-title?title=${encodeURIComponent(title)}${
-					author ? `&author=${encodeURIComponent(author)}` : ""
-				}`;
-
-				const response = await fetch(url, { mode: "cors" });
-				const data = await response.json();
-
-				if (data.exists) {
-					return `${data.title} by ${data.author} is already added.`;
-				}
-			} catch (err) {
-				console.error("Error checking title:", err);
-			}
-		};
-
-		const handleBlur = async function () {
+		const handleTitleInput = async function () {
 			const titleMessage = document.querySelector("#title + .field-message");
+			const book = titleInput.value;
+			const author = authorInput.value;
 
 			if (!authorInput.value) {
 				titleMessage.textContent = "";
 				return;
 			}
 
-			const titleError = await checkBookTitle(titleInput.value, authorInput.value);
+			const bookExists = await checkBookTitle(titleInput.value, authorInput.value);
 
-			if (titleError) {
-				titleMessage.textContent = titleError;
+			if (bookExists) {
+				titleMessage.textContent = `${book} by ${author} is already added.`;
 			} else {
 				titleMessage.textContent = "";
 			}
 		};
 
-		document.querySelector("#title").addEventListener("blur", handleBlur);
-		document.querySelector("#author").addEventListener("blur", handleBlur);
+		document.querySelector("#title").addEventListener("blur", handleTitleInput);
+		document.querySelector("#author").addEventListener("blur", handleTitleInput);
 		document.querySelector("#author").addEventListener("blur", async () => {
 			const authorMessage = document.querySelector("#author + .field-message");
 			const author = authorInput.value;
