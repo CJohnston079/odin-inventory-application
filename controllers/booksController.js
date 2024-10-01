@@ -34,6 +34,23 @@ exports.checkBookTitle = async function (req, res) {
 	}
 };
 
+exports.checkAuthor = async function (req, res) {
+	const author = strToTitleCase(req.query.author);
+
+	if (!author) {
+		return;
+	}
+
+	try {
+		const authorID = strToSlug(author);
+		const exists = await db.checkAuthor(authorID);
+		res.json({ exists, author });
+	} catch (err) {
+		console.error(`Error checking author ${author}`);
+		res.status(500).json({ error: "Server error" });
+	}
+};
+
 exports.getAllBooks = async function (req, res) {
 	const books = await db.getAllBooks();
 	res.render("./books/books", { title: "Books", books });

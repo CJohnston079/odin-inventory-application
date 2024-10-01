@@ -18,6 +18,19 @@ exports.insertAuthor = async function (newAuthor) {
 	}
 };
 
+exports.checkAuthor = async function (authorID) {
+	const query = `
+		SELECT 1 FROM dim_authors
+		WHERE author_id = $1
+		LIMIT 1;
+	`;
+
+	const result = await pool.query(query, [authorID]);
+	const authorExists = result.rowCount > 0;
+
+	return authorExists;
+};
+
 exports.getAuthorNames = async function () {
 	const { rows } = await pool.query(`
     SELECT

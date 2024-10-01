@@ -16,6 +16,7 @@ module.exports = {
 	getAllAuthors: authors.getAllAuthors,
 	getAuthorByID: authors.getAuthorByID,
 	insertAuthor: authors.insertAuthor,
+	checkAuthor: authors.checkAuthor,
 
 	getGenreNames: genres.getGenreNames,
 	getAllGenres: genres.getAllGenres,

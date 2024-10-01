@@ -110,6 +110,22 @@
 			}
 		};
 
+		const checkAuthor = async function (author) {
+			if (!author) {
+				return;
+			}
+
+			try {
+				const url = `check-author?author=${encodeURIComponent(author)}`;
+				const response = await fetch(url, { mode: "cors" });
+				const data = await response.json();
+
+				return data.exists;
+			} catch (err) {
+				console.error(`Error checking author ${author}:`, err);
+			}
+		};
+
 		const handleBlur = async function () {
 			const titleInput = document.querySelector("#title");
 			const authorInput = document.querySelector("#author");
@@ -131,6 +147,23 @@
 
 		document.querySelector("#title").addEventListener("blur", handleBlur);
 		document.querySelector("#author").addEventListener("blur", handleBlur);
+		document.querySelector("#author").addEventListener("blur", async () => {
+			const authorInput = document.querySelector("#author");
+			const authorMessage = document.querySelector("#author + .field-message");
+			const author = authorInput.value;
+
+			const authorExists = await checkAuthor(authorInput.value);
+
+			if (!authorExists) {
+				const newAuthorAnchor = document.createElement("a");
+				authorMessage.textContent = `Author ${author} not found.`;
+				newAuthorAnchor.href = "../authors/new";
+				newAuthorAnchor.textContent = `Add author +`;
+				authorMessage.appendChild(newAuthorAnchor);
+			} else {
+				authorMessage.textContent = "";
+			}
+		});
 
 		document.querySelector("#new-book").addEventListener("submit", e => {
 			const authorInput = document.querySelector("#author");
@@ -149,13 +182,6 @@
 
 			if (authorError) {
 				e.preventDefault();
-				const authorsMessage = document.querySelector("#author + .field-message");
-				authorsMessage.textContent = authorError;
-
-				const newAuthorAnchor = document.createElement("a");
-				newAuthorAnchor.href = "../authors/new";
-				newAuthorAnchor.textContent = `Add author +`;
-				authorsMessage.appendChild(newAuthorAnchor);
 			}
 
 			if (genresError) {
