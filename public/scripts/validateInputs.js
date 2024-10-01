@@ -5,12 +5,26 @@ const checkInputInArray = function (input, arr) {
 	return isInArray;
 };
 
-export const validateAuthor = function (author, authors) {
-	const isInDatabase = checkInputInArray(author, authors);
-
-	if (!isInDatabase) {
-		return `Author ${author} not found.`;
+export const checkAuthor = async function (author) {
+	if (!author || author === "") {
+		return;
 	}
+
+	try {
+		const url = `check-author?author=${encodeURIComponent(author)}`;
+		const response = await fetch(url, { mode: "cors" });
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error checking author ${author}:`, err);
+	}
+};
+
+export const validateAuthor = async function (author) {
+	const authorExists = await checkAuthor(author);
+
+	return !authorExists;
 };
 
 export const validateGenres = function (genresInput, genres) {

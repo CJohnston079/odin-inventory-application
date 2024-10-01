@@ -69,7 +69,7 @@
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
-		import { validateAuthor, validateGenres } from "../scripts/validateInputs.js";
+		import { checkAuthor, validateAuthor, validateGenres } from "../scripts/validateInputs.js";
 
 		const authors = JSON.parse(document.getElementById("authorsData").textContent);
 		const genres = JSON.parse(document.getElementById("genresData").textContent);
@@ -88,6 +88,11 @@
 			fieldName: "genre_name",
 			addNewRoute: "genres",
 		});
+
+		const titleInput = document.querySelector("#title");
+		const authorInput = document.querySelector("#author");
+		const genresInput = document.querySelector("#genres");
+		const yearInput = document.querySelector("#publication-year");
 
 		const checkBookTitle = async function (title, author) {
 			if (!title || !author) {
@@ -110,25 +115,7 @@
 			}
 		};
 
-		const checkAuthor = async function (author) {
-			if (!author) {
-				return;
-			}
-
-			try {
-				const url = `check-author?author=${encodeURIComponent(author)}`;
-				const response = await fetch(url, { mode: "cors" });
-				const data = await response.json();
-
-				return data.exists;
-			} catch (err) {
-				console.error(`Error checking author ${author}:`, err);
-			}
-		};
-
 		const handleBlur = async function () {
-			const titleInput = document.querySelector("#title");
-			const authorInput = document.querySelector("#author");
 			const titleMessage = document.querySelector("#title + .field-message");
 
 			if (!authorInput.value) {
@@ -148,9 +135,12 @@
 		document.querySelector("#title").addEventListener("blur", handleBlur);
 		document.querySelector("#author").addEventListener("blur", handleBlur);
 		document.querySelector("#author").addEventListener("blur", async () => {
-			const authorInput = document.querySelector("#author");
 			const authorMessage = document.querySelector("#author + .field-message");
 			const author = authorInput.value;
+
+			if (!author) {
+				return;
+			}
 
 			const authorExists = await checkAuthor(authorInput.value);
 
@@ -165,24 +155,15 @@
 			}
 		});
 
-		document.querySelector("#new-book").addEventListener("submit", e => {
-			const authorInput = document.querySelector("#author");
-			const genresInput = document.querySelector("#genres");
-			const yearInput = document.querySelector("#publication-year");
+		document.querySelector("#new-book").addEventListener("submit", async e => {
+			e.preventDefault();
 
-			const authorError = validateAuthor(
-				authorInput.value,
-				authors.map(author => author.name)
-			);
+			const authorError = await validateAuthor(authorInput.value);
 
 			const genresError = validateGenres(
 				genresInput.value,
 				genres.map(genre => genre.genre_name)
 			);
-
-			if (authorError) {
-				e.preventDefault();
-			}
 
 			if (genresError) {
 				e.preventDefault();
@@ -193,6 +174,10 @@
 				newGenreAnchor.href = "../genres/new";
 				newGenreAnchor.textContent = `Add genre +`;
 				genresMessage.appendChild(newGenreAnchor);
+			}
+
+			if (!authorError && !genresError) {
+				e.target.submit();
 			}
 		});
 	</script>
