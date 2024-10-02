@@ -69,8 +69,8 @@
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
-		import { checkAuthor } from "../scripts/validateInputs.js";
-		import { checkBookTitle } from "../scripts/validateInputs.js";
+		import { doesAuthorExist } from "../scripts/validateInputs.js";
+		import { doesBookExistByAuthor } from "../scripts/validateInputs.js";
 		import { validateAuthor } from "../scripts/validateInputs.js";
 		import { validateGenres } from "../scripts/validateInputs.js";
 
@@ -107,7 +107,7 @@
 				return;
 			}
 
-			const bookExists = await checkBookTitle(titleInput.value, authorInput.value);
+			const bookExists = await doesBookExistByAuthor(titleInput.value, authorInput.value);
 
 			if (bookExists) {
 				titleMessage.textContent = `${book} by ${author} is already added.`;
@@ -126,7 +126,9 @@
 				return;
 			}
 
-			const authorExists = await checkAuthor(authorInput.value);
+			const authorExists = await doesAuthorExist(authorInput.value);
+
+			console.log("authorExists: ", authorExists);
 
 			if (!authorExists) {
 				const newAuthorAnchor = document.createElement("a");

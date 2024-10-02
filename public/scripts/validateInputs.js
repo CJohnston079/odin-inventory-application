@@ -1,46 +1,43 @@
 import { sanitiseStr } from "./utils.js";
 
-const checkInputInArray = function (input, arr) {
-	const isInArray = arr.map(sanitiseStr).includes(sanitiseStr(input));
-	return isInArray;
-};
+const isInArray = (input, arr) => arr.map(sanitiseStr).includes(sanitiseStr(input));
 
-export const checkAuthor = async function (author) {
+export const doesAuthorExist = async function (author) {
 	if (!author || author === "") {
-		return;
+		return false;
 	}
 
 	try {
-		const url = `check-author?author=${encodeURIComponent(author)}`;
-		const response = await fetch(url, { mode: "cors" });
+		const response = await fetch(`check-author?author=${encodeURIComponent(author)}`);
 		const data = await response.json();
 
 		return data.exists;
 	} catch (err) {
 		console.error(`Error checking author ${author}:`, err);
+		return false;
 	}
 };
 
-export const checkBookTitle = async function (title, author) {
+export const doesBookExistByAuthor = async function (title, author) {
 	if (!title || !author) {
-		return;
+		return false;
 	}
 
 	try {
-		const url = `check-title?title=${encodeURIComponent(title)}${
-			author ? `&author=${encodeURIComponent(author)}` : ""
-		}`;
-		const response = await fetch(url, { mode: "cors" });
+		const base = "check-title";
+		const query = `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
+		const response = await fetch(`${base}?${query}`);
 		const data = await response.json();
 
 		return data.exists;
 	} catch (err) {
 		console.error(`Error checking book ${title} by ${author}:`, err);
+		return false;
 	}
 };
 
 export const validateAuthor = async function (author) {
-	const authorExists = await checkAuthor(author);
+	const authorExists = await doesAuthorExist(author);
 
 	return !authorExists;
 };
@@ -51,7 +48,7 @@ export const validateGenres = function (genresInput, genres) {
 		.split(",")
 		.map(genre => genre.trim());
 
-	const notFoundGenres = genresArr.filter(input => !checkInputInArray(input, genres));
+	const notFoundGenres = genresArr.filter(input => !isInArray(input, genres));
 
 	if (notFoundGenres.length > 0) {
 		let formattedGenres = "";
