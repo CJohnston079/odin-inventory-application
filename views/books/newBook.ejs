@@ -102,12 +102,12 @@
 			const book = titleInput.value;
 			const author = authorInput.value;
 
-			if (!authorInput.value) {
+			if (!author) {
 				titleMessage.textContent = "";
 				return;
 			}
 
-			const bookExists = await doesBookExistByAuthor(titleInput.value, authorInput.value);
+			const bookExists = await doesBookExistByAuthor(titleInput.value, author);
 
 			if (bookExists) {
 				titleMessage.textContent = `${book} by ${author} is already added.`;
@@ -116,32 +116,31 @@
 			}
 		};
 
-		document.querySelector("#title").addEventListener("blur", handleTitleInput);
-		document.querySelector("#author").addEventListener("blur", handleTitleInput);
-		document.querySelector("#author").addEventListener("blur", async () => {
+		const handleAuthorInput = async function () {
 			const authorMessage = document.querySelector("#author + .field-message");
 			const author = authorInput.value;
 
 			if (!author) {
+				authorMessage.textContent = "";
 				return;
 			}
 
-			const authorExists = await doesAuthorExist(authorInput.value);
+			const authorExists = await doesAuthorExist(author);
 
-			console.log("authorExists: ", authorExists);
-
-			if (!authorExists) {
-				const newAuthorAnchor = document.createElement("a");
+			if (authorExists) {
+				authorMessage.textContent = "";
+			} else {
 				authorMessage.textContent = `Author ${author} not found.`;
+
+				const newAuthorAnchor = document.createElement("a");
+
 				newAuthorAnchor.href = "../authors/new";
 				newAuthorAnchor.textContent = `Add author +`;
 				authorMessage.appendChild(newAuthorAnchor);
-			} else {
-				authorMessage.textContent = "";
 			}
-		});
+		};
 
-		document.querySelector("#new-book").addEventListener("submit", async e => {
+		const handleSubmit = async function (e) {
 			e.preventDefault();
 
 			const authorError = await validateAuthor(authorInput.value);
@@ -165,6 +164,13 @@
 			if (!authorError && !genresError) {
 				e.target.submit();
 			}
+		};
+
+		document.querySelector("#title").addEventListener("blur", handleTitleInput);
+		document.querySelector("#author").addEventListener("blur", handleTitleInput);
+		document.querySelector("#author").addEventListener("blur", handleAuthorInput);
+		document.querySelector("#new-book").addEventListener("submit", async e => {
+			handleSubmit(e);
 		});
 	</script>
 </html>
