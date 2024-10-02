@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const path = require("path");
 
 async function insertBookGenres(client) {
-	const filePath = path.join(__dirname, "../data", "books.json");
+	const filePath = path.join(__dirname, "../../data", "books.json");
 	const data = await fs.readFile(filePath, "utf8");
 	const books = JSON.parse(data);
 

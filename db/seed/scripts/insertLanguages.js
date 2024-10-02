@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const path = require("path");
 
 async function insertLanguages(client) {
-	const filePath = path.join(__dirname, "../data", "languages.json");
+	const filePath = path.join(__dirname, "../../data", "languages.json");
 	const data = await fs.readFile(filePath, "utf8");
 	const languages = JSON.parse(data);
 

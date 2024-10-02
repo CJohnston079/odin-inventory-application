@@ -6,12 +6,12 @@ const path = require("path");
 
 require("dotenv").config();
 
-const insertAuthors = require("./insertAuthors");
-const insertGenres = require("./insertGenres");
-const insertLanguages = require("./insertLanguages");
-const insertBooks = require("./insertBooks");
-const insertBookGenres = require("./insertBookGenres");
-const insertBookLanguages = require("./insertBookLanguages");
+const insertAuthors = require("./scripts/insertAuthors");
+const insertGenres = require("./scripts/insertGenres");
+const insertLanguages = require("./scripts/insertLanguages");
+const insertBooks = require("./scripts/insertBooks");
+const insertBookGenres = require("./scripts/insertBookGenres");
+const insertBookLanguages = require("./scripts/insertBookLanguages");
 
 const isProduction = process.env.NODE_ENV === "production";
 const sslConfig = isProduction ? "?sslmode=require" : "";
