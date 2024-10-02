@@ -21,3 +21,8 @@ exports.getBooksByAuthor = async function (req, res) {
 	const books = await db.books.getBooksByAuthor(author);
 	res.render("./authors/author", { title: "Authors", author, books });
 };
+
+exports.getAuthorNames = async function (req, res) {
+	const authors = await db.authors.getAuthorNames();
+	res.json({ authors });
+};

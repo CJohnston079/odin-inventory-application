@@ -23,3 +23,8 @@ exports.getBooksByGenre = async function (req, res) {
 	const books = await db.books.getBooksByGenre(genre);
 	res.render("./genres/genre", { title: "Genres", genre, books });
 };
+
+exports.getGenreNames = async function (req, res) {
+	const genres = await db.genres.getGenreNames();
+	res.json({ genres });
+};

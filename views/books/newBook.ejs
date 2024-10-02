@@ -60,12 +60,6 @@
 			<button type="submit">Add book</button>
 		</form>
 	</body>
-	<script type="application/json" id="authorsData">
-		<%- JSON.stringify(authors) %>
-	</script>
-	<script type="application/json" id="genresData">
-		<%- JSON.stringify(genres) %>
-	</script>
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
@@ -74,8 +68,12 @@
 		import { validateAuthor } from "../scripts/validateInputs.js";
 		import { validateGenres } from "../scripts/validateInputs.js";
 
-		const authors = JSON.parse(document.getElementById("authorsData").textContent);
-		const genres = JSON.parse(document.getElementById("genresData").textContent);
+		const authors = await fetch("../authors/author-names")
+			.then(response => response.json())
+			.then(data => data.authors);
+		const genres = await fetch("../genres/genre-names")
+			.then(response => response.json())
+			.then(data => data.genres);
 
 		enableAutoComplete({
 			inputElementID: "author",
