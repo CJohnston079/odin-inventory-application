@@ -13,6 +13,19 @@ exports.insertGenre = async function (newGenre) {
 	}
 };
 
+exports.checkGenre = async function (genreName) {
+	const query = `
+		SELECT 1 FROM dim_genres
+		WHERE genre_name = $1
+		LIMIT 1;
+	`;
+
+	const result = await pool.query(query, [genreName]);
+	const genreExists = result.rowCount > 0;
+
+	return genreExists;
+};
+
 exports.getGenreNames = async function () {
 	const { rows } = await pool.query(`
     SELECT

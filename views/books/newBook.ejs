@@ -63,8 +63,9 @@
 	<script type="module">
 		import enableAutoComplete from "../scripts/enableAutoComplete.js";
 		import enableAutoCompleteMulti from "../scripts/enableAutoCompleteMulti.js";
-		import { doesAuthorExist } from "../scripts/validateInputs.js";
 		import { doesBookExistByAuthor } from "../scripts/validateInputs.js";
+		import { doesAuthorExist } from "../scripts/validateInputs.js";
+		import { doesGenreExist } from "../scripts/validateInputs.js";
 		import { validateAuthor } from "../scripts/validateInputs.js";
 		import { validateGenres } from "../scripts/validateInputs.js";
 
@@ -138,26 +139,58 @@
 			}
 		};
 
-		const handleSubmit = async function (e) {
-			e.preventDefault();
+		const handleGenresInput = async function () {
+			const genresMessage = document.querySelector("#genres + .field-message");
+			const genresInputVal = genresInput.value;
 
-			const authorError = await validateAuthor(authorInput.value);
+			if (!genresInputVal) {
+				genresMessage.textContent = "";
+				return;
+			}
 
-			const genresError = validateGenres(
-				genresInput.value,
-				genres.map(genre => genre.genre_name)
+			const genresArr = genresInputVal
+				.replace(/,\s*$/, "")
+				.split(",")
+				.map(genre => genre.trim());
+
+			const checkedGenres = await Promise.all(
+				genresArr.map(async genre => {
+					const exists = await doesGenreExist(genre);
+					return !exists ? genre : null;
+				})
 			);
+			const notFoundGenres = checkedGenres.filter(genre => genre !== null);
 
-			if (genresError) {
-				e.preventDefault();
-				const genresMessage = document.querySelector("#genres + .field-message");
-				genresMessage.textContent = genresError;
+			if (notFoundGenres.length === 0) {
+				genresMessage.textContent = "";
+			} else {
+				let genreMessageStr = "";
+
+				if (notFoundGenres.length === 2) {
+					genreMessageStr += notFoundGenres.join(" and ");
+				} else if (notFoundGenres.length > 2) {
+					const lastGenre = notFoundGenres.pop();
+					genreMessageStr += `${notFoundGenres.join(", ")}, and ${lastGenre}`;
+				} else {
+					genreMessageStr += notFoundGenres[0];
+				}
+
+				genresMessage.textContent = `Genre${
+					notFoundGenres.length > 1 ? "s" : ""
+				} ${genreMessageStr} not found.`;
 
 				const newGenreAnchor = document.createElement("a");
 				newGenreAnchor.href = "../genres/new";
 				newGenreAnchor.textContent = `Add genre +`;
 				genresMessage.appendChild(newGenreAnchor);
 			}
+		};
+
+		const handleSubmit = async function (e) {
+			e.preventDefault();
+
+			const authorError = await validateAuthor(authorInput.value);
+			const genresError = await validateGenres(genresInput.value);
 
 			if (!authorError && !genresError) {
 				e.target.submit();
@@ -167,6 +200,7 @@
 		document.querySelector("#title").addEventListener("blur", handleTitleInput);
 		document.querySelector("#author").addEventListener("blur", handleTitleInput);
 		document.querySelector("#author").addEventListener("blur", handleAuthorInput);
+		document.querySelector("#genres").addEventListener("blur", handleGenresInput);
 		document.querySelector("#new-book").addEventListener("submit", async e => {
 			handleSubmit(e);
 		});

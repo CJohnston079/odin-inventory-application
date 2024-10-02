@@ -51,6 +51,22 @@ exports.checkAuthor = async function (req, res) {
 	}
 };
 
+exports.checkGenre = async function (req, res) {
+	const genre = strToTitleCase(req.query.genre);
+
+	if (!genre) {
+		return;
+	}
+
+	try {
+		const exists = await db.genres.checkGenre(genre);
+		res.json({ exists, genre });
+	} catch (err) {
+		console.error(`Error checking genre ${genre}`, err);
+		res.status(500).json({ error: "Server error" });
+	}
+};
+
 exports.getAllBooks = async function (req, res) {
 	const books = await db.books.getAllBooks();
 	res.render("./books/books", { title: "Books", books });
