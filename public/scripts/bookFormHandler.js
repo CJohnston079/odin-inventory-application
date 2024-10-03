@@ -5,6 +5,7 @@ import { joinArrWithConjunctions } from "./utils.js";
 import { validateTitle } from "./validateInputs.js";
 import { validateAuthor } from "./validateInputs.js";
 import { validateGenres } from "./validateInputs.js";
+import { validateYear } from "./validateInputs.js";
 
 const form = document.querySelector("#new-book");
 const titleInput = document.querySelector("#title");
@@ -101,14 +102,32 @@ const handleGenresInput = async function () {
 	}
 };
 
+const handleYearInput = function () {
+	const yearMessage = document.querySelector("#publication-year + .field-message");
+	const year = yearInput.value;
+
+	const isYearValid = validateYear(Number(year));
+
+	if (isYearValid) {
+		yearMessage.textContent = "";
+	} else {
+		yearMessage.textContent = "Publication year cannot be in the future.";
+	}
+};
+
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
-	const isTitleValid = await validateTitle(titleInput.value, authorInput.value);
-	const isAuthorValid = await validateAuthor(authorInput.value);
-	const { areGenresValid } = await validateGenres(genresInput.value);
+	const validations = await Promise.all([
+		validateTitle(titleInput.value, authorInput.value),
+		validateAuthor(authorInput.value),
+		validateGenres(genresInput.value).then(result => result.areGenresValid),
+		validateYear(Number(yearInput.value)),
+	]);
 
-	if (isTitleValid && isAuthorValid && areGenresValid) {
+	const isFormValid = validations.every(Boolean);
+
+	if (isFormValid) {
 		e.target.submit();
 	}
 };
@@ -117,6 +136,7 @@ titleInput.addEventListener("blur", handleTitleInput);
 authorInput.addEventListener("blur", handleTitleInput);
 authorInput.addEventListener("blur", handleAuthorInput);
 genresInput.addEventListener("blur", handleGenresInput);
+yearInput.addEventListener("blur", handleYearInput);
 
 form.addEventListener("submit", async e => {
 	handleSubmit(e);

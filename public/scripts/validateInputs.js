@@ -28,5 +28,11 @@ export const validateGenres = async function (genresInput) {
 	);
 	const notFoundGenres = checkedGenres.filter(genre => genre !== null);
 
-	return { areGenresValid: notFoundGenres.length === 0, invalidGenres: notFoundGenres };
+	return { areGenresValid: notFoundGenres.length === 0, notFoundGenres };
+};
+
+export const validateYear = function (year) {
+	const currentYear = new Date().getFullYear();
+
+	return year <= currentYear;
 };
