@@ -13,12 +13,12 @@
 		<form action="/books" method="post" id="new-book">
 			<ul>
 				<li>
-					<label for="title">Book title:</label>
+					<label for="title">Book title*</label>
 					<input type="text" name="title" id="title" required />
 					<span class="field-message"></span>
 				</li>
 				<li>
-					<label for="author">Author:</label>
+					<label for="author">Author*</label>
 					<input
 						type="text"
 						name="author"
@@ -30,7 +30,7 @@
 					<ul id="author-suggestions"></ul>
 				</li>
 				<li>
-					<label for="genres">Genre(s):</label>
+					<label for="genres">Genre(s)*</label>
 					<input
 						type="text"
 						name="genres"
@@ -42,7 +42,7 @@
 					<ul id="genre-suggestions"></ul>
 				</li>
 				<li>
-					<label for="publication-year">Publication year:</label>
+					<label for="publication-year">Publication year</label>
 					<input
 						type="number"
 						name="publicationYear"

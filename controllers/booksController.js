@@ -4,11 +4,12 @@ const { strToTitleCase } = require("../js/utils");
 const { capitaliseArray } = require("../js/utils");
 
 exports.postNewBook = async function (req, res) {
-	const newBook = req.body;
-
-	newBook["title"] = strToTitleCase(newBook["title"]);
-	newBook["authorID"] = strToSlug(newBook.author);
-	newBook["genres"] = capitaliseArray(newBook["genres"].replace(/,\s*$/, "").split(","));
+	const newBook = {
+		title: strToTitleCase(req.body.title),
+		authorID: strToSlug(req.body.author),
+		genres: capitaliseArray(req.body.genres.replace(/,\s*$/, "").split(",")),
+		publicationYear: req.body.publicationYear || null,
+	};
 
 	console.log("Posting new book:\n", newBook);
 
