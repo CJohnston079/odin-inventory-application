@@ -1,61 +1,17 @@
-import { sanitiseStr } from "./utils.js";
+import { doesBookExistByAuthor } from "./checkDatabase.js";
+import { doesAuthorExist } from "./checkDatabase.js";
+import { doesGenreExist } from "./checkDatabase.js";
 
-const isInArray = (input, arr) => arr.map(sanitiseStr).includes(sanitiseStr(input));
+export const validateTitle = async function (book, author) {
+	const titleAvailable = await doesBookExistByAuthor(book, author);
 
-export const doesBookExistByAuthor = async function (title, author) {
-	if (!title || !author) {
-		return false;
-	}
-
-	try {
-		const base = "check-title";
-		const query = `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
-		const response = await fetch(`${base}?${query}`);
-		const data = await response.json();
-
-		return data.exists;
-	} catch (err) {
-		console.error(`Error checking book ${title} by ${author}:`, err);
-		return false;
-	}
-};
-
-export const doesAuthorExist = async function (author) {
-	if (!author || author === "") {
-		return false;
-	}
-
-	try {
-		const response = await fetch(`check-author?author=${encodeURIComponent(author)}`);
-		const data = await response.json();
-
-		return data.exists;
-	} catch (err) {
-		console.error(`Error checking author ${author}:`, err);
-		return false;
-	}
-};
-
-export const doesGenreExist = async function (genre) {
-	if (!genre) {
-		return false;
-	}
-
-	try {
-		const response = await fetch(`check-genre?genre=${encodeURIComponent(genre)}`);
-		const data = await response.json();
-
-		return data.exists;
-	} catch (err) {
-		console.error(`Error checking genre ${genre}:`, err);
-		return false;
-	}
+	return titleAvailable;
 };
 
 export const validateAuthor = async function (author) {
 	const authorExists = await doesAuthorExist(author);
 
-	return !authorExists;
+	return authorExists;
 };
 
 export const validateGenres = async function (genresInput) {
@@ -72,5 +28,5 @@ export const validateGenres = async function (genresInput) {
 	);
 	const notFoundGenres = checkedGenres.filter(genre => genre !== null);
 
-	return notFoundGenres.length > 0;
+	return { areGenresValid: notFoundGenres.length === 0, invalidGenres: notFoundGenres };
 };

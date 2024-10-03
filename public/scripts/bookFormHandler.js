@@ -1,12 +1,10 @@
 import enableAutoComplete from "./enableAutoComplete.js";
 import enableAutoCompleteMulti from "./enableAutoCompleteMulti.js";
-import { doesBookExistByAuthor } from "./validateInputs.js";
-import { doesAuthorExist } from "./validateInputs.js";
-import { doesGenreExist } from "./validateInputs.js";
+import { formatGenreStr } from "./utils.js";
+import { joinArrWithConjunctions } from "./utils.js";
+import { validateTitle } from "./validateInputs.js";
 import { validateAuthor } from "./validateInputs.js";
 import { validateGenres } from "./validateInputs.js";
-import { joinArrWithConjunctions } from "./utils.js";
-import { formatGenreStr } from "./utils.js";
 
 const form = document.querySelector("#new-book");
 const titleInput = document.querySelector("#title");
@@ -46,7 +44,7 @@ const handleTitleInput = async function () {
 		return;
 	}
 
-	const bookExists = await doesBookExistByAuthor(titleInput.value, author);
+	const bookExists = await validateTitle(titleInput.value, author);
 
 	if (bookExists) {
 		titleMessage.textContent = `${book} by ${author} is already added.`;
@@ -64,7 +62,7 @@ const handleAuthorInput = async function () {
 		return;
 	}
 
-	const authorExists = await doesAuthorExist(author);
+	const authorExists = await validateAuthor(author);
 
 	if (authorExists) {
 		authorMessage.textContent = "";
@@ -88,20 +86,9 @@ const handleGenresInput = async function () {
 		return;
 	}
 
-	const genresArr = genresInputVal
-		.replace(/,\s*$/, "")
-		.split(",")
-		.map(genre => genre.trim());
+	const { areGenresValid, notFoundGenres } = await validateGenres(genresInput.value);
 
-	const checkedGenres = await Promise.all(
-		genresArr.map(async genre => {
-			const exists = await doesGenreExist(genre);
-			return !exists ? genre : null;
-		})
-	);
-	const notFoundGenres = checkedGenres.filter(genre => genre !== null);
-
-	if (notFoundGenres.length === 0) {
+	if (areGenresValid) {
 		genresMessage.textContent = "";
 	} else {
 		const genreMessageStr = joinArrWithConjunctions(notFoundGenres);
@@ -117,12 +104,10 @@ const handleGenresInput = async function () {
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
-	const [authorError, genresError] = await Promise.all([
-		validateAuthor(authorInput.value),
-		validateGenres(genresInput.value),
-	]);
+	const isAuthorValid = await validateAuthor(authorInput.value);
+	const { areGenresValid } = await validateGenres(genresInput.value);
 
-	if (!authorError && !genresError) {
+	if (isAuthorValid && areGenresValid) {
 		e.target.submit();
 	}
 };
@@ -131,6 +116,7 @@ titleInput.addEventListener("blur", handleTitleInput);
 authorInput.addEventListener("blur", handleTitleInput);
 authorInput.addEventListener("blur", handleAuthorInput);
 genresInput.addEventListener("blur", handleGenresInput);
+
 form.addEventListener("submit", async e => {
 	handleSubmit(e);
 });
