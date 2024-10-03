@@ -1,15 +1,11 @@
 const db = require("../db/queries/index");
+const Book = require("../models/Book");
 const { strToSlug } = require("../js/utils");
 const { strToTitleCase } = require("../js/utils");
-const { capitaliseArray } = require("../js/utils");
 
 exports.postNewBook = async function (req, res) {
-	const newBook = {
-		title: strToTitleCase(req.body.title),
-		authorID: strToSlug(req.body.author),
-		genres: capitaliseArray(req.body.genres.replace(/,\s*$/, "").split(",")),
-		publicationYear: req.body.publicationYear || null,
-	};
+	const { title, author, genres, publicationYear } = req.body;
+	const newBook = new Book(title, author, genres, publicationYear);
 
 	console.log("Posting new book:\n", newBook);
 
