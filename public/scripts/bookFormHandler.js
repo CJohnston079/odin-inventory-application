@@ -5,7 +5,10 @@ import { doesAuthorExist } from "./validateInputs.js";
 import { doesGenreExist } from "./validateInputs.js";
 import { validateAuthor } from "./validateInputs.js";
 import { validateGenres } from "./validateInputs.js";
+import { joinArrWithConjunctions } from "./utils.js";
+import { formatGenreStr } from "./utils.js";
 
+const form = document.querySelector("#new-book");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
@@ -101,20 +104,8 @@ const handleGenresInput = async function () {
 	if (notFoundGenres.length === 0) {
 		genresMessage.textContent = "";
 	} else {
-		let genreMessageStr = "";
-
-		if (notFoundGenres.length === 2) {
-			genreMessageStr += notFoundGenres.join(" and ");
-		} else if (notFoundGenres.length > 2) {
-			const lastGenre = notFoundGenres.pop();
-			genreMessageStr += `${notFoundGenres.join(", ")}, and ${lastGenre}`;
-		} else {
-			genreMessageStr += notFoundGenres[0];
-		}
-
-		genresMessage.textContent = `Genre${
-			notFoundGenres.length > 1 ? "s" : ""
-		} ${genreMessageStr} not found.`;
+		const genreMessageStr = joinArrWithConjunctions(notFoundGenres);
+		genresMessage.textContent = formatGenreStr(genreMessageStr);
 
 		const newGenreAnchor = document.createElement("a");
 		newGenreAnchor.href = "../genres/new";
@@ -136,10 +127,10 @@ const handleSubmit = async function (e) {
 	}
 };
 
-document.querySelector("#title").addEventListener("blur", handleTitleInput);
-document.querySelector("#author").addEventListener("blur", handleTitleInput);
-document.querySelector("#author").addEventListener("blur", handleAuthorInput);
-document.querySelector("#genres").addEventListener("blur", handleGenresInput);
-document.querySelector("#new-book").addEventListener("submit", async e => {
+titleInput.addEventListener("blur", handleTitleInput);
+authorInput.addEventListener("blur", handleTitleInput);
+authorInput.addEventListener("blur", handleAuthorInput);
+genresInput.addEventListener("blur", handleGenresInput);
+form.addEventListener("submit", async e => {
 	handleSubmit(e);
 });
