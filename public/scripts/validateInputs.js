@@ -3,9 +3,9 @@ import { doesAuthorExist } from "./checkDatabase.js";
 import { doesGenreExist } from "./checkDatabase.js";
 
 export const validateTitle = async function (book, author) {
-	const titleAvailable = await doesBookExistByAuthor(book, author);
+	const titleUnavailable = await doesBookExistByAuthor(book, author);
 
-	return titleAvailable;
+	return !titleUnavailable;
 };
 
 export const validateAuthor = async function (author) {

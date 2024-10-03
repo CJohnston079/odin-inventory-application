@@ -44,9 +44,9 @@ const handleTitleInput = async function () {
 		return;
 	}
 
-	const bookExists = await validateTitle(titleInput.value, author);
+	const bookAvailable = await validateTitle(titleInput.value, author);
 
-	if (bookExists) {
+	if (!bookAvailable) {
 		titleMessage.textContent = `${book} by ${author} is already added.`;
 	} else {
 		titleMessage.textContent = "";
@@ -104,10 +104,11 @@ const handleGenresInput = async function () {
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
+	const isTitleValid = await validateTitle(titleInput.value, authorInput.value);
 	const isAuthorValid = await validateAuthor(authorInput.value);
 	const { areGenresValid } = await validateGenres(genresInput.value);
 
-	if (isAuthorValid && areGenresValid) {
+	if (isTitleValid && isAuthorValid && areGenresValid) {
 		e.target.submit();
 	}
 };
