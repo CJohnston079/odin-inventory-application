@@ -8,10 +8,13 @@ import { validateGenres } from "./validateInputs.js";
 import { validateYear } from "./validateInputs.js";
 
 const form = document.querySelector("#new-book");
+
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
+
+const validationState = { title: null, author: null, genres: null, year: null };
 
 const authors = await fetch("../authors/author-names")
 	.then(response => response.json())
@@ -47,11 +50,16 @@ const handleTitleInput = async function () {
 
 	const bookAvailable = await validateTitle(titleInput.value, author);
 
+	validationState.title = bookAvailable;
+
 	if (!bookAvailable) {
 		titleMessage.textContent = `${book} by ${author} is already added.`;
 	} else {
 		titleMessage.textContent = "";
+		validationState.title = true;
 	}
+
+	return bookAvailable;
 };
 
 const handleAuthorInput = async function () {
@@ -65,6 +73,8 @@ const handleAuthorInput = async function () {
 
 	const authorExists = await validateAuthor(author);
 
+	validationState.author = authorExists;
+
 	if (authorExists) {
 		authorMessage.textContent = "";
 	} else {
@@ -76,6 +86,8 @@ const handleAuthorInput = async function () {
 		newAuthorAnchor.textContent = `Add author +`;
 		authorMessage.appendChild(newAuthorAnchor);
 	}
+
+	return authorExists;
 };
 
 const handleGenresInput = async function () {
@@ -89,6 +101,8 @@ const handleGenresInput = async function () {
 
 	const { areGenresValid, notFoundGenres } = await validateGenres(genresInput.value);
 
+	validationState.genres = areGenresValid;
+
 	if (areGenresValid) {
 		genresMessage.textContent = "";
 	} else {
@@ -100,32 +114,51 @@ const handleGenresInput = async function () {
 		newGenreAnchor.textContent = `Add genre +`;
 		genresMessage.appendChild(newGenreAnchor);
 	}
+
+	return areGenresValid;
 };
 
 const handleYearInput = function () {
 	const yearMessage = document.querySelector("#publication-year + .field-message");
 	const year = yearInput.value;
+	console.log(`Validating year ${year}`);
 
 	const isYearValid = validateYear(Number(year));
+
+	validationState.year = isYearValid;
 
 	if (isYearValid) {
 		yearMessage.textContent = "";
 	} else {
 		yearMessage.textContent = "Publication year cannot be in the future.";
 	}
+
+	return isYearValid;
 };
 
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
-	const validations = await Promise.all([
-		validateTitle(titleInput.value, authorInput.value),
-		validateAuthor(authorInput.value),
-		validateGenres(genresInput.value).then(result => result.areGenresValid),
-		validateYear(Number(yearInput.value)),
-	]);
+	const validators = {
+		year: handleYearInput,
+		author: handleAuthorInput,
+		title: handleTitleInput,
+		genres: handleGenresInput,
+	};
 
-	const isFormValid = validations.every(Boolean);
+	for (const [field, validator] of Object.entries(validators)) {
+		if (validationState[field]) {
+			continue;
+		}
+
+		const isValid = await validator();
+
+		if (!isValid) {
+			return;
+		}
+	}
+
+	const isFormValid = Object.values(validationState).every(Boolean);
 
 	if (isFormValid) {
 		e.target.submit();
