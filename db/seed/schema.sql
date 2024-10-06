@@ -19,8 +19,10 @@ CREATE TABLE IF NOT EXISTS dim_genres (
   description TEXT
 );
 
-CREATE TABLE IF NOT EXISTS dim_languages (
-  language_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE IF NOT EXISTS dim_countries (
+  country_id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  country_name VARCHAR(32),
+  nationality VARCHAR(32),
   language_name VARCHAR(32)
 );
 
@@ -40,6 +42,6 @@ CREATE TABLE IF NOT EXISTS book_genres (
 
 CREATE TABLE IF NOT EXISTS book_languages (
   book_id INT REFERENCES fact_books(book_id),
-  language_id INT REFERENCES dim_languages(language_id),
-  PRIMARY KEY (book_id, language_id)
+  country_id INT REFERENCES dim_countries(country_id),
+  PRIMARY KEY (book_id, country_id)
 );

@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const insertAuthors = require("./scripts/insertAuthors");
 const insertGenres = require("./scripts/insertGenres");
-const insertLanguages = require("./scripts/insertLanguages");
+const insertCountries = require("./scripts/insertCountries");
 const insertBooks = require("./scripts/insertBooks");
 const insertBookGenres = require("./scripts/insertBookGenres");
 const insertBookLanguages = require("./scripts/insertBookLanguages");
@@ -43,7 +43,7 @@ async function main() {
 
 		await insertAuthors(client);
 		await insertGenres(client);
-		await insertLanguages(client);
+		await insertCountries(client);
 		await insertBooks(client);
 		await insertBookGenres(client);
 		await insertBookLanguages(client);

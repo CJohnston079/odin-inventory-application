@@ -1,5 +1,5 @@
 const db = require("../db/queries/index");
-const nationalities = require("../db/data/nationalities");
+const nationalities = require("../db/data/countries");
 
 exports.postNewAuthor = async function (req, res) {
 	await db.authors.insertAuthor(req.body);
