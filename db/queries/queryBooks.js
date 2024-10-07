@@ -91,8 +91,8 @@ exports.getBooksByAuthor = async function (author) {
       STRING_AGG(dg.genre_name, ', ') AS genres
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
-    JOIN book_genres bg ON fb.book_id = bg.book_id
-    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    LEFT JOIN book_genres bg ON fb.book_id = bg.book_id
+    LEFT JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
     WHERE da.first_name || ' ' || da.last_name = $1
     GROUP BY fb.book_id, da.author_id
     ORDER BY title;
@@ -155,8 +155,8 @@ exports.getBooksByDecade = async function (decade) {
       STRING_AGG(dg.genre_name, ',') AS genres
     FROM fact_books fb
     JOIN dim_authors da ON fb.author_id = da.author_id
-    JOIN book_genres bg ON fb.book_id = bg.book_id
-    JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    LEFT JOIN book_genres bg ON fb.book_id = bg.book_id
+    LEFT JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
     WHERE fb.publication_year BETWEEN $1 AND $2
     GROUP BY fb.book_id, da.author_id
     ORDER BY title;
