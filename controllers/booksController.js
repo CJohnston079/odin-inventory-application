@@ -9,8 +9,13 @@ exports.postNewBook = async function (req, res) {
 
 	console.log("Posting new book:\n", newBook);
 
-	await db.books.insertBook(newBook);
-	res.redirect("/books");
+	try {
+		await db.books.insertBook(newBook);
+		res.redirect("/books");
+	} catch (err) {
+		console.error(`An error occurred posting ${title}:`, err);
+		res.status(500).send(`An error occurred posting ${title}: ${err}`);
+	}
 };
 
 exports.checkBookTitle = async function (req, res) {

@@ -8,7 +8,6 @@ import { validateGenres } from "./validateInputs.js";
 import { validateYear } from "./validateInputs.js";
 
 const form = document.querySelector("#new-book");
-
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
@@ -39,6 +38,10 @@ enableAutoCompleteMulti({
 });
 
 const handleTitleInput = async function () {
+	if (validationState.title) {
+		return;
+	}
+
 	const titleMessage = document.querySelector("#title + .field-message");
 	const book = titleInput.value;
 	const author = authorInput.value;
@@ -63,6 +66,10 @@ const handleTitleInput = async function () {
 };
 
 const handleAuthorInput = async function () {
+	if (validationState.author) {
+		return;
+	}
+
 	const authorMessage = document.querySelector("#author + .field-message");
 	const author = authorInput.value;
 
@@ -91,6 +98,10 @@ const handleAuthorInput = async function () {
 };
 
 const handleGenresInput = async function () {
+	if (validationState.genres) {
+		return;
+	}
+
 	const genresMessage = document.querySelector("#genres + .field-message");
 	const genresInputVal = genresInput.value;
 
@@ -119,9 +130,12 @@ const handleGenresInput = async function () {
 };
 
 const handleYearInput = function () {
+	if (validationState.year) {
+		return;
+	}
+
 	const yearMessage = document.querySelector("#publication-year + .field-message");
 	const year = yearInput.value;
-	console.log(`Validating year ${year}`);
 
 	const isYearValid = validateYear(Number(year));
 
@@ -165,12 +179,16 @@ const handleSubmit = async function (e) {
 	}
 };
 
-titleInput.addEventListener("blur", handleTitleInput);
-authorInput.addEventListener("blur", handleTitleInput);
-authorInput.addEventListener("blur", handleAuthorInput);
-genresInput.addEventListener("blur", handleGenresInput);
-yearInput.addEventListener("blur", handleYearInput);
+const inputs = [
+	{ element: titleInput, blurHandler: handleTitleInput, validationKey: "title" },
+	{ element: authorInput, blurHandler: handleAuthorInput, validationKey: "author" },
+	{ element: genresInput, blurHandler: handleGenresInput, validationKey: "genres" },
+	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
+];
 
-form.addEventListener("submit", async e => {
-	handleSubmit(e);
+inputs.forEach(({ element, blurHandler, validationKey }) => {
+	element.addEventListener("blur", blurHandler);
+	element.addEventListener("input", () => (validationState[validationKey] = null));
 });
+
+form.addEventListener("submit", handleSubmit);

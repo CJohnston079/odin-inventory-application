@@ -2,8 +2,13 @@ const db = require("../db/queries/index");
 const nationalities = require("../db/data/countries");
 
 exports.postNewAuthor = async function (req, res) {
-	await db.authors.insertAuthor(req.body);
-	res.redirect("/authors");
+	try {
+		await db.authors.insertAuthor(req.body);
+		res.redirect("/authors");
+	} catch (err) {
+		console.error(`An error occurred posting new author:`, err);
+		res.status(500).send(`An error occurred posting new author: ${err}`);
+	}
 };
 
 exports.getAllAuthors = async function (req, res) {
