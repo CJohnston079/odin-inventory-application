@@ -39,6 +39,10 @@ enableAutoCompleteMulti({
 });
 
 const handleTitleInput = async function () {
+	if (validationState.title) {
+		return;
+	}
+
 	const titleMessage = document.querySelector("#title + .field-message");
 	const book = titleInput.value;
 	const author = authorInput.value;
@@ -63,6 +67,10 @@ const handleTitleInput = async function () {
 };
 
 const handleAuthorInput = async function () {
+	if (validationState.author) {
+		return;
+	}
+
 	const authorMessage = document.querySelector("#author + .field-message");
 	const author = authorInput.value;
 
@@ -91,6 +99,10 @@ const handleAuthorInput = async function () {
 };
 
 const handleGenresInput = async function () {
+	if (validationState.genres) {
+		return;
+	}
+
 	const genresMessage = document.querySelector("#genres + .field-message");
 	const genresInputVal = genresInput.value;
 
@@ -119,6 +131,10 @@ const handleGenresInput = async function () {
 };
 
 const handleYearInput = function () {
+	if (validationState.year) {
+		return;
+	}
+
 	const yearMessage = document.querySelector("#publication-year + .field-message");
 	const year = yearInput.value;
 
