@@ -1,6 +1,7 @@
 [
 	{
 		"bookTitle": "1Q84",
+		"description": "In an alternate reality, a woman named Aomame becomes ensnared in a bizarre world where strange occurrences unfold. Parallel to her, a man named Tengo uncovers dark secrets while rewriting a novel. As their paths inch closer, mysteries of two moons and eerie conspiracies shape a surreal, intricate narrative.",
 		"author": "Haruki Murakami",
 		"publicationYear": "2009",
 		"isFiction": true,
@@ -9,6 +10,7 @@
 	},
 	{
 		"bookTitle": "A Connecticut Yankee in King Arthur's Court",
+		"description": "A 19th-century man mysteriously travels back to the age of King Arthur's court, where his knowledge of modern technology transforms him into a powerful figure. Amid clashes between medieval and modern values, he seeks to reshape history with often comical and unexpected consequences.",
 		"author": "Mark Twain",
 		"publicationYear": "1889",
 		"isFiction": true,
@@ -17,6 +19,7 @@
 	},
 	{
 		"bookTitle": "A Farewell to Arms",
+		"description": "Set against the backdrop of World War I, this powerful love story follows an American ambulance driver and a British nurse. As war rages around them, they find solace in each other, but tragedy looms, challenging their hopes for a peaceful future.",
 		"author": "Ernest Hemingway",
 		"publicationYear": "1929",
 		"isFiction": true,
@@ -25,6 +28,7 @@
 	},
 	{
 		"bookTitle": "A Long Petal of the Sea",
+		"description": "In the aftermath of the Spanish Civil War, a young couple flees to Chile, seeking refuge and a new life. Through decades of political upheaval and personal struggles, they find love, resilience, and a sense of belonging in an adopted land shaped by revolution.",
 		"author": "Isabel Allende",
 		"publicationYear": "2019",
 		"isFiction": true,
@@ -33,6 +37,7 @@
 	},
 	{
 		"bookTitle": "A Man of the People",
+		"description": "In a newly independent African nation, a young schoolteacher becomes embroiled in the corrupt world of politics. As he navigates the treacherous terrain of power and betrayal, the clash between tradition and modernization pushes his morality to its limits.",
 		"author": "Chinua Achebe",
 		"publicationYear": "1966",
 		"isFiction": true,
@@ -41,6 +46,7 @@
 	},
 	{
 		"bookTitle": "A Personal Matter",
+		"description": "A man faces a deep internal crisis when his son is born with a severe disability. Grappling with feelings of despair, guilt, and confusion, he embarks on a journey of self-destruction before confronting his responsibilities and rediscovering meaning in his life.",
 		"author": "Kenzaburō Ōe",
 		"publicationYear": "1964",
 		"isFiction": true,
@@ -49,6 +55,7 @@
 	},
 	{
 		"bookTitle": "A Portrait of the Artist as a Young Man",
+		"description": "This coming-of-age tale follows the intellectual and spiritual awakening of a young man, Stephen Dedalus. Torn between the constraints of Irish society and his own artistic ambitions, Stephen seeks a path to personal and creative freedom.",
 		"author": "James Joyce",
 		"publicationYear": "1916",
 		"isFiction": true,
@@ -57,6 +64,7 @@
 	},
 	{
 		"bookTitle": "A Room of One's Own",
+		"description": "Exploring the relationship between women and fiction, this essay delves into the societal structures that have historically silenced female voices. It argues for the necessity of financial independence and private space for women to fully realize their creative potential.",
 		"author": "Virginia Woolf",
 		"publicationYear": "1929",
 		"isFiction": false,
@@ -65,6 +73,7 @@
 	},
 	{
 		"bookTitle": "A Universal History of Infamy",
+		"description": "A collection of fantastical tales recounts the lives of history's most infamous characters. Blurring the line between fact and fiction, the stories present a richly imaginative exploration of deceit, betrayal, and the darker aspects of the human condition.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1935",
 		"isFiction": true,
@@ -73,6 +82,7 @@
 	},
 	{
 		"bookTitle": "A Wild Sheep Chase",
+		"description": "In this surreal detective story, an ordinary man embarks on a bizarre quest to find a mysterious sheep with a star-shaped birthmark. His journey leads him into a world of strange encounters, cryptic messages, and philosophical questions about identity and purpose.",
 		"author": "Haruki Murakami",
 		"publicationYear": "1982",
 		"isFiction": true,
@@ -81,6 +91,7 @@
 	},
 	{
 		"bookTitle": "Agua Viva",
+		"description": "A lyrical and experimental exploration of consciousness, this novel delves into the thoughts and sensations of a woman experiencing the fluidity of time, memory, and existence. It defies conventional narrative structure, offering a poetic meditation on art, love, and life.",
 		"author": "Clarice Lispector",
 		"publicationYear": "1973",
 		"isFiction": true,
@@ -89,6 +100,7 @@
 	},
 	{
 		"bookTitle": "Alias Grace",
+		"description": "Set in 19th-century Canada, a young woman convicted of murder recounts her story to a doctor exploring the boundaries of memory and guilt. Based on true events, the novel weaves an intricate tale of mystery, psychological tension, and the complexities of truth.",
 		"author": "Margaret Atwood",
 		"publicationYear": "1996",
 		"isFiction": true,
@@ -97,6 +109,7 @@
 	},
 	{
 		"bookTitle": "All the Names",
+		"description": "A quiet clerk in a vast bureaucratic archive becomes obsessed with tracking down the identity of a woman whose name he finds on an old file. His search leads him through the labyrinthine world of forgotten lives, personal connections, and existential questions about identity.",
 		"author": "José Saramago",
 		"publicationYear": "1997",
 		"isFiction": true,
@@ -105,6 +118,7 @@
 	},
 	{
 		"bookTitle": "Americanah",
+		"description": "A Nigerian woman moves to the United States to attend university and struggles with questions of race, identity, and belonging. Through love, loss, and disillusionment, she reflects on her homeland, her changing self, and what it means to be African in America.",
 		"author": "Chimamanda Ngozi Adichie",
 		"publicationYear": "2013",
 		"isFiction": true,
@@ -113,6 +127,7 @@
 	},
 	{
 		"bookTitle": "Amrita",
+		"description": "In this contemplative novel, a woman grapples with grief after the sudden death of her sister. As she begins to heal, she embarks on a journey of self-discovery, embracing art, relationships, and the mysteries of the universe to find meaning and a renewed sense of life.",
 		"author": "Banana Yoshimoto",
 		"publicationYear": "1986",
 		"isFiction": true,
@@ -121,6 +136,7 @@
 	},
 	{
 		"bookTitle": "And Then There Were None",
+		"description": "Ten strangers are invited to a secluded island, only to discover they are being killed off one by one. As suspicion and fear mount, they realize their own secrets may be the key to uncovering the murderer before it's too late.",
 		"author": "Agatha Christie",
 		"publicationYear": "1939",
 		"isFiction": true,
@@ -129,6 +145,7 @@
 	},
 	{
 		"bookTitle": "Anna Karenina",
+		"description": "Set in Imperial Russia, this sweeping tale follows the tragic love affair between the aristocratic Anna and the dashing Count Vronsky. As their passion challenges societal norms, the novel explores themes of desire, duty, and the harsh consequences of defying convention.",
 		"author": "Leo Tolstoy",
 		"publicationYear": "1877",
 		"isFiction": true,
@@ -137,6 +154,7 @@
 	},
 	{
 		"bookTitle": "Anthills of the Savannah",
+		"description": "In a fictional African country, three former friends navigate the volatile world of politics under a brutal dictatorship. Their complex relationships and moral dilemmas reflect broader issues of power, corruption, and resistance in post-colonial societies.",
 		"author": "Chinua Achebe",
 		"publicationYear": "1987",
 		"isFiction": true,
@@ -145,6 +163,7 @@
 	},
 	{
 		"bookTitle": "Arrow of God",
+		"description": "Set in colonial Nigeria, this story centers around a high priest caught between the traditions of his people and the pressures of British rule. As he struggles to maintain his authority, tensions rise within his community, leading to an inevitable clash between old and new ways.",
 		"author": "Chinua Achebe",
 		"publicationYear": "1964",
 		"isFiction": true,
@@ -153,6 +172,7 @@
 	},
 	{
 		"bookTitle": "Baltasar and Blimunda",
+		"description": "In 18th-century Portugal, a one-handed soldier and a young woman with mystical powers join forces with an eccentric priest to build a flying machine. Amid the backdrop of royal intrigues, the novel intertwines love, faith, and the quest for freedom.",
 		"author": "José Saramago",
 		"publicationYear": "1982",
 		"isFiction": true,
@@ -161,6 +181,7 @@
 	},
 	{
 		"bookTitle": "Baudolino",
+		"description": "A clever young peasant rises to prominence in the court of Emperor Frederick Barbarossa, using his gift for storytelling to influence historical events. Mixing history and fantasy, this epic tale spans continents, blending myth, legend, and the pursuit of truth.",
 		"author": "Umberto Eco",
 		"publicationYear": "2000",
 		"isFiction": true,
@@ -169,6 +190,7 @@
 	},
 	{
 		"bookTitle": "Beloved",
+		"description": "Haunted by the ghost of her dead child, a former slave struggles to reconcile her traumatic past with her present. This deeply emotional novel delves into the horrors of slavery, the weight of memory, and the powerful bond between a mother and her child.",
 		"author": "Toni Morrison",
 		"publicationYear": "1987",
 		"isFiction": true,
@@ -177,6 +199,7 @@
 	},
 	{
 		"bookTitle": "Blindness",
+		"description": "When a sudden epidemic of blindness strikes a city, its citizens are thrown into chaos. As society collapses, a small group of survivors must navigate the brutal and dehumanizing world that emerges, offering a powerful commentary on human nature and resilience.",
 		"author": "José Saramago",
 		"publicationYear": "1995",
 		"isFiction": true,
@@ -185,6 +208,7 @@
 	},
 	{
 		"bookTitle": "Burger's Daughter",
+		"description": "The daughter of a prominent anti-apartheid activist in South Africa struggles to define her own identity amid political turmoil. Torn between her father's legacy and her own desires, she grapples with questions of loyalty, freedom, and the personal cost of activism.",
 		"author": "Nadine Gordimer",
 		"publicationYear": "1979",
 		"isFiction": true,
@@ -193,6 +217,7 @@
 	},
 	{
 		"bookTitle": "Cat's Eye",
+		"description": "A successful artist reflects on her traumatic childhood and complex relationship with a childhood friend. As she looks back on her past, the novel explores themes of memory, bullying, and the lasting impact of formative experiences on identity and creativity.",
 		"author": "Margaret Atwood",
 		"publicationYear": "1988",
 		"isFiction": true,
@@ -201,6 +226,7 @@
 	},
 	{
 		"bookTitle": "Chronicle of a Death Foretold",
+		"description": "In a small town, the murder of a young man unfolds with eerie inevitability. Despite everyone knowing the crime is about to happen, no one intervenes. This dark and suspenseful novella explores themes of fate, honor, and collective guilt.",
 		"author": "Gabriel García Márquez",
 		"publicationYear": "1981",
 		"isFiction": true,
@@ -209,6 +235,7 @@
 	},
 	{
 		"bookTitle": "Contos Novos",
+		"description": "A collection of short stories that captures moments of existential reflection, emotional depth, and the quiet drama of everyday life. Each tale explores human nature, from solitude to fleeting encounters, offering a glimpse into the richness of inner worlds.",
 		"author": "Mário de Andrade",
 		"publicationYear": "1947",
 		"isFiction": true,
@@ -217,6 +244,7 @@
 	},
 	{
 		"bookTitle": "Crime and Punishment",
+		"description": "A penniless student in St. Petersburg commits a brutal murder, believing it will free him from poverty and allow him to pursue greatness. As guilt consumes him, the novel delves into themes of morality, justice, and the psychological torment of crime.",
 		"author": "Fyodor Dostoevsky",
 		"publicationYear": "1866",
 		"isFiction": true,
@@ -225,6 +253,7 @@
 	},
 	{
 		"bookTitle": "Dance of the Happy Shades",
+		"description": "This collection of short stories focuses on ordinary moments in the lives of Canadian women, revealing deep emotional truths beneath the surface of everyday experiences. Themes of family, loneliness, and quiet rebellion are woven throughout the stories with sharp insight.",
 		"author": "Alice Munro",
 		"publicationYear": "1968",
 		"isFiction": true,
@@ -233,6 +262,7 @@
 	},
 	{
 		"bookTitle": "Daughter of Fortune",
+		"description": "In 19th-century Chile, a young woman sets out on a daring adventure to find her lover who has joined the California Gold Rush. Along the way, she discovers her own strength and independence, in a story that intertwines love, destiny, and self-discovery.",
 		"author": "Isabel Allende",
 		"publicationYear": "1999",
 		"isFiction": true,
@@ -241,6 +271,7 @@
 	},
 	{
 		"bookTitle": "Dear Life",
+		"description": "A collection of short stories that delves into the quiet moments and emotional undercurrents of everyday life. Exploring themes of memory, loss, love, and resilience, these tales offer poignant reflections on the human condition, often tinged with bittersweet nostalgia.",
 		"author": "Alice Munro",
 		"publicationYear": "2012",
 		"isFiction": true,
@@ -249,6 +280,7 @@
 	},
 	{
 		"bookTitle": "Death on the Nile",
+		"description": "On a luxurious cruise along the Nile, a young heiress is murdered. As the ship's passengers fall under suspicion, it's up to a brilliant detective to unravel the web of jealousy, secrets, and betrayal, leading to a surprising and satisfying conclusion.",
 		"author": "Agatha Christie",
 		"publicationYear": "1937",
 		"isFiction": true,
@@ -257,6 +289,7 @@
 	},
 	{
 		"bookTitle": "Demian",
+		"description": "This coming-of-age novel follows a young man's journey toward self-discovery, guided by the mysterious and enigmatic Demian. Through philosophical reflections and inner turmoil, the protagonist explores themes of individuality, duality, and the quest for spiritual awakening.",
 		"author": "Hermann Hesse",
 		"publicationYear": "1919",
 		"isFiction": true,
@@ -265,6 +298,7 @@
 	},
 	{
 		"bookTitle": "Demons",
+		"description": "In this intense and politically charged novel, a small Russian town is shaken by the arrival of revolutionaries bent on stirring up social unrest. As ideologies clash, the town's inhabitants are drawn into a destructive whirlwind of radicalism, betrayal, and violence.",
 		"author": "Fyodor Dostoevsky",
 		"publicationYear": "1872",
 		"isFiction": true,
@@ -273,6 +307,7 @@
 	},
 	{
 		"bookTitle": "Dreamtigers",
+		"description": "This collection of short, often fantastical pieces blurs the line between dreams and reality. Each story or poem presents a unique reflection on themes such as time, identity, and the infinite, showcasing a rich tapestry of imagination and philosophical inquiry.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1960",
 		"isFiction": true,
@@ -281,6 +316,7 @@
 	},
 	{
 		"bookTitle": "Dubliners",
+		"description": "A series of interconnected short stories capturing the lives of Dublin's middle and lower classes. Each story portrays moments of epiphany, disillusionment, and quiet desperation, revealing the complexities of human experience against the backdrop of early 20th-century Ireland.",
 		"author": "James Joyce",
 		"publicationYear": "1914",
 		"isFiction": true,
@@ -289,6 +325,7 @@
 	},
 	{
 		"bookTitle": "Eva Luna",
+		"description": "This novel tells the life story of Eva, an orphan with a gift for storytelling, as she navigates the turbulent political and social landscape of Latin America. Through her vivid imagination and determination, Eva transforms her hardships into stories of survival and hope.",
 		"author": "Isabel Allende",
 		"publicationYear": "1987",
 		"isFiction": true,
@@ -297,6 +334,7 @@
 	},
 	{
 		"bookTitle": "Exiles",
+		"description": "A three-act play that explores themes of love, betrayal, and personal freedom through the lives of three characters. Set in Ireland, it examines the tensions between loyalty and independence, art and domesticity, and the quest for emotional and intellectual truth.",
 		"author": "James Joyce",
 		"publicationYear": "1918",
 		"isFiction": true,
@@ -305,6 +343,7 @@
 	},
 	{
 		"bookTitle": "Family Ties",
+		"description": "A collection of short stories that delves into familial relationships, examining love, tension, and the unspoken emotions that bind people together. Each story captures moments of introspection, revealing the fragile and often contradictory nature of human connections.",
 		"author": "Clarice Lispector",
 		"publicationYear": "2000",
 		"isFiction": true,
@@ -313,6 +352,7 @@
 	},
 	{
 		"bookTitle": "Ficciones",
+		"description": "A collection of inventive and mind-bending stories that explore philosophical puzzles, infinite labyrinths, and the power of language. Each story blurs the line between reality and imagination, offering readers a glimpse into the limitless possibilities of storytelling.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1944",
 		"isFiction": true,
@@ -321,6 +361,7 @@
 	},
 	{
 		"bookTitle": "Finnegans Wake",
+		"description": "A groundbreaking, stream-of-consciousness novel that defies traditional narrative structure. Written in a unique, densely layered language, it presents an intricate exploration of dreams, history, and mythology, demanding readers to embrace its complexity and interpretive challenges.",
 		"author": "James Joyce",
 		"publicationYear": "1939",
 		"isFiction": true,
@@ -329,6 +370,7 @@
 	},
 	{
 		"bookTitle": "For Whom the Bell Tolls",
+		"description": "Set during the Spanish Civil War, the novel follows an American dynamiter who joins a band of guerrilla fighters. As he faces the realities of war, the novel explores themes of love, sacrifice, and the interconnectedness of human lives in times of conflict.",
 		"author": "Ernest Hemingway",
 		"publicationYear": "1940",
 		"isFiction": true,
@@ -337,6 +379,7 @@
 	},
 	{
 		"bookTitle": "Foucault's Pendulum",
+		"description": "Three editors, drawn into an elaborate intellectual game, accidentally stumble upon a real and dangerous conspiracy that spans centuries. Mixing history, philosophy, and secret societies, the novel offers a thrilling and thought-provoking journey into the world of esoteric knowledge.",
 		"author": "Umberto Eco",
 		"publicationYear": "1988",
 		"isFiction": true,
@@ -345,6 +388,7 @@
 	},
 	{
 		"bookTitle": "Frankenstein",
+		"description": "A young scientist's obsession with creating life leads to tragic consequences when his monstrous creation is rejected by society. This gothic tale explores themes of ambition, isolation, and the ethical dilemmas surrounding scientific discovery and human responsibility.",
 		"author": "Mary Shelley",
 		"publicationYear": "1818",
 		"isFiction": true,
@@ -353,6 +397,7 @@
 	},
 	{
 		"bookTitle": "Get a Life",
+		"description": "A cancer survivor embarks on a journey of self-discovery as he grapples with his changing relationships, health, and outlook on life. As he tries to reconnect with his loved ones, the novel explores themes of mortality, identity, and the quest for personal fulfillment.",
 		"author": "Nadine Gordimer",
 		"publicationYear": "1981",
 		"isFiction": true,
@@ -361,6 +406,7 @@
 	},
 	{
 		"bookTitle": "Goodbye Tsugumi",
+		"description": "Set in a quiet seaside town, the novel follows the story of two cousins, one of whom, Tsugumi, is both charming and cruel. As they navigate their final summer together before adulthood, the story explores themes of family, friendship, and the bittersweet nature of change.",
 		"author": "Banana Yoshimoto",
 		"publicationYear": "1982",
 		"isFiction": true,
@@ -369,6 +415,7 @@
 	},
 	{
 		"bookTitle": "Gösta Berling's Saga",
+		"description": "In 19th-century Sweden, an exiled priest embarks on a series of adventures among the aristocracy. His life, filled with love, misfortune, and redemption, forms the heart of this richly imaginative tale about the power of community and the complexities of human nature.",
 		"author": "Selma Lagerlöf",
 		"publicationYear": "1891",
 		"isFiction": true,
@@ -377,6 +424,7 @@
 	},
 	{
 		"bookTitle": "Hadji Murat",
+		"description": "Set during the Caucasian War, this novella follows the fate of a Chechen warrior who defects to the Russians. Caught between two worlds, his struggle for survival reveals the brutal realities of war, honor, and the delicate balance of power in a divided land.",
 		"author": "Leo Tolstoy",
 		"publicationYear": "1904",
 		"isFiction": true,
@@ -385,6 +433,7 @@
 	},
 	{
 		"bookTitle": "Half of a Yellow Sun",
+		"description": "Set during the Nigerian Civil War, this epic novel traces the intertwined lives of three characters as they navigate love, loyalty, and survival in a time of violent upheaval. It captures the horrors of war while also celebrating resilience, human connection, and hope.",
 		"author": "Chimamanda Ngozi Adichie",
 		"publicationYear": "2006",
 		"isFiction": true,
@@ -393,6 +442,7 @@
 	},
 	{
 		"bookTitle": "Hard-Boiled Wonderland and the End of the World",
+		"description": "A split narrative follows two parallel worlds: a near-future dystopia where a data processor navigates dangerous conspiracies, and a surreal, dreamlike town at the end of the world. The novel explores the boundaries of reality, memory, and the human mind.",
 		"author": "Haruki Murakami",
 		"publicationYear": "1985",
 		"isFiction": true,
@@ -401,6 +451,7 @@
 	},
 	{
 		"bookTitle": "Hateship, Friendship, Courtship, Loveship, Marriage",
+		"description": "A collection of stories that delves into the intimate and often complicated relationships between men and women, spanning themes of love, betrayal, and longing. Each tale explores the nuances of human connection and the unexpected paths life can take.",
 		"author": "Alice Munro",
 		"publicationYear": "2001",
 		"isFiction": true,
@@ -409,6 +460,7 @@
 	},
 	{
 		"bookTitle": "Herztier",
+		"description": "Set in Communist Romania, this novel follows four university friends as they navigate the brutalities of a repressive regime. Their shared rebellion against state control binds them together, but their struggle for freedom comes at a great personal cost.",
 		"author": "Herta Müller",
 		"publicationYear": "2000",
 		"isFiction": true,
@@ -417,6 +469,7 @@
 	},
 	{
 		"bookTitle": "In Our Time",
+		"description": "This collection of short stories and vignettes offers a powerful exploration of the aftermath of war, capturing moments of quiet reflection, violence, and loss. Set in various locations, the stories highlight the disillusionment and emotional scars left by conflict.",
 		"author": "Ernest Hemingway",
 		"publicationYear": "1925",
 		"isFiction": true,
@@ -425,6 +478,7 @@
 	},
 	{
 		"bookTitle": "Jane Eyre",
+		"description": "An orphaned girl rises above her difficult beginnings to become a governess at a mysterious estate. As she falls in love with the enigmatic master of the house, she uncovers dark secrets that challenge her moral convictions and test her resolve.",
 		"author": "Charlotte Brontë",
 		"publicationYear": "1847",
 		"isFiction": true,
@@ -433,6 +487,7 @@
 	},
 	{
 		"bookTitle": "Jazz",
+		"description": "Set in 1920s Harlem, this novel tells the story of a troubled love triangle between a husband, his wife, and his young lover. Blending musical rhythms with rich prose, it captures the complexity of love, betrayal, and redemption in a vibrant, historical context.",
 		"author": "Toni Morrison",
 		"publicationYear": "1992",
 		"isFiction": true,
@@ -441,6 +496,7 @@
 	},
 	{
 		"bookTitle": "Jerusalem",
+		"description": "This epic novel explores the lives of a close-knit family living in a rural Swedish village during the 19th century. As some members journey to the Holy Land in search of religious salvation, the story delves into themes of faith, tradition, and the meaning of home.",
 		"author": "Selma Lagerlöf",
 		"publicationYear": "1928",
 		"isFiction": true,
@@ -449,6 +505,7 @@
 	},
 	{
 		"bookTitle": "July's People",
+		"description": "Set in a dystopian South Africa, a white liberal family is forced to rely on their black servant, July, after fleeing a violent revolution. The novel explores shifting power dynamics, survival, and the complexities of race and privilege in a world turned upside down.",
 		"author": "Nadine Gordimer",
 		"publicationYear": "1981",
 		"isFiction": true,
@@ -457,6 +514,7 @@
 	},
 	{
 		"bookTitle": "Kafka on the Shore",
+		"description": "A surreal and dreamlike novel that intertwines the stories of a runaway teenager and an elderly man with mysterious powers. Their separate journeys, filled with talking cats, prophecies, and metaphysical puzzles, explore themes of fate, memory, and identity.",
 		"author": "Haruki Murakami",
 		"publicationYear": "2002",
 		"isFiction": true,
@@ -465,6 +523,7 @@
 	},
 	{
 		"bookTitle": "Kitchen",
+		"description": "A young woman grieving the loss of her grandmother finds solace in the kitchen of a new friend's home. As she navigates loss and loneliness, this tender novella explores themes of love, healing, and the comforting power of food and companionship.",
 		"author": "Banana Yoshimoto",
 		"publicationYear": "1988",
 		"isFiction": true,
@@ -473,6 +532,7 @@
 	},
 	{
 		"bookTitle": "Labyrinths",
+		"description": "A collection of short stories and essays that blends philosophy, mysticism, and imagination. The labyrinth serves as a recurring motif, representing the complexities of existence, time, and the universe, while each piece challenges readers to explore the boundaries of reality.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1962",
 		"isFiction": true,
@@ -481,6 +541,7 @@
 	},
 	{
 		"bookTitle": "Les Misérables",
+		"description": "Set against the backdrop of post-revolutionary France, this epic tale follows the lives of several characters, including an ex-convict seeking redemption, a young woman's struggle with poverty, and a student revolutionary. It explores themes of justice, love, and the human spirit.",
 		"author": "Victor Hugo",
 		"publicationYear": "1862",
 		"isFiction": true,
@@ -489,6 +550,7 @@
 	},
 	{
 		"bookTitle": "Life on the Mississippi",
+		"description": "A memoir and travelogue detailing life along the Mississippi River in the 19th century. Filled with historical anecdotes and humorous reflections, the narrative captures the vibrant spirit of riverboat life and the rapidly changing landscape of America.",
 		"author": "Mark Twain",
 		"publicationYear": "1883",
 		"isFiction": false,
@@ -497,6 +559,7 @@
 	},
 	{
 		"bookTitle": "Lives of Girls and Women",
+		"description": "This coming-of-age novel follows a young girl growing up in rural Canada as she navigates the complexities of adolescence, relationships, and self-awareness. Through her experiences, the novel explores themes of gender, identity, and the search for meaning.",
 		"author": "Alice Munro",
 		"publicationYear": "1971",
 		"isFiction": true,
@@ -505,6 +568,7 @@
 	},
 	{
 		"bookTitle": "Lizard",
+		"description": "A collection of short stories that captures moments of transformation, connection, and emotional depth. Each story weaves elements of Japanese culture with universal themes of love, loss, and the search for belonging, offering a glimpse into the human heart.",
 		"author": "Banana Yoshimoto",
 		"publicationYear": "1965",
 		"isFiction": true,
@@ -513,6 +577,7 @@
 	},
 	{
 		"bookTitle": "Lodore",
+		"description": "A historical novel that tells the story of a family torn apart by love, duty, and misfortune. As secrets and betrayals unravel, the novel explores themes of family loyalty, the struggle for independence, and the consequences of past choices.",
 		"author": "Mary Shelley",
 		"publicationYear": "1835",
 		"isFiction": true,
@@ -521,6 +586,7 @@
 	},
 	{
 		"bookTitle": "Love in the Time of Cholera",
+		"description": "Set in a Caribbean port town, this novel tells the story of a love triangle spanning decades. As one man waits a lifetime for his unrequited love, the novel explores themes of passion, aging, and the enduring power of the heart, all against a backdrop of social change.",
 		"author": "Gabriel García Márquez",
 		"publicationYear": "1985",
 		"isFiction": true,
@@ -529,6 +595,7 @@
 	},
 	{
 		"bookTitle": "Macunaíma",
+		"description": "A fantastical and satirical tale about an antihero, Macunaíma, who embarks on a series of surreal adventures across Brazil. Mixing indigenous mythology with modernist elements, the novel reflects on the complexities of national identity, culture, and language.",
 		"author": "Mário de Andrade",
 		"publicationYear": "1928",
 		"isFiction": true,
@@ -537,6 +604,7 @@
 	},
 	{
 		"bookTitle": "Mathilda",
+		"description": "A young woman recounts her tragic life, filled with familial loss, forbidden love, and self-imposed exile. This gothic novella delves into the dark corners of human emotion, exploring themes of grief, guilt, and the consequences of unspoken desires.",
 		"author": "Mary Shelley",
 		"publicationYear": "1959",
 		"isFiction": true,
@@ -545,6 +613,7 @@
 	},
 	{
 		"bookTitle": "Memoirs of a Dutiful Daughter",
+		"description": "In this intimate memoir, a young woman recounts her intellectual awakening and personal growth against the backdrop of a strict upbringing. The story explores themes of identity, self-discovery, and the tension between tradition and independence.",
 		"author": "Simone de Beauvoir",
 		"publicationYear": "1958",
 		"isFiction": false,
@@ -553,6 +622,7 @@
 	},
 	{
 		"bookTitle": "Memoirs of a Survivor",
+		"description": "In a dystopian future, a woman records her observations of societal collapse from within the walls of her apartment. Blurring the line between reality and dream, the novel explores survival, adaptation, and the complexities of human relationships in times of crisis.",
 		"author": "Doris Lessing",
 		"publicationYear": "1974",
 		"isFiction": true,
@@ -561,6 +631,7 @@
 	},
 	{
 		"bookTitle": "Men Without Women",
+		"description": "A collection of short stories that examines the lives of men who, in various ways, are disconnected from women. Through themes of loneliness, desire, and alienation, the stories offer a poignant exploration of masculinity, love, and the search for meaning.",
 		"author": "Haruki Murakami",
 		"publicationYear": "1927",
 		"isFiction": true,
@@ -569,6 +640,7 @@
 	},
 	{
 		"bookTitle": "Mrs. Dalloway",
+		"description": "Over the course of a single day, a woman prepares for a party she will host that evening. As she reflects on her past, her decisions, and her place in society, the novel explores themes of time, memory, and the fragility of life in post-World War I England.",
 		"author": "Virginia Woolf",
 		"publicationYear": "1925",
 		"isFiction": true,
@@ -577,6 +649,7 @@
 	},
 	{
 		"bookTitle": "Murder on the Orient Express",
+		"description": "A luxury train journey is interrupted by murder, and every passenger is a suspect. In this classic whodunit, a famous detective must untangle the web of lies and hidden motives to reveal the truth behind the mysterious crime.",
 		"author": "Agatha Christie",
 		"publicationYear": "1934",
 		"isFiction": true,
@@ -585,6 +658,7 @@
 	},
 	{
 		"bookTitle": "Nadirs",
+		"description": "A collection of vignettes reflecting life in rural Romania, capturing moments of hardship, poverty, and personal struggle. Blending realism with a poetic style, these stories delve into the psychological and emotional landscapes of individuals facing harsh conditions.",
 		"author": "Herta Müller",
 		"publicationYear": "1983",
 		"isFiction": true,
@@ -593,6 +667,7 @@
 	},
 	{
 		"bookTitle": "Narcissus and Goldmund",
+		"description": "Two men embark on divergent life paths—one seeking spiritual fulfillment as a monk, and the other pursuing worldly pleasures as an artist. Their journeys explore the duality of human nature, the tension between intellect and emotion, and the meaning of life.",
 		"author": "Hermann Hesse",
 		"publicationYear": "1930",
 		"isFiction": true,
@@ -601,6 +676,7 @@
 	},
 	{
 		"bookTitle": "Near to the Wild Heart",
+		"description": "An introspective novel that explores the inner life of Joana, a woman caught between conformity and her desire for freedom. Through poetic prose and stream-of-consciousness narration, the novel examines identity, passion, and the nature of existence.",
 		"author": "Clarice Lispector",
 		"publicationYear": "1943",
 		"isFiction": true,
@@ -609,6 +685,7 @@
 	},
 	{
 		"bookTitle": "Ninety-Three",
+		"description": "Set during the French Revolution, this historical novel follows three characters—an idealistic revolutionary, a loyal monarchist, and a conflicted soldier—as they navigate the turbulent events of 1793. The story explores the cost of loyalty, duty, and justice.",
 		"author": "Victor Hugo",
 		"publicationYear": "1874",
 		"isFiction": true,
@@ -617,6 +694,7 @@
 	},
 	{
 		"bookTitle": "Nip the Buds, Shoot the Kids",
+		"description": "In wartime Japan, a group of delinquent boys is abandoned in a remote village during a plague outbreak. As they struggle to survive, the novel explores themes of human cruelty, social rejection, and the desperation of those on the margins of society.",
 		"author": "Kenzaburō Ōe",
 		"publicationYear": "1958",
 		"isFiction": true,
@@ -625,6 +703,7 @@
 	},
 	{
 		"bookTitle": "No Longer at Ease",
+		"description": "A young Nigerian man returns home after studying abroad, only to find himself caught between traditional expectations and the realities of modern corruption. The novel explores the conflict between cultural heritage and the pressures of contemporary life.",
 		"author": "Chinua Achebe",
 		"publicationYear": "1960",
 		"isFiction": true,
@@ -633,6 +712,7 @@
 	},
 	{
 		"bookTitle": "No One Writes to the Colonel",
+		"description": "In a small, impoverished town, an aging colonel waits in vain for a pension promised to him long ago. The novel poignantly explores themes of hope, dignity, and survival in the face of bureaucracy and neglect.",
 		"author": "Gabriel García Márquez",
 		"publicationYear": "1961",
 		"isFiction": true,
@@ -641,6 +721,7 @@
 	},
 	{
 		"bookTitle": "None to Accompany Me",
+		"description": "As South Africa transitions away from apartheid, a woman working in land reform navigates the complex political and personal changes around her. The novel explores the shifting dynamics of power, identity, and belonging in a society undergoing transformation.",
 		"author": "Nadine Gordimer",
 		"publicationYear": "1994",
 		"isFiction": true,
@@ -649,6 +730,7 @@
 	},
 	{
 		"bookTitle": "Norwegian Wood",
+		"description": "A nostalgic coming-of-age novel that follows a young college student in 1960s Tokyo as he grapples with love, loss, and mental illness. The novel delicately explores themes of memory, emotional turbulence, and the complexities of human relationships.",
 		"author": "Haruki Murakami",
 		"publicationYear": "1987",
 		"isFiction": true,
@@ -657,6 +739,7 @@
 	},
 	{
 		"bookTitle": "Notes from Underground",
+		"description": "Told from the perspective of an unnamed narrator, this psychological novel delves into the mind of a bitter, isolated man who reflects on his disdain for society and his own shortcomings. A profound exploration of human consciousness and existential angst.",
 		"author": "Fyodor Dostoevsky",
 		"publicationYear": "1864",
 		"isFiction": true,
@@ -665,6 +748,7 @@
 	},
 	{
 		"bookTitle": "Of Love and Other Demons",
+		"description": "Set in colonial Colombia, the story centers on a young girl believed to be possessed by demons. As a priest is assigned to perform an exorcism, the novel explores themes of faith, superstition, forbidden love, and the clash between indigenous and European cultures.",
 		"author": "Gabriel García Márquez",
 		"publicationYear": "1994",
 		"isFiction": true,
@@ -673,6 +757,7 @@
 	},
 	{
 		"bookTitle": "Of Love and Shadows",
+		"description": "Set in a repressive South American dictatorship, the novel follows a journalist and a photographer as they uncover a dark political conspiracy. As their professional collaboration deepens into love, they risk everything to expose the truth.",
 		"author": "Isabel Allende",
 		"publicationYear": "1984",
 		"isFiction": true,
@@ -681,6 +766,7 @@
 	},
 	{
 		"bookTitle": "One Hundred Years of Solitude",
+		"description": "A multi-generational epic about the Buendía family and the isolated town of Macondo. Through a rich blend of magical realism and historical reflection, the novel explores themes of memory, fate, and the cyclical nature of history and human experience.",
 		"author": "Gabriel García Márquez",
 		"publicationYear": "1967",
 		"isFiction": true,
@@ -689,6 +775,7 @@
 	},
 	{
 		"bookTitle": "Orlando",
+		"description": "A playful exploration of gender, time, and identity, this novel follows the life of Orlando, who mysteriously transforms from man to woman and lives for centuries. The novel defies conventions of biography and offers a meditation on love, art, and societal expectations.",
 		"author": "Virginia Woolf",
 		"publicationYear": "1928",
 		"isFiction": true,
@@ -697,6 +784,7 @@
 	},
 	{
 		"bookTitle": "Oryx and Crake",
+		"description": "In a dystopian future, a lone survivor of a global catastrophe reflects on his friendship with a brilliant scientist, Crake, and his obsession with a mysterious woman, Oryx. The novel explores themes of bioengineering, environmental destruction, and the limits of human ambition.",
 		"author": "Margaret Atwood",
 		"publicationYear": "2003",
 		"isFiction": true,
@@ -705,6 +793,7 @@
 	},
 	{
 		"bookTitle": "Paradise",
+		"description": "A mysterious massacre brings together women who have found refuge in an isolated convent. The novel explores the legacy of slavery, the search for identity, and the meaning of community in a story set against the backdrop of racial tensions and social upheaval in America.",
 		"author": "Toni Morrison",
 		"publicationYear": "1998",
 		"isFiction": true,
@@ -713,6 +802,7 @@
 	},
 	{
 		"bookTitle": "Pauliceia Desvairada",
+		"description": "A collection of modernist poems that captures the vibrant, chaotic spirit of São Paulo in the early 20th century. The poems reflect a sense of movement, innovation, and urban life, blending surreal imagery with sharp social commentary.",
 		"author": "Mário de Andrade",
 		"publicationYear": "1922",
 		"isFiction": true,
@@ -721,6 +811,7 @@
 	},
 	{
 		"bookTitle": "Portrait in Sepia",
+		"description": "A sweeping family saga that spans generations and continents, told through the eyes of a young woman piecing together her family's complex history. The novel explores themes of identity, memory, and the ways in which personal and historical events shape our lives.",
 		"author": "Isabel Allende",
 		"publicationYear": "2000",
 		"isFiction": true,
@@ -729,6 +820,7 @@
 	},
 	{
 		"bookTitle": "Purple Hibiscus",
+		"description": "Set in postcolonial Nigeria, the novel follows a teenage girl growing up in a strict, oppressive household. As political unrest intensifies outside, she discovers freedom and self-expression through the support of her aunt's more liberal and nurturing home.",
 		"author": "Chimamanda Ngozi Adichie",
 		"publicationYear": "2003",
 		"isFiction": true,
@@ -737,6 +829,7 @@
 	},
 	{
 		"bookTitle": "Resurrection",
+		"description": "A Russian nobleman, haunted by guilt for his role in a woman's downfall, embarks on a quest for redemption. As he navigates the corruption of the legal and penal systems, the novel explores themes of justice, morality, and spiritual awakening.",
 		"author": "Leo Tolstoy",
 		"publicationYear": "1899",
 		"isFiction": true,
@@ -745,6 +838,7 @@
 	},
 	{
 		"bookTitle": "Rouse Up O Young Men of the New Age!",
+		"description": "This semi-autobiographical novel follows a father's reflections on his son, who has a mental disability. Interwoven with references to William Blake's poetry, the novel explores themes of parental love, spiritual growth, and the challenges of communication and understanding.",
 		"author": "Kenzaburō Ōe",
 		"publicationYear": "1983",
 		"isFiction": true,
@@ -753,6 +847,7 @@
 	},
 	{
 		"bookTitle": "Runaway",
+		"description": "A collection of interconnected stories that delve into the lives of women grappling with the complexities of love, desire, and the search for freedom. Each tale reveals the intimate struggles and transformative journeys of characters caught in the throes of personal upheaval.",
 		"author": "Alice Munro",
 		"publicationYear": "2004",
 		"isFiction": true,
@@ -761,6 +856,7 @@
 	},
 	{
 		"bookTitle": "She Came to Stay",
+		"description": "A thought-provoking exploration of love, jealousy, and existential dread, this novel centers on a young woman's relationship with her older lover and the unexpected arrival of a friend. The story examines the complexities of human relationships and the nature of reality.",
 		"author": "Simone de Beauvoir",
 		"publicationYear": "1943",
 		"isFiction": true,
@@ -769,6 +865,7 @@
 	},
 	{
 		"bookTitle": "Shirley",
+		"description": "Set during the industrial revolution, this novel interweaves the lives of factory workers and the gentry, exploring themes of class struggle, love, and societal change. A rich narrative that paints a vivid picture of life in a small English town.",
 		"author": "Charlotte Brontë",
 		"publicationYear": "1849",
 		"isFiction": true,
@@ -777,6 +874,7 @@
 	},
 	{
 		"bookTitle": "Siddhartha",
+		"description": "A spiritual journey of self-discovery, this novel follows Siddhartha, a young man in ancient India, as he seeks enlightenment. Through various experiences with love, wealth, and spiritual teachings, he ultimately discovers the importance of personal experience in the quest for truth.",
 		"author": "Hermann Hesse",
 		"publicationYear": "1922",
 		"isFiction": true,
@@ -785,6 +883,7 @@
 	},
 	{
 		"bookTitle": "Song of Solomon",
+		"description": "This novel tells the story of Macon 'Milkman' Dead III, who embarks on a quest to uncover his family's history and heritage. Blending elements of magical realism with poignant social commentary, it explores themes of identity, family, and the search for personal significance.",
 		"author": "Toni Morrison",
 		"publicationYear": "1977",
 		"isFiction": true,
@@ -793,6 +892,7 @@
 	},
 	{
 		"bookTitle": "Steppenwolf",
+		"description": "An introspective journey into the mind of a man divided between his civilized and wild natures. This philosophical novel examines existential themes of loneliness, the search for meaning, and the struggle between societal expectations and personal freedom.",
 		"author": "Hermann Hesse",
 		"publicationYear": "1927",
 		"isFiction": true,
@@ -801,6 +901,7 @@
 	},
 	{
 		"bookTitle": "Sula",
+		"description": "In a small, tightly-knit community, two childhood friends navigate the complexities of friendship, love, and betrayal. The novel delves into themes of race, gender, and societal expectations, offering a rich exploration of personal identity and the bonds that connect us.",
 		"author": "Toni Morrison",
 		"publicationYear": "1973",
 		"isFiction": true,
@@ -809,6 +910,7 @@
 	},
 	{
 		"bookTitle": "Surfacing",
+		"description": "A psychological journey into the wilderness, this novel follows a woman who returns to her childhood home in Canada, seeking answers about her past and her identity. As she confronts her memories, the narrative explores themes of loss, alienation, and the search for self.",
 		"author": "Margaret Atwood",
 		"publicationYear": "1972",
 		"isFiction": true,
@@ -817,6 +919,7 @@
 	},
 	{
 		"bookTitle": "Teach Us to Outgrow Our Madness",
+		"description": "In a series of interconnected stories, the novel examines the lives of a group of young adults grappling with the complexities of love, loss, and self-discovery. It poignantly captures the trials of growing up and the enduring impact of familial and societal expectations.",
 		"author": "Kenzaburō Ōe",
 		"publicationYear": "1969",
 		"isFiction": true,
@@ -825,6 +928,7 @@
 	},
 	{
 		"bookTitle": "The ABC Murders",
+		"description": "In this thrilling mystery, detective Hercule Poirot must unravel a series of murders that follow an alphabetical pattern. With clever clues and unexpected twists, the novel keeps readers on the edge of their seats as Poirot races against time to catch the killer.",
 		"author": "Agatha Christie",
 		"publicationYear": "1936",
 		"isFiction": true,
@@ -833,6 +937,7 @@
 	},
 	{
 		"bookTitle": "The Adventures of Huckleberry Finn",
+		"description": "A classic tale of adventure and friendship, this novel follows young Huck Finn as he escapes from his oppressive life and journeys down the Mississippi River with a runaway slave. Through their adventures, they confront themes of race, morality, and the quest for freedom.",
 		"author": "Mark Twain",
 		"publicationYear": "1884",
 		"isFiction": true,
@@ -841,6 +946,7 @@
 	},
 	{
 		"bookTitle": "The Adventures of Tom Sawyer",
+		"description": "Join Tom Sawyer, a mischievous boy living in the pre-Civil War South, as he embarks on a series of thrilling escapades with his friends. This charming tale explores themes of youth, adventure, and the complexities of growing up in a changing world.",
 		"author": "Mark Twain",
 		"publicationYear": "1876",
 		"isFiction": true,
@@ -849,6 +955,7 @@
 	},
 	{
 		"bookTitle": "The Aleph",
+		"description": "In this captivating collection of stories, the author delves into themes of love, loss, and the nature of reality. Each narrative invites readers to explore the extraordinary and the mundane, blurring the lines between the fantastical and the everyday.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1949",
 		"isFiction": true,
@@ -857,6 +964,7 @@
 	},
 	{
 		"bookTitle": "The Blind Assassin",
+		"description": "A rich, layered narrative intertwines a contemporary woman's life with a fictional novel written by her late sister. Through intricate storytelling, the novel explores themes of memory, betrayal, and the complexities of sisterhood set against the backdrop of societal expectations.",
 		"author": "Margaret Atwood",
 		"publicationYear": "2000",
 		"isFiction": true,
@@ -865,6 +973,7 @@
 	},
 	{
 		"bookTitle": "The Bluest Eye",
+		"description": "This poignant novel tells the story of Pecola Breedlove, an African American girl who longs for blue eyes and a life defined by beauty and acceptance. Through her tragic journey, the novel critiques societal standards of beauty and the impact of racism and poverty.",
 		"author": "Toni Morrison",
 		"publicationYear": "1970",
 		"isFiction": true,
@@ -873,6 +982,7 @@
 	},
 	{
 		"bookTitle": "The Book of Imaginary Beings",
+		"description": "An enchanting exploration of mythical creatures from various cultures, this book features whimsical descriptions of fantastical beings that span the spectrum of human imagination. A delightful blend of folklore and creativity, it celebrates the power of storytelling.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1957",
 		"isFiction": true,
@@ -881,6 +991,7 @@
 	},
 	{
 		"bookTitle": "The Brothers Karamazov",
+		"description": "A philosophical and spiritual exploration of faith, morality, and free will, this novel follows the lives of the Karamazov brothers as they navigate complex familial relationships and existential questions. A profound reflection on human nature and the struggle for truth.",
 		"author": "Fyodor Dostoevsky",
 		"publicationYear": "1880",
 		"isFiction": true,
@@ -889,6 +1000,7 @@
 	},
 	{
 		"bookTitle": "The Changeling",
+		"description": "A haunting tale of transformation and identity, this novel explores the life of a woman who becomes embroiled in a world of secrets and deception after the birth of her child. The narrative weaves together themes of motherhood, loss, and the supernatural.",
 		"author": "Kenzaburō Ōe",
 		"publicationYear": "1970",
 		"isFiction": true,
@@ -897,6 +1009,7 @@
 	},
 	{
 		"bookTitle": "The Children of Húrin",
+		"description": "Set in the mythical world of Middle-earth, this tragic tale follows the fates of Túrin Turambar and his sister Niënor as they confront their family's cursed legacy. The novel is a powerful exploration of heroism, fate, and the struggles against darkness.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "2007",
 		"isFiction": true,
@@ -905,6 +1018,7 @@
 	},
 	{
 		"bookTitle": "The Conservationist",
+		"description": "Set in apartheid-era South Africa, this novel chronicles the life of a wealthy white farmer grappling with the complexities of land, identity, and belonging. Through its vivid portrayal of nature and humanity, the narrative reflects on the enduring impact of colonialism.",
 		"author": "Nadine Gordimer",
 		"publicationYear": "1974",
 		"isFiction": true,
@@ -913,6 +1027,7 @@
 	},
 	{
 		"bookTitle": "The Death of Ivan Ilyich",
+		"description": "This poignant novella examines the life and death of a high-ranking judge as he confronts his own mortality. Through Ivan's existential crisis, the story explores themes of authenticity, the meaning of life, and the inevitability of death.",
 		"author": "Leo Tolstoy",
 		"publicationYear": "1886",
 		"isFiction": true,
@@ -921,6 +1036,7 @@
 	},
 	{
 		"bookTitle": "The Double",
+		"description": "A darkly comedic tale that follows a man whose life is turned upside down when he encounters a doppelgänger who mirrors his every move. This unsettling exploration of identity, alienation, and societal expectations challenges perceptions of reality.",
 		"author": "José Saramago",
 		"publicationYear": "1846",
 		"isFiction": true,
@@ -929,6 +1045,7 @@
 	},
 	{
 		"bookTitle": "The Emperor of Portugallia",
+		"description": "A touching story of love and loss, this novel follows an impoverished peasant who becomes obsessed with his daughter, believing her to be a queen. Through his delusions, the narrative explores themes of paternal love, sacrifice, and the nature of reality.",
 		"author": "Selma Lagerlöf",
 		"publicationYear": "1879",
 		"isFiction": true,
@@ -937,6 +1054,7 @@
 	},
 	{
 		"bookTitle": "The Fellowship of the Ring",
+		"description": "The first part of an epic fantasy trilogy, this novel follows a diverse group of characters on a perilous journey to destroy a powerful ring that threatens their world. Themes of friendship, courage, and sacrifice weave together in this timeless adventure.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "1954",
 		"isFiction": true,
@@ -945,6 +1063,7 @@
 	},
 	{
 		"bookTitle": "The Fifth Child",
+		"description": "A chilling exploration of family and societal norms, this novel follows a couple who, after creating a comfortable life, give birth to a child who is anything but normal. The story delves into themes of fear, acceptance, and the complexities of motherhood.",
 		"author": "Doris Lessing",
 		"publicationYear": "1988",
 		"isFiction": true,
@@ -953,6 +1072,7 @@
 	},
 	{
 		"bookTitle": "The Fox Was Ever the Hunter",
+		"description": "Set against a backdrop of cultural conflict, this novel follows a young woman navigating the complexities of love, duty, and identity. As she confronts societal expectations and her own desires, the story reveals the often-hidden struggles of her community.",
 		"author": "Herta Müller",
 		"publicationYear": "1991",
 		"isFiction": true,
@@ -961,6 +1081,7 @@
 	},
 	{
 		"bookTitle": "The Gambler",
+		"description": "A semi-autobiographical novella that explores the world of gambling through the eyes of a young man. As he navigates the thrill of chance and the perils of obsession, the narrative reflects on themes of luck, fate, and the human condition.",
 		"author": "Fyodor Dostoevsky",
 		"publicationYear": "1867",
 		"isFiction": true,
@@ -969,6 +1090,7 @@
 	},
 	{
 		"bookTitle": "The Garden of Forking Paths",
+		"description": "A unique collection of interconnected stories that blur the boundaries of time and reality. Each narrative offers a glimpse into alternate realities and choices, exploring the complexity of human experience and the nature of infinity.",
 		"author": "Jorge Luis Borges",
 		"publicationYear": "1941",
 		"isFiction": true,
@@ -977,6 +1099,7 @@
 	},
 	{
 		"bookTitle": "The General in His Labyrinth",
+		"description": "This historical novel follows the last days of Simón Bolívar, the liberator of South America, as he grapples with the disillusionment of his legacy. A poignant exploration of power, freedom, and the burdens of leadership in a tumultuous world.",
 		"author": "Gabriel García Márquez",
 		"publicationYear": "1989",
 		"isFiction": true,
@@ -985,6 +1108,7 @@
 	},
 	{
 		"bookTitle": "The Glass Bead Game",
+		"description": "Set in a utopian society, this novel centers on the life of a man dedicated to the intellectual pursuit of the Glass Bead Game. Through its intricate narrative, the book explores themes of knowledge, art, and the balance between intellect and experience.",
 		"author": "Hermann Hesse",
 		"publicationYear": "1943",
 		"isFiction": true,
@@ -993,6 +1117,7 @@
 	},
 	{
 		"bookTitle": "The Golden Notebook",
+		"description": "A groundbreaking exploration of women's lives, this novel follows a writer who tries to make sense of her fragmented existence through different notebooks. It addresses themes of mental health, feminism, and the complexities of personal and societal identities.",
 		"author": "Doris Lessing",
 		"publicationYear": "1962",
 		"isFiction": true,
@@ -1001,6 +1126,7 @@
 	},
 	{
 		"bookTitle": "The Good Terrorist",
+		"description": "A compelling exploration of political radicalism, this novel follows a young woman drawn into a group of revolutionaries. As she grapples with her beliefs and the realities of violence, the narrative examines the blurred lines between ideology and personal relationships.",
 		"author": "Doris Lessing",
 		"publicationYear": "1985",
 		"isFiction": true,
@@ -1009,6 +1135,7 @@
 	},
 	{
 		"bookTitle": "The Gospel According to Jesus Christ",
+		"description": "A controversial and thought-provoking reimagining of the life of Jesus, this novel presents a humanized portrait of the figure, exploring his struggles with divinity and mortality. The narrative raises profound questions about faith, power, and the nature of truth.",
 		"author": "José Saramago",
 		"publicationYear": "1991",
 		"isFiction": true,
@@ -1017,6 +1144,7 @@
 	},
 	{
 		"bookTitle": "The Grass Is Singing",
+		"description": "Set in colonial Africa, this novel tells the story of a white woman who becomes entangled in a destructive relationship with a black servant. Through her tragic tale, the narrative explores themes of race, class, and the complexities of colonialism.",
 		"author": "Doris Lessing",
 		"publicationYear": "1950",
 		"isFiction": true,
@@ -1025,6 +1153,7 @@
 	},
 	{
 		"bookTitle": "The Handmaid's Tale",
+		"description": "In a dystopian future where women are subjugated, this gripping tale follows a handmaid whose sole purpose is to bear children for the ruling class. Through her eyes, the story explores themes of power, gender oppression, and the fight for autonomy.",
 		"author": "Margaret Atwood",
 		"publicationYear": "1985",
 		"isFiction": true,
@@ -1033,6 +1162,7 @@
 	},
 	{
 		"bookTitle": "The Hobbit",
+		"description": "An enchanting tale of adventure, this novel follows the journey of Bilbo Baggins, a reluctant hobbit, as he embarks on a quest to reclaim treasure guarded by a dragon. A story of bravery, friendship, and self-discovery set in a rich fantasy world.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "1937",
 		"isFiction": true,
@@ -1041,6 +1171,7 @@
 	},
 	{
 		"bookTitle": "The Hour of the Star",
+		"description": "This poignant novella tells the story of a poor girl from the Brazilian hinterlands who dreams of a better life in the city. Through her struggles and aspirations, the narrative explores themes of social class, identity, and the nature of existence.",
 		"author": "Clarice Lispector",
 		"publicationYear": "1977",
 		"isFiction": true,
@@ -1049,6 +1180,7 @@
 	},
 	{
 		"bookTitle": "The House of the Spirits",
+		"description": "A sweeping family saga that intertwines personal and political histories, this novel spans generations, exploring love, power, and the effects of dictatorship in a Latin American country. It beautifully blends magical realism with deep emotional truths.",
 		"author": "Isabel Allende",
 		"publicationYear": "1982",
 		"isFiction": true,
@@ -1057,6 +1189,7 @@
 	},
 	{
 		"bookTitle": "The Hunchback of Notre-Dame",
+		"description": "Set in medieval Paris, this timeless tale follows the tragic love story of Quasimodo, the deformed bell-ringer, and the beautiful Esmeralda. The novel explores themes of love, acceptance, and the struggle against societal prejudice.",
 		"author": "Victor Hugo",
 		"publicationYear": "1831",
 		"isFiction": true,
@@ -1065,6 +1198,7 @@
 	},
 	{
 		"bookTitle": "The Hunger Angel",
+		"description": "A haunting narrative about survival and resilience, this novel follows a young man in a Soviet labor camp during World War II. Through his harrowing experiences, the story delves into themes of hunger, despair, and the human spirit's indomitable will to survive.",
 		"author": "Herta Müller",
 		"publicationYear": "2009",
 		"isFiction": true,
@@ -1073,6 +1207,7 @@
 	},
 	{
 		"bookTitle": "The Idiot",
+		"description": "A powerful exploration of innocence and morality, this novel follows Prince Myshkin, who returns to Russia after years in a sanatorium. As he navigates the complexities of society, his kind-hearted nature challenges the cynicism around him.",
 		"author": "Fyodor Dostoevsky",
 		"publicationYear": "1869",
 		"isFiction": true,
@@ -1081,6 +1216,7 @@
 	},
 	{
 		"bookTitle": "The Innocents Abroad",
+		"description": "A humorous and insightful travel narrative that chronicles a group of American tourists exploring Europe and the Holy Land. The author's witty observations and critiques of cultural norms offer a unique perspective on the clash of civilizations.",
 		"author": "Mark Twain",
 		"publicationYear": "1869",
 		"isFiction": false,
@@ -1089,6 +1225,7 @@
 	},
 	{
 		"bookTitle": "The Island of the Day Before",
+		"description": "Set in the 17th century, this novel follows a shipwrecked man who finds himself on a deserted island, grappling with his thoughts of love and loss. The narrative intertwines themes of time, exploration, and the quest for meaning.",
 		"author": "Umberto Eco",
 		"publicationYear": "1994",
 		"isFiction": true,
@@ -1097,6 +1234,7 @@
 	},
 	{
 		"bookTitle": "The Japanese Lover",
+		"description": "A heartwarming tale of enduring love that transcends time and cultural boundaries. The story revolves around an elderly woman reflecting on her passionate romance with a Japanese man during World War II, exploring themes of memory, loss, and resilience.",
 		"author": "Isabel Allende",
 		"publicationYear": "2015",
 		"isFiction": true,
@@ -1105,6 +1243,7 @@
 	},
 	{
 		"bookTitle": "The Lake",
+		"description": "A deeply reflective novel that examines the life of a writer returning to his childhood home by a serene lake. Through his memories and encounters, the narrative explores themes of nostalgia, identity, and the passage of time.",
 		"author": "Banana Yoshimoto",
 		"publicationYear": "1964",
 		"isFiction": true,
@@ -1113,6 +1252,7 @@
 	},
 	{
 		"bookTitle": "The Land of Green Plums",
+		"description": "Set in Romania during the oppressive regime of Ceaușescu, this novel follows a group of friends as they navigate a world of fear, repression, and loss. The narrative weaves together their personal struggles and the broader societal challenges they face.",
 		"author": "Herta Müller",
 		"publicationYear": "1994",
 		"isFiction": true,
@@ -1121,6 +1261,7 @@
 	},
 	{
 		"bookTitle": "The Last Man",
+		"description": "In a future where humanity faces extinction, this novel tells the story of one man's quest for survival and understanding. Through his journey, the narrative explores themes of love, loss, and the resilience of the human spirit.",
 		"author": "Mary Shelley",
 		"publicationYear": "1826",
 		"isFiction": true,
@@ -1129,6 +1270,7 @@
 	},
 	{
 		"bookTitle": "The Man Who Laughs",
+		"description": "A historical novel that follows the life of Gwynplaine, a boy disfigured into a perpetual grin. Set against a backdrop of political intrigue and social injustice, the story explores themes of identity, love, and the struggle for acceptance.",
 		"author": "Victor Hugo",
 		"publicationYear": "1869",
 		"isFiction": true,
@@ -1137,6 +1279,7 @@
 	},
 	{
 		"bookTitle": "The Mandarins",
+		"description": "Set in post-World War II France, this novel follows a group of intellectuals grappling with the moral complexities of life and love. Through their intertwining relationships, the narrative explores themes of philosophy, politics, and the search for truth.",
 		"author": "Simone de Beauvoir",
 		"publicationYear": "1954",
 		"isFiction": true,
@@ -1145,6 +1288,7 @@
 	},
 	{
 		"bookTitle": "The Moons of Jupiter",
+		"description": "A collection of interlinked stories that delve into the lives of a family grappling with personal and societal changes. The narratives explore themes of love, loss, and the complexity of relationships against the backdrop of cosmic wonder.",
 		"author": "Alice Munro",
 		"publicationYear": "1982",
 		"isFiction": true,
@@ -1153,6 +1297,7 @@
 	},
 	{
 		"bookTitle": "The Mousetrap",
+		"description": "A classic mystery play that unfolds in a remote guesthouse where a group of strangers is trapped by a snowstorm. As tensions rise, a detective investigates a murder, leading to a thrilling conclusion filled with unexpected twists.",
 		"author": "Agatha Christie",
 		"publicationYear": "1952",
 		"isFiction": true,
@@ -1161,6 +1306,7 @@
 	},
 	{
 		"bookTitle": "The Murder of Roger Ackroyd",
+		"description": "A classic whodunit featuring detective Hercule Poirot, this novel revolves around the mysterious death of Roger Ackroyd. With a twist ending that redefined the genre, the story explores themes of deception, morality, and the complexities of human nature.",
 		"author": "Agatha Christie",
 		"publicationYear": "1926",
 		"isFiction": true,
@@ -1169,6 +1315,7 @@
 	},
 	{
 		"bookTitle": "The Mysterious Affair at Styles",
+		"description": "In this intriguing debut of detective Hercule Poirot, a wealthy woman is found dead in her estate. As Poirot investigates, he uncovers a web of secrets and lies, leading to a dramatic revelation that will keep readers guessing.",
 		"author": "Agatha Christie",
 		"publicationYear": "1920",
 		"isFiction": true,
@@ -1177,6 +1324,7 @@
 	},
 	{
 		"bookTitle": "The Mysterious Flame of Queen Loana",
+		"description": "A richly layered narrative that follows a man suffering from amnesia as he attempts to reconstruct his identity through memories of his childhood and the books he loved. This introspective journey explores themes of memory, literature, and the self.",
 		"author": "Umberto Eco",
 		"publicationYear": "2004",
 		"isFiction": true,
@@ -1185,6 +1333,7 @@
 	},
 	{
 		"bookTitle": "The Name of the Rose",
+		"description": "Set in a medieval abbey, this historical mystery intertwines murder, faith, and philosophy as a monk investigates a series of deaths. A gripping tale that explores the intersection of knowledge, power, and the human condition.",
 		"author": "Umberto Eco",
 		"publicationYear": "1980",
 		"isFiction": true,
@@ -1193,6 +1342,7 @@
 	},
 	{
 		"bookTitle": "The Old Man and the Sea",
+		"description": "This timeless novella tells the story of an aging fisherman who embarks on a relentless struggle to catch a giant marlin. A powerful tale of resilience, courage, and the human spirit's indomitable will against nature.",
 		"author": "Ernest Hemingway",
 		"publicationYear": "1952",
 		"isFiction": true,
@@ -1201,6 +1351,7 @@
 	},
 	{
 		"bookTitle": "The Passion According to G.H.",
+		"description": "A profound and introspective novel that explores a woman's existential crisis after an encounter with a strange creature in her maid's room. Through her reflections, the narrative delves into themes of identity, existence, and the nature of reality.",
 		"author": "Clarice Lispector",
 		"publicationYear": "1964",
 		"isFiction": true,
@@ -1209,6 +1360,7 @@
 	},
 	{
 		"bookTitle": "The Passport",
+		"description": "A poignant exploration of identity and displacement, this novel follows a group of immigrants navigating the complexities of life in a foreign land. Their stories reveal the struggles of belonging and the search for home amidst societal challenges.",
 		"author": "Herta Müller",
 		"publicationYear": "1986",
 		"isFiction": true,
@@ -1217,6 +1369,7 @@
 	},
 	{
 		"bookTitle": "The Pickup",
+		"description": "A nuanced exploration of cultural differences and personal identity, this novel follows a young woman who finds herself drawn to a mysterious man from a different background. Through their relationship, the narrative examines themes of love, class, and belonging.",
 		"author": "Nadine Gordimer",
 		"publicationYear": "2001",
 		"isFiction": true,
@@ -1225,6 +1378,7 @@
 	},
 	{
 		"bookTitle": "The Prague Cemetery",
+		"description": "Set in 19th-century Europe, this novel follows a forger who becomes entangled in political intrigues and conspiracy theories. Through a labyrinthine narrative, the story explores themes of identity, history, and the nature of truth.",
 		"author": "Umberto Eco",
 		"publicationYear": "2010",
 		"isFiction": true,
@@ -1233,6 +1387,7 @@
 	},
 	{
 		"bookTitle": "The Prince and the Pauper",
+		"description": "A classic tale of mistaken identity that follows the adventures of a poor boy who switches places with a prince. This delightful story explores themes of social class, friendship, and the quest for justice in a whimsical setting.",
 		"author": "Mark Twain",
 		"publicationYear": "1881",
 		"isFiction": true,
@@ -1241,6 +1396,7 @@
 	},
 	{
 		"bookTitle": "The Professor",
+		"description": "A reflective exploration of love and the challenges of teaching, this novel follows a professor as he navigates his relationships with students and colleagues. Through his experiences, the narrative delves into themes of passion, ambition, and the pursuit of knowledge.",
 		"author": "Charlotte Brontë",
 		"publicationYear": "1857",
 		"isFiction": true,
@@ -1249,6 +1405,7 @@
 	},
 	{
 		"bookTitle": "The Return of the King",
+		"description": "The epic conclusion to the fantasy trilogy, this novel follows the final battles for Middle-earth as the forces of good confront evil. With themes of bravery, friendship, and sacrifice, it culminates in a powerful tale of hope and redemption.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "1955",
 		"isFiction": true,
@@ -1257,6 +1414,7 @@
 	},
 	{
 		"bookTitle": "The Ring of the Löwenskölds",
+		"description": "A gripping narrative that follows a family's struggles with ancestral curses and secrets. Set in Sweden, the story weaves together themes of love, betrayal, and the weight of the past as characters confront their destinies.",
 		"author": "Selma Lagerlöf",
 		"publicationYear": "1925",
 		"isFiction": true,
@@ -1265,6 +1423,7 @@
 	},
 	{
 		"bookTitle": "The Second Sex",
+		"description": "A groundbreaking work of feminist philosophy that examines women's oppression and liberation. The narrative delves into the historical, social, and psychological dimensions of gender, challenging readers to rethink their perceptions of femininity and equality.",
 		"author": "Simone de Beauvoir",
 		"publicationYear": "1949",
 		"isFiction": false,
@@ -1273,6 +1432,7 @@
 	},
 	{
 		"bookTitle": "The Silent Cry",
+		"description": "A profound exploration of family dynamics and cultural identity, this novel follows two brothers returning to their rural hometown. Through their interactions and reflections, the narrative reveals the complexities of memory, loss, and reconciliation.",
 		"author": "Kenzaburō Ōe",
 		"publicationYear": "1967",
 		"isFiction": true,
@@ -1281,6 +1441,7 @@
 	},
 	{
 		"bookTitle": "The Silmarillion",
+		"description": "A rich tapestry of mythology and history, this collection delves into the creation of Middle-earth and the epic tales of its inhabitants. Through intricate narratives, it explores themes of heroism, power, and the struggle between good and evil.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "1977",
 		"isFiction": true,
@@ -1289,6 +1450,7 @@
 	},
 	{
 		"bookTitle": "The Sun Also Rises",
+		"description": "A classic novel of the Lost Generation, this story follows a group of expatriates as they navigate love, disillusionment, and the search for meaning in post-World War I Europe. Through their experiences, the narrative captures the essence of a restless era.",
 		"author": "Ernest Hemingway",
 		"publicationYear": "1926",
 		"isFiction": true,
@@ -1297,6 +1459,7 @@
 	},
 	{
 		"bookTitle": "The Testaments",
+		"description": "Set fifteen years after The Handmaid's Tale, this sequel explores the lives of women in a dystopian society. Through their intertwined stories, the narrative examines resistance, power, and the fight for freedom in a world of oppression.",
 		"author": "Margaret Atwood",
 		"publicationYear": "2019",
 		"isFiction": true,
@@ -1305,6 +1468,7 @@
 	},
 	{
 		"bookTitle": "The Thing Around Your Neck",
+		"description": "A poignant collection of stories that delves into the immigrant experience and the complexities of identity. Through vivid narratives, the author captures the struggles, dreams, and challenges faced by those caught between two cultures.",
 		"author": "Chimamanda Ngozi Adichie",
 		"publicationYear": "2009",
 		"isFiction": true,
@@ -1313,6 +1477,7 @@
 	},
 	{
 		"bookTitle": "The Two Towers",
+		"description": "The second installment in an epic fantasy saga, this novel continues the quest to destroy the One Ring. As alliances are forged and battles fought, the story delves into themes of friendship, sacrifice, and the enduring struggle between good and evil.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "1954",
 		"isFiction": true,
@@ -1321,6 +1486,7 @@
 	},
 	{
 		"bookTitle": "The View from Castle Rock",
+		"description": "A reflective exploration of heritage and identity, this novel blends autobiography and fiction as it traces the author's Scottish ancestry. Through vivid storytelling, it examines the interplay between personal history and the broader human experience.",
 		"author": "Alice Munro",
 		"publicationYear": "2006",
 		"isFiction": true,
@@ -1329,6 +1495,7 @@
 	},
 	{
 		"bookTitle": "The Waves",
+		"description": "A poetic and innovative narrative that follows the lives of six friends from childhood to adulthood. Through their internal monologues and lyrical prose, the novel explores themes of identity, love, and the passage of time.",
 		"author": "Virginia Woolf",
 		"publicationYear": "1931",
 		"isFiction": true,
@@ -1337,6 +1504,7 @@
 	},
 	{
 		"bookTitle": "The Wind-Up Bird Chronicle",
+		"description": "A surreal and intricate tale that follows a man searching for his missing wife. As he delves into a mysterious world of dreams and bizarre encounters, the narrative weaves together themes of loss, identity, and the quest for truth.",
 		"author": "Haruki Murakami",
 		"publicationYear": "1994",
 		"isFiction": true,
@@ -1345,6 +1513,7 @@
 	},
 	{
 		"bookTitle": "The Woman Destroyed",
+		"description": "A powerful exploration of female identity and the complexities of relationships, this novel presents three interlinked stories of women facing existential crises. Each character's struggle highlights the societal expectations and personal desires that shape their lives.",
 		"author": "Simone de Beauvoir",
 		"publicationYear": "1967",
 		"isFiction": true,
@@ -1353,6 +1522,7 @@
 	},
 	{
 		"bookTitle": "The Wonderful Adventures of Nils",
+		"description": "A charming tale that follows a mischievous boy transformed into a tiny creature, embarking on adventures across Sweden with a flock of geese. Through his journey, the story imparts valuable lessons about kindness, nature, and the importance of friendship.",
 		"author": "Selma Lagerlöf",
 		"publicationYear": "1906",
 		"isFiction": true,
@@ -1361,6 +1531,7 @@
 	},
 	{
 		"bookTitle": "The Year of the Death of Ricardo Reis",
+		"description": "Set in Portugal, this novel follows a poet who returns to his homeland after years of exile, confronting the political and personal turmoil of the time. The narrative weaves together themes of love, loss, and the search for meaning in a changing world.",
 		"author": "José Saramago",
 		"publicationYear": "1984",
 		"isFiction": true,
@@ -1369,6 +1540,7 @@
 	},
 	{
 		"bookTitle": "Things Fall Apart",
+		"description": "A seminal novel that depicts the clash between traditional African culture and colonialism. Through the story of Okonkwo, a proud leader, the narrative explores themes of identity, conflict, and the consequences of change in a society on the brink.",
 		"author": "Chinua Achebe",
 		"publicationYear": "1958",
 		"isFiction": true,
@@ -1377,6 +1549,7 @@
 	},
 	{
 		"bookTitle": "To Have and Have Not",
+		"description": "Set in the 1930s, this novel follows a fisherman in Key West who becomes embroiled in smuggling and piracy. A tale of survival and moral ambiguity, it explores themes of love, sacrifice, and the harsh realities of life.",
 		"author": "Ernest Hemingway",
 		"publicationYear": "1937",
 		"isFiction": true,
@@ -1385,6 +1558,7 @@
 	},
 	{
 		"bookTitle": "To the Lighthouse",
+		"description": "A modernist masterpiece that explores the inner thoughts of its characters during a summer visit to a seaside home. The narrative beautifully captures themes of time, memory, and the transient nature of life through poetic language and vivid imagery.",
 		"author": "Virginia Woolf",
 		"publicationYear": "1927",
 		"isFiction": true,
@@ -1393,6 +1567,7 @@
 	},
 	{
 		"bookTitle": "Toilers of the Sea",
+		"description": "Set in the picturesque island of Guernsey, this novel follows a fisherman's struggles against the sea and societal challenges. A tale of love, resilience, and the human spirit's connection to nature, it explores the complexities of man's relationship with the environment.",
 		"author": "Victor Hugo",
 		"publicationYear": "1866",
 		"isFiction": true,
@@ -1401,6 +1576,7 @@
 	},
 	{
 		"bookTitle": "Ulysses",
+		"description": "A groundbreaking novel that reimagines Homer's epic in the context of a single day in Dublin. Through its innovative narrative style, it delves into themes of identity, human experience, and the intricacies of everyday life, transforming the mundane into the extraordinary.",
 		"author": "James Joyce",
 		"publicationYear": "1922",
 		"isFiction": true,
@@ -1409,6 +1585,7 @@
 	},
 	{
 		"bookTitle": "Unfinished Tales",
+		"description": "A collection of narratives that expand upon the rich mythology of Middle-earth. Through diverse stories and characters, it explores the deep lore of Tolkien's world, offering fans new insights into beloved tales and characters.",
 		"author": "J. R. R. Tolkien",
 		"publicationYear": "1980",
 		"isFiction": true,
@@ -1417,6 +1594,7 @@
 	},
 	{
 		"bookTitle": "Valperga",
+		"description": "A historical novel set in medieval Italy, this tale follows the life of a noblewoman as she navigates political intrigue and personal tragedy. Through her journey, the narrative explores themes of power, love, and the resilience of the human spirit.",
 		"author": "Mary Shelley",
 		"publicationYear": "1823",
 		"isFiction": true,
@@ -1425,6 +1603,7 @@
 	},
 	{
 		"bookTitle": "Villette",
+		"description": "A poignant exploration of isolation and self-discovery, this novel follows a young woman who travels to Belgium to teach. Through her experiences, the narrative delves into themes of identity, love, and the struggle for personal fulfillment.",
 		"author": "Charlotte Brontë",
 		"publicationYear": "1853",
 		"isFiction": true,
@@ -1433,6 +1612,7 @@
 	},
 	{
 		"bookTitle": "War and Peace",
+		"description": "An epic historical novel that interweaves the lives of several families during the Napoleonic Wars. Through its sweeping narrative, it explores themes of love, fate, and the impact of history on personal lives, creating a rich tapestry of human experience.",
 		"author": "Leo Tolstoy",
 		"publicationYear": "1869",
 		"isFiction": true,
@@ -1441,6 +1621,7 @@
 	},
 	{
 		"bookTitle": "We Should All Be Feminists",
+		"description": "A powerful essay that argues for gender equality and women's rights, this work draws on personal anecdotes and cultural observations. It challenges societal norms and encourages readers to envision a world where all individuals are empowered and valued.",
 		"author": "Chimamanda Ngozi Adichie",
 		"publicationYear": "2014",
 		"isFiction": false,
