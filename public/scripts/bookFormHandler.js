@@ -121,7 +121,6 @@ const handleGenresInput = async function () {
 const handleYearInput = function () {
 	const yearMessage = document.querySelector("#publication-year + .field-message");
 	const year = yearInput.value;
-	console.log(`Validating year ${year}`);
 
 	const isYearValid = validateYear(Number(year));
 
@@ -170,6 +169,11 @@ authorInput.addEventListener("blur", handleTitleInput);
 authorInput.addEventListener("blur", handleAuthorInput);
 genresInput.addEventListener("blur", handleGenresInput);
 yearInput.addEventListener("blur", handleYearInput);
+
+titleInput.addEventListener("input", () => (validationState.title = null));
+authorInput.addEventListener("input", () => (validationState.author = null));
+genresInput.addEventListener("input", () => (validationState.genres = null));
+yearInput.addEventListener("input", () => (validationState.year = null));
 
 form.addEventListener("submit", async e => {
 	handleSubmit(e);
