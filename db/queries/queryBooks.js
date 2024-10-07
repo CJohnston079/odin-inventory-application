@@ -1,19 +1,25 @@
 const pool = require("../pool");
 
 exports.insertBook = async function (newBook) {
-	const { title, authorID, publicationYear, isFiction, genres } = newBook;
+	const { title, authorID, publicationYear, isFiction, genres, description } = newBook;
 
 	try {
 		await pool.query("BEGIN");
 
 		const insertBookQuery = `
-          INSERT INTO fact_books (book_title, author_id, publication_year, is_fiction)
-          VALUES ($1, $2, $3, $4)
+          INSERT INTO fact_books (book_title, author_id, publication_year, is_fiction, book_description)
+          VALUES ($1, $2, $3, $4, $5)
           RETURNING book_id
       `;
 		const {
 			rows: [{ book_id: bookID }],
-		} = await pool.query(insertBookQuery, [title, authorID, publicationYear, isFiction]);
+		} = await pool.query(insertBookQuery, [
+			title,
+			authorID,
+			publicationYear,
+			isFiction,
+			description,
+		]);
 
 		if (genres && genres.length > 0) {
 			const genreQuery = `

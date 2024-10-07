@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS fact_books (
   book_title VARCHAR(64),
   author_id VARCHAR(64) REFERENCES dim_authors(author_id),
   publication_year INT,
-  is_fiction BOOLEAN
+  is_fiction BOOLEAN,
+  book_description VARCHAR(400)
 );
 
 CREATE TABLE IF NOT EXISTS book_genres (

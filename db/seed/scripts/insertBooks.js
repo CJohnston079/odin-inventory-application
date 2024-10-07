@@ -21,8 +21,8 @@ async function insertBooks(client) {
 		const authorId = authorIdQuery.rows[0].author_id;
 
 		await client.query(
-			"INSERT INTO fact_books (book_title, author_id, publication_year, is_fiction) VALUES ($1, $2, $3, $4)",
-			[book.bookTitle, authorId, book.publicationYear, book.isFiction]
+			"INSERT INTO fact_books (book_title, author_id, publication_year, is_fiction, book_description) VALUES ($1, $2, $3, $4, $5)",
+			[book.bookTitle, authorId, book.publicationYear, book.isFiction, book.description]
 		);
 	}
 	console.log("Books inserted successfully");
