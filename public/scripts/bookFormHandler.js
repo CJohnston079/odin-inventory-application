@@ -8,7 +8,6 @@ import { validateGenres } from "./validateInputs.js";
 import { validateYear } from "./validateInputs.js";
 
 const form = document.querySelector("#new-book");
-
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
@@ -180,17 +179,16 @@ const handleSubmit = async function (e) {
 	}
 };
 
-titleInput.addEventListener("blur", handleTitleInput);
-authorInput.addEventListener("blur", handleTitleInput);
-authorInput.addEventListener("blur", handleAuthorInput);
-genresInput.addEventListener("blur", handleGenresInput);
-yearInput.addEventListener("blur", handleYearInput);
+const inputs = [
+	{ element: titleInput, blurHandler: handleTitleInput, validationKey: "title" },
+	{ element: authorInput, blurHandler: handleAuthorInput, validationKey: "author" },
+	{ element: genresInput, blurHandler: handleGenresInput, validationKey: "genres" },
+	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
+];
 
-titleInput.addEventListener("input", () => (validationState.title = null));
-authorInput.addEventListener("input", () => (validationState.author = null));
-genresInput.addEventListener("input", () => (validationState.genres = null));
-yearInput.addEventListener("input", () => (validationState.year = null));
-
-form.addEventListener("submit", async e => {
-	handleSubmit(e);
+inputs.forEach(({ element, blurHandler, validationKey }) => {
+	element.addEventListener("blur", blurHandler);
+	element.addEventListener("input", () => (validationState[validationKey] = null));
 });
+
+form.addEventListener("submit", handleSubmit);
