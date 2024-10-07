@@ -3,8 +3,13 @@ const { strToSlug, slugToStr } = require("../js/utils");
 const { capitaliseStr } = require("../js/utils");
 
 exports.postNewGenre = async function (req, res) {
-	await db.genres.insertGenre(req.body);
-	res.redirect("/genres");
+	try {
+		await db.genres.insertGenre(req.body);
+		res.redirect("/genres");
+	} catch (err) {
+		console.error(`An error occurred posting new genre:`, err);
+		res.status(500).send(`An error occurred posting new genre: ${err}`);
+	}
 };
 
 exports.getAllGenres = async function (req, res) {
