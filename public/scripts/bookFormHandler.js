@@ -14,7 +14,7 @@ const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
 const descriptionInput = document.querySelector("#description");
 
-const validationState = { title: null, author: null, genres: null, year: null };
+const validationState = { title: null, author: null, genres: null, year: null, description: null };
 
 const authors = await fetch("../authors/author-names")
 	.then(response => response.json())
@@ -155,15 +155,16 @@ const handleDescriptionInput = function () {
 	const descriptionMessage = document.querySelector("#description ~ .field-message");
 	const charCountElement = document.querySelector("#description ~ .char-count");
 	const charCount = descriptionInput.value.length;
+	const isDescriptionValid = charCount <= 280;
+
+	validationState.description = isDescriptionValid;
 
 	charCountElement.textContent = `${charCount}/280`;
-	charCountElement.classList.toggle("limit-exceeded", charCount > 280);
+	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
 
-	if (charCount > 280) {
-		descriptionMessage.textContent = "Character limit exceeded";
-	} else {
-		descriptionMessage.textContent = "";
-	}
+	descriptionMessage.textContent = isDescriptionValid ? "" : "Character limit exceeded";
+
+	return isDescriptionValid;
 };
 
 const handleSubmit = async function (e) {
@@ -174,6 +175,7 @@ const handleSubmit = async function (e) {
 		author: handleAuthorInput,
 		title: handleTitleInput,
 		genres: handleGenresInput,
+		description: handleDescriptionInput,
 	};
 
 	for (const [field, validator] of Object.entries(validators)) {
