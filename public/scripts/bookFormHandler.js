@@ -12,6 +12,7 @@ const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
+const descriptionInput = document.querySelector("#description");
 
 const validationState = { title: null, author: null, genres: null, year: null };
 
@@ -42,7 +43,7 @@ const handleTitleInput = async function () {
 		return;
 	}
 
-	const titleMessage = document.querySelector("#title + .field-message");
+	const titleMessage = document.querySelector("#title ~ .field-message");
 	const book = titleInput.value;
 	const author = authorInput.value;
 
@@ -70,7 +71,7 @@ const handleAuthorInput = async function () {
 		return;
 	}
 
-	const authorMessage = document.querySelector("#author + .field-message");
+	const authorMessage = document.querySelector("#author ~ .field-message");
 	const author = authorInput.value;
 
 	if (!author) {
@@ -102,7 +103,7 @@ const handleGenresInput = async function () {
 		return;
 	}
 
-	const genresMessage = document.querySelector("#genres + .field-message");
+	const genresMessage = document.querySelector("#genres ~ .field-message");
 	const genresInputVal = genresInput.value;
 
 	if (!genresInputVal) {
@@ -134,7 +135,7 @@ const handleYearInput = function () {
 		return;
 	}
 
-	const yearMessage = document.querySelector("#publication-year + .field-message");
+	const yearMessage = document.querySelector("#publication-year ~ .field-message");
 	const year = yearInput.value;
 
 	const isYearValid = validateYear(Number(year));
@@ -148,6 +149,21 @@ const handleYearInput = function () {
 	}
 
 	return isYearValid;
+};
+
+const handleDescriptionInput = function () {
+	const descriptionMessage = document.querySelector("#description ~ .field-message");
+	const charCountElement = document.querySelector("#description ~ .char-count");
+	const charCount = descriptionInput.value.length;
+
+	charCountElement.textContent = `${charCount}/280`;
+	charCountElement.classList.toggle("limit-exceeded", charCount > 280);
+
+	if (charCount > 280) {
+		descriptionMessage.textContent = "Character limit exceeded";
+	} else {
+		descriptionMessage.textContent = "";
+	}
 };
 
 const handleSubmit = async function (e) {
@@ -191,4 +207,5 @@ inputs.forEach(({ element, blurHandler, validationKey }) => {
 	element.addEventListener("input", () => (validationState[validationKey] = null));
 });
 
+descriptionInput.addEventListener("input", handleDescriptionInput);
 form.addEventListener("submit", handleSubmit);

@@ -57,3 +57,7 @@
 .selected {
 	opacity: 1;
 }
+
+.limit-exceeded {
+	font-weight: 700;
+}
