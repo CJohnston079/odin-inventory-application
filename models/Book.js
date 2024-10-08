@@ -8,7 +8,7 @@ class Book {
 		this.authorID = strToSlug(author);
 		this.genres = capitaliseArray(genres.replace(/,\s*$/, "").split(","));
 		this.publicationYear = publicationYear || null;
-		this.description = description || null;
+		this.description = description.slice(0, 280) || null;
 	}
 }
 

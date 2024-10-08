@@ -12,8 +12,9 @@ const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
+const descriptionInput = document.querySelector("#description");
 
-const validationState = { title: null, author: null, genres: null, year: null };
+const validationState = { title: null, author: null, genres: null, year: null, description: null };
 
 const authors = await fetch("../authors/author-names")
 	.then(response => response.json())
@@ -42,7 +43,7 @@ const handleTitleInput = async function () {
 		return;
 	}
 
-	const titleMessage = document.querySelector("#title + .field-message");
+	const titleMessage = document.querySelector("#title ~ .field-message");
 	const book = titleInput.value;
 	const author = authorInput.value;
 
@@ -70,7 +71,7 @@ const handleAuthorInput = async function () {
 		return;
 	}
 
-	const authorMessage = document.querySelector("#author + .field-message");
+	const authorMessage = document.querySelector("#author ~ .field-message");
 	const author = authorInput.value;
 
 	if (!author) {
@@ -102,7 +103,7 @@ const handleGenresInput = async function () {
 		return;
 	}
 
-	const genresMessage = document.querySelector("#genres + .field-message");
+	const genresMessage = document.querySelector("#genres ~ .field-message");
 	const genresInputVal = genresInput.value;
 
 	if (!genresInputVal) {
@@ -134,7 +135,7 @@ const handleYearInput = function () {
 		return;
 	}
 
-	const yearMessage = document.querySelector("#publication-year + .field-message");
+	const yearMessage = document.querySelector("#publication-year ~ .field-message");
 	const year = yearInput.value;
 
 	const isYearValid = validateYear(Number(year));
@@ -150,6 +151,22 @@ const handleYearInput = function () {
 	return isYearValid;
 };
 
+const handleDescriptionInput = function () {
+	const descriptionMessage = document.querySelector("#description ~ .field-message");
+	const charCountElement = document.querySelector("#description ~ .char-count");
+	const charCount = descriptionInput.value.length;
+	const isDescriptionValid = charCount <= 280;
+
+	validationState.description = isDescriptionValid;
+
+	charCountElement.textContent = `${charCount}/280`;
+	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
+
+	descriptionMessage.textContent = isDescriptionValid ? "" : "Character limit exceeded";
+
+	return isDescriptionValid;
+};
+
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
@@ -158,6 +175,7 @@ const handleSubmit = async function (e) {
 		author: handleAuthorInput,
 		title: handleTitleInput,
 		genres: handleGenresInput,
+		description: handleDescriptionInput,
 	};
 
 	for (const [field, validator] of Object.entries(validators)) {
@@ -175,7 +193,14 @@ const handleSubmit = async function (e) {
 	const isFormValid = Object.values(validationState).every(Boolean);
 
 	if (isFormValid) {
-		e.target.submit();
+		e.target.form.submit();
+	}
+};
+
+const submitOnEnter = async function (e) {
+	if (e.key === "Enter") {
+		e.preventDefault();
+		await handleSubmit(e);
 	}
 };
 
@@ -190,5 +215,8 @@ inputs.forEach(({ element, blurHandler, validationKey }) => {
 	element.addEventListener("blur", blurHandler);
 	element.addEventListener("input", () => (validationState[validationKey] = null));
 });
+
+descriptionInput.addEventListener("input", handleDescriptionInput);
+descriptionInput.addEventListener("keydown", submitOnEnter);
 
 form.addEventListener("submit", handleSubmit);
