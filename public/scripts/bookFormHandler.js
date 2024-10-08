@@ -193,7 +193,14 @@ const handleSubmit = async function (e) {
 	const isFormValid = Object.values(validationState).every(Boolean);
 
 	if (isFormValid) {
-		e.target.submit();
+		e.target.form.submit();
+	}
+};
+
+const submitOnEnter = async function (e) {
+	if (e.key === "Enter") {
+		e.preventDefault();
+		await handleSubmit(e);
 	}
 };
 
@@ -210,4 +217,6 @@ inputs.forEach(({ element, blurHandler, validationKey }) => {
 });
 
 descriptionInput.addEventListener("input", handleDescriptionInput);
+descriptionInput.addEventListener("keydown", submitOnEnter);
+
 form.addEventListener("submit", handleSubmit);
