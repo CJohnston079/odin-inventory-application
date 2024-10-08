@@ -10,7 +10,8 @@ CREATE TABLE IF NOT EXISTS dim_authors (
   first_name VARCHAR(32),
   last_name VARCHAR(32),
   birth_year INT,
-  nationality VARCHAR(32)
+  nationality VARCHAR(32),
+  biography VARCHAR(400)
 );
 
 CREATE TABLE IF NOT EXISTS dim_genres (
