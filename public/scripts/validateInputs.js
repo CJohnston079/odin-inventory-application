@@ -14,6 +14,12 @@ export const validateAuthor = async function (author) {
 	return authorExists;
 };
 
+export const validateAuthorName = async function (author) {
+	const authorExists = await doesAuthorExist(author);
+
+	return !authorExists;
+};
+
 export const validateGenres = async function (genresInput) {
 	const genresArr = genresInput
 		.replace(/,\s*$/, "")
