@@ -13,3 +13,10 @@ exports.getAllCountries = async function () {
 	`);
 	return rows;
 };
+
+exports.getNationalityNames = async function () {
+	const { rows } = await pool.query(`
+    SELECT country_id AS id, nationality FROM dim_countries;
+  `);
+	return rows;
+};
