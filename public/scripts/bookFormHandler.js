@@ -193,7 +193,7 @@ const handleSubmit = async function (e) {
 	const isFormValid = Object.values(validationState).every(Boolean);
 
 	if (isFormValid) {
-		e.target.form.submit();
+		form.submit();
 	}
 };
 
