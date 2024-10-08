@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../styles/index.css" />
 		<title>Inventory | <%= title %></title>
+		<link rel="stylesheet" href="../styles/index.css" />
+		<script type="module" src="../scripts/authorFormHandler.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
@@ -36,18 +37,5 @@
 			</ul>
 			<button type="submit">Add author</button>
 		</form>
-		<script type="application/json" id="nationalitiesData">
-			<%- JSON.stringify(nationalities-old) %>
-		</script>
-		<script type="module">
-			import enableAutoComplete from "../scripts/enableAutoComplete.js";
-
-			enableAutoComplete({
-				inputElementID: "nationality",
-				suggestionListID: "nationality-suggestions",
-				options: JSON.parse(document.getElementById("nationalitiesData").textContent),
-				fieldName: "name",
-			});
-		</script>
 	</body>
 </html>
