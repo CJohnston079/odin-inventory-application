@@ -1,0 +1,16 @@
+<table>
+	<thead>
+		<tr>
+			<th>Country</th>
+			<th>Books</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% countries.map(country => { %>
+		<tr>
+			<td><%= country.country %></td>
+			<td><%= country.books %></td>
+		</tr>
+		<% }) %>
+	</tbody>
+</table>
