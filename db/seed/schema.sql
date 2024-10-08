@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS book_languages;
 DROP TABLE IF EXISTS book_genres;
 DROP TABLE IF EXISTS fact_books;
-DROP TABLE IF EXISTS dim_languages;
+DROP TABLE IF EXISTS dim_countries;
 DROP TABLE IF EXISTS dim_genres;
 DROP TABLE IF EXISTS dim_authors;
 
