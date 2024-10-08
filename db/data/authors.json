@@ -3,192 +3,224 @@
 		"firstName": "Chinua",
 		"lastName": "Achebe",
 		"birthYear": "1930",
-		"nationality": "Nigerian"
+		"nationality": "Nigerian",
+		"biography": "Chinua Achebe was a Nigerian novelist and essayist whose works explored African identity, colonialism, and post-colonial society, blending traditional storytelling with modern literary techniques."
 	},
 	{
 		"firstName": "Isabel",
 		"lastName": "Allende",
 		"birthYear": "1942",
-		"nationality": "Chilean"
+		"nationality": "Chilean",
+		"biography": "Isabel Allende is a Chilean-American author known for her magical realism and richly detailed narratives, often focusing on strong female characters and themes of love, exile, and resilience."
 	},
 	{
 		"firstName": "Mário",
 		"lastName": "de Andrade",
 		"birthYear": "1893",
-		"nationality": "Brazilian"
+		"nationality": "Brazilian",
+		"biography": "Mário de Andrade was a Brazilian writer, poet, and musicologist whose works were pivotal in the Modernist movement, blending folklore, culture, and language to explore Brazilian identity."
 	},
 	{
 		"firstName": "Margaret",
 		"lastName": "Atwood",
 		"birthYear": "1939",
-		"nationality": "Canadian"
+		"nationality": "Canadian",
+		"biography": "Margaret Atwood is a Canadian author and poet known for her speculative fiction, blending feminist themes with social commentary, often examining the intersections of power, gender, and dystopia."
 	},
 	{
 		"firstName": "Jorge Luis",
 		"lastName": "Borges",
 		"birthYear": "1899",
-		"nationality": "Argentinian"
+		"nationality": "Argentinian",
+		"biography": "Jorge Luis Borges was an Argentine writer and poet whose works delved into metaphysical themes, blending labyrinthine structures, philosophical inquiry, and literary invention in his exploration of reality."
 	},
 	{
 		"firstName": "Charlotte",
 		"lastName": "Brontë",
 		"birthYear": "1816",
-		"nationality": "British"
+		"nationality": "British",
+		"biography": "Charlotte Brontë was an English novelist known for her emotionally intense works that explored themes of gender, morality, and social criticism, often featuring strong, complex heroines."
 	},
 	{
 		"firstName": "Agatha",
 		"lastName": "Christie",
 		"birthYear": "1890",
-		"nationality": "British"
+		"nationality": "British",
+		"biography": "Agatha Christie was a British novelist renowned for her detective fiction, particularly her ingenious plotting, mastery of suspense, and iconic characters, shaping the modern mystery genre."
 	},
 	{
 		"firstName": "Fyodor",
 		"lastName": "Dostoevsky",
 		"birthYear": "1821",
-		"nationality": "Russian"
+		"nationality": "Russian",
+		"biography": "Fyodor Dostoevsky was a Russian novelist and philosopher whose works explored complex psychological and ethical dilemmas, delving into themes of morality, faith, and the human condition."
 	},
 	{
 		"firstName": "Umberto",
 		"lastName": "Eco",
 		"birthYear": "1932",
-		"nationality": "Italian"
+		"nationality": "Italian",
+		"biography": "Umberto Eco was an Italian author and scholar whose works fused historical fiction with semiotic theory, often examining knowledge, language, and the interplay between truth and illusion."
 	},
 	{
 		"firstName": "Hermann",
 		"lastName": "Hesse",
 		"birthYear": "1877",
-		"nationality": "German"
+		"nationality": "German",
+		"biography": "Hermann Hesse was a German-Swiss writer known for his introspective novels, exploring themes of self-discovery, spirituality, and the conflict between individualism and societal conformity."
 	},
 	{
 		"firstName": "Victor",
 		"lastName": "Hugo",
 		"birthYear": "1802",
-		"nationality": "French"
+		"nationality": "French",
+		"biography": "Victor Hugo was a French writer whose works spanned poetry, drama, and novels, focusing on social justice, human suffering, and the moral complexities of individual and political actions."
 	},
 	{
 		"firstName": "James",
 		"lastName": "Joyce",
 		"birthYear": "1882",
-		"nationality": "Irish"
+		"nationality": "Irish",
+		"biography": "James Joyce was an Irish modernist writer known for his experimental style, exploring themes of consciousness, language, and identity through stream-of-consciousness and innovative narrative techniques."
 	},
 	{
 		"firstName": "Kenzaburō",
 		"lastName": "Ōe",
 		"birthYear": "1935",
-		"nationality": "Japanese"
+		"nationality": "Japanese",
+		"biography": "Kenzaburō Ōe was a Japanese novelist whose works explored themes of personal trauma, politics, and social responsibility, often blending the personal with the universal in his storytelling."
 	},
 	{
 		"firstName": "Gabriel",
 		"lastName": "García Márquez",
 		"birthYear": "1927",
-		"nationality": "Colombian"
+		"nationality": "Colombian",
+		"biography": "Gabriel García Márquez was a Colombian author and journalist known for his masterful use of magical realism, blending reality and fantasy to explore Latin American culture, history, and politics."
 	},
 	{
 		"firstName": "Nadine",
 		"lastName": "Gordimer",
 		"birthYear": "1923",
-		"nationality": "South African"
+		"nationality": "South African",
+		"biography": "Nadine Gordimer was a South African novelist and activist whose works addressed apartheid, social injustice, and the complexities of moral and political responsibility in divided societies."
 	},
 	{
 		"firstName": "Ernest",
 		"lastName": "Hemingway",
 		"birthYear": "1899",
-		"nationality": "American"
+		"nationality": "American",
+		"biography": "Ernest Hemingway was an American novelist and journalist known for his spare, direct writing style, often exploring themes of courage, loss, and the human struggle for meaning."
 	},
 	{
 		"firstName": "Haruki",
 		"lastName": "Murakami",
 		"birthYear": "1949",
-		"nationality": "Japanese"
+		"nationality": "Japanese",
+		"biography": "Haruki Murakami is a Japanese novelist whose surreal and often dreamlike works explore themes of alienation, memory, and the boundaries between the real and the fantastical."
 	},
 	{
 		"firstName": "Herta",
 		"lastName": "Müller",
 		"birthYear": "1953",
-		"nationality": "German"
+		"nationality": "German",
+		"biography": "Herta Müller is a Romanian-German author whose works examine themes of oppression, exile, and the personal cost of totalitarian regimes, blending poetry with stark realism."
 	},
 	{
 		"firstName": "Alice",
 		"lastName": "Munro",
 		"birthYear": "1931",
-		"nationality": "Canadian"
+		"nationality": "Canadian",
+		"biography": "Alice Munro is a Canadian short story writer celebrated for her precise and insightful depictions of ordinary lives, exploring the complexities of relationships, memory, and identity."
 	},
 	{
 		"firstName": "José",
 		"lastName": "Saramago",
 		"birthYear": "1922",
-		"nationality": "Portuguese"
+		"nationality": "Portuguese",
+		"biography": "José Saramago was a Portuguese writer known for his philosophical novels, blending allegory and realism to examine human nature, societal structures, and existential themes."
 	},
 	{
 		"firstName": "Mary",
 		"lastName": "Shelley",
 		"birthYear": "1797",
-		"nationality": "British"
+		"nationality": "British",
+		"biography": "Mary Shelley was an English novelist whose works often explored themes of human ambition, morality, and the relationship between science and ethics, blending Gothic and Romantic sensibilities."
 	},
 	{
 		"firstName": "Simone",
 		"lastName": "de Beauvoir",
 		"birthYear": "1908",
-		"nationality": "French"
+		"nationality": "French",
+		"biography": "Simone de Beauvoir was a French writer and philosopher whose works examined existentialism, feminism, and ethics, challenging societal norms and exploring the construction of identity."
 	},
 	{
 		"firstName": "Clarice",
 		"lastName": "Lispector",
 		"birthYear": "1920",
-		"nationality": "Brazilian"
+		"nationality": "Brazilian",
+		"biography": "Clarice Lispector was a Brazilian writer known for her introspective, enigmatic prose, exploring themes of identity, existentialism, and the boundaries of language and consciousness."
 	},
 	{
 		"firstName": "Selma",
 		"lastName": "Lagerlöf",
 		"birthYear": "1858",
-		"nationality": "Swedish"
+		"nationality": "Swedish",
+		"biography": "Selma Lagerlöf was a Swedish author and the first woman to win the Nobel Prize in Literature, known for her vivid, often folkloric narratives that blended realism with the fantastical."
 	},
 	{
 		"firstName": "Doris",
 		"lastName": "Lessing",
 		"birthYear": "1919",
-		"nationality": "British"
+		"nationality": "British",
+		"biography": "Doris Lessing was a British novelist whose works explored themes of colonialism, feminism, and social justice, often focusing on the inner lives of her characters in changing societies."
 	},
 	{
 		"firstName": "Banana",
 		"lastName": "Yoshimoto",
 		"birthYear": "1964",
-		"nationality": "Japanese"
+		"nationality": "Japanese",
+		"biography": "Banana Yoshimoto is a Japanese author whose works explore themes of love, loss, and the emotional lives of young people, blending dreamlike qualities with sharp emotional insights."
 	},
 	{
 		"firstName": "Toni",
 		"lastName": "Morrison",
 		"birthYear": "1931",
-		"nationality": "American"
+		"nationality": "American",
+		"biography": "Toni Morrison was an American novelist whose works delved into African American culture and history, exploring themes of identity, trauma, and the legacy of slavery with lyrical intensity."
 	},
 	{
 		"firstName": "Chimamanda",
 		"lastName": "Ngozi Adichie",
 		"birthYear": "1977",
-		"nationality": "Nigerian"
+		"nationality": "Nigerian",
+		"biography": "Chimamanda Ngozi Adichie is a Nigerian writer whose works explore themes of identity, migration, feminism, and post-colonialism, often highlighting the complexities of Nigerian and global experiences."
 	},
 	{
 		"firstName": "J. R. R.",
 		"lastName": "Tolkien",
 		"birthYear": "1892",
-		"nationality": "British"
+		"nationality": "British",
+		"biography": "J. R. R. Tolkien was an English writer and philologist whose fantasy works created intricate, immersive worlds, blending mythological elements with deep explorations of good, evil, and heroism."
 	},
 	{
 		"firstName": "Leo",
 		"lastName": "Tolstoy",
 		"birthYear": "1828",
-		"nationality": "Russian"
+		"nationality": "Russian",
+		"biography": "Leo Tolstoy was a Russian novelist and philosopher whose epic works explored the moral and social issues of his time, often focusing on themes of faith, family, and the meaning of life."
 	},
 	{
 		"firstName": "Mark",
 		"lastName": "Twain",
 		"birthYear": "1835",
-		"nationality": "American"
+		"nationality": "American",
+		"biography": "Mark Twain was an American writer and humorist known for his sharp social commentary, wit, and depictions of life along the Mississippi River, often addressing issues of race and class."
 	},
 	{
 		"firstName": "Virginia",
 		"lastName": "Woolf",
 		"birthYear": "1882",
-		"nationality": "British"
+		"nationality": "British",
+		"biography": "Virginia Woolf was an English modernist writer known for her experimental narrative techniques, exploring themes of time, memory, and consciousness through stream-of-consciousness prose."
 	}
 ]
