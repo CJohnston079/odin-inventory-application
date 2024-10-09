@@ -136,6 +136,13 @@ const handleSubmit = async function (e) {
 	}
 };
 
+const submitOnEnter = async function (e) {
+	if (e.key === "Enter") {
+		e.preventDefault();
+		await handleSubmit(e);
+	}
+};
+
 const inputs = [
 	{ element: firstNameInput, blurHandler: handleNameInput, validationKey: "name" },
 	{ element: lastNameInput, blurHandler: handleNameInput, validationKey: "name" },
@@ -149,5 +156,6 @@ inputs.forEach(({ element, blurHandler, validationKey }) => {
 });
 
 biographyInput.addEventListener("input", handleBiographyInput);
+biographyInput.addEventListener("keydown", submitOnEnter);
 
 form.addEventListener("submit", handleSubmit);
