@@ -1,6 +1,7 @@
 import enableAutoComplete from "./enableAutoComplete.js";
 import { validateAuthorName } from "./validateInputs.js";
 import { validateYear } from "./validateInputs.js";
+import { validateNationality } from "./validateInputs.js";
 
 const form = document.querySelector("#new-author");
 
@@ -9,7 +10,7 @@ const lastNameInput = document.querySelector("#last-name");
 const yearInput = document.querySelector("#birth-year");
 const nationalityInput = document.querySelector("#nationality");
 
-const validationState = { name: null, year: null };
+const validationState = { name: null, year: null, nationality: null };
 
 const nationalities = await fetch("../countries/nationality-names")
 	.then(response => response.json())
@@ -64,16 +65,36 @@ const handleYearInput = function () {
 	if (isYearValid) {
 		yearMessage.textContent = "";
 	} else {
-		yearMessage.textContent = "Birth year cannot be in the future.";
+		yearMessage.textContent = "Birth   year cannot be in the future.";
 	}
 
 	return isYearValid;
+};
+
+const handleNationalityInput = async function () {
+	if (validationState.nationality) {
+		return;
+	}
+
+	const nationalityMessage = document.querySelector("#nationality ~ .field-message");
+	const nationality = nationalityInput.value;
+
+	const isNationalityValid = await validateNationality(nationality);
+
+	validationState.nationality = isNationalityValid;
+
+	if (!isNationalityValid) {
+		nationalityMessage.textContent = `Nationality ${nationality} not found.`;
+	} else {
+		nationalityMessage.textContent = "";
+	}
 };
 
 const inputs = [
 	{ element: firstNameInput, blurHandler: handleNameInput, validationKey: "name" },
 	{ element: lastNameInput, blurHandler: handleNameInput, validationKey: "name" },
 	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
+	{ element: nationalityInput, blurHandler: handleNationalityInput, validationKey: "nationality" },
 ];
 
 inputs.forEach(({ element, blurHandler, validationKey }) => {

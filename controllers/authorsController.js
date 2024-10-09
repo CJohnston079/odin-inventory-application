@@ -46,7 +46,23 @@ exports.checkAuthor = async function (req, res) {
 		const exists = await db.authors.checkAuthor(authorID);
 		res.json({ exists, author });
 	} catch (err) {
-		console.error(`Error checking author ${author}`);
+		console.error(`Error checking author ${author}.`, err);
+		res.status(500).json({ error: "Server error" });
+	}
+};
+
+exports.checkNationality = async function (req, res) {
+	const nationality = strToTitleCase(req.query.nationality);
+
+	if (!nationality) {
+		return;
+	}
+
+	try {
+		const exists = await db.countries.checkNationality(nationality);
+		res.json({ exists, nationality });
+	} catch (err) {
+		console.error(`Error checking nationality ${nationality}.`, err);
 		res.status(500).json({ error: "Server error" });
 	}
 };

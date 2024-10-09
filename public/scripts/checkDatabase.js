@@ -47,3 +47,21 @@ export const doesGenreExist = async function (genre) {
 		return false;
 	}
 };
+
+export const doesNationalityExist = async function (nationality) {
+	if (!nationality || nationality === "") {
+		return false;
+	}
+
+	const query = `check-nationality?nationality=${encodeURIComponent(nationality)}`;
+
+	try {
+		const response = await fetch(query);
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error fetching from endpoint check-nationality?nationality=${nationality}`, err);
+		return false;
+	}
+};
