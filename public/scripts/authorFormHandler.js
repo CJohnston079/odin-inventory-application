@@ -90,6 +90,34 @@ const handleNationalityInput = async function () {
 	}
 };
 
+const handleSubmit = async function (e) {
+	e.preventDefault();
+
+	const validators = {
+		name: handleNameInput,
+		year: handleYearInput,
+		nationality: handleNationalityInput,
+	};
+
+	for (const [field, validator] of Object.entries(validators)) {
+		if (validationState[field]) {
+			continue;
+		}
+
+		const isValid = await validator();
+
+		if (!isValid) {
+			return;
+		}
+	}
+
+	const isFormValid = Object.values(validationState).every(Boolean);
+
+	if (isFormValid) {
+		form.submit();
+	}
+};
+
 const inputs = [
 	{ element: firstNameInput, blurHandler: handleNameInput, validationKey: "name" },
 	{ element: lastNameInput, blurHandler: handleNameInput, validationKey: "name" },
@@ -101,3 +129,5 @@ inputs.forEach(({ element, blurHandler, validationKey }) => {
 	element.addEventListener("blur", blurHandler);
 	element.addEventListener("input", () => (validationState[validationKey] = null));
 });
+
+form.addEventListener("submit", handleSubmit);
