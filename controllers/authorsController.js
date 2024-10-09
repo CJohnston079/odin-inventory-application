@@ -1,11 +1,15 @@
 const db = require("../db/queries/index");
 const nationalities = require("../db/data/countries");
-const { strToSlug } = require("../js/utils");
-const { strToTitleCase } = require("../js/utils");
+const Author = require("../models/Author");
 
 exports.postNewAuthor = async function (req, res) {
+	const { firstName, lastName, birthYear, nationality, biography } = req.body;
+	const newAuthor = new Author({ firstName, lastName, birthYear, nationality, biography });
+
+	console.log("Posting new author:\n", newAuthor);
+
 	try {
-		await db.authors.insertAuthor(req.body);
+		await db.authors.insertAuthor(newAuthor);
 		res.redirect("/authors");
 	} catch (err) {
 		console.error(`An error occurred posting new author:`, err);
