@@ -9,8 +9,9 @@ const firstNameInput = document.querySelector("#first-name");
 const lastNameInput = document.querySelector("#last-name");
 const yearInput = document.querySelector("#birth-year");
 const nationalityInput = document.querySelector("#nationality");
+const biographyInput = document.querySelector("#biography");
 
-const validationState = { name: null, year: null, nationality: null };
+const validationState = { name: null, year: null, nationality: null, biography: null };
 
 const nationalities = await fetch("../countries/nationality-names")
 	.then(response => response.json())
@@ -90,6 +91,22 @@ const handleNationalityInput = async function () {
 	}
 };
 
+const handleBiographyInput = function () {
+	const biographyMessage = document.querySelector("#biography ~ .field-message");
+	const charCountElement = document.querySelector("#biography ~ .char-count");
+	const charCount = biographyInput.value.length;
+	const isBiographyValid = charCount <= 280;
+
+	validationState.biography = isBiographyValid;
+
+	charCountElement.textContent = `${charCount}/280`;
+	charCountElement.classList.toggle("limit-exceeded", !isBiographyValid);
+
+	biographyMessage.textContent = isBiographyValid ? "" : "Character limit exceeded";
+
+	return isBiographyValid;
+};
+
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
@@ -97,6 +114,7 @@ const handleSubmit = async function (e) {
 		name: handleNameInput,
 		year: handleYearInput,
 		nationality: handleNationalityInput,
+		biography: handleBiographyInput,
 	};
 
 	for (const [field, validator] of Object.entries(validators)) {
@@ -129,5 +147,7 @@ inputs.forEach(({ element, blurHandler, validationKey }) => {
 	element.addEventListener("blur", blurHandler);
 	element.addEventListener("input", () => (validationState[validationKey] = null));
 });
+
+biographyInput.addEventListener("input", handleBiographyInput);
 
 form.addEventListener("submit", handleSubmit);
