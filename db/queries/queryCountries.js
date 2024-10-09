@@ -20,3 +20,16 @@ exports.getNationalityNames = async function () {
   `);
 	return rows;
 };
+
+exports.checkNationality = async function (nationality) {
+	const query = `
+		SELECT 1 FROM dim_countries
+		WHERE nationality = $1
+		LIMIT 1;
+	`;
+
+	const result = await pool.query(query, [nationality]);
+	const nationalityExists = result.rowCount > 0;
+
+	return nationalityExists;
+};
