@@ -15,10 +15,9 @@
 				<li>
 					<label for="first-name">First name:</label>
 					<input type="text" name="firstName" id="first-name" required />
-				</li>
-				<li>
 					<label for="last-name">Surname:</label>
 					<input type="text" name="lastName" id="last-name" required />
+					<span class="field-message"></span>
 				</li>
 				<li>
 					<label for="birth-year">Birth year:</label>
@@ -28,10 +27,12 @@
 						id="birth-year"
 						max="<%= new Date().getFullYear() %>"
 					/>
+					<span class="field-message"></span>
 				</li>
 				<li>
 					<label for="nationality">Nationality:</label>
 					<input type="text" name="nationality" id="nationality" required />
+					<span class="field-message"></span>
 					<ul id="nationality-suggestions"></ul>
 				</li>
 			</ul>

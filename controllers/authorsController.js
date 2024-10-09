@@ -1,5 +1,7 @@
 const db = require("../db/queries/index");
 const nationalities = require("../db/data/countries");
+const { strToSlug } = require("../js/utils");
+const { strToTitleCase } = require("../js/utils");
 
 exports.postNewAuthor = async function (req, res) {
 	try {
@@ -30,4 +32,37 @@ exports.getBooksByAuthor = async function (req, res) {
 exports.getAuthorNames = async function (req, res) {
 	const authors = await db.authors.getAuthorNames();
 	res.json({ authors });
+};
+
+exports.checkAuthor = async function (req, res) {
+	const author = strToTitleCase(req.query.author);
+
+	if (!author) {
+		return;
+	}
+
+	try {
+		const authorID = strToSlug(author);
+		const exists = await db.authors.checkAuthor(authorID);
+		res.json({ exists, author });
+	} catch (err) {
+		console.error(`Error checking author ${author}.`, err);
+		res.status(500).json({ error: "Server error" });
+	}
+};
+
+exports.checkNationality = async function (req, res) {
+	const nationality = strToTitleCase(req.query.nationality);
+
+	if (!nationality) {
+		return;
+	}
+
+	try {
+		const exists = await db.countries.checkNationality(nationality);
+		res.json({ exists, nationality });
+	} catch (err) {
+		console.error(`Error checking nationality ${nationality}.`, err);
+		res.status(500).json({ error: "Server error" });
+	}
 };
