@@ -1,17 +1,15 @@
 const pool = require("../pool");
-const { strToSlug } = require("../../js/utils");
 
 exports.insertAuthor = async function (newAuthor) {
-	const { firstName, lastName, birthYear, nationality } = newAuthor;
-	const authorID = strToSlug(`${firstName} ${lastName}`);
+	const { authorID, firstName, lastName, birthYear, nationality, biography } = newAuthor;
 
 	const query = `
-    INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality)
-    VALUES ($1, $2, $3, $4, $5)
+    INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality, biography)
+    VALUES ($1, $2, $3, $4, $5, $6)
   `;
 
 	try {
-		await pool.query(query, [authorID, firstName, lastName, birthYear, nationality]);
+		await pool.query(query, [authorID, firstName, lastName, birthYear, nationality, biography]);
 	} catch (error) {
 		console.error(`Error inserting author ${firstName} ${lastName}:`, error);
 		throw error;
