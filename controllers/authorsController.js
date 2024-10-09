@@ -1,6 +1,8 @@
 const db = require("../db/queries/index");
 const nationalities = require("../db/data/countries");
 const Author = require("../models/Author");
+const { strToTitleCase } = require("../js/utils");
+const { strToSlug } = require("../js/utils");
 
 exports.postNewAuthor = async function (req, res) {
 	const { firstName, lastName, birthYear, nationality, biography } = req.body;
