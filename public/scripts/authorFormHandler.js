@@ -1,5 +1,6 @@
 import enableAutoComplete from "./enableAutoComplete.js";
 import { validateAuthorName } from "./validateInputs.js";
+import { validateYear } from "./validateInputs.js";
 
 const form = document.querySelector("#new-author");
 
@@ -8,7 +9,7 @@ const lastNameInput = document.querySelector("#last-name");
 const yearInput = document.querySelector("#birth-year");
 const nationalityInput = document.querySelector("#nationality");
 
-const validationState = { name: null };
+const validationState = { name: null, year: null };
 
 const nationalities = await fetch("../countries/nationality-names")
 	.then(response => response.json())
@@ -48,12 +49,31 @@ const handleNameInput = async function () {
 	return nameAvailable;
 };
 
-firstNameInput.addEventListener("blur", handleNameInput);
-lastNameInput.addEventListener("blur", handleNameInput);
+const handleYearInput = function () {
+	if (validationState.year) {
+		return;
+	}
+
+	const yearMessage = document.querySelector("#birth-year ~ .field-message");
+	const year = yearInput.value;
+
+	const isYearValid = validateYear(Number(year));
+
+	validationState.year = isYearValid;
+
+	if (isYearValid) {
+		yearMessage.textContent = "";
+	} else {
+		yearMessage.textContent = "Birth year cannot be in the future.";
+	}
+
+	return isYearValid;
+};
 
 const inputs = [
 	{ element: firstNameInput, blurHandler: handleNameInput, validationKey: "name" },
 	{ element: lastNameInput, blurHandler: handleNameInput, validationKey: "name" },
+	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
 ];
 
 inputs.forEach(({ element, blurHandler, validationKey }) => {
