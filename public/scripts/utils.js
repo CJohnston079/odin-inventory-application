@@ -28,7 +28,7 @@ export const joinArrWithConjunctions = function (arr) {
 
 export const formatGenreStr = function (str) {
 	const hasMultipleItems = /\s+(,|and)\s+/.test(str);
-	const genreStr = `Gerne${hasMultipleItems ? "s" : ""} ${str} not found.`;
+	const genreStr = `Genre${hasMultipleItems ? "s" : ""} ${str} not found.`;
 
 	return genreStr;
 };
