@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require("../controllers/genresController");
 
 router.get("/genre-names", controller.getGenreNames);
+router.get("/check-genre", controller.checkGenre);
 router.get("/new", controller.getNewGenreForm);
 router.get("/:genre", controller.getBooksByGenre);
 router.get("/", controller.getAllGenres);

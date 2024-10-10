@@ -3,15 +3,16 @@ export const doesBookExistByAuthor = async function (title, author) {
 		return false;
 	}
 
+	const base = "/books/check-title";
+	const query = `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
+
 	try {
-		const base = "check-title";
-		const query = `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
 		const response = await fetch(`${base}?${query}`);
 		const data = await response.json();
 
 		return data.exists;
 	} catch (err) {
-		console.error(`Error fetching from endpoint check-title?title=${title}&author${author}:`, err);
+		console.error(`Error fetching from endpoint "${base}?title=${title}&author${author}":`, err);
 		return false;
 	}
 };
@@ -21,13 +22,16 @@ export const doesAuthorExist = async function (author) {
 		return false;
 	}
 
+	const base = "/authors/check-author";
+	const query = `author=${encodeURIComponent(author)}`;
+
 	try {
-		const response = await fetch(`check-author?author=${encodeURIComponent(author)}`);
+		const response = await fetch(`${base}?${query}`);
 		const data = await response.json();
 
 		return data.exists;
 	} catch (err) {
-		console.error(`Error fetching from endpoint check-author?author=${author}:`, err);
+		console.error(`Error fetching from endpoint "${base}?author=${author}":`, err);
 		return false;
 	}
 };
@@ -37,13 +41,16 @@ export const doesGenreExist = async function (genre) {
 		return false;
 	}
 
+	const base = "/genres/check-genre";
+	const query = `genre=${encodeURIComponent(genre)}`;
+
 	try {
-		const response = await fetch(`/books/check-genre?genre=${encodeURIComponent(genre)}`);
+		const response = await fetch(`${base}?${query}`);
 		const data = await response.json();
 
 		return data.exists;
 	} catch (err) {
-		console.error(`Error fetching from endpoint books/check-genre?genre=${genre}:`, err);
+		console.error(`Error fetching from endpoint "${base}?genre=${genre}":`, err);
 		return false;
 	}
 };
@@ -53,15 +60,16 @@ export const doesNationalityExist = async function (nationality) {
 		return false;
 	}
 
-	const query = `check-nationality?nationality=${encodeURIComponent(nationality)}`;
+	const base = "/countries/check-nationality";
+	const query = `nationality=${encodeURIComponent(nationality)}`;
 
 	try {
-		const response = await fetch(query);
+		const response = await fetch(`${base}?${query}`);
 		const data = await response.json();
 
 		return data.exists;
 	} catch (err) {
-		console.error(`Error fetching from endpoint check-nationality?nationality=${nationality}`, err);
+		console.error(`Error fetching from endpoint "${base}?nationality=${nationality}`, err);
 		return false;
 	}
 };
