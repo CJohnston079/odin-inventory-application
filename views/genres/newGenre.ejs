@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../styles/index.css" />
 		<title>Inventory | <%= title %></title>
+		<link rel="stylesheet" href="../styles/index.css" />
+		<script type="module" src="../scripts/genreFormHandler.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
@@ -12,12 +13,15 @@
 		<form action="/genres" method="post" id="new-genre">
 			<ul>
 				<li>
-					<label for="genre-name">Genre name:</label>
-					<input type="text" name="name" id="genre-name" required />
+					<label for="genre">Genre name</label>
+					<input type="text" name="genre" id="genre" required />
+					<span class="field-message"></span>
 				</li>
 				<li>
-					<label for="genre-description">Desciption:</label>
-					<textarea name="description" id="genre-description"></textarea>
+					<label for="description">Desciption</label>
+					<textarea name="description" id="description"></textarea>
+					<span class="char-count">0/280</span>
+					<span class="field-message"></span>
 				</li>
 			</ul>
 			<button type="submit">Add genre</button>

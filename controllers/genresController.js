@@ -1,10 +1,13 @@
 const db = require("../db/queries/index");
+const Genre = require("../models/Genre");
 const { strToSlug, slugToStr } = require("../js/utils");
-const { capitaliseStr } = require("../js/utils");
 
 exports.postNewGenre = async function (req, res) {
+	const newGenre = new Genre(req.body);
+	console.log("Posting new genre:\n", newGenre);
+
 	try {
-		await db.genres.insertGenre(req.body);
+		await db.genres.insertGenre(newGenre);
 		res.redirect("/genres");
 	} catch (err) {
 		console.error(`An error occurred posting new genre:`, err);
