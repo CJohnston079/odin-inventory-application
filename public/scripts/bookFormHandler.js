@@ -206,6 +206,7 @@ const submitOnEnter = async function (e) {
 
 const inputs = [
 	{ element: titleInput, blurHandler: handleTitleInput, validationKey: "title" },
+	{ element: authorInput, blurHandler: handleTitleInput, validationKey: "title" },
 	{ element: authorInput, blurHandler: handleAuthorInput, validationKey: "author" },
 	{ element: genresInput, blurHandler: handleGenresInput, validationKey: "genres" },
 	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
