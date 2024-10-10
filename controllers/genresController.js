@@ -1,6 +1,8 @@
 const db = require("../db/queries/index");
 const Genre = require("../models/Genre");
-const { strToSlug, slugToStr } = require("../js/utils");
+const { strToSlug } = require("../js/utils");
+const { slugToStr } = require("../js/utils");
+const { strToTitleCase } = require("../js/utils");
 
 exports.postNewGenre = async function (req, res) {
 	const newGenre = new Genre(req.body);
@@ -30,6 +32,22 @@ exports.getBooksByGenre = async function (req, res) {
 	const genre = slugToStr(genreSlug);
 	const books = await db.books.getBooksByGenre(genre);
 	res.render("./genres/genre", { title: "Genres", genre, books });
+};
+
+exports.checkGenre = async function (req, res) {
+	const genre = strToTitleCase(req.query.genre);
+
+	if (!genre) {
+		return;
+	}
+
+	try {
+		const exists = await db.genres.checkGenre(genre);
+		res.json({ exists, genre });
+	} catch (err) {
+		console.error(`Error checking genre ${genre}`, err);
+		res.status(500).json({ error: "Server error" });
+	}
 };
 
 exports.getGenreNames = async function (req, res) {
