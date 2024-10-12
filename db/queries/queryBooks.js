@@ -171,3 +171,27 @@ exports.getBooksByDecade = async function (decade) {
 	);
 	return rows;
 };
+
+exports.getBooksByCountry = async function (country) {
+	const { rows } = await pool.query(
+		`
+    SELECT
+      fb.book_id,
+      da.author_id,
+      fb.book_title AS title,
+      da.first_name || ' ' || da.last_name AS author,
+      fb.publication_year,
+      STRING_AGG(dg.genre_name, ',') AS genres
+    FROM fact_books fb
+    JOIN dim_authors da ON fb.author_id = da.author_id
+    LEFT JOIN book_genres bg ON fb.book_id = bg.book_id
+    LEFT JOIN dim_genres as dg ON bg.genre_id = dg.genre_id
+    JOIN dim_countries dc ON da.nationality = dc.nationality
+    WHERE dc.country_name = $1
+    GROUP BY fb.book_id, da.author_id
+    ORDER BY title, author;
+  `,
+		[country]
+	);
+	return rows;
+};

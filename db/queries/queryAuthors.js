@@ -57,6 +57,7 @@ exports.getAllAuthors = async function () {
       da.first_name || ' ' || da.last_name AS author_name,
       da.birth_year,
       da.nationality,
+      dc.country_name AS country,
       COALESCE((
         SELECT STRING_AGG(gc.genre_name, ',' ORDER BY gc.genre_count DESC, gc.genre_name)
         FROM GenreCounts gc
@@ -65,7 +66,8 @@ exports.getAllAuthors = async function () {
       COUNT(DISTINCT fb.book_id) AS number_of_books
     FROM dim_authors da
     LEFT JOIN fact_books fb ON da.author_id = fb.author_id
-    GROUP BY da.author_id, da.first_name, da.last_name, da.birth_year, da.nationality
+    JOIN dim_countries dc ON da.nationality = dc.nationality
+    GROUP BY da.author_id, da.first_name, da.last_name, da.birth_year, da.nationality, country
     ORDER BY da.last_name;
 	`);
 	return rows;
