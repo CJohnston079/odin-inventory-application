@@ -11,6 +11,13 @@ exports.getNationalityNames = async function (req, res) {
 	res.json({ nationalities });
 };
 
+exports.getBooksByCountry = async function (req, res) {
+	const country = req.params.country;
+	const books = await db.books.getBooksByCountry(country);
+
+	res.render("./countries/country", { title: "Countries", country, books });
+};
+
 exports.checkNationality = async function (req, res) {
 	const nationality = strToTitleCase(req.query.nationality);
 
