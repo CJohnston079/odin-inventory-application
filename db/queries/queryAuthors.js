@@ -1,29 +1,30 @@
 const pool = require("../pool");
 
 exports.insertAuthor = async function (newAuthor) {
-	const { authorID, firstName, lastName, birthYear, nationality, biography } = newAuthor;
+	const { slug, firstName, lastName, birthYear, nationality, biography } = newAuthor;
 
 	const query = `
-    INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality, biography)
+    INSERT INTO dim_authors (slug, first_name, last_name, birth_year, nationality, biography)
     VALUES ($1, $2, $3, $4, $5, $6)
   `;
 
 	try {
-		await pool.query(query, [authorID, firstName, lastName, birthYear, nationality, biography]);
+		await pool.query(query, [slug, firstName, lastName, birthYear, nationality, biography]);
 	} catch (error) {
-		console.error(`Error inserting author ${firstName} ${lastName}:`, error);
+		console.error(`Error inserting author ${firstName} ${lastName}.`, error);
 		throw error;
 	}
 };
 
-exports.checkAuthor = async function (authorID) {
+exports.checkAuthor = async function (slug) {
+	console.log(slug);
 	const query = `
 		SELECT 1 FROM dim_authors
-		WHERE author_id = $1
+		WHERE slug = $1
 		LIMIT 1;
 	`;
 
-	const result = await pool.query(query, [authorID]);
+	const result = await pool.query(query, [slug]);
 	const authorExists = result.rowCount > 0;
 
 	return authorExists;
@@ -32,7 +33,7 @@ exports.checkAuthor = async function (authorID) {
 exports.getAuthorNames = async function () {
 	const { rows } = await pool.query(`
     SELECT
-      author_id AS id,
+      id,
       first_name || ' ' || last_name AS name
     FROM dim_authors
     ORDER BY last_name;
@@ -44,31 +45,31 @@ exports.getAllAuthors = async function () {
 	const { rows } = await pool.query(`
     WITH GenreCounts AS (
       SELECT
-        fb.author_id,
-        dg.genre_name,
-        COUNT(DISTINCT fb.book_id) AS genre_count
-      FROM fact_books fb
-      JOIN book_genres bg ON fb.book_id = bg.book_id
-      JOIN dim_genres dg ON bg.genre_id = dg.genre_id
-      GROUP BY fb.author_id, dg.genre_name
+        book.author_id,
+        genre.name,
+        COUNT(DISTINCT book.id) AS genre_count
+      FROM fact_books AS book
+      JOIN book_genres AS bg ON book.id = bg.book_id
+      JOIN dim_genres AS genre ON bg.genre_id = genre.id
+      GROUP BY book.author_id, genre.id
     )
     SELECT
-      da.author_id,
-      da.first_name || ' ' || da.last_name AS author_name,
-      da.birth_year,
-      da.nationality,
-      dc.country_name AS country,
+      author.id,
+      author.first_name || ' ' || author.last_name AS name,
+      author.birth_year,
+      author.nationality,
+      country.name AS country,
       COALESCE((
-        SELECT STRING_AGG(gc.genre_name, ',' ORDER BY gc.genre_count DESC, gc.genre_name)
-        FROM GenreCounts gc
-        WHERE gc.author_id = da.author_id
+        SELECT STRING_AGG(gc.name, ',' ORDER BY gc.genre_count DESC, gc.name)
+        FROM GenreCounts AS gc
+        WHERE gc.author_id = author.id
       ), '') AS genres,
-      COUNT(DISTINCT fb.book_id) AS number_of_books
-    FROM dim_authors da
-    LEFT JOIN fact_books fb ON da.author_id = fb.author_id
-    JOIN dim_countries dc ON da.nationality = dc.nationality
-    GROUP BY da.author_id, da.first_name, da.last_name, da.birth_year, da.nationality, country
-    ORDER BY da.last_name;
+      COUNT(DISTINCT book.id) AS number_of_books
+    FROM dim_authors AS author
+    LEFT JOIN fact_books AS book ON author.id = book.author_id
+    JOIN dim_countries AS country ON author.nationality = country.nationality
+    GROUP BY author.id, country.id
+    ORDER BY author.last_name;
 	`);
 	return rows;
 };
@@ -76,7 +77,7 @@ exports.getAllAuthors = async function () {
 exports.getAuthorByID = async function (id) {
 	const { rows } = await pool.query(
 		`
-  		SELECT first_name || ' ' || last_name AS author FROM dim_authors WHERE author_id = $1;
+  		SELECT first_name || ' ' || last_name AS author FROM dim_authors WHERE id = $1;
   `,
 		[id]
 	);

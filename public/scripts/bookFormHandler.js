@@ -34,7 +34,7 @@ enableAutoCompleteMulti({
 	inputElementID: "genres",
 	suggestionListID: "genre-suggestions",
 	options: genres,
-	fieldName: "genre_name",
+	fieldName: "name",
 	addNewRoute: "genres",
 });
 

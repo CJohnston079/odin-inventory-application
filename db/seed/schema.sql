@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS dim_countries (
 
 CREATE TABLE IF NOT EXISTS fact_books (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 101),
-  slug VARCHAR(128),
   author_id INT REFERENCES dim_authors(id),
+  slug VARCHAR(128),
   title VARCHAR(64),
   publication_year INT,
   is_fiction BOOLEAN,
