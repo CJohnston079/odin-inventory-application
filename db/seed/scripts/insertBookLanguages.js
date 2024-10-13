@@ -9,7 +9,7 @@ async function insertBookLanguages(client) {
 	for (const book of books) {
 		const languages = book.languages;
 		const bookTitle = book.bookTitle;
-		const bookIdQuery = await client.query("SELECT book_id FROM fact_books WHERE book_title = $1", [
+		const bookIdQuery = await client.query("SELECT id FROM fact_books WHERE title = $1", [
 			bookTitle,
 		]);
 
@@ -18,11 +18,11 @@ async function insertBookLanguages(client) {
 			continue;
 		}
 
-		const bookId = bookIdQuery.rows[0].book_id;
+		const bookId = bookIdQuery.rows[0].id;
 
 		for (const language of languages) {
 			const languageIDQuery = await client.query(
-				"SELECT country_id FROM dim_countries WHERE language_name = $1",
+				"SELECT id FROM dim_countries WHERE language = $1",
 				[language]
 			);
 
@@ -31,7 +31,7 @@ async function insertBookLanguages(client) {
 				continue;
 			}
 
-			const languageID = languageIDQuery.rows[0].country_id;
+			const languageID = languageIDQuery.rows[0].id;
 
 			await client.query("INSERT INTO book_languages (book_id, country_id) VALUES ($1, $2)", [
 				Number(bookId),

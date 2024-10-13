@@ -1,5 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
+const { strToSlug } = require("../../../js/utils");
 
 async function insertBooks(client) {
 	const filePath = path.join(__dirname, "../../data", "books.json");
@@ -9,7 +10,7 @@ async function insertBooks(client) {
 	for (const book of books) {
 		const author = book.author;
 		const authorIdQuery = await client.query(
-			"SELECT author_id FROM dim_authors WHERE (first_name || ' ' || last_name) = $1",
+			"SELECT id FROM dim_authors WHERE (first_name || ' ' || last_name) = $1",
 			[author]
 		);
 
@@ -18,11 +19,19 @@ async function insertBooks(client) {
 			continue;
 		}
 
-		const authorId = authorIdQuery.rows[0].author_id;
+		book.authorId = authorIdQuery.rows[0].id;
+		book.slug = strToSlug(book.bookTitle);
 
 		await client.query(
-			"INSERT INTO fact_books (book_title, author_id, publication_year, is_fiction, book_description) VALUES ($1, $2, $3, $4, $5)",
-			[book.bookTitle, authorId, book.publicationYear, book.isFiction, book.description]
+			"INSERT INTO fact_books (title, slug, author_id, publication_year, is_fiction, description) VALUES ($1, $2, $3, $4, $5, $6)",
+			[
+				book.bookTitle,
+				book.slug,
+				book.authorId,
+				book.publicationYear,
+				book.isFiction,
+				book.description,
+			]
 		);
 	}
 	console.log("Books inserted successfully");
