@@ -8,13 +8,13 @@ async function insertBookGenres(client) {
 
 	for (const book of books) {
 		const genres = book.genres;
-		const bookTitle = book.bookTitle;
+		const bookTitle = book.title;
 		const bookIdQuery = await client.query("SELECT id FROM fact_books WHERE title = $1", [
 			bookTitle,
 		]);
 
 		if (bookIdQuery.rows.length === 0) {
-			console.log(`Book ID not found for title: ${bookTitle}`);
+			console.log(`Book ID not found for ${bookTitle}`);
 			continue;
 		}
 
@@ -24,7 +24,7 @@ async function insertBookGenres(client) {
 			const genreIdQuery = await client.query("SELECT id FROM dim_genres WHERE name = $1", [genre]);
 
 			if (genreIdQuery.rows.length === 0) {
-				console.log(`Genre ID not found for genre: ${genre}`);
+				console.log(`Genre ID not found for ${genre}`);
 				continue;
 			}
 

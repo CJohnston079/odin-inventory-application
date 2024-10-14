@@ -1,114 +1,114 @@
 [
 	{
-		"genreName": "Adventure",
-		"genreDescription": "Adventure fiction is a genre that features stories of exciting journeys, risky pursuits, and exploration. It often involves protagonists facing challenges in unknown or dangerous environments."
+		"genre": "Adventure",
+		"description": "Adventure fiction is a genre that features stories of exciting journeys, risky pursuits, and exploration. It often involves protagonists facing challenges in unknown or dangerous environments."
 	},
 	{
-		"genreName": "Autobiography",
-		"genreDescription": "An autobiography is a non-fiction genre in which the author recounts their own life experiences, offering personal insights and a chronological account of their history."
+		"genre": "Autobiography",
+		"description": "An autobiography is a non-fiction genre in which the author recounts their own life experiences, offering personal insights and a chronological account of their history."
 	},
 	{
-		"genreName": "Comedy",
-		"genreDescription": "Comdedies have a light or humorous tone that depict amusing incidents and characters."
+		"genre": "Comedy",
+		"description": "Comdedies have a light or humorous tone that depict amusing incidents and characters."
 	},
 	{
-		"genreName": "Epic",
-		"genreDescription": "Epic fiction is characterized by long narratives, often set in the past, involving heroes on grand quests or battles, highlighting themes of heroism, fate, and cultural identity."
+		"genre": "Epic",
+		"description": "Epic fiction is characterized by long narratives, often set in the past, involving heroes on grand quests or battles, highlighting themes of heroism, fate, and cultural identity."
 	},
 	{
-		"genreName": "Essay",
-		"genreDescription": "Essays are short, non-fiction works that explore a specific subject or idea, often from the author’s personal perspective, using analysis, argumentation, or reflection."
+		"genre": "Essay",
+		"description": "Essays are short, non-fiction works that explore a specific subject or idea, often from the author’s personal perspective, using analysis, argumentation, or reflection."
 	},
 	{
-		"genreName": "Fantasy",
-		"genreDescription": "Fantasy is a genre that features magical or supernatural elements, often set in imaginary worlds. It frequently includes mythical creatures, enchanted landscapes, and heroes undertaking quests."
+		"genre": "Fantasy",
+		"description": "Fantasy is a genre that features magical or supernatural elements, often set in imaginary worlds. It frequently includes mythical creatures, enchanted landscapes, and heroes undertaking quests."
 	},
 	{
-		"genreName": "Feminism",
-		"genreDescription": "Feminist literature centers on issues of gender equality, women's rights, and the social structures that impact women, often challenging societal norms and advocating for social change."
+		"genre": "Feminism",
+		"description": "Feminist literature centers on issues of gender equality, women's rights, and the social structures that impact women, often challenging societal norms and advocating for social change."
 	},
 	{
-		"genreName": "Gothic",
-		"genreDescription": "Gothic fiction is a genre characterized by dark, mysterious settings, often involving haunted castles, supernatural elements, and themes of horror, romance, and psychological terror."
+		"genre": "Gothic",
+		"description": "Gothic fiction is a genre characterized by dark, mysterious settings, often involving haunted castles, supernatural elements, and themes of horror, romance, and psychological terror."
 	},
 	{
-		"genreName": "Historical",
-		"genreDescription": "Historical fiction takes place in a past setting, often incorporating real historical events, figures, or time periods, blending historical accuracy with imaginative storytelling."
+		"genre": "Historical",
+		"description": "Historical fiction takes place in a past setting, often incorporating real historical events, figures, or time periods, blending historical accuracy with imaginative storytelling."
 	},
 	{
-		"genreName": "Horror",
-		"genreDescription": "Horror is a genre designed to evoke fear, dread, or shock in readers, often through supernatural elements, psychological terror, or gruesome and terrifying scenarios."
+		"genre": "Horror",
+		"description": "Horror is a genre designed to evoke fear, dread, or shock in readers, often through supernatural elements, psychological terror, or gruesome and terrifying scenarios."
 	},
 	{
-		"genreName": "Magical Realism",
-		"genreDescription": "Magical realism is chiefly a Latin-American narrative strategy that is characterized by the matter-of-fact inclusion of fantastic or mythical elements into seemingly realistic fiction."
+		"genre": "Magical Realism",
+		"description": "Magical realism is chiefly a Latin-American narrative strategy that is characterized by the matter-of-fact inclusion of fantastic or mythical elements into seemingly realistic fiction."
 	},
 	{
-		"genreName": "Memoir",
-		"genreDescription": "A memoir is a non-fiction genre in which the author reflects on personal experiences and life events, typically focusing on a specific theme or period of their life."
+		"genre": "Memoir",
+		"description": "A memoir is a non-fiction genre in which the author reflects on personal experiences and life events, typically focusing on a specific theme or period of their life."
 	},
 	{
-		"genreName": "Modernist",
-		"genreDescription": "Modernist literature is a genre that emerged in the late 19th and early 20th centuries, characterized by a break from traditional narrative forms and an exploration of inner consciousness, fragmented structure, and existential themes."
+		"genre": "Modernist",
+		"description": "Modernist literature is a genre that emerged in the late 19th and early 20th centuries, characterized by a break from traditional narrative forms and an exploration of inner consciousness, fragmented structure, and existential themes."
 	},
 	{
-		"genreName": "Mystery",
-		"genreDescription": "Mystery fiction revolves around solving a puzzle or crime, typically involving a detective or investigator uncovering clues to resolve a suspenseful and complex situation."
+		"genre": "Mystery",
+		"description": "Mystery fiction revolves around solving a puzzle or crime, typically involving a detective or investigator uncovering clues to resolve a suspenseful and complex situation."
 	},
 	{
-		"genreName": "Philosophical",
-		"genreDescription": "Philosophical fiction explores fundamental questions about existence, ethics, reality, and knowledge, often weaving abstract or theoretical ideas into the plot or character development."
+		"genre": "Philosophical",
+		"description": "Philosophical fiction explores fundamental questions about existence, ethics, reality, and knowledge, often weaving abstract or theoretical ideas into the plot or character development."
 	},
 	{
-		"genreName": "Psychological Fiction",
-		"genreDescription": "A work of fiction in which the thoughts, feelings, and motivations of the characters are of equal or greater interest than is the external action of the narrative"
+		"genre": "Psychological Fiction",
+		"description": "A work of fiction in which the thoughts, feelings, and motivations of the characters are of equal or greater interest than is the external action of the narrative"
 	},
 	{
-		"genreName": "Political",
-		"genreDescription": "Political literature focuses on social, governmental, and ideological issues, often engaging with power structures, political movements, and the critique of existing systems."
+		"genre": "Political",
+		"description": "Political literature focuses on social, governmental, and ideological issues, often engaging with power structures, political movements, and the critique of existing systems."
 	},
 	{
-		"genreName": "Religious Fiction",
-		"genreDescription": "Religious fiction is fiction that is inspired by religious texts or other elements of a religion."
+		"genre": "Religious Fiction",
+		"description": "Religious fiction is fiction that is inspired by religious texts or other elements of a religion."
 	},
 	{
-		"genreName": "Romance",
-		"genreDescription": "Romance fiction centers around romantic relationships, focusing on themes of love, passion, and emotional connection, often with a narrative arc leading to a satisfying resolution."
+		"genre": "Romance",
+		"description": "Romance fiction centers around romantic relationships, focusing on themes of love, passion, and emotional connection, often with a narrative arc leading to a satisfying resolution."
 	},
 	{
-		"genreName": "Satire",
-		"genreDescription": "The use of humour, irony, exaggeration, or ridicule to expose and criticize people's stupidity or vices, particularly in the context of contemporary politics and other topical issues."
+		"genre": "Satire",
+		"description": "The use of humour, irony, exaggeration, or ridicule to expose and criticize people's stupidity or vices, particularly in the context of contemporary politics and other topical issues."
 	},
 	{
-		"genreName": "Science Fiction",
-		"genreDescription": "Science fiction explores futuristic or speculative themes, often involving advanced technology, space exploration, time travel, and scientific possibilities beyond the current reality."
+		"genre": "Science Fiction",
+		"description": "Science fiction explores futuristic or speculative themes, often involving advanced technology, space exploration, time travel, and scientific possibilities beyond the current reality."
 	},
 	{
-		"genreName": "Short Story",
-		"genreDescription": "A short story is a brief work of fiction, typically focused on a single event, character, or theme. It often delivers a powerful narrative in a condensed form."
+		"genre": "Short Story",
+		"description": "A short story is a brief work of fiction, typically focused on a single event, character, or theme. It often delivers a powerful narrative in a condensed form."
 	},
 	{
-		"genreName": "Suspense",
-		"genreDescription": "Suspense fiction builds tension and anticipation, keeping readers on edge as they await the resolution of a high-stakes situation or dramatic conflict."
+		"genre": "Suspense",
+		"description": "Suspense fiction builds tension and anticipation, keeping readers on edge as they await the resolution of a high-stakes situation or dramatic conflict."
 	},
 	{
-		"genreName": "Thriller",
-		"genreDescription": "Thriller fiction is known for fast-paced, high-stakes plots that involve danger, excitement, and often espionage or crime, keeping readers engaged with twists and intense action."
+		"genre": "Thriller",
+		"description": "Thriller fiction is known for fast-paced, high-stakes plots that involve danger, excitement, and often espionage or crime, keeping readers engaged with twists and intense action."
 	},
 	{
-		"genreName": "Travel Writing",
-		"genreDescription": "Travel writing is a non-fiction genre that recounts the author's journeys, often offering insights into different cultures, places, and personal experiences in unfamiliar settings."
+		"genre": "Travel Writing",
+		"description": "Travel writing is a non-fiction genre that recounts the author's journeys, often offering insights into different cultures, places, and personal experiences in unfamiliar settings."
 	},
 	{
-		"genreName": "Tragedy",
-		"genreDescription": "Drama based on human suffering and, mainly, the terrible or sorrowful events that befall a main character or cast of characters"
+		"genre": "Tragedy",
+		"description": "Drama based on human suffering and, mainly, the terrible or sorrowful events that befall a main character or cast of characters"
 	},
 	{
-		"genreName": "Young Adult",
-		"genreDescription": "Young adult fiction is aimed at a teenage audience and often focuses on coming-of-age themes, identity, relationships, and emotional growth, while still appealing to adult readers."
+		"genre": "Young Adult",
+		"description": "Young adult fiction is aimed at a teenage audience and often focuses on coming-of-age themes, identity, relationships, and emotional growth, while still appealing to adult readers."
 	},
 	{
-		"genreName": "War",
-		"genreDescription": "The war genre focuses on the experiences of soldiers and civilians during times of war. These stories often explore themes of heroism, sacrifice, loss, and the impact of war on individuals and society."
+		"genre": "War",
+		"description": "The war genre focuses on the experiences of soldiers and civilians during times of war. These stories often explore themes of heroism, sacrifice, loss, and the impact of war on individuals and society."
 	}
 ]

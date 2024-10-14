@@ -72,8 +72,8 @@ exports.getAllBooks = async function () {
 		SELECT
       book.id,
       book.author_id,
+      book.title,
       author.slug AS author_slug,
-      book.title AS title,
       author.first_name || ' ' || author.last_name AS author,
       book.publication_year,
       STRING_AGG(genre.name, ',') AS genres
@@ -82,7 +82,7 @@ exports.getAllBooks = async function () {
     JOIN book_genres AS bg ON book.id = bg.book_id
     JOIN dim_genres AS genre ON bg.genre_id = genre.id
     GROUP BY book.id, author.id
-    ORDER BY title;
+    ORDER BY book.title, author;
 	`);
 	return rows;
 };
@@ -107,6 +107,7 @@ exports.getBooksByAuthor = async function (author) {
 		`
     SELECT
       book.id,
+      book.title,
       book.author_id,
       book.title AS title,
       author.first_name || ' ' || author.last_name AS author,
@@ -130,8 +131,8 @@ exports.getBooksByGenre = async function (genre) {
 		`
     SELECT
       book.id,
+      book.title,
       book.author_id,
-      book.title AS title,
       author.first_name || ' ' || author.last_name AS author,
       book.publication_year,
     STRING_AGG(genre.name, ', ') AS genres
@@ -147,7 +148,7 @@ exports.getBooksByGenre = async function (genre) {
       WHERE genre2.name = $1
     )
     GROUP BY book.id, author.id
-    ORDER BY title
+    ORDER BY book.title, author
 	`,
 		[genre]
 	);
@@ -182,7 +183,7 @@ exports.getBooksByDecade = async function (decade) {
     LEFT JOIN dim_genres AS genre ON bg.genre_id = genre.id
     WHERE book.publication_year BETWEEN $1 AND $2
     GROUP BY book.id, author.id
-    ORDER BY title;
+    ORDER BY book.title, author;
   `,
 		[decade, decade + 9]
 	);
@@ -206,7 +207,7 @@ exports.getBooksByCountry = async function (country) {
     JOIN dim_countries AS country ON author.nationality = country.nationality
     WHERE country.name = $1
     GROUP BY book.id, author.id
-    ORDER BY title, author;
+    ORDER BY book.title, author;
   `,
 		[country]
 	);

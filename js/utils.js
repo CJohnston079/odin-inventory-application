@@ -1,4 +1,12 @@
-const capitalise = str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+const capitalise = str => {
+	const firstAlphaIndex = [...str].findIndex(char => /[\D\S]/.test(char));
+
+	return (
+		str.slice(0, firstAlphaIndex) +
+		str.charAt(firstAlphaIndex).toUpperCase() +
+		str.slice(firstAlphaIndex + 1)
+	);
+};
 
 exports.slugToStr = str => str.trim().split("-").map(capitalise).join(" ");
 
@@ -21,10 +29,36 @@ exports.strToSlug = function (str) {
 		.replace(/-+/g, "-");
 };
 
+exports.strToNameCase = function (str) {
+	const nobility = ["von", "van", "al", "bin", "bint", "ibn"];
+	const locative = ["de", "del", "da", "di", "dos", "della", "du", "vom", "zu"];
+	const articles = ["la", "las", "le", "los"];
+	const particles = [...nobility, ...locative, ...articles];
+
+	const names = str.trim().split(/\s+/);
+	const nameCaseNames = names
+		.map((name, i) => {
+			const isParticle = particles.includes(name.toLowerCase());
+
+			if (isParticle && names.length > 1) {
+				return name.toLowerCase();
+			}
+
+			if (name.includes("-")) {
+				return name.split("-").map(capitalise).join("-");
+			}
+
+			return capitalise(name);
+		})
+		.join(" ");
+
+	return nameCaseNames;
+};
+
 exports.strToTitleCase = function (str) {
 	const articles = ["a", "an", "de", "di", "en", "the"];
 	const conjunctions = ["and", "but", "if", "or", "nor"];
-	const prepositions = ["as", "at", "by", "for", "in", "of", "on", "per", "to", "via"];
+	const prepositions = ["as", "at", "by", "for", "from", "in", "of", "on", "per", "to", "via"];
 	const versus = ["vs.", "vs", "v.", "v"];
 	const allMinorWords = [...articles, ...conjunctions, ...prepositions, ...versus];
 
