@@ -1,5 +1,5 @@
 const capitalise = str => {
-	const firstAlphaIndex = [...str].findIndex(char => /[a-zA-Z]/.test(char));
+	const firstAlphaIndex = [...str].findIndex(char => /[\D\S]/.test(char));
 
 	return (
 		str.slice(0, firstAlphaIndex) +
@@ -27,6 +27,32 @@ exports.strToSlug = function (str) {
 		.trim()
 		.replace(/\s+/g, "-")
 		.replace(/-+/g, "-");
+};
+
+exports.strToNameCase = function (str) {
+	const nobility = ["von", "van", "al", "bin", "bint", "ibn"];
+	const locative = ["de", "del", "da", "di", "dos", "della", "du", "vom", "zu"];
+	const articles = ["la", "las", "le", "los"];
+	const particles = [...nobility, ...locative, ...articles];
+
+	const names = str.trim().split(/\s+/);
+	const nameCaseNames = names
+		.map((name, i) => {
+			const isParticle = particles.includes(name.toLowerCase());
+
+			if (isParticle && names.length > 1) {
+				return name.toLowerCase();
+			}
+
+			if (name.includes("-")) {
+				return name.split("-").map(capitalise).join("-");
+			}
+
+			return capitalise(name);
+		})
+		.join(" ");
+
+	return nameCaseNames;
 };
 
 exports.strToTitleCase = function (str) {
