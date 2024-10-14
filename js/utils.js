@@ -1,4 +1,12 @@
-const capitalise = str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+const capitalise = str => {
+	const firstAlphaIndex = [...str].findIndex(char => /[a-zA-Z]/.test(char));
+
+	return (
+		str.slice(0, firstAlphaIndex) +
+		str.charAt(firstAlphaIndex).toUpperCase() +
+		str.slice(firstAlphaIndex + 1)
+	);
+};
 
 exports.slugToStr = str => str.trim().split("-").map(capitalise).join(" ");
 
