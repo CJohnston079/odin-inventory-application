@@ -32,7 +32,7 @@ exports.strToSlug = function (str) {
 exports.strToTitleCase = function (str) {
 	const articles = ["a", "an", "de", "di", "en", "the"];
 	const conjunctions = ["and", "but", "if", "or", "nor"];
-	const prepositions = ["as", "at", "by", "for", "in", "of", "on", "per", "to", "via"];
+	const prepositions = ["as", "at", "by", "for", "from", "in", "of", "on", "per", "to", "via"];
 	const versus = ["vs.", "vs", "v.", "v"];
 	const allMinorWords = [...articles, ...conjunctions, ...prepositions, ...versus];
 
