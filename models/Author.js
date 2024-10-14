@@ -11,6 +11,17 @@ class Author {
 		this.birthYear = birthYear || null;
 		this.biography = biography || null;
 	}
+
+	toDbEntry() {
+		return {
+			slug: this.slug,
+			first_name: this.firstName,
+			last_name: this.lastName,
+			nationality: this.nationality,
+			birth_year: this.birthYear,
+			biography: this.biography,
+		};
+	}
 }
 
 module.exports = Author;
