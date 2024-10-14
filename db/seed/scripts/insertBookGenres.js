@@ -9,7 +9,7 @@ async function insertBookGenres(client) {
 	for (const book of books) {
 		const genres = book.genres;
 		const bookTitle = book.bookTitle;
-		const bookIdQuery = await client.query("SELECT book_id FROM fact_books WHERE book_title = $1", [
+		const bookIdQuery = await client.query("SELECT id FROM fact_books WHERE title = $1", [
 			bookTitle,
 		]);
 
@@ -18,20 +18,17 @@ async function insertBookGenres(client) {
 			continue;
 		}
 
-		const bookId = bookIdQuery.rows[0].book_id;
+		const bookId = bookIdQuery.rows[0].id;
 
 		for (const genre of genres) {
-			const genreIdQuery = await client.query(
-				"SELECT genre_id FROM dim_genres WHERE genre_name = $1",
-				[genre]
-			);
+			const genreIdQuery = await client.query("SELECT id FROM dim_genres WHERE name = $1", [genre]);
 
 			if (genreIdQuery.rows.length === 0) {
 				console.log(`Genre ID not found for genre: ${genre}`);
 				continue;
 			}
 
-			const genreId = genreIdQuery.rows[0].genre_id;
+			const genreId = genreIdQuery.rows[0].id;
 
 			await client.query("INSERT INTO book_genres (book_id, genre_id) VALUES ($1, $2)", [
 				Number(bookId),

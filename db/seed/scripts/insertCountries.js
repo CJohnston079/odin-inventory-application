@@ -1,5 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
+const { strToSlug } = require("../../../js/utils");
 
 async function insertCountries(client) {
 	const filePath = path.join(__dirname, "../../data", "countries.json");
@@ -7,9 +8,10 @@ async function insertCountries(client) {
 	const countries = JSON.parse(data);
 
 	for (const country of countries) {
+		country.slug = strToSlug(country.country);
 		await client.query(
-			"INSERT INTO dim_countries (country_name, nationality, language_name) VALUES ($1, $2, $3)",
-			[country.country, country.nationality, country.language]
+			"INSERT INTO dim_countries (slug, name, nationality, language) VALUES ($1, $2, $3, $4)",
+			[country.slug, country.country, country.nationality, country.language]
 		);
 	}
 	console.log("Countries inserted successfully");

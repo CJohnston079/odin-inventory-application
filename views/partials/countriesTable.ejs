@@ -8,7 +8,7 @@
 	<tbody>
 		<% countries.map(country => { %>
 		<tr>
-			<td><a href="countries/<%= country.country %>"><%= country.country %></a></td>
+			<td><a href="countries/<%= country.name %>"><%= country.name %></a></td>
 			<td><%= country.books %></td>
 		</tr>
 		<% }) %>

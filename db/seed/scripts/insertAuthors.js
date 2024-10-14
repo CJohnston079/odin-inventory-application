@@ -8,12 +8,12 @@ async function insertAuthors(client) {
 	const authors = JSON.parse(data);
 
 	for (const author of authors) {
-		author.id = strToSlug(`${author.firstName} ${author.lastName}`);
+		author.slug = strToSlug(`${author.firstName} ${author.lastName}`);
 
 		await client.query(
-			"INSERT INTO dim_authors (author_id, first_name, last_name, birth_year, nationality, biography) VALUES ($1, $2, $3, $4, $5, $6)",
+			"INSERT INTO dim_authors (slug, first_name, last_name, birth_year, nationality, biography) VALUES ($1, $2, $3, $4, $5, $6)",
 			[
-				author.id,
+				author.slug,
 				author.firstName,
 				author.lastName,
 				author.birthYear,

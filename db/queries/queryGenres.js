@@ -3,12 +3,12 @@ const pool = require("../pool");
 exports.insertGenre = async function (newGenre) {
 	const { name, description } = newGenre;
 
-	const query = "INSERT INTO dim_genres (genre_name, description) VALUES($1, $2)";
+	const query = "INSERT INTO dim_genres (name, description) VALUES($1, $2)";
 
 	try {
 		await pool.query(query, [name, description]);
 	} catch (error) {
-		console.error(`Error inserting genre ${name}:`, error);
+		console.error(`Error inserting genre ${name}.`, error);
 		throw error;
 	}
 };
@@ -16,7 +16,7 @@ exports.insertGenre = async function (newGenre) {
 exports.checkGenre = async function (genreName) {
 	const query = `
 		SELECT 1 FROM dim_genres
-		WHERE genre_name = $1
+		WHERE name = $1
 		LIMIT 1;
 	`;
 
@@ -29,10 +29,10 @@ exports.checkGenre = async function (genreName) {
 exports.getGenreNames = async function () {
 	const { rows } = await pool.query(`
     SELECT
-      genre_id AS id,
-      genre_name
+      id,
+      name
     FROM dim_genres
-    ORDER BY genre_name
+    ORDER BY name
 	`);
 	return rows;
 };
@@ -40,13 +40,19 @@ exports.getGenreNames = async function () {
 exports.getAllGenres = async function () {
 	const { rows } = await pool.query(`
 		SELECT
-      dg.genre_name AS genre,
-      COALESCE(COUNT(fb.book_id), 0) AS number_of_books
-    FROM dim_genres dg
-    LEFT JOIN book_genres bg ON dg.genre_id = bg.genre_id
-    LEFT JOIN fact_books fb ON bg.book_id = fb.book_id
-    GROUP BY genre
-    ORDER BY genre;
+      genre.id,
+      genre.name,
+      COALESCE(COUNT(book.id), 0) AS number_of_books
+    FROM dim_genres AS genre
+    LEFT JOIN book_genres AS bg ON genre.id = bg.genre_id
+    LEFT JOIN fact_books AS book ON bg.book_id = book.id
+    GROUP BY genre.id
+    ORDER BY genre.name;
 	`);
+	return rows;
+};
+
+exports.getGenreByID = async function (id) {
+	const { rows } = await pool.query(`SELECT name AS genre FROM dim_genres WHERE id = $1;`, [id]);
 	return rows;
 };

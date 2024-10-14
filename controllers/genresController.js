@@ -19,7 +19,7 @@ exports.postNewGenre = async function (req, res) {
 
 exports.getAllGenres = async function (req, res) {
 	const genres = await db.genres.getAllGenres();
-	genres.forEach(genre => (genre.slug = strToSlug(genre.genre)));
+	genres.forEach(genre => (genre.slug = strToSlug(genre.name)));
 	res.render("./genres/genres", { title: "Genres", genres });
 };
 
