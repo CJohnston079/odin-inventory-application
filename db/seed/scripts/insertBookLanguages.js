@@ -8,7 +8,7 @@ async function insertBookLanguages(client) {
 
 	for (const book of books) {
 		const languages = book.languages;
-		const bookTitle = book.bookTitle;
+		const bookTitle = book.title;
 		const bookIdQuery = await client.query("SELECT id FROM fact_books WHERE title = $1", [
 			bookTitle,
 		]);

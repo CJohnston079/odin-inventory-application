@@ -83,3 +83,13 @@ exports.getAuthorByID = async function (id) {
 	);
 	return rows;
 };
+
+exports.getAuthorIDByName = async function (name) {
+	const { rows } = await pool.query(
+		`
+      SELECT id FROM dim_authors WHERE first_name || ' ' || last_name = $1;
+    `,
+		[name]
+	);
+	return rows[0].id;
+};
