@@ -1,19 +1,23 @@
 const fs = require("fs").promises;
 const path = require("path");
 const { strToSlug } = require("../../../js/utils");
+const Genre = require("../../../models/Genre");
 
 async function insertGenres(client) {
 	const filePath = path.join(__dirname, "../../data", "genres.json");
-	const data = await fs.readFile(filePath, "utf8");
-	const genres = JSON.parse(data);
+	const genresData = await fs.readFile(filePath, "utf8").then(data => JSON.parse(data));
 
-	for (const genre of genres) {
-		genre.slug = strToSlug(genre.genreName);
-		await client.query("INSERT INTO dim_genres (name, slug, description) VALUES ($1, $2, $3)", [
-			genre.genreName,
-			genre.slug,
-			genre.genreDescription,
-		]);
+	for (const entry of genresData) {
+		const genre = new Genre(entry);
+		try {
+			await client.query(
+				"INSERT INTO dim_genres (slug, name, description) VALUES ($1, $2, $3)",
+				Object.values(genre.toDbEntry())
+			);
+		} catch (err) {
+			console.error(`Error inserting genre ${genre}`, err);
+			continue;
+		}
 	}
 	console.log("Genres inserted successfully");
 }
