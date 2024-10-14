@@ -47,12 +47,11 @@ async function main() {
 		await insertBooks(client);
 		await insertBookGenres(client);
 		await insertBookLanguages(client);
-
-		console.log("Seeding complete");
-	} catch (e) {
-		console.log("An error occurred during seeding", e);
+	} catch (err) {
+		console.log("An error occurred during seeding", err);
 	} finally {
 		await client.end();
+		console.log("Seeding complete");
 	}
 }
 
