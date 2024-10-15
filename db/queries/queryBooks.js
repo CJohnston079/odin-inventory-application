@@ -204,7 +204,7 @@ exports.getBooksByCountry = async function (country) {
     JOIN dim_authors AS author ON book.author_id = author.id
     LEFT JOIN book_genres AS bg ON book.id = bg.book_id
     LEFT JOIN dim_genres AS genre ON bg.genre_id = genre.id
-    JOIN dim_countries AS country ON author.nationality = country.nationality
+    JOIN dim_countries AS country ON author.country_id = country.id
     WHERE country.name = $1
     GROUP BY book.id, author.id
     ORDER BY book.title, author;

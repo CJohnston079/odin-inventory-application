@@ -3,14 +3,38 @@ const pool = require("../pool");
 exports.insertAuthor = async function (newAuthor) {
 	const { slug, firstName, lastName, birthYear, nationality, biography } = newAuthor;
 
-	const query = `
-    INSERT INTO dim_authors (slug, first_name, last_name, birth_year, nationality, biography)
-    VALUES ($1, $2, $3, $4, $5, $6)
-  `;
-
 	try {
-		await pool.query(query, [slug, firstName, lastName, birthYear, nationality, biography]);
+		await pool.query("BEGIN");
+
+		const { rows: countryRows } = await pool.query(
+			`
+      SELECT id FROM dim_countries WHERE nationality = $1;
+      `,
+			[nationality]
+		);
+
+		if (!countryRows.length) {
+			throw new Error(`Country with nationality ${nationality} not found`);
+		}
+		const countryID = countryRows[0].id;
+
+		const insertAuthorQuery = `
+      INSERT INTO dim_authors (country_id, slug, first_name, last_name, birth_year, biography)
+      VALUES ($1, $2, $3, $4, $5, $6)
+    `;
+
+		await pool.query(insertAuthorQuery, [
+			countryID,
+			slug,
+			firstName,
+			lastName,
+			birthYear,
+			biography,
+		]);
+
+		await pool.query("COMMIT");
 	} catch (error) {
+		await pool.query("ROLLBACK");
 		console.error(`Error inserting author ${firstName} ${lastName}.`, error);
 		throw error;
 	}
@@ -57,7 +81,7 @@ exports.getAllAuthors = async function () {
       author.id,
       author.first_name || ' ' || author.last_name AS name,
       author.birth_year,
-      author.nationality,
+      country.nationality,
       country.name AS country,
       COALESCE((
         SELECT STRING_AGG(gc.name, ',' ORDER BY gc.genre_count DESC, gc.name)
@@ -67,7 +91,7 @@ exports.getAllAuthors = async function () {
       COUNT(DISTINCT book.id) AS number_of_books
     FROM dim_authors AS author
     LEFT JOIN fact_books AS book ON author.id = book.author_id
-    JOIN dim_countries AS country ON author.nationality = country.nationality
+    JOIN dim_countries AS country ON author.country_id = country.id
     GROUP BY author.id, country.id
     ORDER BY author.last_name;
 	`);

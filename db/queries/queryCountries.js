@@ -6,7 +6,7 @@ exports.getAllCountries = async function () {
       country.name,
       COUNT(book.id) AS books
     FROM dim_countries AS country
-    JOIN dim_authors AS author ON country.nationality = author.nationality
+    JOIN dim_authors AS author ON country.id = author.country_id
     JOIN fact_books AS book ON author.id = book.author_id
     GROUP BY country.id
     ORDER BY country.name;
@@ -30,4 +30,14 @@ exports.checkNationality = async function (nationality) {
 	const nationalityExists = result.rowCount > 0;
 
 	return nationalityExists;
+};
+
+exports.getCountryIDByNationality = async function (nationality) {
+	const { rows } = await pool.query(
+		`
+      SELECT id FROM dim_countries WHERE nationality = $1;
+    `,
+		[nationality]
+	);
+	return rows[0].id;
 };
