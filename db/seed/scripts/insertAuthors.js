@@ -1,8 +1,9 @@
 const path = require("path");
 const fs = require("fs").promises;
 const Author = require("../../../models/Author");
+const db = require("../../queries/index");
 
-async function insertAuthors(client) {
+async function insertAuthors() {
 	const filePath = path.join(__dirname, "../../data", "authors.json");
 	const authorsData = await fs.readFile(filePath, "utf8").then(data => JSON.parse(data));
 
@@ -10,12 +11,7 @@ async function insertAuthors(client) {
 		const author = new Author(entry);
 
 		try {
-			await author.fetchCountryID();
-
-			await client.query(
-				"INSERT INTO dim_authors (country_id, slug, first_name, last_name, birth_year, biography) VALUES ($1, $2, $3, $4, $5, $6)",
-				Object.values(author.toDbEntry())
-			);
+			await db.authors.insertAuthor(author);
 		} catch (err) {
 			console.error(`Error inserting author ${author}`, err);
 			continue;
