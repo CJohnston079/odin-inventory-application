@@ -4,8 +4,8 @@ const { strToSlug } = require("../js/utils");
 const { strToTitleCase } = require("../js/utils");
 
 exports.postNewBook = async function (req, res) {
-	const { title, description, author, genres, publicationYear } = req.body;
-	const newBook = new Book({ title, description, author, genres, publicationYear });
+	const { title, description, author, genres, isFiction, publicationYear } = req.body;
+	const newBook = new Book({ title, description, author, genres, isFiction, publicationYear });
 
 	console.log("Posting new book:\n", newBook);
 
