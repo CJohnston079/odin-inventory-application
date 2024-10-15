@@ -1,42 +1,19 @@
 const pool = require("../pool");
 
 exports.insertAuthor = async function (newAuthor) {
-	const { slug, firstName, lastName, birthYear, nationality, biography } = newAuthor;
-
 	try {
-		await pool.query("BEGIN");
+		await newAuthor.fetchCountryID();
 
-		const { rows: countryRows } = await pool.query(
+		await pool.query(
 			`
-      SELECT id FROM dim_countries WHERE nationality = $1;
-      `,
-			[nationality]
-		);
-
-		if (!countryRows.length) {
-			throw new Error(`Country with nationality ${nationality} not found`);
-		}
-		const countryID = countryRows[0].id;
-
-		const insertAuthorQuery = `
       INSERT INTO dim_authors (country_id, slug, first_name, last_name, birth_year, biography)
       VALUES ($1, $2, $3, $4, $5, $6)
-    `;
-
-		await pool.query(insertAuthorQuery, [
-			countryID,
-			slug,
-			firstName,
-			lastName,
-			birthYear,
-			biography,
-		]);
-
-		await pool.query("COMMIT");
-	} catch (error) {
-		await pool.query("ROLLBACK");
-		console.error(`Error inserting author ${firstName} ${lastName}.`, error);
-		throw error;
+      `,
+			Object.values(newAuthor.toDbEntry())
+		);
+	} catch (err) {
+		console.error(`Error inserting author ${newAuthor}.`, err);
+		throw err;
 	}
 };
 

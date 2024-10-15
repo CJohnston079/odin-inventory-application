@@ -1,37 +1,20 @@
 const pool = require("../pool");
 
 exports.insertBook = async function (newBook) {
-	const { title, authorSlug, publicationYear, isFiction, genres, description } = newBook;
-
 	try {
 		await pool.query("BEGIN");
-
-		const { rows: authorRows } = await pool.query(
+		await newBook.fetchAuthorID();
+		const result = await pool.query(
 			`
-      SELECT id FROM dim_authors WHERE slug = $1;
+      INSERT INTO fact_books (author_id, slug, title, publication_year, is_fiction, description)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING fact_books.id
       `,
-			[authorSlug]
+			Object.values(newBook.toDbEntry())
 		);
 
-		if (!authorRows.length) {
-			throw new Error(`Author with slug '${authorSlug}' not found`);
-		}
-		const authorID = authorRows[0].id;
-
-		const insertBookQuery = `
-      INSERT INTO fact_books (title, author_id, publication_year, is_fiction, description)
-      VALUES ($1, $2, $3, $4, $5)
-      RETURNING id
-    `;
-		const {
-			rows: [{ id: bookID }],
-		} = await pool.query(insertBookQuery, [
-			title,
-			authorID,
-			publicationYear,
-			isFiction,
-			description,
-		]);
+		const bookID = result.rows[0].id;
+		const genres = newBook.genres;
 
 		if (genres && genres.length > 0) {
 			const genreQuery = `
@@ -44,10 +27,10 @@ exports.insertBook = async function (newBook) {
 
 		await pool.query("COMMIT");
 		return bookID;
-	} catch (error) {
+	} catch (err) {
 		await pool.query("ROLLBACK");
-		console.error(`Error inserting book ${title}.`, error);
-		throw error;
+		console.error(`Error inserting book ${newBook}.`, err);
+		throw err;
 	}
 };
 

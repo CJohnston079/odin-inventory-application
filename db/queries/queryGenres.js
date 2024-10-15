@@ -1,15 +1,14 @@
 const pool = require("../pool");
 
 exports.insertGenre = async function (newGenre) {
-	const { name, description } = newGenre;
-
-	const query = "INSERT INTO dim_genres (name, description) VALUES($1, $2)";
-
 	try {
-		await pool.query(query, [name, description]);
-	} catch (error) {
-		console.error(`Error inserting genre ${name}.`, error);
-		throw error;
+		await pool.query(
+			"INSERT INTO dim_genres (slug, name, description) VALUES ($1, $2, $3)",
+			Object.values(newGenre.toDbEntry())
+		);
+	} catch (err) {
+		console.error(`Error inserting genre ${newGenre}.`, err);
+		throw err;
 	}
 };
 
