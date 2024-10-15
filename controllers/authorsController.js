@@ -5,9 +5,7 @@ const { strToTitleCase } = require("../js/utils");
 const { strToSlug } = require("../js/utils");
 
 exports.postNewAuthor = async function (req, res) {
-	const { firstName, lastName, birthYear, nationality, biography } = req.body;
-	const newAuthor = new Author({ firstName, lastName, birthYear, nationality, biography });
-
+	const newAuthor = new Author(req.body);
 	console.log("Posting new author:\n", newAuthor);
 
 	try {
