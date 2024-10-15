@@ -12,8 +12,9 @@ exports.getNationalityNames = async function (req, res) {
 };
 
 exports.getBooksByCountry = async function (req, res) {
-	const country = req.params.country;
-	const books = await db.books.getBooksByCountry(country);
+	const countryID = req.params.country;
+	const country = await db.countries.getCountryByID(countryID);
+	const books = await db.books.getBooksByCountry(countryID);
 
 	res.render("./countries/country", { title: "Countries", country, books });
 };
