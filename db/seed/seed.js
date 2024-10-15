@@ -41,9 +41,9 @@ async function main() {
 		await client.query(schema);
 		console.log("Schema created successfully");
 
+		await insertCountries(client);
 		await insertAuthors(client);
 		await insertGenres(client);
-		await insertCountries(client);
 		await insertBooks(client);
 		await insertBookGenres(client);
 		await insertBookLanguages(client);

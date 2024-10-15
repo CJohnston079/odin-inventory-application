@@ -10,8 +10,10 @@ async function insertAuthors(client) {
 		const author = new Author(entry);
 
 		try {
+			await author.fetchCountryID();
+
 			await client.query(
-				"INSERT INTO dim_authors (slug, first_name, last_name, nationality, birth_year, biography) VALUES ($1, $2, $3, $4, $5, $6)",
+				"INSERT INTO dim_authors (country_id, slug, first_name, last_name, birth_year, biography) VALUES ($1, $2, $3, $4, $5, $6)",
 				Object.values(author.toDbEntry())
 			);
 		} catch (err) {
