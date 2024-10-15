@@ -31,3 +31,13 @@ exports.checkNationality = async function (nationality) {
 
 	return nationalityExists;
 };
+
+exports.getCountryIDByNationality = async function (nationality) {
+	const { rows } = await pool.query(
+		`
+      SELECT id FROM dim_countries WHERE nationality = $1;
+    `,
+		[nationality]
+	);
+	return rows[0].id;
+};
