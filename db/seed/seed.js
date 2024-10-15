@@ -10,8 +10,6 @@ const insertAuthors = require("./scripts/insertAuthors");
 const insertGenres = require("./scripts/insertGenres");
 const insertCountries = require("./scripts/insertCountries");
 const insertBooks = require("./scripts/insertBooks");
-const insertBookGenres = require("./scripts/insertBookGenres");
-const insertBookLanguages = require("./scripts/insertBookLanguages");
 
 const isProduction = process.env.NODE_ENV === "production";
 const sslConfig = isProduction ? "?sslmode=require" : "";
