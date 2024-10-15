@@ -91,10 +91,10 @@ exports.getBooksByAuthor = async function (author) {
 		`
     SELECT
       book.id,
-      book.title,
-      book.slug,
-      book.title AS title,
       book.author_id,
+      book.slug,
+      author.slug AS author_slug,
+      book.title,
       author.first_name || ' ' || author.last_name AS author,
       book.publication_year,
       STRING_AGG(genre.name, ', ') AS genres
@@ -116,10 +116,11 @@ exports.getBooksByGenre = async function (genre) {
 		`
     SELECT
       book.id,
-      book.title,
-      book.slug,
-      author.first_name || ' ' || author.last_name AS author,
       book.author_id,
+      author.slug AS author_slug,
+      book.slug,
+      book.title,
+      author.first_name || ' ' || author.last_name AS author,
       book.publication_year,
     STRING_AGG(genre.name, ', ') AS genres
     FROM fact_books AS book
@@ -160,6 +161,7 @@ exports.getBooksByDecade = async function (decade) {
       book.id,
       book.author_id,
       book.slug,
+      author.slug AS author_slug,
       author.first_name || ' ' || author.last_name AS author,
       book.title AS title,
       book.publication_year,
@@ -184,6 +186,7 @@ exports.getBooksByCountry = async function (country) {
       book.id,
       book.author_id,
       book.slug,
+      author.slug AS author_slug,
       author.first_name || ' ' || author.last_name AS author,
       book.title,
       book.publication_year,

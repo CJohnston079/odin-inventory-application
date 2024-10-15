@@ -10,8 +10,12 @@
 	<tbody>
 		<% books.map((book) => { %>
 		<tr>
-			<td><a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a></td>
-			<td><a href="/authors/<%= book.author_id %>"><%= book.author %></a></td>
+			<td>
+				<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+			</td>
+			<td>
+				<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>"> <%= book.author %> </a>
+			</td>
 			<td>
 				<a href="/decades/<%= Math.floor(book.publication_year / 10) + '0s' %>">
 					<%= book.publication_year %>

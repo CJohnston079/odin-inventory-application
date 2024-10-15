@@ -56,6 +56,7 @@ exports.getAllAuthors = async function () {
     )
     SELECT
       author.id,
+      author.slug,
       author.first_name || ' ' || author.last_name AS name,
       author.birth_year,
       country.nationality,
