@@ -6,7 +6,7 @@ exports.getAllCountries = async function () {
       country.name,
       COUNT(book.id) AS books
     FROM dim_countries AS country
-    JOIN dim_authors AS author ON country.nationality = author.nationality
+    JOIN dim_authors AS author ON country.id = author.country_id
     JOIN fact_books AS book ON author.id = book.author_id
     GROUP BY country.id
     ORDER BY country.name;
