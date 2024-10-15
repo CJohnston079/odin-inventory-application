@@ -1,6 +1,5 @@
-const fs = require("fs").promises;
 const path = require("path");
-const { strToSlug } = require("../../../js/utils");
+const fs = require("fs").promises;
 const Genre = require("../../../models/Genre");
 
 async function insertGenres(client) {
