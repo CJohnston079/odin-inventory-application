@@ -45,8 +45,6 @@ async function main() {
 		await insertAuthors(client);
 		await insertGenres(client);
 		await insertBooks(client);
-		await insertBookGenres(client);
-		await insertBookLanguages(client);
 	} catch (err) {
 		console.log("An error occurred during seeding", err);
 	} finally {
