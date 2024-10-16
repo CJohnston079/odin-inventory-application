@@ -21,7 +21,7 @@
 					<%= book.publication_year %>
 				</a>
 			</td>
-			<%- include("./genresColumn", { data: book }) %>
+			<%- include("./genresColumn", { genres: book.genres }) %>
 		</tr>
 		<% }) %>
 	</tbody>

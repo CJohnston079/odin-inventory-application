@@ -1,7 +1,5 @@
 <td>
-  <% if (data.genres) {%>
-    <% data.genres.split(",").map(genre => { %>
-    <a href="/genres/<%= genre.trim().toLowerCase().replace(" ", "-") %>"><%= genre %></a>
-    <% }) %>
-  <% }%>
+	<% if (genres) {%> <% genres.map(genre => { %>
+	<a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a>
+	<% }) %> <% }%>
 </td>

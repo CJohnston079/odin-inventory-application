@@ -16,6 +16,10 @@ exports.getBooksByCountry = async function (req, res) {
 	const country = await db.countries.getCountryByID(countryID);
 	const books = await db.books.getBooksByCountry(countryID);
 
+	await Promise.all(
+		books.map(book => db.genres.getGenresByBook(book.id).then(genres => (book.genres = genres)))
+	);
+
 	res.render("./countries/country", { title: "Countries", country, books });
 };
 

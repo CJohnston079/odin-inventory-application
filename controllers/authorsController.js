@@ -30,6 +30,11 @@ exports.getBooksByAuthor = async function (req, res) {
 	const authorID = req.params.author;
 	const { author } = (await db.authors.getAuthorByID(authorID))[0];
 	const books = await db.books.getBooksByAuthor(author);
+
+	await Promise.all(
+		books.map(book => db.genres.getGenresByBook(book.id).then(genres => (book.genres = genres)))
+	);
+
 	res.render("./authors/author", { title: "Authors", author, books });
 };
 
