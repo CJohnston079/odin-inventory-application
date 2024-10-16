@@ -58,7 +58,13 @@ exports.getAllAuthors = async function () {
     LEFT JOIN fact_books AS book ON author.id = book.author_id
     JOIN dim_countries AS country ON author.country_id = country.id
     GROUP BY author.id, country.id
-    ORDER BY author.last_name;
+    ORDER BY (
+      CASE
+        WHEN LOWER(SPLIT_PART(author.last_name, ' ', 1)) IN ('al', 'bin', 'bint', 'da', 'de', 'del', 'della', 'di', 'dos', 'du', 'ibn', 'la', 'las', 'le', 'los', 'van', 'vom', 'von', 'zu')
+        THEN SPLIT_PART(author.last_name, ' ', 2)
+        ELSE author.last_name
+      END
+    );
 	`);
 	return rows;
 };
