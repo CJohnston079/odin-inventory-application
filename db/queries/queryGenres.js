@@ -51,6 +51,23 @@ exports.getAllGenres = async function () {
 	return rows;
 };
 
+exports.getGenresByBook = async function (book) {
+	const { rows } = await pool.query(
+		`
+    SELECT
+      genre.id,
+      genre.slug,
+      genre.name
+    FROM dim_genres AS genre
+    JOIN book_genres AS bg ON genre.id = bg.genre_id
+    JOIN fact_books AS book ON bg.book_id = book.id
+    WHERE book.ID = $1;
+  `,
+		[book]
+	);
+	return rows;
+};
+
 exports.getGenreByID = async function (id) {
 	const { rows } = await pool.query(`SELECT name AS genre FROM dim_genres WHERE id = $1;`, [id]);
 	return rows;
