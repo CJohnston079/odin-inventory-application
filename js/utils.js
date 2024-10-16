@@ -29,9 +29,11 @@ exports.strToSlug = function (str) {
 		.replace(/-+/g, "-");
 };
 
-exports.strToNameCase = function (str) {
-	const nobility = ["von", "van", "al", "bin", "bint", "ibn"];
-	const locative = ["de", "del", "da", "di", "dos", "della", "du", "vom", "zu"];
+exports.strToNameCase = function (str, options = {}) {
+	const { isSurname = false } = options;
+
+	const nobility = ["al", "bin", "bint", "ibn", "van", "von"];
+	const locative = ["da", "de", "del", "della", "di", "dos", "du", "vom", "zu"];
 	const articles = ["la", "las", "le", "los"];
 	const particles = [...nobility, ...locative, ...articles];
 
@@ -39,8 +41,10 @@ exports.strToNameCase = function (str) {
 	const nameCaseNames = names
 		.map((name, i) => {
 			const isParticle = particles.includes(name.toLowerCase());
+			const isCompoundName = names.length > 1;
+			const isNotLast = isCompoundName && isSurname && i < names.length - 1;
 
-			if (isParticle && names.length > 1) {
+			if (isParticle && isNotLast) {
 				return name.toLowerCase();
 			}
 

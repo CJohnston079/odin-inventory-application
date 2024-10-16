@@ -7,7 +7,7 @@ class Author {
 	constructor({ firstName, lastName, birthYear, nationality, biography }) {
 		this.slug = strToSlug(`${firstName} ${lastName}`);
 		this.firstName = strToNameCase(firstName);
-		this.lastName = strToNameCase(lastName);
+		this.lastName = strToNameCase(lastName, { isSurname: true });
 		this.nationality = strToTitleCase(nationality);
 		this.birthYear = birthYear || null;
 		this.biography = biography || null;
