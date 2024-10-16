@@ -28,9 +28,14 @@ exports.getNewGenreForm = function (req, res) {
 };
 
 exports.getBooksByGenre = async function (req, res) {
-	const genreSlug = req.params.genre;
-	const genre = slugToStr(genreSlug);
-	const books = await db.books.getBooksByGenre(genre);
+	const genreID = req.params.genre;
+	const { genre } = (await db.genres.getGenreByID(genreID))[0];
+	const books = await db.books.getBooksByGenre(genreID);
+
+	await Promise.all(
+		books.map(book => db.genres.getGenresByBook(book.id).then(genres => (book.genres = genres)))
+	);
+
 	res.render("./genres/genre", { title: "Genres", genre, books });
 };
 

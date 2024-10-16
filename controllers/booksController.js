@@ -36,6 +36,11 @@ exports.checkBookTitle = async function (req, res) {
 
 exports.getAllBooks = async function (req, res) {
 	const books = await db.books.getAllBooks();
+
+	await Promise.all(
+		books.map(book => db.genres.getGenresByBook(book.id).then(genres => (book.genres = genres)))
+	);
+
 	res.render("./books/books", { title: "Books", books });
 };
 

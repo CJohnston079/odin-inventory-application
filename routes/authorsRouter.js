@@ -5,7 +5,7 @@ const controller = require("../controllers/authorsController");
 router.get("/author-names", controller.getAuthorNames);
 router.get("/check-author", controller.checkAuthor);
 router.get("/new", controller.getNewAuthorForm);
-router.get("/:author", controller.getBooksByAuthor);
+router.get("/:author/:slug", controller.getBooksByAuthor);
 router.get("/", controller.getAllAuthors);
 router.post("/", controller.postNewAuthor);
 

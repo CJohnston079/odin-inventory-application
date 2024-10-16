@@ -11,5 +11,10 @@ exports.getBooksByDecade = async function (req, res) {
 	const decade = req.params.decade;
 	const decadeNum = Number(decade.replace(/\D/g, ""));
 	const books = await db.books.getBooksByDecade(decadeNum);
+
+	await Promise.all(
+		books.map(book => db.genres.getGenresByBook(book.id).then(genres => (book.genres = genres)))
+	);
+
 	res.render("./decades/decade", { title: "Decades", decade, books });
 };

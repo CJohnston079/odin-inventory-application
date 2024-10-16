@@ -3,6 +3,8 @@ const pool = require("../pool");
 exports.getAllCountries = async function () {
 	const { rows } = await pool.query(`
 		SELECT
+      country.id,
+      country.slug,
       country.name,
       COUNT(book.id) AS books
     FROM dim_countries AS country
@@ -30,6 +32,16 @@ exports.checkNationality = async function (nationality) {
 	const nationalityExists = result.rowCount > 0;
 
 	return nationalityExists;
+};
+
+exports.getCountryByID = async function (countryID) {
+	const { rows } = await pool.query(
+		`
+    SELECT name FROM dim_countries WHERE id = $1;
+  `,
+		[countryID]
+	);
+	return rows[0].name;
 };
 
 exports.getCountryIDByNationality = async function (nationality) {

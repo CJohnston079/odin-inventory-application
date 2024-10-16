@@ -55,15 +55,13 @@ exports.getAllBooks = async function () {
 		SELECT
       book.id,
       book.author_id,
-      book.title,
+      book.slug,
       author.slug AS author_slug,
+      book.title,
       author.first_name || ' ' || author.last_name AS author,
-      book.publication_year,
-      STRING_AGG(genre.name, ',') AS genres
+      book.publication_year
     FROM fact_books AS book
     JOIN dim_authors AS author ON book.author_id = author.id
-    JOIN book_genres AS bg ON book.id = bg.book_id
-    JOIN dim_genres AS genre ON bg.genre_id = genre.id
     GROUP BY book.id, author.id
     ORDER BY book.title, author;
 	`);
@@ -90,9 +88,10 @@ exports.getBooksByAuthor = async function (author) {
 		`
     SELECT
       book.id,
-      book.title,
       book.author_id,
-      book.title AS title,
+      book.slug,
+      author.slug AS author_slug,
+      book.title,
       author.first_name || ' ' || author.last_name AS author,
       book.publication_year,
       STRING_AGG(genre.name, ', ') AS genres
@@ -114,24 +113,23 @@ exports.getBooksByGenre = async function (genre) {
 		`
     SELECT
       book.id,
-      book.title,
       book.author_id,
+      author.slug AS author_slug,
+      book.slug,
+      book.title,
       author.first_name || ' ' || author.last_name AS author,
-      book.publication_year,
-    STRING_AGG(genre.name, ', ') AS genres
+      book.publication_year
     FROM fact_books AS book
     JOIN dim_authors AS author ON book.author_id = author.id
-    JOIN book_genres AS bg ON book.id = bg.book_id
-    JOIN dim_genres AS genre ON bg.genre_id = genre.id
     WHERE book.id IN (
       SELECT book2.id
       FROM fact_books AS book2
       JOIN book_genres AS bg2 ON book2.id = bg2.book_id
       JOIN dim_genres AS genre2 ON bg2.genre_id = genre2.id
-      WHERE genre2.name = $1
+      WHERE genre2.id = $1
     )
     GROUP BY book.id, author.id
-    ORDER BY book.title, author
+    ORDER BY book.title, author;
 	`,
 		[genre]
 	);
@@ -156,8 +154,10 @@ exports.getBooksByDecade = async function (decade) {
     SELECT
       book.id,
       book.author_id,
-      book.title AS title,
+      book.slug,
+      author.slug AS author_slug,
       author.first_name || ' ' || author.last_name AS author,
+      book.title AS title,
       book.publication_year,
       STRING_AGG(genre.name, ',') AS genres
     FROM fact_books AS book
@@ -179,8 +179,10 @@ exports.getBooksByCountry = async function (country) {
     SELECT
       book.id,
       book.author_id,
-      book.title,
+      book.slug,
+      author.slug AS author_slug,
       author.first_name || ' ' || author.last_name AS author,
+      book.title,
       book.publication_year,
       STRING_AGG(genre.name, ',') AS genres
     FROM fact_books AS book
@@ -188,7 +190,7 @@ exports.getBooksByCountry = async function (country) {
     LEFT JOIN book_genres AS bg ON book.id = bg.book_id
     LEFT JOIN dim_genres AS genre ON bg.genre_id = genre.id
     JOIN dim_countries AS country ON author.country_id = country.id
-    WHERE country.name = $1
+    WHERE country.id = $1
     GROUP BY book.id, author.id
     ORDER BY book.title, author;
   `,
