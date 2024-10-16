@@ -19,6 +19,13 @@ exports.postNewAuthor = async function (req, res) {
 
 exports.getAllAuthors = async function (req, res) {
 	const authors = await db.authors.getAllAuthors();
+
+	await Promise.all(
+		authors.map(author =>
+			db.genres.getGenresByAuthor(author.id).then(genres => (author.genres = genres))
+		)
+	);
+
 	res.render("./authors/authors", { title: "Authors", authors });
 };
 

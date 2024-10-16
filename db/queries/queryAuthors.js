@@ -44,16 +44,6 @@ exports.getAuthorNames = async function () {
 
 exports.getAllAuthors = async function () {
 	const { rows } = await pool.query(`
-    WITH GenreCounts AS (
-      SELECT
-        book.author_id,
-        genre.name,
-        COUNT(DISTINCT book.id) AS genre_count
-      FROM fact_books AS book
-      JOIN book_genres AS bg ON book.id = bg.book_id
-      JOIN dim_genres AS genre ON bg.genre_id = genre.id
-      GROUP BY book.author_id, genre.id
-    )
     SELECT
       author.id,
       country.id AS country_id,
@@ -63,11 +53,6 @@ exports.getAllAuthors = async function () {
       author.birth_year,
       country.nationality,
       country.name AS country,
-      COALESCE((
-        SELECT STRING_AGG(gc.name, ',' ORDER BY gc.genre_count DESC, gc.name)
-        FROM GenreCounts AS gc
-        WHERE gc.author_id = author.id
-      ), '') AS genres,
       COUNT(DISTINCT book.id) AS number_of_books
     FROM dim_authors AS author
     LEFT JOIN fact_books AS book ON author.id = book.author_id

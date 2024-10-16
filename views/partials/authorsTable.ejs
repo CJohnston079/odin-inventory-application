@@ -21,7 +21,7 @@
 				>
 			</td>
 			<td><%= author.number_of_books %></td>
-			<%- include("./genresColumn", { data: author }) %>
+			<%- include("./genresColumn", { genres: author.genres }) %>
 		</tr>
 		<% }) %>
 	</tbody>
