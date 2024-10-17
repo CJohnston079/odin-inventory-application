@@ -62,7 +62,7 @@ exports.getAllAuthors = async function () {
       CASE
         WHEN LOWER(SPLIT_PART(author.last_name, ' ', 1)) IN ('al', 'bin', 'bint', 'da', 'de', 'del', 'della', 'di', 'dos', 'du', 'ibn', 'la', 'las', 'le', 'los', 'van', 'vom', 'von', 'zu')
         THEN SPLIT_PART(author.last_name, ' ', 2)
-        ELSE author.last_name
+        ELSE unaccent(author.last_name)
       END
     );
 	`);
