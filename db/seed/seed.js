@@ -3,6 +3,8 @@
 const { Client } = require("pg");
 const fs = require("fs").promises;
 const path = require("path");
+const chalk = require("chalk");
+const logger = require("../../js/logger");
 
 require("dotenv").config();
 
@@ -20,7 +22,7 @@ function getArgumentValue(flag, defaultValue) {
 }
 
 async function main() {
-	console.log("Seeding...");
+	logger.info("Seeding initialised...");
 
 	const user = getArgumentValue("--user", process.env.USER);
 	const password = getArgumentValue("--password", process.env.PASSWORD);
@@ -32,22 +34,39 @@ async function main() {
 		ssl: isProduction ? { rejectUnauthorized: false } : false,
 	});
 
+	let countriesAddedCount, countriesFailed;
+	let authorsAddedCount, authorsFailed;
+	let genresAddedCount, genresFailed;
+	let booksAddedCount, booksFailed;
+
 	try {
 		await client.connect();
 
 		const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
 		await client.query(schema);
-		console.log("Schema created successfully");
+		logger.separator();
+		console.log("> Schema successfully created");
 
-		await insertCountries(client);
-		await insertAuthors(client);
-		await insertGenres(client);
-		await insertBooks(client);
+		({ countriesAddedCount, countriesFailed } = await insertCountries(client));
+		({ authorsAddedCount, authorsFailed } = await insertAuthors(client));
+		({ genresAddedCount, genresFailed } = await insertGenres(client));
+		({ booksAddedCount, booksFailed } = await insertBooks(client));
 	} catch (err) {
-		console.log("An error occurred during seeding", err);
+		logger.error("An error occurred during seeding", err);
 	} finally {
 		await client.end();
-		console.log("Seeding complete");
+		logger.summary({
+			countriesAddedCount,
+			countriesFailed,
+			authorsAddedCount,
+			authorsFailed,
+			genresAddedCount,
+			genresFailed,
+			booksAddedCount,
+			booksFailed,
+		});
+		logger.info("Seeding complete!");
+		logger.separator();
 	}
 }
 

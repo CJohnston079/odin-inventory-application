@@ -1,4 +1,5 @@
 const pool = require("../pool");
+const logger = require("../../js/logger");
 
 exports.insertAuthor = async function (newAuthor) {
 	try {
@@ -12,7 +13,7 @@ exports.insertAuthor = async function (newAuthor) {
 			Object.values(newAuthor.toDbEntry())
 		);
 	} catch (err) {
-		console.error(`Error inserting author ${newAuthor}.`, err);
+		logger.error(`Error inserting author ${JSON.stringify(newAuthor, null, 2)}.`, err);
 		throw err;
 	}
 };

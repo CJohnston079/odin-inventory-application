@@ -1,4 +1,5 @@
 const db = require("../db/queries/index");
+const logger = require("../js/logger");
 const { strToSlug } = require("../js/utils");
 const { strToTitleCase } = require("../js/utils");
 const { capitaliseArray } = require("../js/utils");
@@ -22,7 +23,7 @@ class Book {
 		try {
 			this.authorID = await db.authors.getAuthorIDByName(this.author);
 		} catch (err) {
-			console.log(`Error fetching ID for author ${this.author}.`, err);
+			logger.error(`Error fetching ID for author ${this.author}.`, err);
 			throw err;
 		}
 	}

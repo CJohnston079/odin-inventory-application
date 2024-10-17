@@ -1,4 +1,5 @@
 const pool = require("../pool");
+const logger = require("../../js/logger");
 
 exports.insertBook = async function (newBook) {
 	try {
@@ -29,7 +30,7 @@ exports.insertBook = async function (newBook) {
 		return bookID;
 	} catch (err) {
 		await pool.query("ROLLBACK");
-		console.error(`Error inserting book ${newBook}.`, err);
+		logger.error(`Error inserting book ${JSON.stringify(newBook, null, 2)}.`, err);
 		throw err;
 	}
 };

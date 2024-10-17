@@ -1,4 +1,5 @@
 const db = require("../db/queries/index");
+const logger = require("../js/logger");
 const { strToSlug } = require("../js/utils");
 const { strToTitleCase } = require("../js/utils");
 const { strToNameCase } = require("../js/utils");
@@ -17,7 +18,10 @@ class Author {
 		try {
 			this.countryID = await db.countries.getCountryIDByNationality(this.nationality);
 		} catch (err) {
-			console.log(`Error fetching country_id for nationality ${this.nationality}.`, err);
+			logger.error(
+				`Error fetching country_id with nationality "${this.nationality} for author ${this.firstName} + ${this.lastName}".`,
+				err
+			);
 			throw err;
 		}
 	}

@@ -7,22 +7,23 @@ async function insertBooks() {
 	const filePath = path.join(__dirname, "../../data", "books.json");
 	const booksData = await fs.readFile(filePath, "utf8").then(data => JSON.parse(data));
 
-	let successCount = 0;
-	let failedCount = 0;
+	const booksFailed = [];
+	let booksAddedCount = 0;
 
 	for (const entry of booksData) {
 		const book = new Book(entry);
 
 		try {
 			await db.books.insertBook(book);
-			successCount += 1;
+			booksAddedCount += 1;
 		} catch (err) {
-			console.error(`Error inserting book ${book}.`, err);
-			failedCount += 1;
+			booksFailed.push(book.title);
 			continue;
 		}
 	}
-	console.log(`${successCount} books inserted successfully, ${failedCount} failures`);
+	console.log(`> ${booksAddedCount} books inserted successfully (${booksFailed.length} failures)`);
+
+	return { booksAddedCount, booksFailed };
 }
 
 module.exports = insertBooks;

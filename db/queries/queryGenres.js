@@ -1,4 +1,5 @@
 const pool = require("../pool");
+const logger = require("../../js/logger");
 
 exports.insertGenre = async function (newGenre) {
 	try {
@@ -7,7 +8,7 @@ exports.insertGenre = async function (newGenre) {
 			Object.values(newGenre.toDbEntry())
 		);
 	} catch (err) {
-		console.error(`Error inserting genre ${newGenre}.`, err);
+		logger.error(`Error inserting genre ${JSON.stringify(newGenre, null, 2)}.`, err);
 		throw err;
 	}
 };
