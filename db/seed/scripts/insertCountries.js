@@ -8,8 +8,8 @@ async function insertCountries(client) {
 	const data = await fs.readFile(filePath, "utf8");
 	const countries = JSON.parse(data);
 
-	let successCount = 0;
-	let failedCount = 0;
+	const countriesFailed = [];
+	let countriesAddedCount = 0;
 
 	for (const country of countries) {
 		country.slug = strToSlug(country.country);
@@ -18,14 +18,18 @@ async function insertCountries(client) {
 				"INSERT INTO dim_countries (slug, name, nationality, language) VALUES ($1, $2, $3, $4)",
 				[country.slug, country.name, country.nationality, country.language]
 			);
-			successCount += 1;
+			countriesAddedCount += 1;
 		} catch (err) {
 			logger.error(`Error inserting country ${JSON.stringify(country, null, 2)}`, err);
-			failedCount += 1;
+			countriesFailed.push(country.name);
 			continue;
 		}
 	}
-	console.log(`> ${successCount} countries inserted successfully (${failedCount} failures)`);
+	console.log(
+		`> ${countriesAddedCount} countries inserted successfully (${countriesFailed.length} failures)`
+	);
+
+	return { countriesAddedCount, countriesFailed };
 }
 
 module.exports = insertCountries;

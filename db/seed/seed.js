@@ -3,6 +3,7 @@
 const { Client } = require("pg");
 const fs = require("fs").promises;
 const path = require("path");
+const chalk = require("chalk");
 const logger = require("../../js/logger");
 
 require("dotenv").config();
@@ -33,6 +34,11 @@ async function main() {
 		ssl: isProduction ? { rejectUnauthorized: false } : false,
 	});
 
+	let countriesAddedCount, countriesFailed;
+	let authorsAddedCount, authorsFailed;
+	let genresAddedCount, genresFailed;
+	let booksAddedCount, booksFailed;
+
 	try {
 		await client.connect();
 
@@ -41,14 +47,24 @@ async function main() {
 		logger.separator();
 		console.log("> Schema successfully created");
 
-		await insertCountries(client);
-		await insertAuthors(client);
-		await insertGenres(client);
-		await insertBooks(client);
+		({ countriesAddedCount, countriesFailed } = await insertCountries(client));
+		({ authorsAddedCount, authorsFailed } = await insertAuthors(client));
+		({ genresAddedCount, genresFailed } = await insertGenres(client));
+		({ booksAddedCount, booksFailed } = await insertBooks(client));
 	} catch (err) {
 		logger.error("An error occurred during seeding", err);
 	} finally {
 		await client.end();
+		logger.summary({
+			countriesAddedCount,
+			countriesFailed,
+			authorsAddedCount,
+			authorsFailed,
+			genresAddedCount,
+			genresFailed,
+			booksAddedCount,
+			booksFailed,
+		});
 		logger.info("Seeding complete!");
 		logger.separator();
 	}
