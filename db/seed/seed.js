@@ -3,6 +3,7 @@
 const { Client } = require("pg");
 const fs = require("fs").promises;
 const path = require("path");
+const logger = require("../../js/logger");
 
 require("dotenv").config();
 
@@ -20,7 +21,7 @@ function getArgumentValue(flag, defaultValue) {
 }
 
 async function main() {
-	console.log("Seeding...");
+	logger.info("Seeding initialised...");
 
 	const user = getArgumentValue("--user", process.env.USER);
 	const password = getArgumentValue("--password", process.env.PASSWORD);
@@ -37,17 +38,19 @@ async function main() {
 
 		const schema = await fs.readFile(path.join(__dirname, "schema.sql"), "utf8");
 		await client.query(schema);
-		console.log("Schema created successfully");
+		logger.separator();
+		console.log("> Schema successfully created");
 
 		await insertCountries(client);
 		await insertAuthors(client);
 		await insertGenres(client);
 		await insertBooks(client);
 	} catch (err) {
-		console.log("An error occurred during seeding", err);
+		logger.error("An error occurred during seeding", err);
 	} finally {
 		await client.end();
-		console.log("Seeding complete");
+		logger.info("Seeding complete!");
+		logger.separator();
 	}
 }
 

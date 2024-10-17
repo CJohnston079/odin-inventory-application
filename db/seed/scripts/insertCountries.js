@@ -1,5 +1,6 @@
 const fs = require("fs").promises;
 const path = require("path");
+const logger = require("../../../js/logger");
 const { strToSlug } = require("../../../js/utils");
 
 async function insertCountries(client) {
@@ -24,7 +25,7 @@ async function insertCountries(client) {
 			continue;
 		}
 	}
-	console.log(`${successCount} countries inserted successfully, ${failedCount} failures`);
+	console.log(`> ${successCount} countries inserted successfully (${failedCount} failures)`);
 }
 
 module.exports = insertCountries;

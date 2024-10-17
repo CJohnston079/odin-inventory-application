@@ -22,7 +22,7 @@ async function insertBooks() {
 			continue;
 		}
 	}
-	console.log(`${successCount} books inserted successfully, ${failedCount} failures`);
+	console.log(`> ${successCount} books inserted successfully (${failedCount} failures)`);
 }
 
 module.exports = insertBooks;

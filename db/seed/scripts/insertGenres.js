@@ -21,7 +21,7 @@ async function insertGenres() {
 			continue;
 		}
 	}
-	console.log(`${successCount} genres inserted successfully, ${failedCount} failures`);
+	console.log(`> ${successCount} genres inserted successfully (${failedCount} failures)`);
 }
 
 module.exports = insertGenres;

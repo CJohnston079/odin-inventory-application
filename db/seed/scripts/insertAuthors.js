@@ -22,7 +22,7 @@ async function insertAuthors() {
 			continue;
 		}
 	}
-	console.log(`${successCount} authors inserted successfully, ${failedCount} failures`);
+	console.log(`> ${successCount} authors inserted successfully (${failedCount} failures)`);
 }
 
 module.exports = insertAuthors;
