@@ -19,7 +19,20 @@ exports.error = function (message, err) {
 	}
 };
 
-exports.summary = function (message) {
+exports.summary = function (data) {
 	this.separator();
-	console.log(chalk.cyan("[SUMMARY]") + `\n> ${message}`);
+	console.log(chalk.blue("[SUMMARY]\n"));
+	printSummary("countries", data.countriesAddedCount, data.countriesFailed);
+	printSummary("authors", data.authorsAddedCount, data.authorsFailed);
+	printSummary("genres", data.genresAddedCount, data.genresFailed);
+	printSummary("books", data.booksAddedCount, data.booksFailed);
+};
+
+const printSummary = function (table, successCount, failed) {
+	console.log(table.toUpperCase());
+	console.log(chalk.bold(`├ inserted: ${chalk.green(successCount)}`));
+	console.log(chalk.bold(`└── failed: ${chalk.red(failed.length)}`));
+	if (failed.length > 0) {
+		console.log(chalk.red(`\t  - ${failed.join(`\n\t  - `)}`));
+	}
 };
