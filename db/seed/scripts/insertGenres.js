@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs").promises;
 const Genre = require("../../../models/Genre");
 const db = require("../../queries/index");
+const logger = require("../../../js/logger");
 
 async function insertGenres() {
 	const filePath = path.join(__dirname, "../../data", "genres.json");
@@ -16,7 +17,6 @@ async function insertGenres() {
 			await db.genres.insertGenre(genre);
 			successCount += 1;
 		} catch (err) {
-			console.error(`Error inserting genre ${genre}`, err);
 			failedCount += 1;
 			continue;
 		}

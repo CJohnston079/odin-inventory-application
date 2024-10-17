@@ -17,7 +17,6 @@ async function insertBooks() {
 			await db.books.insertBook(book);
 			successCount += 1;
 		} catch (err) {
-			console.error(`Error inserting book ${book}.`, err);
 			failedCount += 1;
 			continue;
 		}

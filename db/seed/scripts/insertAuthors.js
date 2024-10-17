@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs").promises;
 const Author = require("../../../models/Author");
 const db = require("../../queries/index");
+const logger = require("../../../js/logger");
 
 async function insertAuthors() {
 	const filePath = path.join(__dirname, "../../data", "authors.json");
@@ -17,7 +18,6 @@ async function insertAuthors() {
 			await db.authors.insertAuthor(author);
 			successCount += 1;
 		} catch (err) {
-			console.error(`Error inserting author ${author}`, err);
 			failedCount += 1;
 			continue;
 		}

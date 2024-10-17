@@ -16,11 +16,11 @@ async function insertCountries(client) {
 		try {
 			await client.query(
 				"INSERT INTO dim_countries (slug, name, nationality, language) VALUES ($1, $2, $3, $4)",
-				[country.slug, country.country, country.nationality, country.language]
+				[country.slug, country.name, country.nationality, country.language]
 			);
 			successCount += 1;
 		} catch (err) {
-			console.error(`Error inserting country ${country}`, err);
+			logger.error(`Error inserting country ${JSON.stringify(country, null, 2)}`, err);
 			failedCount += 1;
 			continue;
 		}
