@@ -1,15 +1,26 @@
 <header>
 	<h1>Inventory Application</h1>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/books">Books</a>
-		<a href="/authors">Authors</a>
-		<a href="/genres">Genres</a>
-		<a href="/decades">Decades</a>
-		<a href="/countries">Countries</a>
-		<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
-		<a id="back-anchor" href="javascript:void(0)" onclick="window.history.back()">Back</a>
-		<% } %>
-	</nav>
-	<%- include("secondaryNav") %>
+	<div>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/books">Books</a></li>
+				<li><a href="/authors">Authors</a></li>
+				<li><a href="/genres">Genres</a></li>
+				<li><a href="/decades">Decades</a></li>
+				<li><a href="/countries">Countries</a></li>
+				<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
+				<li>
+					<a id="back-anchor" href="javascript:void(0)" onclick="window.history.back()">Back</a>
+				</li>
+				<% } %>
+			</ul>
+			<ul>
+				<li><a href="/authors/new">New author</a></li>
+				<li><a href="/books/new">New book</a></li>
+				<li><a href="/genres/new">New genre</a></li>
+			</ul>
+		</nav>
+	</div>
+	<hr />
 </header>
