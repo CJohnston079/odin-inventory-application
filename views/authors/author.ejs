@@ -3,12 +3,22 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Inventory | <%= author %></title>
+		<title>Inventory | <%= author.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
-		<h2><%= author %></h2>
-		<%- include("../partials/booksTable", { books }) %>
+		<article>
+			<header>
+				<h2><%= author.name %></h2>
+				<nav>
+					<button type="button" aria-label="Edit genre">Edit</button>
+					<button type="submit" aria-label="Delete genre">Delete</button>
+				</nav>
+			</header>
+			<p><%= author.biography %><</p>
+		</article>
+		<hr />
+		<%- include("../partials/booksTable", { caption: `Books by ${author.name}`, books }) %>
 	</body>
 </html>

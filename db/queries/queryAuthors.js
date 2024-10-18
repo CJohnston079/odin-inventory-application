@@ -73,7 +73,11 @@ exports.getAllAuthors = async function () {
 exports.getAuthorByID = async function (id) {
 	const { rows } = await pool.query(
 		`
-  		SELECT first_name || ' ' || last_name AS author FROM dim_authors WHERE id = $1;
+  		SELECT
+        author.first_name || ' ' || author.last_name AS name,
+        author.biography
+      FROM dim_authors AS author
+      WHERE author.id = $1;
   `,
 		[id]
 	);

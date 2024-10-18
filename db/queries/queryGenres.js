@@ -90,6 +90,8 @@ exports.getGenresByAuthor = async function (author) {
 };
 
 exports.getGenreByID = async function (id) {
-	const { rows } = await pool.query(`SELECT name AS genre FROM dim_genres WHERE id = $1;`, [id]);
+	const { rows } = await pool.query(`SELECT name, description FROM dim_genres WHERE id = $1;`, [
+		id,
+	]);
 	return rows;
 };

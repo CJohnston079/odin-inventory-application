@@ -29,7 +29,7 @@ exports.getNewGenreForm = function (req, res) {
 
 exports.getBooksByGenre = async function (req, res) {
 	const genreID = req.params.genre;
-	const { genre } = (await db.genres.getGenreByID(genreID))[0];
+	const genre = (await db.genres.getGenreByID(genreID))[0];
 	const books = await db.books.getBooksByGenre(genreID);
 
 	await Promise.all(

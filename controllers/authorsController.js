@@ -35,8 +35,8 @@ exports.getNewAuthorForm = function (req, res) {
 
 exports.getBooksByAuthor = async function (req, res) {
 	const authorID = req.params.author;
-	const { author } = (await db.authors.getAuthorByID(authorID))[0];
-	const books = await db.books.getBooksByAuthor(author);
+	const author = (await db.authors.getAuthorByID(authorID))[0];
+	const books = await db.books.getBooksByAuthor(author.name);
 
 	await Promise.all(
 		books.map(book => db.genres.getGenresByBook(book.id).then(genres => (book.genres = genres)))

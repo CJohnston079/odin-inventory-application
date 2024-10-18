@@ -70,3 +70,15 @@ nav ul {
 nav ul li {
 	display: inline;
 }
+
+dl div {
+	margin-bottom: 1rem;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0;
+}
