@@ -73,8 +73,14 @@ exports.getBook = async function (bookID) {
 	const { rows } = await pool.query(
 		`
 		SELECT
-      book.*,
-      author.first_name || ' ' || author.last_name AS author
+      book.id,
+      book.title,
+      book.description AS blurb,
+      book.is_fiction,
+      book.publication_year,
+      author.first_name || ' ' || author.last_name AS author,
+      author.id AS author_id,
+      author.slug AS author_slug
     FROM fact_books AS book
     JOIN dim_authors AS author ON book.author_id = author.id
     WHERE book.id = $1;

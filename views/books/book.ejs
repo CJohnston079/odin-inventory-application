@@ -3,16 +3,47 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Inventory | <%= book.book_title %></title>
+		<title>Inventory | <%= book.title %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
-		<h2><%= book.title %></h2>
-		<ul>
-			<li><b>Published:</b> <%= book.publication_year %></li>
-			<li><b>Fiction:</b> <%- book.is_fiction %></li>
-			<li><b>Author:</b> <%= book.author %></li>
-		</ul>
+		<article>
+			<header>
+				<h2><%= book.title %></h2>
+				<nav>
+					<button type="button" aria-label="Edit genre">Edit</button>
+					<button type="submit" aria-label="Delete genre">Delete</button>
+				</nav>
+			</header>
+			<dl>
+				<div>
+					<dt>Author</dt>
+					<dd>
+						<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>">
+							<%= book.author %>
+						</a>
+					</dd>
+				</div>
+				<div>
+					<dt>Published</dt>
+					<dd>
+						<a href="/decades/<%= Math.floor(book.publication_year / 10) %>0s">
+							<%= book.publication_year %>
+						</a>
+					</dd>
+				</div>
+				<div>
+					<dt>Genre</dt>
+					<dd>
+						<% book.genres.map((genre) => { %>
+						<a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a>
+						<% }) %>
+					</dd>
+				</div>
+			</dl>
+			<p><%= book.blurb %></p>
+		</article>
+		<hr />
 	</body>
 </html>
