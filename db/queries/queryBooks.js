@@ -205,3 +205,15 @@ exports.getBooksByCountry = async function (country) {
 	);
 	return rows;
 };
+
+exports.deleteBook = async function (book) {
+	try {
+		await pool.query("BEGIN");
+		await pool.query("DELETE FROM book_genres WHERE book_id = $1;", [book]);
+		await pool.query("DELETE FROM fact_books WHERE id = $1;", [book]);
+		await pool.query("COMMIT");
+	} catch (error) {
+		await pool.query("ROLLBACK");
+		throw error;
+	}
+};
