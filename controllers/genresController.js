@@ -59,3 +59,15 @@ exports.getGenreNames = async function (req, res) {
 	const genres = await db.genres.getGenreNames();
 	res.json({ genres });
 };
+
+exports.deleteGenre = async function (req, res) {
+	const genreID = req.params.genre;
+
+	try {
+		await db.genres.deleteGenre(genreID);
+		res.redirect("/genres");
+	} catch (err) {
+		console.error(`An error occurred deleting genre ${genreID}\n`, err);
+		res.status(500).send(`An error occurred deleting genre ${genreID}\n ${err}`);
+	}
+};
