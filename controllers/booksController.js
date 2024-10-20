@@ -58,3 +58,15 @@ exports.getBook = async function (req, res) {
 
 	res.render("./books/book", { title: book.book_title, book });
 };
+
+exports.deleteBook = async function (req, res) {
+	const bookID = req.params.book;
+
+	try {
+		await db.books.deleteBook(bookID);
+		res.redirect("/books");
+	} catch (err) {
+		console.error(`An error occurred deleting book ${bookID}\n`, err);
+		res.status(500).send(`An error occurred deleting book ${bookID}\n ${err}`);
+	}
+};

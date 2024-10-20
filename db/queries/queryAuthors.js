@@ -74,6 +74,8 @@ exports.getAuthorByID = async function (id) {
 	const { rows } = await pool.query(
 		`
   		SELECT
+        author.id,
+        author.slug,
         author.first_name || ' ' || author.last_name AS name,
         author.biography
       FROM dim_authors AS author
@@ -92,4 +94,25 @@ exports.getAuthorIDByName = async function (name) {
 		[name]
 	);
 	return rows[0].id;
+};
+
+exports.deleteAuthor = async function (author) {
+	try {
+		await pool.query("BEGIN");
+
+		const { rows: books } = await pool.query("SELECT id FROM fact_books WHERE author_id = $1", [
+			author,
+		]);
+
+		for (const book of books) {
+			await pool.query("DELETE FROM book_genres WHERE book_id = $1;", [book.id]);
+			await pool.query("DELETE FROM fact_books WHERE id = $1;", [book.id]);
+		}
+
+		await pool.query("DELETE FROM dim_authors WHERE id = $1;", [author]);
+		await pool.query("COMMIT");
+	} catch (err) {
+		await pool.query("ROLLBACK");
+		throw err;
+	}
 };

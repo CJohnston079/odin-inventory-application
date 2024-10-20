@@ -62,6 +62,10 @@
 	font-weight: 700;
 }
 
+.method-override-wrapper {
+	display: inline;
+}
+
 nav ul {
 	margin: 0;
 	padding-inline-start: 0;
