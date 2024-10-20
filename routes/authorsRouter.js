@@ -8,5 +8,6 @@ router.get("/new", controller.getNewAuthorForm);
 router.get("/:author/:slug", controller.getBooksByAuthor);
 router.get("/", controller.getAllAuthors);
 router.post("/", controller.postNewAuthor);
+router.delete("/:author/:slug", controller.deleteAuthor);
 
 module.exports = router;
