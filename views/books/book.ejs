@@ -14,9 +14,9 @@
 				<nav>
 					<button type="button" aria-label="Edit book">Edit</button>
 					<form
+						class="method-override-wrapper"
 						action="/books/<%= book.id %>/<%= book.slug %>?_method=DELETE"
 						method="POST"
-						style="display: inline"
 					>
 						<button type="submit" aria-label="Delete book">Delete</button>
 					</form>

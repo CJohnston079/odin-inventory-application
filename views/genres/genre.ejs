@@ -14,9 +14,9 @@
 				<nav>
 					<button type="button" aria-label="Edit genre">Edit</button>
 					<form
+						class="method-override-wrapper"
 						action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
 						method="POST"
-						style="display: inline"
 					>
 						<button type="submit" aria-label="Delete genre">Delete</button>
 					</form>
