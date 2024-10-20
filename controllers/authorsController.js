@@ -66,3 +66,15 @@ exports.checkAuthor = async function (req, res) {
 		res.status(500).json({ error: "Server error" });
 	}
 };
+
+exports.deleteAuthor = async function (req, res) {
+	const authorID = req.params.author;
+
+	try {
+		await db.authors.deleteAuthor(authorID);
+		res.redirect("/authors");
+	} catch (err) {
+		console.error(`An error occurred deleting author ${authorID}\n`, err);
+		res.status(500).send(`An error occurred deleting author ${authorID}\n ${err}`);
+	}
+};
