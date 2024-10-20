@@ -95,3 +95,15 @@ exports.getGenreByID = async function (id) {
 	]);
 	return rows;
 };
+
+exports.deleteGenre = async function (genre) {
+	try {
+		await pool.query("BEGIN");
+		await pool.query("DELETE FROM book_genres WHERE genre_id = $1;", [genre]);
+		await pool.query("DELETE FROM dim_genres WHERE id = $1;", [genre]);
+		await pool.query("COMMIT");
+	} catch (error) {
+		await pool.query("ROLLBACK");
+		throw error;
+	}
+};
