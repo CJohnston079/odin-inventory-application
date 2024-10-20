@@ -93,3 +93,24 @@ exports.getAuthorIDByName = async function (name) {
 	);
 	return rows[0].id;
 };
+
+exports.deleteAuthor = async function (author) {
+	try {
+		await pool.query("BEGIN");
+
+		const { rows: books } = await pool.query("SELECT id FROM fact_books WHERE author_id = $1", [
+			author,
+		]);
+
+		for (const book of books) {
+			await pool.query("DELETE FROM book_genres WHERE book_id = $1;", [book.id]);
+			await pool.query("DELETE FROM fact_books WHERE id = $1;", [book.id]);
+		}
+
+		await pool.query("DELETE FROM dim_authors WHERE id = $1;", [author]);
+		await pool.query("COMMIT");
+	} catch (err) {
+		await pool.query("ROLLBACK");
+		throw err;
+	}
+};
