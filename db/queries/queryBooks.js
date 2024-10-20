@@ -74,6 +74,7 @@ exports.getBook = async function (bookID) {
 		`
 		SELECT
       book.id,
+      book.slug,
       book.title,
       book.description AS blurb,
       book.is_fiction,

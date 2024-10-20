@@ -12,8 +12,14 @@
 			<header>
 				<h2><%= book.title %></h2>
 				<nav>
-					<button type="button" aria-label="Edit genre">Edit</button>
-					<button type="submit" aria-label="Delete genre">Delete</button>
+					<button type="button" aria-label="Edit book">Edit</button>
+					<form
+						action="/books/<%= book.id %>/<%= book.slug %>?_method=DELETE"
+						method="POST"
+						style="display: inline"
+					>
+						<button type="submit" aria-label="Delete book">Delete</button>
+					</form>
 				</nav>
 			</header>
 			<dl>
