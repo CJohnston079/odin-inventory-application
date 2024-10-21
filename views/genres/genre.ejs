@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= genre.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
+		<script type="module" src="/scripts/dialogueController.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
@@ -13,13 +14,21 @@
 				<h2><%= genre.name %></h2>
 				<nav>
 					<button type="button" aria-label="Edit genre">Edit</button>
-					<form
-						class="method-override-wrapper"
-						action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
-						method="POST"
-					>
-						<button type="submit" aria-label="Delete genre">Delete</button>
-					</form>
+					<div class="dialogue-wrapper" style="display: inline">
+						<dialog>
+							<h3>Delete <%= genre.name %>?</h3>
+							<p>This will remove the <%= genre.name %> genre from <%= books.length %> books.</p>
+							<button autofocus>Close</button>
+							<form
+								class="method-override-wrapper"
+								action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
+								method="POST"
+							>
+								<button type="submit" aria-label="Delete genre">Delete</button>
+							</form>
+						</dialog>
+						<button>Delete</button>
+					</div>
 				</nav>
 			</header>
 			<p><%= genre.description %></p>
