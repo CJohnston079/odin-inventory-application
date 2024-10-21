@@ -16,16 +16,22 @@
 					<button type="button" aria-label="Edit genre">Edit</button>
 					<div class="dialogue-wrapper">
 						<dialog>
-							<h3>Delete <%= genre.name %>?</h3>
-							<p>This will remove the <%= genre.name %> genre from <%= books.length %> books.</p>
-							<button autofocus>Close</button>
-							<form
-								class="method-override-wrapper"
-								action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
-								method="POST"
-							>
-								<button type="submit" aria-label="Delete genre">Delete</button>
-							</form>
+							<header>
+								<h3>Delete <%= genre.name %>?</h3>
+							</header>
+							<section>
+								<p>This will remove the <%= genre.name %> genre from <%= books.length %> books.</p>
+							</section>
+							<footer class="dialogue-actions">
+								<button autofocus>Close</button>
+								<form
+									class="method-override-wrapper"
+									action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
+									method="POST"
+								>
+									<button type="submit" aria-label="Delete genre">Delete</button>
+								</form>
+							</footer>
 						</dialog>
 						<button>Delete</button>
 					</div>

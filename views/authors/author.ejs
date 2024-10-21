@@ -16,23 +16,29 @@
 					<button type="button" aria-label="Edit genre">Edit</button>
 					<div class="dialogue-wrapper">
 						<dialog>
-							<h3>Delete <%= author.name %>?</h3>
-							<p>This will also remove the following books by <%= author.name %>.</p>
-							<ul>
-								<% books.map((book) => { %>
-								<li>
-									<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-								</li>
-								<% }) %>
-							</ul>
-							<button autofocus>Close</button>
-							<form
-								class="method-override-wrapper"
-								action="/authors/<%= author.id %>/<%= author.slug %>?_method=DELETE"
-								method="POST"
-							>
-								<button type="submit" aria-label="Delete author">Delete</button>
-							</form>
+							<header>
+								<h3>Delete <%= author.name %>?</h3>
+							</header>
+							<section>
+								<p>This will also remove the following books by <%= author.name %>.</p>
+								<ul>
+									<% books.map((book) => { %>
+									<li>
+										<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+									</li>
+									<% }) %>
+								</ul>
+							</section>
+							<footer class="dialogue-actions">
+								<button autofocus>Close</button>
+								<form
+									class="method-override-wrapper"
+									action="/authors/<%= author.id %>/<%= author.slug %>?_method=DELETE"
+									method="POST"
+								>
+									<button type="submit" aria-label="Delete author">Delete</button>
+								</form>
+							</footer>
 						</dialog>
 						<button>Delete</button>
 					</div>

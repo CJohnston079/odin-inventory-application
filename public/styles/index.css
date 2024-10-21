@@ -67,6 +67,10 @@
 	display: inline;
 }
 
+.dialogue-actions {
+	text-align: right;
+}
+
 ul {
 	padding-inline-start: 1rem;
 }
