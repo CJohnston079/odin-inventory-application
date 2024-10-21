@@ -62,7 +62,8 @@
 	font-weight: 700;
 }
 
-.method-override-wrapper {
+.method-override-wrapper,
+.dialog-wrapper {
 	display: inline;
 }
 
