@@ -66,12 +66,16 @@
 	display: inline;
 }
 
-nav ul {
+ul {
+	padding-inline-start: 1rem;
+}
+
+nav > ul {
 	margin: 0;
 	padding-inline-start: 0;
 }
 
-nav ul li {
+nav > ul li {
 	display: inline;
 }
 
