@@ -97,6 +97,22 @@ exports.getGenreByID = async function (id) {
 	return rows;
 };
 
+exports.updateGenre = async function (genreID, genre) {
+	try {
+		await pool.query(
+			`
+      UPDATE dim_genres
+      SET slug = $2, name = $3, description = $4
+      WHERE id = $1;
+    `,
+			[genreID, ...Object.values(genre.toDbEntry())]
+		);
+	} catch (err) {
+		logger.error(`Error updating genre ${JSON.stringify(genre, null, 2)}.`, err);
+		throw err;
+	}
+};
+
 exports.deleteGenre = async function (genre) {
 	try {
 		await pool.query("BEGIN");
