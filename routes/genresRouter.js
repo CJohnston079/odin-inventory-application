@@ -8,6 +8,7 @@ router.get("/new", controller.getNewGenreForm);
 router.get("/:genre/:slug", controller.getBooksByGenre);
 router.get("/", controller.getAllGenres);
 router.post("/", controller.postNewGenre);
+router.put("/:genre/:slug", controller.updateGenre);
 router.delete("/:genre/:slug", controller.deleteGenre);
 
 module.exports = router;
