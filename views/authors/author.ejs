@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= author.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
+		<script type="module" src="/scripts/dialogueController.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
@@ -13,13 +14,28 @@
 				<h2><%= author.name %></h2>
 				<nav>
 					<button type="button" aria-label="Edit genre">Edit</button>
-					<form
-						class="method-override-wrapper"
-						action="/authors/<%= author.id %>/<%= author.slug %>?_method=DELETE"
-						method="POST"
-					>
-						<button type="submit" aria-label="Delete author">Delete</button>
-					</form>
+					<div class="dialogue-wrapper" style="display: inline">
+						<dialog>
+							<h3>Delete <%= author.name %>?</h3>
+							<p>This will also remove the following books by <%= author.name %>.</p>
+							<ul>
+								<% books.map((book) => { %>
+								<li>
+									<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+								</li>
+								<% }) %>
+							</ul>
+							<button autofocus>Close</button>
+							<form
+								class="method-override-wrapper"
+								action="/authors/<%= author.id %>/<%= author.slug %>?_method=DELETE"
+								method="POST"
+							>
+								<button type="submit" aria-label="Delete author">Delete</button>
+							</form>
+						</dialog>
+						<button>Delete</button>
+					</div>
 				</nav>
 			</header>
 			<p><%= author.biography %><</p>
