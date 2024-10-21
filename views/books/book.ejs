@@ -12,15 +12,22 @@
 		<article>
 			<header>
 				<h2><%= book.title %></h2>
-				<nav>
+				<nav aria-label="Book actions">
 					<button type="button" aria-label="Edit book">Edit</button>
 					<div class="dialogue-wrapper">
-						<dialog>
+						<dialog
+							id="delete-book-dialog"
+							aria-labelledby="delete-book-title"
+							aria-describedby="delete-book-description"
+						>
 							<header>
-								<h3>Delete <%= book.title %>?</h3>
+								<h3 id="delete-book-title">Delete <%= book.title %>?</h3>
 							</header>
+							<section>
+								<p id="delete-book-description">This will permanently delete <%= book.title %>.</p>
+							</section>
 							<footer class="dialogue-actions">
-								<button autofocus>Close</button>
+								<button autofocus aria-label="Close dialog">Close</button>
 								<form
 									class="method-override-wrapper"
 									action="/books/<%= book.id %>/<%= book.slug %>?_method=DELETE"
@@ -30,7 +37,7 @@
 								</form>
 							</footer>
 						</dialog>
-						<button>Delete</button>
+						<button aria-haspopup="dialog" aria-controls="delete-book-dialog">Delete</button>
 					</div>
 				</nav>
 			</header>
