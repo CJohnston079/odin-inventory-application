@@ -5,21 +5,42 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= genre.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
+		<script type="module" src="/scripts/dialogueController.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
 		<article>
 			<header>
 				<h2><%= genre.name %></h2>
-				<nav>
+				<nav aria-label="Genre actions">
 					<button type="button" aria-label="Edit genre">Edit</button>
-					<form
-						class="method-override-wrapper"
-						action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
-						method="POST"
-					>
-						<button type="submit" aria-label="Delete genre">Delete</button>
-					</form>
+					<div class="dialogue-wrapper">
+						<dialog
+							id="delete-genre-dialog"
+							aria-labelledby="delete-genre-title"
+							aria-describedby="delete-genre-description"
+						>
+							<header>
+								<h3 id="delete-genre-title">Delete <%= genre.name %>?</h3>
+							</header>
+							<section>
+								<p id="delete-genre-description">
+									This will remove the <%= genre.name %> genre from <%= books.length %> books.
+								</p>
+							</section>
+							<footer class="dialogue-actions">
+								<button autofocus aria-label="Close dialog">Close</button>
+								<form
+									class="method-override-wrapper"
+									action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
+									method="POST"
+								>
+									<button type="submit" aria-label="Delete genre">Delete</button>
+								</form>
+							</footer>
+						</dialog>
+						<button aria-haspopup="dialog" aria-controls="delete-genre-dialog">Delete</button>
+					</div>
 				</nav>
 			</header>
 			<p><%= genre.description %></p>
