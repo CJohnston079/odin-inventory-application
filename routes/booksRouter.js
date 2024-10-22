@@ -7,6 +7,7 @@ router.get("/new", controller.getNewBookForm);
 router.get("/:book/:slug", controller.getBook);
 router.get("/", controller.getAllBooks);
 router.post("/", controller.postNewBook);
+router.put("/:book/:slug", controller.updateBook);
 router.delete("/:book/:slug", controller.deleteBook);
 
 module.exports = router;
