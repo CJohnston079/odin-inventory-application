@@ -96,6 +96,32 @@ exports.getAuthorIDByName = async function (name) {
 	return rows[0].id;
 };
 
+exports.updateAuthor = async function (authorID, author) {
+	try {
+		await pool.query("BEGIN");
+		await author.fetchCountryID();
+		await pool.query(
+			`
+      UPDATE dim_authors
+      SET
+        country_id = $2,
+        slug = $3,
+        first_name = $4,
+        last_name = $5,
+        birth_year = $6,
+        biography = $7
+      WHERE id = $1;
+    `,
+			[authorID, ...Object.values(author.toDbEntry())]
+		);
+		await pool.query("COMMIT");
+	} catch (err) {
+		await pool.query("ROLLBACK");
+		logger.error(`Error updating author ${JSON.stringify(author, null, 2)}.`, err);
+		throw err;
+	}
+};
+
 exports.deleteAuthor = async function (author) {
 	try {
 		await pool.query("BEGIN");
