@@ -67,6 +67,19 @@ exports.checkAuthor = async function (req, res) {
 	}
 };
 
+exports.updateAuthor = async function (req, res) {
+	const authorID = req.params.author;
+	const updatedAuthor = new Author(req.body);
+
+	try {
+		await db.authors.updateAuthor(authorID, updatedAuthor);
+		res.redirect(`/authors/${authorID}/${updatedAuthor.slug}`);
+	} catch (err) {
+		console.error(`An error occurred updating author:`, err);
+		res.status(500).send(`An error occurred updating author: ${err}`);
+	}
+};
+
 exports.deleteAuthor = async function (req, res) {
 	const authorID = req.params.author;
 
