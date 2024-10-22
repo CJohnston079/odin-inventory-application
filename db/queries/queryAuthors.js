@@ -76,9 +76,14 @@ exports.getAuthorByID = async function (id) {
   		SELECT
         author.id,
         author.slug,
+        author.first_name,
+        author.last_name,
         author.first_name || ' ' || author.last_name AS name,
+        author.birth_year,
+        country.nationality,
         author.biography
       FROM dim_authors AS author
+      JOIN dim_countries AS country ON author.country_id = country.id
       WHERE author.id = $1;
   `,
 		[id]
@@ -94,6 +99,32 @@ exports.getAuthorIDByName = async function (name) {
 		[name]
 	);
 	return rows[0].id;
+};
+
+exports.updateAuthor = async function (authorID, author) {
+	try {
+		await pool.query("BEGIN");
+		await author.fetchCountryID();
+		await pool.query(
+			`
+      UPDATE dim_authors
+      SET
+        country_id = $2,
+        slug = $3,
+        first_name = $4,
+        last_name = $5,
+        birth_year = $6,
+        biography = $7
+      WHERE id = $1;
+    `,
+			[authorID, ...Object.values(author.toDbEntry())]
+		);
+		await pool.query("COMMIT");
+	} catch (err) {
+		await pool.query("ROLLBACK");
+		logger.error(`Error updating author ${JSON.stringify(author, null, 2)}.`, err);
+		throw err;
+	}
 };
 
 exports.deleteAuthor = async function (author) {
