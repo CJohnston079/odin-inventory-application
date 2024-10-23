@@ -1,7 +1,8 @@
 import enableAutoComplete from "../enableAutoComplete.js";
-import { checkAuthorExists } from "../validateInputs.js";
-import { checkYearNotInFuture } from "../validateInputs.js";
-import { checkNationalityExists } from "../validateInputs.js";
+import validateName from "./input-handlers/validateName.js";
+import validateNationality from "./input-handlers/validateNationality.js";
+import validateTextarea from "./input-handlers/validateTextarea.js";
+import validateYear from "./input-handlers/validateYear.js";
 
 const form = document.querySelector("#new-author");
 
@@ -24,97 +25,14 @@ enableAutoComplete({
 	fieldName: "nationality",
 });
 
-const handleNameInput = async function () {
-	if (validationState.name) {
-		return;
-	}
-
-	const nameMessage = document.querySelector("#first-name ~ .field-message");
-	const firstName = firstNameInput.value;
-	const lastName = lastNameInput.value;
-	const name = `${firstName} ${lastName}`;
-
-	if (!firstName || !lastName) {
-		nameMessage.textContent = "";
-		return;
-	}
-
-	const nameAvailable = !(await checkAuthorExists(name));
-
-	if (nameAvailable) {
-		nameMessage.textContent = "";
-		validationState.name = true;
-	} else {
-		nameMessage.textContent = `${name} already added.`;
-	}
-
-	return nameAvailable;
-};
-
-const handleYearInput = function () {
-	if (validationState.year) {
-		return;
-	}
-
-	const yearMessage = document.querySelector("#birth-year ~ .field-message");
-	const year = yearInput.value;
-
-	const isYearValid = checkYearNotInFuture(Number(year));
-
-	validationState.year = isYearValid;
-
-	if (isYearValid) {
-		yearMessage.textContent = "";
-	} else {
-		yearMessage.textContent = "Birth   year cannot be in the future.";
-	}
-
-	return isYearValid;
-};
-
-const handleNationalityInput = async function () {
-	if (validationState.nationality) {
-		return;
-	}
-
-	const nationalityMessage = document.querySelector("#nationality ~ .field-message");
-	const nationality = nationalityInput.value;
-
-	const isNationalityValid = await checkNationalityExists(nationality);
-
-	validationState.nationality = isNationalityValid;
-
-	if (!isNationalityValid) {
-		nationalityMessage.textContent = `Nationality ${nationality} not found.`;
-	} else {
-		nationalityMessage.textContent = "";
-	}
-};
-
-const handleBiographyInput = function () {
-	const biographyMessage = document.querySelector("#biography ~ .field-message");
-	const charCountElement = document.querySelector("#biography ~ .char-count");
-	const charCount = biographyInput.value.length;
-	const isBiographyValid = charCount <= 280;
-
-	validationState.biography = isBiographyValid;
-
-	charCountElement.textContent = `${charCount}/280`;
-	charCountElement.classList.toggle("limit-exceeded", !isBiographyValid);
-
-	biographyMessage.textContent = isBiographyValid ? "" : "Character limit exceeded";
-
-	return isBiographyValid;
-};
-
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
 	const validators = {
-		name: handleNameInput,
-		year: handleYearInput,
-		nationality: handleNationalityInput,
-		biography: handleBiographyInput,
+		name: async () => validateName(firstNameInput, lastNameInput),
+		year: async () => validateYear(yearInput),
+		nationality: async () => validateNationality(nationalityInput),
+		biography: async () => validateTextarea(biographyInput),
 	};
 
 	for (const [field, validator] of Object.entries(validators)) {
@@ -123,6 +41,7 @@ const handleSubmit = async function (e) {
 		}
 
 		const isValid = await validator();
+		validationState[field] = isValid;
 
 		if (!isValid) {
 			return;
@@ -130,7 +49,6 @@ const handleSubmit = async function (e) {
 	}
 
 	const isFormValid = Object.values(validationState).every(Boolean);
-
 	if (isFormValid) {
 		form.submit();
 	}
@@ -144,18 +62,40 @@ const submitOnEnter = async function (e) {
 };
 
 const inputs = [
-	{ element: firstNameInput, blurHandler: handleNameInput, validationKey: "name" },
-	{ element: lastNameInput, blurHandler: handleNameInput, validationKey: "name" },
-	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
-	{ element: nationalityInput, blurHandler: handleNationalityInput, validationKey: "nationality" },
+	{
+		element: firstNameInput,
+		validationKey: "name",
+		validator: async () => validateName(firstNameInput, lastNameInput),
+	},
+	{
+		element: lastNameInput,
+		validationKey: "name",
+		validator: async () => validateName(firstNameInput, lastNameInput),
+	},
+	{
+		element: yearInput,
+		validationKey: "year",
+		validator: async () => validateYear(yearInput),
+	},
+	{
+		element: nationalityInput,
+		validationKey: "nationality",
+		validator: async () => validateNationality(nationalityInput),
+	},
 ];
 
-inputs.forEach(({ element, blurHandler, validationKey }) => {
-	element.addEventListener("blur", blurHandler);
-	element.addEventListener("input", () => (validationState[validationKey] = null));
+inputs.forEach(({ element, validator, validationKey }) => {
+	element.addEventListener("blur", async () => {
+		validationState[validationKey] = await validator();
+	});
+	element.addEventListener("input", () => {
+		validationState[validationKey] = null;
+	});
 });
 
-biographyInput.addEventListener("input", handleBiographyInput);
+biographyInput.addEventListener("input", () => {
+	validationState.biography = validateTextarea(biographyInput);
+});
 biographyInput.addEventListener("keydown", submitOnEnter);
 
 form.addEventListener("submit", handleSubmit);
