@@ -1,7 +1,7 @@
-import enableAutoComplete from "./enableAutoComplete.js";
-import { validateAuthorName } from "./validateInputs.js";
-import { validateYear } from "./validateInputs.js";
-import { validateNationality } from "./validateInputs.js";
+import enableAutoComplete from "../enableAutoComplete.js";
+import { validateAuthorName } from "../validateInputs.js";
+import { validateYear } from "../validateInputs.js";
+import { validateNationality } from "../validateInputs.js";
 
 const form = document.querySelector("#new-author");
 

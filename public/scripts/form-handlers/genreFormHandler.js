@@ -1,4 +1,4 @@
-import { validateGenre } from "./validateInputs.js";
+import { validateGenre } from "../validateInputs.js";
 
 const form = document.querySelector("#new-genre");
 const genreInput = document.querySelector("#genre");

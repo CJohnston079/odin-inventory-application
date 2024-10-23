@@ -1,11 +1,11 @@
-import enableAutoComplete from "./enableAutoComplete.js";
-import enableAutoCompleteMulti from "./enableAutoCompleteMulti.js";
-import { formatGenreStr } from "./utils.js";
-import { joinArrWithConjunctions } from "./utils.js";
-import { validateTitle } from "./validateInputs.js";
-import { validateAuthor } from "./validateInputs.js";
-import { validateGenres } from "./validateInputs.js";
-import { validateYear } from "./validateInputs.js";
+import enableAutoComplete from "../enableAutoComplete.js";
+import enableAutoCompleteMulti from "../enableAutoCompleteMulti.js";
+import { formatGenreStr } from "../utils.js";
+import { joinArrWithConjunctions } from "../utils.js";
+import { validateTitle } from "../validateInputs.js";
+import { validateAuthor } from "../validateInputs.js";
+import { validateGenres } from "../validateInputs.js";
+import { validateYear } from "../validateInputs.js";
 
 const form = document.querySelector("#new-book");
 const titleInput = document.querySelector("#title");
