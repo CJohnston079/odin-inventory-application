@@ -6,42 +6,32 @@ const descriptionInput = document.querySelector("#description");
 
 const validationState = { genre: null, description: null };
 
-const handleGenreInput = async function () {
-	if (validationState.genre) {
-		return;
-	}
+const validateGenre = async function (genreInput) {
+	const genreMessage = document.querySelector(`#${genreInput.id} ~ .field-message`);
 
-	const genreMessage = document.querySelector("#genre ~ .field-message");
-	const genre = genreInput.value;
-
-	if (!genre) {
+	if (!genreInput.value) {
 		genreMessage.textContent = "";
-		return;
+		return false;
 	}
 
-	const genreAvailable = !(await checkGenreExists(genre));
+	const genreAvailable = !(await checkGenreExists(genreInput.value));
 
-	validationState.genre = genreAvailable;
-
-	if (!genreAvailable) {
-		genreMessage.textContent = `${genre} is already added.`;
+	if (genreAvailable) {
+		genreMessage.textContent = "";
 	} else {
-		genreMessage.textContent = "";
-		validationState.genre = true;
+		genreMessage.textContent = `${genreInput.value} is already added.`;
 	}
 
 	return genreAvailable;
 };
 
-const handleDescriptionInput = function () {
-	const descriptionMessage = document.querySelector("#description ~ .field-message");
-	const charCountElement = document.querySelector("#description ~ .char-count");
+const validateTextarea = function (descriptionInput, maxChars = 280) {
+	const descriptionMessage = document.querySelector(`#${descriptionInput.id} ~ .field-message`);
+	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .char-count`);
 	const charCount = descriptionInput.value.length;
-	const isDescriptionValid = charCount <= 280;
+	const isDescriptionValid = charCount <= maxChars;
 
-	validationState.description = isDescriptionValid;
-
-	charCountElement.textContent = `${charCount}/280`;
+	charCountElement.textContent = `${charCount}/${maxChars}`;
 	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
 
 	descriptionMessage.textContent = isDescriptionValid ? "" : "Character limit exceeded";
@@ -53,8 +43,8 @@ const handleSubmit = async function (e) {
 	e.preventDefault();
 
 	const validators = {
-		genre: handleGenreInput,
-		description: handleDescriptionInput,
+		genre: async () => validateGenre(genreInput),
+		description: async () => validateTextarea(descriptionInput),
 	};
 
 	for (const [field, validator] of Object.entries(validators)) {
@@ -63,6 +53,7 @@ const handleSubmit = async function (e) {
 		}
 
 		const isValid = await validator();
+		validationState[field] = isValid;
 
 		if (!isValid) {
 			return;
@@ -70,7 +61,6 @@ const handleSubmit = async function (e) {
 	}
 
 	const isFormValid = Object.values(validationState).every(Boolean);
-
 	if (isFormValid) {
 		form.submit();
 	}
@@ -83,14 +73,26 @@ const submitOnEnter = async function (e) {
 	}
 };
 
-const inputs = [{ element: genreInput, blurHandler: handleGenreInput, validationKey: "genre" }];
+const inputs = [
+	{
+		inputElement: genreInput,
+		validationKey: "genre",
+		validator: async () => validateGenre(genreInput),
+	},
+];
 
-inputs.forEach(({ element, blurHandler, validationKey }) => {
-	element.addEventListener("blur", blurHandler);
-	element.addEventListener("input", () => (validationState[validationKey] = null));
+inputs.forEach(({ inputElement, validationKey, validator }) => {
+	inputElement.addEventListener("blur", async () => {
+		validationState[validationKey] = await validator();
+	});
+	inputElement.addEventListener("input", () => {
+		validationState[validationKey] = null;
+	});
 });
 
-descriptionInput.addEventListener("input", handleDescriptionInput);
+descriptionInput.addEventListener("input", () => {
+	validationState.description = validateTextarea(descriptionInput);
+});
 descriptionInput.addEventListener("keydown", submitOnEnter);
 
 form.addEventListener("submit", handleSubmit);
