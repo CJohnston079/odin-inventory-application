@@ -2,10 +2,10 @@ import enableAutoComplete from "../enableAutoComplete.js";
 import enableAutoCompleteMulti from "../enableAutoCompleteMulti.js";
 import { formatGenreStr } from "../utils.js";
 import { joinArrWithConjunctions } from "../utils.js";
-import { validateTitle } from "../validateInputs.js";
-import { validateAuthor } from "../validateInputs.js";
-import { validateGenres } from "../validateInputs.js";
-import { validateYear } from "../validateInputs.js";
+import { checkBookByAuthorExists } from "../validateInputs.js";
+import { checkAuthorExists } from "../validateInputs.js";
+import { checkGenresExists } from "../validateInputs.js";
+import { checkYearNotInFuture } from "../validateInputs.js";
 
 const form = document.querySelector("#new-book");
 const titleInput = document.querySelector("#title");
@@ -52,7 +52,7 @@ const handleTitleInput = async function () {
 		return;
 	}
 
-	const bookAvailable = await validateTitle(titleInput.value, author);
+	const bookAvailable = !(await checkBookByAuthorExists(titleInput.value, author));
 
 	validationState.title = bookAvailable;
 
@@ -79,7 +79,7 @@ const handleAuthorInput = async function () {
 		return;
 	}
 
-	const authorExists = await validateAuthor(author);
+	const authorExists = await checkAuthorExists(author);
 
 	validationState.author = authorExists;
 
@@ -111,11 +111,11 @@ const handleGenresInput = async function () {
 		return;
 	}
 
-	const { areGenresValid, notFoundGenres } = await validateGenres(genresInput.value);
+	const { doAllGenresExist, notFoundGenres } = await checkGenresExists(genresInput.value);
 
-	validationState.genres = areGenresValid;
+	validationState.genres = doAllGenresExist;
 
-	if (areGenresValid) {
+	if (doAllGenresExist) {
 		genresMessage.textContent = "";
 	} else {
 		const genreMessageStr = joinArrWithConjunctions(notFoundGenres);
@@ -127,7 +127,7 @@ const handleGenresInput = async function () {
 		genresMessage.appendChild(newGenreAnchor);
 	}
 
-	return areGenresValid;
+	return doAllGenresExist;
 };
 
 const handleYearInput = function () {
@@ -138,7 +138,7 @@ const handleYearInput = function () {
 	const yearMessage = document.querySelector("#publication-year ~ .field-message");
 	const year = yearInput.value;
 
-	const isYearValid = validateYear(Number(year));
+	const isYearValid = checkYearNotInFuture(Number(year));
 
 	validationState.year = isYearValid;
 

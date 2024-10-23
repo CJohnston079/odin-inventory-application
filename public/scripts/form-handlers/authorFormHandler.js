@@ -1,7 +1,7 @@
 import enableAutoComplete from "../enableAutoComplete.js";
-import { validateAuthorName } from "../validateInputs.js";
-import { validateYear } from "../validateInputs.js";
-import { validateNationality } from "../validateInputs.js";
+import { checkAuthorExists } from "../validateInputs.js";
+import { checkYearNotInFuture } from "../validateInputs.js";
+import { checkNationalityExists } from "../validateInputs.js";
 
 const form = document.querySelector("#new-author");
 
@@ -39,7 +39,7 @@ const handleNameInput = async function () {
 		return;
 	}
 
-	const nameAvailable = await validateAuthorName(name);
+	const nameAvailable = !(await checkAuthorExists(name));
 
 	if (nameAvailable) {
 		nameMessage.textContent = "";
@@ -59,7 +59,7 @@ const handleYearInput = function () {
 	const yearMessage = document.querySelector("#birth-year ~ .field-message");
 	const year = yearInput.value;
 
-	const isYearValid = validateYear(Number(year));
+	const isYearValid = checkYearNotInFuture(Number(year));
 
 	validationState.year = isYearValid;
 
@@ -80,7 +80,7 @@ const handleNationalityInput = async function () {
 	const nationalityMessage = document.querySelector("#nationality ~ .field-message");
 	const nationality = nationalityInput.value;
 
-	const isNationalityValid = await validateNationality(nationality);
+	const isNationalityValid = await checkNationalityExists(nationality);
 
 	validationState.nationality = isNationalityValid;
 

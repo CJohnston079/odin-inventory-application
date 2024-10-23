@@ -1,4 +1,4 @@
-import { validateGenre } from "../validateInputs.js";
+import { checkGenreExists } from "../validateInputs.js";
 
 const form = document.querySelector("#new-genre");
 const genreInput = document.querySelector("#genre");
@@ -19,7 +19,7 @@ const handleGenreInput = async function () {
 		return;
 	}
 
-	const genreAvailable = await validateGenre(genre);
+	const genreAvailable = !(await checkGenreExists(genre));
 
 	validationState.genre = genreAvailable;
 
