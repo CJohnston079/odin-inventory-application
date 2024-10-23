@@ -38,58 +38,41 @@ enableAutoCompleteMulti({
 	addNewRoute: "genres",
 });
 
-const handleTitleInput = async function () {
-	if (validationState.title) {
-		return;
-	}
+const validateTitle = async function (titleInput, authorInput) {
+	const titleMessage = document.querySelector(`#${titleInput.id} ~ .field-message`);
 
-	const titleMessage = document.querySelector("#title ~ .field-message");
-	const book = titleInput.value;
-	const author = authorInput.value;
-
-	if (!author) {
+	if (!authorInput.value) {
 		titleMessage.textContent = "";
-		return;
+		return false;
 	}
 
-	const bookAvailable = !(await checkBookByAuthorExists(titleInput.value, author));
-
-	validationState.title = bookAvailable;
+	const bookAvailable = !(await checkBookByAuthorExists(titleInput.value, authorInput.value));
 
 	if (!bookAvailable) {
-		titleMessage.textContent = `${book} by ${author} is already added.`;
+		titleMessage.textContent = `${titleInput.value} by ${authorInput.value} is already added.`;
 	} else {
 		titleMessage.textContent = "";
-		validationState.title = true;
 	}
 
 	return bookAvailable;
 };
 
-const handleAuthorInput = async function () {
-	if (validationState.author) {
-		return;
-	}
+const validateAuthor = async function (authorInput) {
+	const authorMessage = document.querySelector(`#${authorInput.id} ~ .field-message`);
 
-	const authorMessage = document.querySelector("#author ~ .field-message");
-	const author = authorInput.value;
-
-	if (!author) {
+	if (!authorInput.value) {
 		authorMessage.textContent = "";
-		return;
+		return false;
 	}
 
-	const authorExists = await checkAuthorExists(author);
-
-	validationState.author = authorExists;
+	const authorExists = await checkAuthorExists(authorInput.value);
 
 	if (authorExists) {
 		authorMessage.textContent = "";
 	} else {
-		authorMessage.textContent = `Author ${author} not found.`;
+		authorMessage.textContent = `Author ${authorInput.value} not found.`;
 
 		const newAuthorAnchor = document.createElement("a");
-
 		newAuthorAnchor.href = "../authors/new";
 		newAuthorAnchor.textContent = `Add author +`;
 		authorMessage.appendChild(newAuthorAnchor);
@@ -98,22 +81,15 @@ const handleAuthorInput = async function () {
 	return authorExists;
 };
 
-const handleGenresInput = async function () {
-	if (validationState.genres) {
-		return;
-	}
+const validateGenres = async function (genresInput) {
+	const genresMessage = document.querySelector(`#${genresInput.id} ~ .field-message`);
 
-	const genresMessage = document.querySelector("#genres ~ .field-message");
-	const genresInputVal = genresInput.value;
-
-	if (!genresInputVal) {
+	if (!genresInput.value) {
 		genresMessage.textContent = "";
-		return;
+		return false;
 	}
 
 	const { doAllGenresExist, notFoundGenres } = await checkGenresExists(genresInput.value);
-
-	validationState.genres = doAllGenresExist;
 
 	if (doAllGenresExist) {
 		genresMessage.textContent = "";
@@ -130,17 +106,9 @@ const handleGenresInput = async function () {
 	return doAllGenresExist;
 };
 
-const handleYearInput = function () {
-	if (validationState.year) {
-		return;
-	}
-
-	const yearMessage = document.querySelector("#publication-year ~ .field-message");
-	const year = yearInput.value;
-
-	const isYearValid = checkYearNotInFuture(Number(year));
-
-	validationState.year = isYearValid;
+const validateYear = function (yearInput) {
+	const yearMessage = document.querySelector(`#${yearInput.id} ~ .field-message`);
+	const isYearValid = checkYearNotInFuture(Number(yearInput.value));
 
 	if (isYearValid) {
 		yearMessage.textContent = "";
@@ -151,13 +119,11 @@ const handleYearInput = function () {
 	return isYearValid;
 };
 
-const handleDescriptionInput = function () {
-	const descriptionMessage = document.querySelector("#description ~ .field-message");
-	const charCountElement = document.querySelector("#description ~ .char-count");
+const validateTextarea = function (descriptionInput) {
+	const descriptionMessage = document.querySelector(`#${descriptionInput.id} ~ .field-message`);
+	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .char-count`);
 	const charCount = descriptionInput.value.length;
 	const isDescriptionValid = charCount <= 280;
-
-	validationState.description = isDescriptionValid;
 
 	charCountElement.textContent = `${charCount}/280`;
 	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
@@ -171,11 +137,11 @@ const handleSubmit = async function (e) {
 	e.preventDefault();
 
 	const validators = {
-		year: handleYearInput,
-		author: handleAuthorInput,
-		title: handleTitleInput,
-		genres: handleGenresInput,
-		description: handleDescriptionInput,
+		year: async () => validateYear(yearInput),
+		author: async () => validateAuthor(authorInput),
+		title: async () => validateTitle(titleInput, authorInput),
+		genres: async () => validateGenres(genresInput),
+		description: async () => validateTextarea(descriptionInput),
 	};
 
 	for (const [field, validator] of Object.entries(validators)) {
@@ -184,6 +150,7 @@ const handleSubmit = async function (e) {
 		}
 
 		const isValid = await validator();
+		validationState[field] = isValid;
 
 		if (!isValid) {
 			return;
@@ -191,7 +158,6 @@ const handleSubmit = async function (e) {
 	}
 
 	const isFormValid = Object.values(validationState).every(Boolean);
-
 	if (isFormValid) {
 		form.submit();
 	}
@@ -205,19 +171,45 @@ const submitOnEnter = async function (e) {
 };
 
 const inputs = [
-	{ element: titleInput, blurHandler: handleTitleInput, validationKey: "title" },
-	{ element: authorInput, blurHandler: handleTitleInput, validationKey: "title" },
-	{ element: authorInput, blurHandler: handleAuthorInput, validationKey: "author" },
-	{ element: genresInput, blurHandler: handleGenresInput, validationKey: "genres" },
-	{ element: yearInput, blurHandler: handleYearInput, validationKey: "year" },
+	{
+		inputElement: titleInput,
+		validationKey: "title",
+		validator: async () => validateTitle(titleInput, authorInput),
+	},
+	{
+		inputElement: authorInput,
+		validationKey: "title",
+		validator: async () => validateTitle(titleInput, authorInput),
+	},
+	{
+		inputElement: authorInput,
+		validationKey: "author",
+		validator: async () => validateAuthor(authorInput),
+	},
+	{
+		inputElement: genresInput,
+		validationKey: "genres",
+		validator: async () => validateGenres(genresInput),
+	},
+	{
+		inputElement: yearInput,
+		validationKey: "year",
+		validator: async () => validateYear(yearInput),
+	},
 ];
 
-inputs.forEach(({ element, blurHandler, validationKey }) => {
-	element.addEventListener("blur", blurHandler);
-	element.addEventListener("input", () => (validationState[validationKey] = null));
+inputs.forEach(({ inputElement, validationKey, validator }) => {
+	inputElement.addEventListener("blur", async () => {
+		validationState[validationKey] = await validator();
+	});
+	inputElement.addEventListener("input", () => {
+		validationState[validationKey] = null;
+	});
 });
 
-descriptionInput.addEventListener("input", handleDescriptionInput);
+descriptionInput.addEventListener("input", () => {
+	validationState.description = validateTextarea(descriptionInput);
+});
 descriptionInput.addEventListener("keydown", submitOnEnter);
 
 form.addEventListener("submit", handleSubmit);
