@@ -1,33 +1,80 @@
-import { doesBookExistByAuthor } from "./checkDatabase.js";
-import { doesAuthorExist } from "./checkDatabase.js";
-import { doesGenreExist } from "./checkDatabase.js";
-import { doesNationalityExist } from "./checkDatabase.js";
+export const checkBookByAuthorExists = async function (title, author) {
+	if (!title || !author) {
+		return false;
+	}
 
-export const validateTitle = async function (book, author) {
-	const titleUnavailable = await doesBookExistByAuthor(book, author);
+	const base = "/books/check-title";
+	const query = `title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}`;
 
-	return !titleUnavailable;
+	try {
+		const response = await fetch(`${base}?${query}`);
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error fetching from endpoint "${base}?title=${title}&author${author}":`, err);
+		return false;
+	}
 };
 
-export const validateAuthor = async function (author) {
-	const authorExists = await doesAuthorExist(author);
+export const checkAuthorExists = async function (author) {
+	if (!author || author === "") {
+		return false;
+	}
 
-	return authorExists;
+	const base = "/authors/check-author";
+	const query = `author=${encodeURIComponent(author)}`;
+
+	try {
+		const response = await fetch(`${base}?${query}`);
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error fetching from endpoint "${base}?author=${author}":`, err);
+		return false;
+	}
 };
 
-export const validateAuthorName = async function (author) {
-	const authorExists = await doesAuthorExist(author);
+export const checkGenreExists = async function (genre) {
+	if (!genre) {
+		return false;
+	}
 
-	return !authorExists;
+	const base = "/genres/check-genre";
+	const query = `genre=${encodeURIComponent(genre)}`;
+
+	try {
+		const response = await fetch(`${base}?${query}`);
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error fetching from endpoint "${base}?genre=${genre}":`, err);
+		return false;
+	}
 };
 
-export const validateGenre = async function (genre) {
-	const genreExists = await doesGenreExist(genre);
+export const checkNationalityExists = async function (nationality) {
+	if (!nationality || nationality === "") {
+		return false;
+	}
 
-	return !genreExists;
+	const base = "/countries/check-nationality";
+	const query = `nationality=${encodeURIComponent(nationality)}`;
+
+	try {
+		const response = await fetch(`${base}?${query}`);
+		const data = await response.json();
+
+		return data.exists;
+	} catch (err) {
+		console.error(`Error fetching from endpoint "${base}?nationality=${nationality}`, err);
+		return false;
+	}
 };
 
-export const validateGenres = async function (genresInput) {
+export const checkGenresExists = async function (genresInput) {
 	const genresArr = genresInput
 		.replace(/,\s*$/, "")
 		.split(",")
@@ -35,23 +82,19 @@ export const validateGenres = async function (genresInput) {
 
 	const checkedGenres = await Promise.all(
 		genresArr.map(async genre => {
-			const exists = await doesGenreExist(genre);
+			const exists = await checkGenreExists(genre);
 			return !exists ? genre : null;
 		})
 	);
-	const notFoundGenres = checkedGenres.filter(genre => genre !== null);
 
-	return { areGenresValid: notFoundGenres.length === 0, notFoundGenres };
+	const notFoundGenres = checkedGenres.filter(genre => genre !== null);
+	const doAllGenresExist = notFoundGenres.length === 0;
+
+	return { doAllGenresExist, notFoundGenres };
 };
 
-export const validateYear = function (year) {
+export const checkYearNotInFuture = function (year) {
 	const currentYear = new Date().getFullYear();
 
 	return year <= currentYear;
-};
-
-export const validateNationality = async function (nationality) {
-	const nationalityExists = await doesNationalityExist(nationality);
-
-	return nationalityExists;
 };
