@@ -1,11 +1,10 @@
 import enableAutoComplete from "../enableAutoComplete.js";
 import enableAutoCompleteMulti from "../enableAutoCompleteMulti.js";
-import { formatGenreStr } from "../utils.js";
-import { joinArrWithConjunctions } from "../utils.js";
-import { checkBookByAuthorExists } from "../validateInputs.js";
-import { checkAuthorExists } from "../validateInputs.js";
-import { checkGenresExists } from "../validateInputs.js";
-import { checkYearNotInFuture } from "../validateInputs.js";
+import validateAuthor from "./input-handlers/validateAuthor.js";
+import validateGenres from "./input-handlers/validateGenres.js";
+import validateTextarea from "./input-handlers/validateTextarea.js";
+import validateTitle from "./input-handlers/validateTitle.js";
+import validateYear from "./input-handlers/validateYear.js";
 
 const form = document.querySelector("#new-book");
 const titleInput = document.querySelector("#title");
@@ -38,106 +37,11 @@ enableAutoCompleteMulti({
 	addNewRoute: "genres",
 });
 
-const validateTitle = async function (titleInput, authorInput) {
-	const titleMessage = document.querySelector(`#${titleInput.id} ~ .field-message`);
-
-	if (!authorInput.value) {
-		titleMessage.textContent = "";
-		return false;
-	}
-
-	const bookAvailable = !(await checkBookByAuthorExists(titleInput.value, authorInput.value));
-
-	if (!bookAvailable) {
-		titleMessage.textContent = `${titleInput.value} by ${authorInput.value} is already added.`;
-	} else {
-		titleMessage.textContent = "";
-	}
-
-	return bookAvailable;
-};
-
-const validateAuthor = async function (authorInput) {
-	const authorMessage = document.querySelector(`#${authorInput.id} ~ .field-message`);
-
-	if (!authorInput.value) {
-		authorMessage.textContent = "";
-		return false;
-	}
-
-	const authorExists = await checkAuthorExists(authorInput.value);
-
-	if (authorExists) {
-		authorMessage.textContent = "";
-	} else {
-		authorMessage.textContent = `Author ${authorInput.value} not found.`;
-
-		const newAuthorAnchor = document.createElement("a");
-		newAuthorAnchor.href = "../authors/new";
-		newAuthorAnchor.textContent = `Add author +`;
-		authorMessage.appendChild(newAuthorAnchor);
-	}
-
-	return authorExists;
-};
-
-const validateGenres = async function (genresInput) {
-	const genresMessage = document.querySelector(`#${genresInput.id} ~ .field-message`);
-
-	if (!genresInput.value) {
-		genresMessage.textContent = "";
-		return false;
-	}
-
-	const { doAllGenresExist, notFoundGenres } = await checkGenresExists(genresInput.value);
-
-	if (doAllGenresExist) {
-		genresMessage.textContent = "";
-	} else {
-		const genreMessageStr = joinArrWithConjunctions(notFoundGenres);
-		genresMessage.textContent = formatGenreStr(genreMessageStr);
-
-		const newGenreAnchor = document.createElement("a");
-		newGenreAnchor.href = "../genres/new";
-		newGenreAnchor.textContent = `Add genre +`;
-		genresMessage.appendChild(newGenreAnchor);
-	}
-
-	return doAllGenresExist;
-};
-
-const validateYear = function (yearInput) {
-	const yearMessage = document.querySelector(`#${yearInput.id} ~ .field-message`);
-	const isYearValid = checkYearNotInFuture(Number(yearInput.value));
-
-	if (isYearValid) {
-		yearMessage.textContent = "";
-	} else {
-		yearMessage.textContent = "Publication year cannot be in the future.";
-	}
-
-	return isYearValid;
-};
-
-const validateTextarea = function (descriptionInput) {
-	const descriptionMessage = document.querySelector(`#${descriptionInput.id} ~ .field-message`);
-	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .char-count`);
-	const charCount = descriptionInput.value.length;
-	const isDescriptionValid = charCount <= 280;
-
-	charCountElement.textContent = `${charCount}/280`;
-	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
-
-	descriptionMessage.textContent = isDescriptionValid ? "" : "Character limit exceeded";
-
-	return isDescriptionValid;
-};
-
 const handleSubmit = async function (e) {
 	e.preventDefault();
 
 	const validators = {
-		year: async () => validateYear(yearInput),
+		year: () => validateYear(yearInput),
 		author: async () => validateAuthor(authorInput),
 		title: async () => validateTitle(titleInput, authorInput),
 		genres: async () => validateGenres(genresInput),
