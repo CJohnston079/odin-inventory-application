@@ -1,43 +1,11 @@
-import { checkGenreExists } from "../validateInputs.js";
+import validateGenre from "./input-handlers/validateGenre.js";
+import validateTextarea from "./input-handlers/validateTextarea.js";
 
 const form = document.querySelector("#new-genre");
 const genreInput = document.querySelector("#genre");
 const descriptionInput = document.querySelector("#description");
 
 const validationState = { genre: null, description: null };
-
-const validateGenre = async function (genreInput) {
-	const genreMessage = document.querySelector(`#${genreInput.id} ~ .field-message`);
-
-	if (!genreInput.value) {
-		genreMessage.textContent = "";
-		return false;
-	}
-
-	const genreAvailable = !(await checkGenreExists(genreInput.value));
-
-	if (genreAvailable) {
-		genreMessage.textContent = "";
-	} else {
-		genreMessage.textContent = `${genreInput.value} is already added.`;
-	}
-
-	return genreAvailable;
-};
-
-const validateTextarea = function (descriptionInput, maxChars = 280) {
-	const descriptionMessage = document.querySelector(`#${descriptionInput.id} ~ .field-message`);
-	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .char-count`);
-	const charCount = descriptionInput.value.length;
-	const isDescriptionValid = charCount <= maxChars;
-
-	charCountElement.textContent = `${charCount}/${maxChars}`;
-	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
-
-	descriptionMessage.textContent = isDescriptionValid ? "" : "Character limit exceeded";
-
-	return isDescriptionValid;
-};
 
 const handleSubmit = async function (e) {
 	e.preventDefault();
