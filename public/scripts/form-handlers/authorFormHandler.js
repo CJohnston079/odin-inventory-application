@@ -3,17 +3,10 @@ import validateName from "./input-handlers/validateName.js";
 import validateNationality from "./input-handlers/validateNationality.js";
 import validateTextarea from "./input-handlers/validateTextarea.js";
 import validateYear from "./input-handlers/validateYear.js";
+import handleSubmit from "./submit-handlers/handleSubmit.js";
+import submitOnEnter from "./submit-handlers/submitOnEnter.js";
 
-const form = document.querySelector("#new-author");
-
-const firstNameInput = document.querySelector("#first-name");
-const lastNameInput = document.querySelector("#last-name");
-const yearInput = document.querySelector("#birth-year");
-const nationalityInput = document.querySelector("#nationality");
-const biographyInput = document.querySelector("#biography");
-
-const validationState = { name: null, year: null, nationality: null, biography: null };
-
+// enables auto-complete
 const nationalities = await fetch("../countries/nationality-names")
 	.then(response => response.json())
 	.then(data => data.nationalities);
@@ -25,70 +18,37 @@ enableAutoComplete({
 	fieldName: "nationality",
 });
 
-const handleSubmit = async function (e) {
-	e.preventDefault();
+// enables form validation and submission
+const form = document.querySelector("#new-author");
+const firstNameInput = document.querySelector("#first-name");
+const lastNameInput = document.querySelector("#last-name");
+const yearInput = document.querySelector("#birth-year");
+const nationalityInput = document.querySelector("#nationality");
+const biographyInput = document.querySelector("#biography");
 
-	const validators = {
-		name: async () => validateName(firstNameInput, lastNameInput),
-		year: async () => validateYear(yearInput),
-		nationality: async () => validateNationality(nationalityInput),
-		biography: async () => validateTextarea(biographyInput),
-	};
+const validationState = { name: null, year: null, nationality: null, biography: null };
 
-	for (const [field, validator] of Object.entries(validators)) {
-		if (validationState[field]) {
-			continue;
-		}
-
-		const isValid = await validator();
-		validationState[field] = isValid;
-
-		if (!isValid) {
-			return;
-		}
-	}
-
-	const isFormValid = Object.values(validationState).every(Boolean);
-	if (isFormValid) {
-		form.submit();
-	}
-};
-
-const submitOnEnter = async function (e) {
-	if (e.key === "Enter") {
-		e.preventDefault();
-		await handleSubmit(e);
-	}
+const validators = {
+	name: async () => await validateName(firstNameInput, lastNameInput),
+	year: () => validateYear(yearInput),
+	nationality: async () => await validateNationality(nationalityInput),
+	biography: () => validateTextarea(biographyInput),
 };
 
 const inputs = [
-	{
-		element: firstNameInput,
-		validationKey: "name",
-		validator: async () => validateName(firstNameInput, lastNameInput),
-	},
-	{
-		element: lastNameInput,
-		validationKey: "name",
-		validator: async () => validateName(firstNameInput, lastNameInput),
-	},
-	{
-		element: yearInput,
-		validationKey: "year",
-		validator: async () => validateYear(yearInput),
-	},
-	{
-		element: nationalityInput,
-		validationKey: "nationality",
-		validator: async () => validateNationality(nationalityInput),
-	},
+	{ inputElement: firstNameInput, validationKey: "name" },
+	{ inputElement: lastNameInput, validationKey: "name" },
+	{ inputElement: yearInput, validationKey: "year" },
+	{ inputElement: nationalityInput, validationKey: "nationality" },
 ];
 
-inputs.forEach(({ element, validator, validationKey }) => {
-	element.addEventListener("blur", async () => {
+inputs.forEach(({ inputElement, validationKey }) => {
+	const validator = validators[validationKey];
+
+	inputElement.addEventListener("blur", async () => {
 		validationState[validationKey] = await validator();
 	});
-	element.addEventListener("input", () => {
+	inputElement.addEventListener("input", () => {
 		validationState[validationKey] = null;
 	});
 });
@@ -96,6 +56,11 @@ inputs.forEach(({ element, validator, validationKey }) => {
 biographyInput.addEventListener("input", () => {
 	validationState.biography = validateTextarea(biographyInput);
 });
-biographyInput.addEventListener("keydown", submitOnEnter);
 
-form.addEventListener("submit", handleSubmit);
+biographyInput.addEventListener("keydown", async e => {
+	submitOnEnter(e, { form, validationState, validators });
+});
+
+form.addEventListener("submit", async e => {
+	await handleSubmit(e, { form, validationState, validators });
+});

@@ -5,16 +5,10 @@ import validateGenres from "./input-handlers/validateGenres.js";
 import validateTextarea from "./input-handlers/validateTextarea.js";
 import validateTitle from "./input-handlers/validateTitle.js";
 import validateYear from "./input-handlers/validateYear.js";
+import handleSubmit from "./submit-handlers/handleSubmit.js";
+import submitOnEnter from "./submit-handlers/submitOnEnter.js";
 
-const form = document.querySelector("#new-book");
-const titleInput = document.querySelector("#title");
-const authorInput = document.querySelector("#author");
-const genresInput = document.querySelector("#genres");
-const yearInput = document.querySelector("#publication-year");
-const descriptionInput = document.querySelector("#description");
-
-const validationState = { title: null, author: null, genres: null, year: null, description: null };
-
+// enables auto-complete
 const authors = await fetch("../authors/author-names")
 	.then(response => response.json())
 	.then(data => data.authors);
@@ -37,72 +31,35 @@ enableAutoCompleteMulti({
 	addNewRoute: "genres",
 });
 
-const handleSubmit = async function (e) {
-	e.preventDefault();
+// enables form validation and submission
+const form = document.querySelector("#new-book");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const genresInput = document.querySelector("#genres");
+const yearInput = document.querySelector("#publication-year");
+const descriptionInput = document.querySelector("#description");
 
-	const validators = {
-		year: () => validateYear(yearInput),
-		author: async () => validateAuthor(authorInput),
-		title: async () => validateTitle(titleInput, authorInput),
-		genres: async () => validateGenres(genresInput),
-		description: async () => validateTextarea(descriptionInput),
-	};
+const validationState = { title: null, author: null, genres: null, year: null, description: null };
 
-	for (const [field, validator] of Object.entries(validators)) {
-		if (validationState[field]) {
-			continue;
-		}
-
-		const isValid = await validator();
-		validationState[field] = isValid;
-
-		if (!isValid) {
-			return;
-		}
-	}
-
-	const isFormValid = Object.values(validationState).every(Boolean);
-	if (isFormValid) {
-		form.submit();
-	}
-};
-
-const submitOnEnter = async function (e) {
-	if (e.key === "Enter") {
-		e.preventDefault();
-		await handleSubmit(e);
-	}
+const validators = {
+	year: () => validateYear(yearInput),
+	author: async () => await validateAuthor(authorInput),
+	title: async () => await validateTitle(titleInput, authorInput),
+	genres: async () => await validateGenres(genresInput),
+	description: () => validateTextarea(descriptionInput),
 };
 
 const inputs = [
-	{
-		inputElement: titleInput,
-		validationKey: "title",
-		validator: async () => validateTitle(titleInput, authorInput),
-	},
-	{
-		inputElement: authorInput,
-		validationKey: "title",
-		validator: async () => validateTitle(titleInput, authorInput),
-	},
-	{
-		inputElement: authorInput,
-		validationKey: "author",
-		validator: async () => validateAuthor(authorInput),
-	},
-	{
-		inputElement: genresInput,
-		validationKey: "genres",
-		validator: async () => validateGenres(genresInput),
-	},
-	{
-		inputElement: yearInput,
-		validationKey: "year",
-		validator: async () => validateYear(yearInput),
-	},
+	{ inputElement: titleInput, validationKey: "title" },
+	{ inputElement: authorInput, validationKey: "title" },
+	{ inputElement: authorInput, validationKey: "author" },
+	{ inputElement: genresInput, validationKey: "genres" },
+	{ inputElement: yearInput, validationKey: "year" },
 ];
 
-inputs.forEach(({ inputElement, validationKey, validator }) => {
+inputs.forEach(({ inputElement, validationKey }) => {
+	const validator = validators[validationKey];
+
 	inputElement.addEventListener("blur", async () => {
 		validationState[validationKey] = await validator();
 	});
@@ -114,6 +71,11 @@ inputs.forEach(({ inputElement, validationKey, validator }) => {
 descriptionInput.addEventListener("input", () => {
 	validationState.description = validateTextarea(descriptionInput);
 });
-descriptionInput.addEventListener("keydown", submitOnEnter);
 
-form.addEventListener("submit", handleSubmit);
+descriptionInput.addEventListener("keydown", async e => {
+	await submitOnEnter(e, { form, validationState, validators });
+});
+
+form.addEventListener("submit", async e => {
+	await handleSubmit(e, { form, validationState, validators });
+});
