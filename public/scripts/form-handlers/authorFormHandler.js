@@ -1,7 +1,8 @@
 import enableAutoComplete from "../enableAutoComplete.js";
-import { checkAuthorExists } from "../validateInputs.js";
-import { checkYearNotInFuture } from "../validateInputs.js";
-import { checkNationalityExists } from "../validateInputs.js";
+import validateName from "./input-handlers/validateName.js";
+import validateNationality from "./input-handlers/validateNationality.js";
+import validateTextarea from "./input-handlers/validateTextarea.js";
+import validateYear from "./input-handlers/validateYear.js";
 
 const form = document.querySelector("#new-author");
 
@@ -23,68 +24,6 @@ enableAutoComplete({
 	options: nationalities,
 	fieldName: "nationality",
 });
-
-const validateName = async function (firstNameInput, lastNameInput) {
-	const nameMessage = document.querySelector(`#${firstNameInput.id} ~ .field-message`);
-
-	if (!firstNameInput.value || !lastNameInput.value) {
-		nameMessage.textContent = "";
-		return false;
-	}
-
-	const name = `${firstNameInput.value} ${lastNameInput.value}`;
-	const nameAvailable = !(await checkAuthorExists(name));
-
-	if (nameAvailable) {
-		nameMessage.textContent = "";
-	} else {
-		nameMessage.textContent = `${name} already added.`;
-	}
-
-	return nameAvailable;
-};
-
-const validateYear = function (yearInput) {
-	const yearMessage = document.querySelector(`#${yearInput.id} ~ .field-message`);
-	const isYearValid = checkYearNotInFuture(Number(yearInput.value));
-	const fieldName =
-		yearInput.id.charAt(0).toUpperCase() + yearInput.id.toLowerCase().slice(1).replaceAll("-", " ");
-
-	if (isYearValid) {
-		yearMessage.textContent = "";
-	} else {
-		yearMessage.textContent = `${fieldName} cannot be in the future.`;
-	}
-
-	return isYearValid;
-};
-
-const validateNationality = async function (nationalityInput) {
-	const nationalityMessage = document.querySelector(`#${nationalityInput.id} ~ .field-message`);
-	const isNationalityValid = await checkNationalityExists(nationalityInput.value);
-
-	if (isNationalityValid) {
-		nationalityMessage.textContent = "";
-	} else {
-		nationalityMessage.textContent = `Nationality ${nationalityInput.value} not found.`;
-	}
-
-	return isNationalityValid;
-};
-
-const validateTextarea = function (descriptionInput, maxChars = 280) {
-	const descriptionMessage = document.querySelector(`#${descriptionInput.id} ~ .field-message`);
-	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .char-count`);
-	const charCount = descriptionInput.value.length;
-	const isDescriptionValid = charCount <= maxChars;
-
-	charCountElement.textContent = `${charCount}/${maxChars}`;
-	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
-
-	descriptionMessage.textContent = isDescriptionValid ? "" : "Character limit exceeded";
-
-	return isDescriptionValid;
-};
 
 const handleSubmit = async function (e) {
 	e.preventDefault();
