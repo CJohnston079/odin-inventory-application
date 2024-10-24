@@ -72,6 +72,10 @@ nav > ul li {
 	display: inline;
 }
 
+nav > .dialogue-wrapper {
+	display: inline;
+}
+
 dl div {
 	margin-bottom: 1rem;
 }
