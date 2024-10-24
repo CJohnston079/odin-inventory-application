@@ -62,6 +62,7 @@ exports.getBook = async function (req, res) {
 exports.updateBook = async function (req, res) {
 	const bookID = req.params.book;
 	const updatedBook = new Book(req.body);
+	console.log("Updating book:\n", updatedBook);
 
 	try {
 		await db.books.updateBook(bookID, updatedBook);
