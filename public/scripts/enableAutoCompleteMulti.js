@@ -33,7 +33,7 @@ const enableAutoCompleteMulti = function ({
 	};
 
 	const updateInput = function (input, newEntry) {
-		const entries = input.value.replaceAll(" ", "").split(",").slice(0, -1);
+		const entries = input.value.split(/\s*,\s*/).slice(0, -1);
 		entries.push(newEntry);
 		input.value = entries.join(", ");
 	};
