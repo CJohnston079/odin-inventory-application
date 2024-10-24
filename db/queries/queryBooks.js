@@ -207,6 +207,32 @@ exports.getBooksByCountry = async function (country) {
 	return rows;
 };
 
+exports.updateBook = async function (bookID, book) {
+	try {
+		await pool.query("BEGIN");
+		await book.fetchAuthorID();
+		await pool.query(
+			`
+      UPDATE fact_books
+      SET
+        author_id = $2,
+        slug = $3,
+        title = $4,
+        publication_year = $5,
+        is_fiction = $6,
+        description = $7
+      WHERE id = $1;
+    `,
+			[bookID, ...Object.values(book.toDbEntry())]
+		);
+		await pool.query("COMMIT");
+	} catch (err) {
+		await pool.query("ROLLBACK");
+		logger.error(`Error updating book ${JSON.stringify(book, null, 2)}.`, err);
+		throw err;
+	}
+};
+
 exports.deleteBook = async function (book) {
 	try {
 		await pool.query("BEGIN");

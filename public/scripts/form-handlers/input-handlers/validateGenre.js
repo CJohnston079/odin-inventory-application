@@ -1,6 +1,6 @@
 import { checkGenreExists } from "../../validateInputs.js";
 
-const validateGenre = async function (genreInput) {
+const validateGenre = async function (genreInput, currentName = null) {
 	const genreMessage = document.querySelector(`#${genreInput.id} ~ .field-message`);
 
 	if (!genreInput.value) {
@@ -8,7 +8,8 @@ const validateGenre = async function (genreInput) {
 		return false;
 	}
 
-	const genreAvailable = !(await checkGenreExists(genreInput.value));
+	const genreAvailable =
+		currentName === genreInput.value || !(await checkGenreExists(genreInput.value));
 
 	if (genreAvailable) {
 		genreMessage.textContent = "";

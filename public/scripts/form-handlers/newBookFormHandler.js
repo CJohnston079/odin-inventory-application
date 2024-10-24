@@ -9,10 +9,10 @@ import handleSubmit from "./submit-handlers/handleSubmit.js";
 import submitOnEnter from "./submit-handlers/submitOnEnter.js";
 
 // enables auto-complete
-const authors = await fetch("../authors/author-names")
+const authors = await fetch("/authors/author-names")
 	.then(response => response.json())
 	.then(data => data.authors);
-const genres = await fetch("../genres/genre-names")
+const genres = await fetch("/genres/genre-names")
 	.then(response => response.json())
 	.then(data => data.genres);
 
@@ -38,6 +38,7 @@ const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
 const descriptionInput = document.querySelector("#description");
+const bookTitle = document.querySelector("#title");
 
 const validationState = { title: null, author: null, genres: null, year: null, description: null };
 

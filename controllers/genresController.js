@@ -60,6 +60,19 @@ exports.getGenreNames = async function (req, res) {
 	res.json({ genres });
 };
 
+exports.updateGenre = async function (req, res) {
+	const genreID = req.params.genre;
+	const updatedGenre = new Genre(req.body);
+
+	try {
+		await db.genres.updateGenre(genreID, updatedGenre);
+		res.redirect(`/genres/${genreID}/${updatedGenre.slug}`);
+	} catch (err) {
+		console.error(`An error occurred updating genre:`, err);
+		res.status(500).send(`An error occurred updating genre: ${err}`);
+	}
+};
+
 exports.deleteGenre = async function (req, res) {
 	const genreID = req.params.genre;
 

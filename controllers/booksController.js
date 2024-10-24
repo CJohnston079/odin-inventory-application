@@ -59,6 +59,19 @@ exports.getBook = async function (req, res) {
 	res.render("./books/book", { title: book.book_title, book });
 };
 
+exports.updateBook = async function (req, res) {
+	const bookID = req.params.book;
+	const updatedBook = new Book(req.body);
+
+	try {
+		await db.books.updateBook(bookID, updatedBook);
+		res.redirect(`/books/${bookID}/${updatedBook.slug}`);
+	} catch (err) {
+		console.error(`An error occurred updating ${updatedBook.title}:`, err);
+		res.status(500).send(`An error occurred updating updating ${updatedBook.title}: ${err}`);
+	}
+};
+
 exports.deleteBook = async function (req, res) {
 	const bookID = req.params.book;
 

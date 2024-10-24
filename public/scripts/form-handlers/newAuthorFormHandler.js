@@ -7,7 +7,7 @@ import handleSubmit from "./submit-handlers/handleSubmit.js";
 import submitOnEnter from "./submit-handlers/submitOnEnter.js";
 
 // enables auto-complete
-const nationalities = await fetch("../countries/nationality-names")
+const nationalities = await fetch("/countries/nationality-names")
 	.then(response => response.json())
 	.then(data => data.nationalities);
 

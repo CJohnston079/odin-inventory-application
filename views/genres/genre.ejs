@@ -6,14 +6,54 @@
 		<title>Inventory | <%= genre.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
+    <script type="module" src="/scripts/form-handlers/editGenreFormHandler.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
 		<article>
 			<header>
-				<h2><%= genre.name %></h2>
+				<h2 id="title"><%= genre.name %></h2>
 				<nav aria-label="Genre actions">
-					<button type="button" aria-label="Edit genre">Edit</button>
+					<div class="dialogue-wrapper">
+						<dialog
+							id="edit-genre-dialog"
+							aria-labelledby="edit-genre-title"
+						>
+							<header>
+								<h3 id="edit-genre-title">Editing <%= genre.name %></h3>
+							</header>
+							<section>
+								<form
+                  id="edit-genre"
+									class="method-override-wrapper"
+									action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=PUT"
+									method="POST"
+								>
+									<div class="field">
+										<label for="genre">Genre name</label>
+										<input type="text" name="genre" id="genre" value="<%= genre.name %>" required />
+										<span class="field-message"></span>
+									</div>
+									<div class="field">
+                    <label for="description">Desciption</label>
+										<textarea
+                      name="description"
+                      id="description"
+                      cols="40"
+                      rows="8"
+                    ><%= genre.description %></textarea>
+										<span class="char-count"><%= genre.description.length %>/280</span>
+										<span class="field-message"></span>
+									</div>
+								</form>
+							</section>
+							<footer class="dialogue-actions">
+								<button autofocus aria-label="Close dialog">Close</button>
+                <button form="edit-genre" type="submit" aria-label="Save changes">Save</button>
+							</footer>
+						</dialog>
+						<button aria-haspopup="dialog" aria-controls="edit-genre-dialog">Edit</button>
+					</div>
 					<div class="dialogue-wrapper">
 						<dialog
 							id="delete-genre-dialog"

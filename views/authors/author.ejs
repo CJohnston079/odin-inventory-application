@@ -6,14 +6,68 @@
 		<title>Inventory | <%= author.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
+    <script type="module" src="/scripts/form-handlers/editAuthorFormHandler.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
 		<article>
 			<header>
-				<h2><%= author.name %></h2>
+				<h2 id="title"><%= author.name %></h2>
 				<nav aria-label="Author actions">
-					<button type="button" aria-label="Edit author">Edit</button>
+					<div class="dialogue-wrapper">
+						<dialog
+							id="edit-author-dialog"
+							aria-labelledby="edit-author-title"
+						>
+							<header>
+								<h3 id="edit-author-title">Editing <%= author.name %></h3>
+							</header>
+							<section>
+								<form
+									id="edit-author"
+									class="method-override-wrapper"
+									action="/authors/<%= author.id %>/<%= author.slug %>?_method=PUT"
+									method="POST"
+								>
+                  <div class="field">
+                    <label for="first-name">First name:</label>
+                    <input value="<%= author.first_name %>" type="text" name="firstName" id="first-name" required />
+                    <label style="margin-top: 1rem" for="last-name">Surname</label>
+                    <input value="<%= author.last_name %>" type="text" name="lastName" id="last-name" required />
+                    <span class="field-message"></span>
+                  </div>
+                  <div class="field">
+                    <label for="birth-year">Birth year:</label>
+                    <input
+                      value="<%= author.birth_year %>"
+                      type="number"
+                      name="birthYear"
+                      id="birth-year"
+                      max="<%= new Date().getFullYear() %>"
+                    />
+                    <span class="field-message"></span>
+                  </div>
+                  <div class="field">
+                    <label for="nationality">Nationality:</label>
+                    <input value="<%= author.nationality %>" type="text" name="nationality" id="nationality" required />
+                    <span class="field-message"></span>
+                    <ul id="nationality-suggestions"></ul>
+                  </div>
+                  <div class="field">
+                    <label for="biography">Biography</label>
+                    <textarea name="biography" id="biography" cols="40" rows="8"><%= author.biography %></textarea>
+                    <span class="field-message"></span>
+                    <span class="char-count"><%= author.biography.length %>/280</span>
+                  </div>
+								</form>
+							</section>
+							<footer class="dialogue-actions">
+								<button autofocus aria-label="Close dialog">Close</button>
+								<button form="edit-author" type="submit" aria-label="Save author edits">Save</button>
+							</footer>
+						</dialog>
+						<button aria-haspopup="dialog" aria-controls="edit-author-dialog">Edit</button>
+					</div>
 					<div class="dialogue-wrapper">
 						<dialog
 							id="delete-author-dialog"
@@ -50,7 +104,7 @@
 					</div>
 				</nav>
 			</header>
-			<p><%= author.biography %><</p>
+			<p><%= author.biography %></p>
 		</article>
 		<hr />
 		<%- include("../partials/booksTable", { caption: `Books by ${author.name}`, books }) %>
