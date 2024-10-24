@@ -1,6 +1,6 @@
 import { checkBookByAuthorExists } from "../../validateInputs.js";
 
-const validateTitle = async function (titleInput, authorInput) {
+const validateTitle = async function (titleInput, authorInput, currentTitle = null) {
 	const titleMessage = document.querySelector(`#${titleInput.id} ~ .field-message`);
 
 	if (!authorInput.value) {
@@ -8,7 +8,9 @@ const validateTitle = async function (titleInput, authorInput) {
 		return false;
 	}
 
-	const bookAvailable = !(await checkBookByAuthorExists(titleInput.value, authorInput.value));
+	const bookAvailable =
+		currentTitle === titleInput.value ||
+		!(await checkBookByAuthorExists(titleInput.value, authorInput.value));
 
 	if (!bookAvailable) {
 		titleMessage.textContent = `${titleInput.value} by ${authorInput.value} is already added.`;

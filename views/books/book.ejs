@@ -6,12 +6,13 @@
 		<title>Inventory | <%= book.title %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
+		<script type="module" src="/scripts/form-handlers/editBookFormHandler.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
 		<article>
 			<header>
-				<h2><%= book.title %></h2>
+				<h2 id="title"><%= book.title %></h2>
 				<nav aria-label="Book actions">
 					<div class="dialogue-wrapper">
 						<dialog
@@ -23,7 +24,7 @@
 							</header>
 							<section>
 								<form
-									id="new-book"
+									id="edit-book"
 									class="method-override-wrapper"
 									action="/books/<%= book.id %>/<%= book.slug %>?_method=PUT"
 									method="POST"
@@ -86,7 +87,7 @@
 							</section>
 							<footer class="dialogue-actions">
 								<button autofocus aria-label="Close dialog">Close</button>
-								<button form="new-book" type="submit" aria-label="Save changes">Save</button>
+								<button form="edit-book" type="submit" aria-label="Save changes">Save</button>
 							</footer>
 						</dialog>
 						<button aria-haspopup="dialog" aria-controls="edit-book-dialog">Edit</button>

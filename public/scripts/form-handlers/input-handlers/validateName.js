@@ -1,6 +1,6 @@
 import { checkAuthorExists } from "../../validateInputs.js";
 
-const validateName = async function (firstNameInput, lastNameInput) {
+const validateName = async function (firstNameInput, lastNameInput, currentName = null) {
 	const nameMessage = document.querySelector(`#${firstNameInput.id} ~ .field-message`);
 
 	if (!firstNameInput.value || !lastNameInput.value) {
@@ -9,7 +9,7 @@ const validateName = async function (firstNameInput, lastNameInput) {
 	}
 
 	const name = `${firstNameInput.value} ${lastNameInput.value}`;
-	const nameAvailable = !(await checkAuthorExists(name));
+	const nameAvailable = name === currentName || !(await checkAuthorExists(name));
 
 	if (nameAvailable) {
 		nameMessage.textContent = "";

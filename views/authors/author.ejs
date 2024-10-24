@@ -6,12 +6,13 @@
 		<title>Inventory | <%= author.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
+    <script type="module" src="/scripts/form-handlers/editAuthorFormHandler.js"></script>
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
 		<article>
 			<header>
-				<h2><%= author.name %></h2>
+				<h2 id="title"><%= author.name %></h2>
 				<nav aria-label="Author actions">
 					<div class="dialogue-wrapper">
 						<dialog
@@ -23,7 +24,7 @@
 							</header>
 							<section>
 								<form
-									id="new-author"
+									id="edit-author"
 									class="method-override-wrapper"
 									action="/authors/<%= author.id %>/<%= author.slug %>?_method=PUT"
 									method="POST"
@@ -62,7 +63,7 @@
 							</section>
 							<footer class="dialogue-actions">
 								<button autofocus aria-label="Close dialog">Close</button>
-								<button form="new-author" type="submit" aria-label="Save author edits">Save</button>
+								<button form="edit-author" type="submit" aria-label="Save author edits">Save</button>
 							</footer>
 						</dialog>
 						<button aria-haspopup="dialog" aria-controls="edit-author-dialog">Edit</button>

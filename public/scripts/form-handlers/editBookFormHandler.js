@@ -32,13 +32,12 @@ enableAutoCompleteMulti({
 });
 
 // enables form validation and submission
-const form = document.querySelector("#new-book");
+const form = document.querySelector("#edit-book");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
 const descriptionInput = document.querySelector("#description");
-const bookTitle = document.querySelector("#title");
 
 const validationState = { title: null, author: null, genres: null, year: null, description: null };
 
