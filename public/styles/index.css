@@ -50,18 +50,6 @@
 	}
 }
 
-.suggestion {
-	opacity: 0.5;
-}
-
-.selected {
-	opacity: 1;
-}
-
-.limit-exceeded {
-	font-weight: 700;
-}
-
 .method-override-wrapper,
 .dialog-wrapper {
 	display: inline;
@@ -94,4 +82,89 @@ dt {
 
 dd {
 	margin: 0;
+}
+
+.field > input,
+.field > label {
+	display: block;
+}
+
+.field {
+	margin-bottom: 1rem;
+}
+
+.field textarea {
+	resize: none;
+}
+
+.field input,
+.field textarea {
+	display: block;
+	padding: 0.25rem;
+	width: calc(40ch - 0.5rem);
+}
+
+input,
+button,
+textarea,
+.suggestions,
+.field-message,
+.char-count {
+	font-family: inherit;
+	font-size: 0.85em;
+}
+
+.suggestions {
+	position: relative;
+	padding: 0 1rem;
+	margin: 0rem;
+	width: calc(40ch - 1.75rem);
+	background-color: var(--cl-background-shade);
+	border-radius: 0 0 2px 2px;
+	transform: translateY(-8px);
+	z-index: -1;
+}
+
+.suggestions li {
+	margin-left: 0.5rem;
+}
+
+.suggestions li:first-child {
+	padding-top: 1rem;
+}
+
+.suggestions li:last-child {
+	padding-bottom: 0.5rem;
+}
+
+.suggestion {
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.selected {
+	opacity: 1;
+}
+
+.field-message {
+	display: inline;
+	font-weight: bold;
+}
+
+.field-message a {
+	display: inline-block;
+	margin-left: 1ch;
+}
+
+.limit-exceeded {
+	font-weight: 700;
+}
+
+.radio-option {
+	display: inline;
+}
+
+.radio-option > input {
+	display: inline;
+	width: auto;
 }
