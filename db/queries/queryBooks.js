@@ -225,6 +225,19 @@ exports.updateBook = async function (bookID, book) {
     `,
 			[bookID, ...Object.values(book.toDbEntry())]
 		);
+		await pool.query(`DELETE FROM book_genres WHERE book_id = $1;`, [bookID]);
+
+		const genres = book.genres;
+
+		if (genres && genres.length > 0) {
+			const genreQuery = `
+        INSERT INTO book_genres (book_id, genre_id)
+        SELECT $1, id FROM dim_genres AS genre
+        WHERE genre.name = ANY($2)
+      `;
+			await pool.query(genreQuery, [bookID, genres]);
+		}
+
 		await pool.query("COMMIT");
 	} catch (err) {
 		await pool.query("ROLLBACK");
