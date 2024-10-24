@@ -50,18 +50,6 @@
 	}
 }
 
-.suggestion {
-	opacity: 0.5;
-}
-
-.selected {
-	opacity: 1;
-}
-
-.limit-exceeded {
-	font-weight: 700;
-}
-
 .method-override-wrapper,
 .dialog-wrapper {
 	display: inline;
@@ -149,6 +137,15 @@ textarea,
 	padding-bottom: 0.5rem;
 }
 
+.suggestion {
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.selected {
+	opacity: 1;
+}
+
 .field-message {
 	display: inline;
 	font-weight: bold;
@@ -157,6 +154,10 @@ textarea,
 .field-message a {
 	display: inline-block;
 	margin-left: 1ch;
+}
+
+.limit-exceeded {
+	font-weight: 700;
 }
 
 .radio-option {
