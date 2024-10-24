@@ -19,7 +19,6 @@ exports.insertAuthor = async function (newAuthor) {
 };
 
 exports.checkAuthor = async function (slug) {
-	console.log(slug);
 	const query = `
 		SELECT 1 FROM dim_authors
 		WHERE slug = $1
