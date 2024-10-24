@@ -29,12 +29,12 @@
 									action="/books/<%= book.id %>/<%= book.slug %>?_method=PUT"
 									method="POST"
 								>
-									<div>
+									<div class="field">
                     <label for="title">Book title*</label>
 										<input value="<%= book.title %>" type="text" name="title" id="title" required />
 										<span class="field-message"></span>
 									</div>
-									<div>
+									<div class="field">
 										<label for="author">Author*</label>
 										<input
                       value="<%= book.author %>"
@@ -47,7 +47,7 @@
 										<span class="field-message"></span>
 										<ul id="author-suggestions"></ul>
 									</div>
-									<div>
+									<div class="field">
 										<label for="genres">Genre(s)*</label>
 										<input
                       value="<%= book.genres.map(genre => genre.name).join(", ") %>"
@@ -60,7 +60,7 @@
 										<span class="field-message"></span>
 										<ul id="genre-suggestions"></ul>
 									</div>
-									<div>
+									<div class="field">
 										<label for="publication-year">Publication year</label>
 										<input
                       value="<%= book.publication_year %>"
@@ -71,13 +71,17 @@
 										/>
 										<span class="field-message"></span>
 									</div>
-									<div>
-                    <input type="radio" id="fiction" name="isFiction" value="true" <%= book.is_fiction ? 'checked' : '' %> />
-                    <label for="fiction">Fiction</label>
-                    <input type="radio" id="non-fiction" name="isFiction" value="false" <%= !book.is_fiction ? 'checked' : '' %> />
-                    <label for="non-fiction">Non-fiction</label>
-                </div>
-									<div>
+									<div class="field">
+                    <div class="radio-option">
+                      <input type="radio" id="fiction" name="isFiction" value="true" checked />
+                      <label for="fiction">Fiction</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="non-fiction" name="isFiction" value="false" />
+                      <label for="non-fiction">Non-fiction</label>
+                    </div>
+                  </div>
+									<div class="field">
 										<label for="description">Blurb</label>
 										<textarea name="description" id="description" cols="40" rows="8"><%= book.blurb %></textarea>
 										<span class="field-message"></span>

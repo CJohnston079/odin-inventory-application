@@ -29,12 +29,12 @@
 									action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=PUT"
 									method="POST"
 								>
-									<div>
+									<div class="field">
 										<label for="genre">Genre name</label>
 										<input type="text" name="genre" id="genre" value="<%= genre.name %>" required />
 										<span class="field-message"></span>
 									</div>
-									<div>
+									<div class="field">
                     <label for="description">Desciption</label>
 										<textarea
                       name="description"

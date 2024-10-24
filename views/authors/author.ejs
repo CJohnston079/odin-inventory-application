@@ -29,14 +29,14 @@
 									action="/authors/<%= author.id %>/<%= author.slug %>?_method=PUT"
 									method="POST"
 								>
-                  <div>
+                  <div class="field">
                     <label for="first-name">First name:</label>
                     <input value="<%= author.first_name %>" type="text" name="firstName" id="first-name" required />
-                    <label for="last-name">Surname:</label>
+                    <label style="margin-top: 1rem" for="last-name">Surname</label>
                     <input value="<%= author.last_name %>" type="text" name="lastName" id="last-name" required />
                     <span class="field-message"></span>
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="birth-year">Birth year:</label>
                     <input
                       value="<%= author.birth_year %>"
@@ -47,13 +47,13 @@
                     />
                     <span class="field-message"></span>
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="nationality">Nationality:</label>
                     <input value="<%= author.nationality %>" type="text" name="nationality" id="nationality" required />
                     <span class="field-message"></span>
                     <ul id="nationality-suggestions"></ul>
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="biography">Biography</label>
                     <textarea name="biography" id="biography" cols="40" rows="8"><%= author.biography %></textarea>
                     <span class="field-message"></span>
