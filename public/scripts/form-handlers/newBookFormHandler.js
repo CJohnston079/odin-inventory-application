@@ -9,10 +9,10 @@ import handleSubmit from "./submit-handlers/handleSubmit.js";
 import submitOnEnter from "./submit-handlers/submitOnEnter.js";
 
 // enables auto-complete
-const authors = await fetch("../authors/author-names")
+const authors = await fetch("/authors/author-names")
 	.then(response => response.json())
 	.then(data => data.authors);
-const genres = await fetch("../genres/genre-names")
+const genres = await fetch("/genres/genre-names")
 	.then(response => response.json())
 	.then(data => data.genres);
 
