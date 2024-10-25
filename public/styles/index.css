@@ -105,6 +105,15 @@ td {
 	border-bottom: 1px solid var(--cl-background-shade-2);
 }
 
+.tables-container {
+	display: flex;
+	gap: 2rem;
+}
+
+.tables-container table {
+	height: fit-content;
+}
+
 .field > input,
 .field > label {
 	display: block;
