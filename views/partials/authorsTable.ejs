@@ -2,25 +2,27 @@
 	<thead>
 		<tr>
 			<th>Author</th>
+			<th>Books</th>
 			<th>Born</th>
 			<th>Nationality</th>
-			<th>Books</th>
 			<th>Genres</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% authors.map(author => { %>
 		<tr>
-			<td><a href="authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a></td>
+			<td>
+				<a href="authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a>
+			</td>
+			<td>
+        <%= author.number_of_books %>
+      </td>
 			<td>
 				<a href="decades/<%= Math.floor(author.birth_year / 10) %>0s"><%= author.birth_year %></a>
 			</td>
 			<td>
-				<a href="countries/<%= author.country_id %>/<%= author.country_slug %>"
-					><%= author.nationality %></a
-				>
+				<a href="countries/<%= author.country_id %>/<%= author.country_slug %>"><%= author.nationality %></a>
 			</td>
-			<td><%= author.number_of_books %></td>
 			<%- include("./genresColumn", { genres: author.genres }) %>
 		</tr>
 		<% }) %>
