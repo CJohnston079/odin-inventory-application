@@ -12,9 +12,19 @@
 		<section>
 			<h3>Featured books</h3>
 			<ul>
-				<% featuredBooks.map((book) => { %>
+				<% featuredBooks.map(book => { %>
 				<li>
 					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+		<section>
+			<h3>Featured authors</h3>
+			<ul>
+				<% featuredAuthors.map(author => { %>
+				<li>
+					<a href="/authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a>
 				</li>
 				<% }) %>
 			</ul>

@@ -69,6 +69,20 @@ exports.getAllAuthors = async function () {
 	return rows;
 };
 
+exports.getRandomAuthors = async function (limit = 8) {
+	const { rows } = await pool.query(
+		`
+    SELECT author.id, author.slug, author.first_name || ' ' || author.last_name AS name
+    FROM dim_authors AS author
+    ORDER BY RANDOM()
+    LIMIT $1;
+  `,
+		[limit]
+	);
+
+	return rows;
+};
+
 exports.getAuthorByID = async function (id) {
 	const { rows } = await pool.query(
 		`
