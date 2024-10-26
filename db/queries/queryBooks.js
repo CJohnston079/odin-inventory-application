@@ -97,6 +97,20 @@ exports.getRandomBooksByGenre = async function (genre, limit = 8) {
 	return rows;
 };
 
+exports.getRandomBooksByDecade = async function (decade, limit = 8) {
+	const { rows } = await pool.query(
+		`
+		SELECT book.id, book.slug, book.title
+    FROM fact_books AS book
+    WHERE book.publication_year BETWEEN $1 AND $2
+    ORDER BY RANDOM()
+    LIMIT $3;
+	`,
+		[decade, decade + 9, limit]
+	);
+	return rows;
+};
+
 exports.getBook = async function (bookID) {
 	const { rows } = await pool.query(
 		`
@@ -181,6 +195,23 @@ exports.getAllDecades = async function () {
     GROUP BY decade
     ORDER BY decade;
 	`);
+	return rows;
+};
+
+exports.getRandomDecades = async function (limit = 4) {
+	const { rows } = await pool.query(
+		`
+    SELECT 
+      FLOOR(publication_year / 10) * 10 AS decade,
+      COUNT(id) AS books
+    FROM fact_books
+    GROUP BY decade
+    HAVING COUNT(id) >= 8 
+    ORDER BY RANDOM()
+    LIMIT $1;
+	`,
+		[limit]
+	);
 	return rows;
 };
 

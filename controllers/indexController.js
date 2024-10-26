@@ -4,6 +4,7 @@ exports.getIndex = async function (req, res) {
 	const featuredBooks = await db.books.getRandomBooks();
 	const featuredAuthors = await db.authors.getRandomAuthors();
 	const featuredGenres = await db.genres.getRandomGenres();
+	const featuredDecades = await db.books.getRandomDecades();
 
 	await Promise.all(
 		featuredGenres.map(genre =>
@@ -11,5 +12,17 @@ exports.getIndex = async function (req, res) {
 		)
 	);
 
-	res.render("index", { title: "Home", featuredBooks, featuredAuthors, featuredGenres });
+	await Promise.all(
+		featuredDecades.map(decade =>
+			db.books.getRandomBooksByDecade(decade.decade).then(books => (decade.books = books))
+		)
+	);
+
+	res.render("index", {
+		title: "Home",
+		featuredBooks,
+		featuredAuthors,
+		featuredGenres,
+		featuredDecades,
+	});
 };
