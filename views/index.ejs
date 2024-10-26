@@ -9,5 +9,15 @@
 	<body>
 		<%- include("partials/header") %>
 		<h2><%= title %></h2>
+		<section>
+			<h3>Featured books</h3>
+			<ul>
+				<% featuredBooks.map((book) => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
 	</body>
 </html>

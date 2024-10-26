@@ -69,6 +69,19 @@ exports.getAllBooks = async function () {
 	return rows;
 };
 
+exports.getRandomBooks = async function (limit = 8) {
+	const { rows } = await pool.query(
+		`
+		SELECT book.id, book.slug, book.title
+    FROM fact_books AS book
+    ORDER BY RANDOM()
+    LIMIT $1;
+	`,
+		[limit]
+	);
+	return rows;
+};
+
 exports.getBook = async function (bookID) {
 	const { rows } = await pool.query(
 		`
