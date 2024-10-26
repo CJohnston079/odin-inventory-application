@@ -29,5 +29,17 @@
 				<% }) %>
 			</ul>
 		</section>
+		<% featuredGenres.map(genre => { %>
+		<section>
+			<h3>Featured <%= genre.name %> books</h3>
+			<ul>
+				<% genre.books.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+			<a href="/genres/<%= genre.id %>/<%= genre.slug %>">More <%= genre.name %> books</a>
+		</section>
 	</body>
 </html>

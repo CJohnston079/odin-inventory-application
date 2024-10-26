@@ -37,6 +37,26 @@ exports.getGenreNames = async function () {
 	return rows;
 };
 
+exports.getRandomGenres = async function (limit = 4) {
+	const { rows } = await pool.query(
+		`
+      SELECT
+        genre.id,
+        genre.slug,
+        genre.name,
+        COUNT(bg.book_id) AS books
+      FROM dim_genres AS genre
+      JOIN book_genres AS bg ON genre.id = bg.genre_id
+      GROUP BY genre.id
+      HAVING COUNT(bg.book_id) >= 8
+      ORDER BY RANDOM()
+      LIMIT $1;
+    `,
+		[limit]
+	);
+	return rows;
+};
+
 exports.getAllGenres = async function () {
 	const { rows } = await pool.query(`
 		SELECT
