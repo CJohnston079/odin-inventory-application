@@ -9,5 +9,54 @@
 	<body>
 		<%- include("partials/header") %>
 		<h2><%= title %></h2>
+		<section>
+			<h3>Featured books</h3>
+			<ul>
+				<% featuredBooks.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
+		<section>
+			<h3>Featured authors</h3>
+			<ul>
+				<% featuredAuthors.map(author => { %>
+				<li>
+					<a href="/authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
+		<% featuredGenres.map(genre => { %>
+		<section>
+			<h3>Featured <%= genre.name %> books</h3>
+			<ul>
+				<% genre.books.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+			<a href="/genres/<%= genre.id %>/<%= genre.slug %>">More <%= genre.name %> books</a>
+		</section>
+    <hr>
+		<% }) %> <% featuredDecades.map(decade => { %>
+		<section>
+			<h3>Featured <%= decade.decade %>s books</h3>
+      <ul>
+				<% decade.books.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+			<a href="/decades/<%= decade.decade %>">More books from the <%= decade.decade %>s</a>
+		</section>
+    <hr>
+		<% }) %>
 	</body>
 </html>
