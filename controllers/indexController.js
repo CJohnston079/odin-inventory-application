@@ -26,3 +26,7 @@ exports.getIndex = async function (req, res) {
 		featuredDecades,
 	});
 };
+
+exports.getPageNotFound = function (req, res) {
+	res.render("page-not-found");
+};
