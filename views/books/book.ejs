@@ -152,5 +152,38 @@
 			<p><%= book.blurb %></p>
 		</article>
 		<hr />
+    <section>
+			<h3>More books by <%= book.author %></h3>
+			<ul>
+				<% moreBooksByAuthor.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
+    <section>
+			<h3>More <%= featuredGenre.name %> books</h3>
+			<ul>
+				<% moreBooksByGenre.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
+    <section>
+			<h3>More books from the <%= decade %>s</h3>
+			<ul>
+				<% moreBooksByDecade.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
 	</body>
 </html>

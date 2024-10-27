@@ -82,6 +82,20 @@ exports.getRandomBooks = async function (limit = 8) {
 	return rows;
 };
 
+exports.getRandomBooksByAuthor = async function (author, limit = 8) {
+	const { rows } = await pool.query(
+		`
+		SELECT book.id, book.slug, book.title
+    FROM fact_books AS book
+    WHERE book.author_id = $1
+    ORDER BY RANDOM()
+    LIMIT $2;
+	`,
+		[author, limit]
+	);
+	return rows;
+};
+
 exports.getRandomBooksByGenre = async function (genre, limit = 8) {
 	const { rows } = await pool.query(
 		`
