@@ -88,12 +88,14 @@ exports.getAuthorByID = async function (id) {
 		`
   		SELECT
         author.id,
+        author.country_id,
         author.slug,
         author.first_name,
         author.last_name,
         author.first_name || ' ' || author.last_name AS name,
         author.birth_year,
         country.nationality,
+        country.slug AS country_slug,
         author.biography
       FROM dim_authors AS author
       JOIN dim_countries AS country ON author.country_id = country.id
