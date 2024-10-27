@@ -8,6 +8,10 @@ const capitalise = str => {
 	);
 };
 
+exports.getDecade = year => Math.floor(year / 10) * 10;
+
+exports.getRandomArrItem = arr => arr[Math.floor(Math.random() * arr.length)];
+
 exports.slugToStr = str => str.trim().split("-").map(capitalise).join(" ");
 
 exports.capitaliseArray = function (arr) {
@@ -89,7 +93,7 @@ exports.strToTitleCase = function (str) {
 
 exports.groupDecadesByCentury = function (decades) {
 	const groupedDecades = decades.reduce((centuries, decadeEntry) => {
-		const decade = Number(decadeEntry.decade, 10);
+		const decade = Number(decadeEntry.decade);
 		const century = Math.floor(decade / 100) * 100;
 
 		if (centuries[century]) {

@@ -1,5 +1,7 @@
 const db = require("../db/queries/index");
 const Book = require("../models/Book");
+const { getDecade } = require("../js/utils");
+const { getRandomArrItem } = require("../js/utils");
 const { strToSlug } = require("../js/utils");
 const { strToTitleCase } = require("../js/utils");
 
@@ -56,8 +58,8 @@ exports.getBook = async function (req, res) {
 
 	book.genres = await db.genres.getGenresByBook(book.id);
 
-	const decade = Math.floor(book.publication_year / 10) * 10;
-	const featuredGenre = book.genres[Math.floor(Math.random() * book.genres.length)];
+	const decade = getDecade(book.publication_year);
+	const featuredGenre = getRandomArrItem(book.genres);
 	const moreBooksByAuthor = await db.books.getRandomBooksByAuthor(book.author_id, 4);
 	const moreBooksByDecade = await db.books.getRandomBooksByDecade(decade, 4);
 	const moreBooksByGenre = await db.books.getRandomBooksByGenre(featuredGenre.id, 4);
