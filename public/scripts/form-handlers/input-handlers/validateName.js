@@ -1,4 +1,5 @@
 import { checkAuthorExists } from "../../validateInputs.js";
+import { strToNameCase } from "../../utils.js";
 
 const validateName = async function (firstNameInput, lastNameInput, currentName = null) {
 	const nameMessage = document.querySelector(`#${firstNameInput.id} ~ .field-message`);
@@ -14,7 +15,7 @@ const validateName = async function (firstNameInput, lastNameInput, currentName 
 	if (nameAvailable) {
 		nameMessage.textContent = "";
 	} else {
-		nameMessage.textContent = `${name} already added.`;
+		nameMessage.textContent = `${strToNameCase(name)} already added.`;
 	}
 
 	return nameAvailable;

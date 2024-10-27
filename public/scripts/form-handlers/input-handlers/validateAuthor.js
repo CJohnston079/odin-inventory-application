@@ -1,4 +1,5 @@
 import { checkAuthorExists } from "../../validateInputs.js";
+import { strToNameCase } from "../../utils.js";
 
 const validateAuthor = async function (authorInput) {
 	const authorMessage = document.querySelector(`#${authorInput.id} ~ .field-message`);
@@ -13,7 +14,7 @@ const validateAuthor = async function (authorInput) {
 	if (authorExists) {
 		authorMessage.textContent = "";
 	} else {
-		authorMessage.textContent = `Author ${authorInput.value} not found.`;
+		authorMessage.textContent = `Author ${strToNameCase(authorInput.value)} not found.`;
 
 		const newAuthorAnchor = document.createElement("a");
 		newAuthorAnchor.href = "../authors/new";
