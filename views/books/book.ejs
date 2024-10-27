@@ -163,5 +163,16 @@
 			</ul>
 		</section>
     <hr>
+    <section>
+			<h3>More <%= featuredGenre.name %> books</h3>
+			<ul>
+				<% moreBooksByGenre.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
 	</body>
 </html>
