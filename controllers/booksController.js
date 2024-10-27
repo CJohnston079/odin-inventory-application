@@ -55,17 +55,21 @@ exports.getBook = async function (req, res) {
 	const book = (await db.books.getBook(bookId))[0];
 
 	book.genres = await db.genres.getGenresByBook(book.id);
-	const featuredGenre = book.genres[Math.floor(Math.random() * book.genres.length)];
 
+	const decade = Math.floor(book.publication_year / 10) * 10;
+	const featuredGenre = book.genres[Math.floor(Math.random() * book.genres.length)];
 	const moreBooksByAuthor = await db.books.getRandomBooksByAuthor(book.author_id, 4);
+	const moreBooksByDecade = await db.books.getRandomBooksByDecade(decade, 4);
 	const moreBooksByGenre = await db.books.getRandomBooksByGenre(featuredGenre.id, 4);
 
 	res.render("./books/book", {
 		title: book.book_title,
 		book,
-		moreBooksByAuthor,
-		moreBooksByGenre,
+		decade,
 		featuredGenre,
+		moreBooksByAuthor,
+		moreBooksByDecade,
+		moreBooksByGenre,
 	});
 };
 
