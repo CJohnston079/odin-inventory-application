@@ -1,4 +1,6 @@
 import { checkBookByAuthorExists } from "../../validateInputs.js";
+import { strToNameCase } from "../../utils.js";
+import { strToTitleCase } from "../../utils.js";
 
 const validateTitle = async function (titleInput, authorInput, currentTitle = null) {
 	const titleMessage = document.querySelector(`#${titleInput.id} ~ .field-message`);
@@ -13,7 +15,9 @@ const validateTitle = async function (titleInput, authorInput, currentTitle = nu
 		!(await checkBookByAuthorExists(titleInput.value, authorInput.value));
 
 	if (!bookAvailable) {
-		titleMessage.textContent = `${titleInput.value} by ${authorInput.value} is already added.`;
+		titleMessage.textContent = `
+      ${strToTitleCase(titleInput.value)} by ${strToNameCase(authorInput.value)} is already added.
+    `;
 	} else {
 		titleMessage.textContent = "";
 	}
