@@ -152,5 +152,16 @@
 			<p><%= book.blurb %></p>
 		</article>
 		<hr />
+    <section>
+			<h3>More books by <%= book.author %></h3>
+			<ul>
+				<% moreBooksByAuthor.map(book => { %>
+				<li>
+					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+				</li>
+				<% }) %>
+			</ul>
+		</section>
+    <hr>
 	</body>
 </html>

@@ -53,10 +53,11 @@ exports.getNewBookForm = async function (req, res) {
 exports.getBook = async function (req, res) {
 	const bookId = req.params.book;
 	const book = (await db.books.getBook(bookId))[0];
+	const moreBooksByAuthor = await db.books.getRandomBooksByAuthor(book.author_id, 4);
 
 	book.genres = await db.genres.getGenresByBook(book.id);
 
-	res.render("./books/book", { title: book.book_title, book });
+	res.render("./books/book", { title: book.book_title, book, moreBooksByAuthor });
 };
 
 exports.updateBook = async function (req, res) {
