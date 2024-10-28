@@ -38,13 +38,14 @@ const authorInput = document.querySelector("#author");
 const genresInput = document.querySelector("#genres");
 const yearInput = document.querySelector("#publication-year");
 const descriptionInput = document.querySelector("#description");
+const currentTitle = document.querySelector("#book-title").textContent;
 
 const validationState = { title: null, author: null, genres: null, year: null, description: null };
 
 const validators = {
 	year: () => validateYear(yearInput),
 	author: async () => await validateAuthor(authorInput),
-	title: async () => await validateTitle(titleInput, authorInput),
+	title: async () => await validateTitle(titleInput, authorInput, currentTitle),
 	genres: async () => await validateGenres(genresInput),
 	description: () => validateTextarea(descriptionInput),
 };
