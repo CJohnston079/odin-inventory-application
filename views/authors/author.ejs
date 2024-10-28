@@ -109,9 +109,13 @@
 				<div>
 					<dt>Birth year</dt>
 					<dd>
+            <% if (author.birth_year) { %>
 						<a href="/decades/<%= Math.floor(author.birth_year / 10) %>0s">
 							<%= author.birth_year %>
 						</a>
+            <% } else { %>
+            <span>Unknown</span>
+            <% } %>
 					</dd>
 				</div>
 				<div>

@@ -5,7 +5,7 @@ class Genre {
 	constructor({ genre, description }) {
 		this.slug = strToSlug(genre);
 		this.name = strToTitleCase(genre);
-		this.description = description || null;
+		this.description = description || "";
 	}
 
 	toDbEntry() {
