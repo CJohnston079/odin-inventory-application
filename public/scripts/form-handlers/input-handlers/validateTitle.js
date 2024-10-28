@@ -1,9 +1,15 @@
+import validateFieldLength from "./validateFieldLength.js";
 import { checkBookByAuthorExists } from "../../validateInputs.js";
 import { strToNameCase } from "../../utils.js";
 import { strToTitleCase } from "../../utils.js";
 
 const validateTitle = async function (titleInput, authorInput, currentTitle = null) {
 	const titleMessage = document.querySelector(`#${titleInput.id} ~ .field-message`);
+	const isTooLong = !validateFieldLength(titleInput, { maxLength: 64 });
+
+	if (isTooLong) {
+		return;
+	}
 
 	if (!authorInput.value) {
 		titleMessage.textContent = "";

@@ -12,7 +12,7 @@
 		<%- include("../partials/header", { backAnchor: true }) %>
 		<article>
 			<header>
-				<h2 id="title"><%= book.title %></h2>
+				<h2 id="book-title"><%= book.title %></h2>
 				<nav aria-label="Book actions">
 					<div class="dialogue-wrapper">
 						<dialog
@@ -149,7 +149,7 @@
 					</dd>
 				</div>
 			</dl>
-			<p><%= book.blurb %></p>
+      <p><%= book.blurb %></p>
 		</article>
 		<hr />
     <section>

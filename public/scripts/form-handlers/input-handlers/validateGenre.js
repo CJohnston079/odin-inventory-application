@@ -1,8 +1,14 @@
+import validateFieldLength from "./validateFieldLength.js";
 import { checkGenreExists } from "../../validateInputs.js";
 import { strToTitleCase } from "../../utils.js";
 
 const validateGenre = async function (genreInput, currentName = null) {
 	const genreMessage = document.querySelector(`#${genreInput.id} ~ .field-message`);
+	const isTooLong = !validateFieldLength(genreInput, { maxLength: 32 });
+
+	if (isTooLong) {
+		return;
+	}
 
 	if (!genreInput.value) {
 		genreMessage.textContent = "";
