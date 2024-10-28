@@ -11,7 +11,7 @@ class Author {
 		this.lastName = strToNameCase(lastName, { isSurname: true });
 		this.nationality = strToTitleCase(nationality);
 		this.birthYear = birthYear || null;
-		this.biography = biography || null;
+		this.biography = biography || "";
 	}
 
 	async fetchCountryID() {

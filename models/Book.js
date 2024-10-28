@@ -15,7 +15,7 @@ class Book {
 			: capitaliseArray(genres.replace(/,\s*$/, "").split(","));
 		this.isFiction = isFiction;
 		this.publicationYear = publicationYear || null;
-		this.description = description.slice(0, 280) || null;
+		this.description = description.slice(0, 280) || "";
 		this.authorID = null;
 	}
 
