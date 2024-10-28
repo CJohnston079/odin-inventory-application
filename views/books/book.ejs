@@ -135,9 +135,13 @@
 				<div>
 					<dt>Published</dt>
 					<dd>
-						<a href="/decades/<%= Math.floor(book.publication_year / 10) %>0s">
-							<%= book.publication_year %>
-						</a>
+            <% if (book.publication_year) { %>
+              <a href="/decades/<%= Math.floor(book.publication_year / 10) %>0s">
+                <%= book.publication_year %>
+              </a>
+              <% } else { %>
+              <span>Unknown</span>
+              <% } %>
 					</dd>
 				</div>
 				<div>
