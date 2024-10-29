@@ -13,6 +13,14 @@ main {
 	padding: var(--header-padding);
 }
 
+nav ul {
+	padding-inline-start: 0;
+}
+/* 
+nav > .dialogue-wrapper {
+	display: inline;
+} */
+
 #header {
 	position: sticky;
 	inset: 0;

@@ -67,23 +67,6 @@
 	text-align: right;
 }
 
-ul {
-	padding-inline-start: 1rem;
-}
-
-nav > ul {
-	margin: 0;
-	padding-inline-start: 0;
-}
-
-nav > ul li {
-	display: inline;
-}
-
-nav > .dialogue-wrapper {
-	display: inline;
-}
-
 dl div {
 	margin-bottom: 1rem;
 }
