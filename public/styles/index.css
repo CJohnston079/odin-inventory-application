@@ -48,6 +48,10 @@
 		--cl-foreground-shade: hsl(0, 0%, 95%);
 		--cl-foreground-shade-2: hsl(0, 0%, 90%);
 	}
+
+	.nav-icon {
+		filter: invert();
+	}
 }
 
 * {

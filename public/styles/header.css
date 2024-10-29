@@ -2,7 +2,11 @@ body {
 	--header-padding: 2rem;
 
 	display: grid;
-	grid-template-columns: 16rem 1fr;
+	grid-template-columns: auto 1fr;
+}
+
+h1 {
+	margin-bottom: 2rem;
 }
 
 main {
@@ -32,4 +36,47 @@ main {
 .nav {
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.nav-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-link,
+.nav-link:visited {
+	text-decoration: none;
+	color: var(--cl-foreground-shade-2);
+}
+
+.nav-link {
+	display: flex;
+	align-items: center;
+	gap: 1ch;
+
+	border: solid 2px transparent;
+	cursor: pointer;
+}
+
+.item-count {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--cl-midground);
+}
+
+.nav-icon {
+	width: 2ch;
+	height: 2ch;
+	opacity: 0.5;
+}
+
+h4 {
+	margin-bottom: 0.5rem;
+	border-top: solid var(--cl-background-shade-2) 1px;
+	padding-top: 1rem;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	color: var(--cl-midground);
 }
