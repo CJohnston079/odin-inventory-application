@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<%- include("../partials/header") %>
-		<h2><%= title %></h2>
-		<%- include("../partials/booksTable", { books }) %>
+    <main>
+      <h2><%= title %></h2>
+      <%- include("../partials/booksTable", { books }) %>
+    </main>
 	</body>
 </html>

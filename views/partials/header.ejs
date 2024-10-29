@@ -1,26 +1,24 @@
-<header>
-	<h1>Inventory Application</h1>
-	<div>
-		<nav>
-			<ul aria-label="Main navigation">
-				<li><a href="/">Home</a></li>
-				<li><a href="/books">Books</a></li>
-				<li><a href="/authors">Authors</a></li>
-				<li><a href="/genres">Genres</a></li>
-				<li><a href="/decades">Decades</a></li>
-				<li><a href="/countries">Countries</a></li>
-				<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
-				<li>
-					<a id="back-anchor" href="javascript:void(0)" onclick="window.history.back()">Back</a>
-				</li>
-				<% } %>
-			</ul>
-			<ul aria-label="Add new items">
-        <li><a href="/books/new">New book</a></li>
-				<li><a href="/authors/new">New author</a></li>
-				<li><a href="/genres/new">New genre</a></li>
-			</ul>
-		</nav>
-	</div>
-	<hr />
+<link rel="stylesheet" href="/styles/header.css" />
+<header id="header">
+	<h1>Inventory</h1>
+	<nav id="nav">
+		<ul id="nav-main" class="nav" aria-label="Main navigation">
+			<li><a href="/">Home</a></li>
+			<li><a href="/books">Books</a></li>
+			<li><a href="/authors">Authors</a></li>
+			<li><a href="/genres">Genres</a></li>
+			<li><a href="/decades">Decades</a></li>
+			<li><a href="/countries">Countries</a></li>
+			<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
+			<li>
+				<a id="back-anchor" href="javascript:void(0)" onclick="window.history.back()">Back</a>
+			</li>
+			<% } %>
+		</ul>
+		<ul id="nav-secondary" class="nav" aria-label="Add new items">
+			<li><a href="/books/new">New book</a></li>
+			<li><a href="/authors/new">New author</a></li>
+			<li><a href="/genres/new">New genre</a></li>
+		</ul>
+	</nav>
 </header>

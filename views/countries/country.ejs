@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
-		<h2><%= country %></h2>
-		<%- include("../partials/booksTable", { books, caption: `Books from ${country}` }) %>
+    <main>
+      <h2><%= country %></h2>
+      <%- include("../partials/booksTable", { books, caption: `Books from ${country}` }) %>
+    </main>
 	</body>
 </html>
