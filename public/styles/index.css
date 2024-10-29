@@ -50,6 +50,10 @@
 	}
 }
 
+* {
+	margin: 0;
+}
+
 .method-override-wrapper,
 .dialog-wrapper {
 	display: inline;
