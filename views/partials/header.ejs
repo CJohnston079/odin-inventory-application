@@ -2,81 +2,91 @@
 <header id="header">
 	<h1>Inventory</h1>
 	<nav id="nav">
-		<ul id="nav-main" class="nav" aria-label="Main navigation">
-			<li class="nav-item">
-				<a class="nav-link" href="/">
-					<img class="nav-icon" src="/assets/icons/home.png" alt="" />
-					Home
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/books">
-					<img class="nav-icon" src="/assets/icons/book.png" alt="" />
-					Books
-				</a>
-				<span class="item-count">192</span>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/authors">
-					<img class="nav-icon" src="/assets/icons/pen.png" alt="" />
-					Authors
-				</a>
-				<span class="item-count">32</span>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/genres">
-					<img class="nav-icon" src="/assets/icons/theatre.png" alt="" />
-					Genres
-				</a>
-				<span class="item-count">28</span>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/decades">
-					<img class="nav-icon" src="/assets/icons/calendar.png" alt="" />
-					Decades
-				</a>
-        <span class="item-count">21</span>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/countries">
-					<img class="nav-icon" src="/assets/icons/globe.png" alt="" />
-					Countries
-				</a>
-        <span class="item-count">17</span>
-			</li>
-			<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
-			<li class="nav-item">
-				<a
-					class="nav-link"
-					id="back-anchor"
-					href="javascript:void(0)"
-					onclick="window.history.back()"
-				>
-					<img class="nav-icon" src="/assets/icons/back.png" alt="" />
-					Back
-				</a>
-			</li>
-			<% } %>
-		</ul>
-		<ul id="nav-secondary" class="nav" aria-label="Add new items">
-			<li class="nav-item">
-				<a class="nav-link" href="/books/new">
-					<img class="nav-icon" src="/assets/icons/add.png" alt="" />
-					New book
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/authors/new">
-					<img class="nav-icon" src="/assets/icons/add.png" alt="" />
-					New author
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/genres/new">
-					<img class="nav-icon" src="/assets/icons/add.png" alt="" />
-					New genre
-				</a>
-			</li>
-		</ul>
+		<div class="nav-wrapper">
+			<ul>
+				<li class="nav-item">
+					<a class="nav-link" href="/">
+						<img class="nav-icon" src="/assets/icons/home.png" alt="" />
+						Home
+					</a>
+				</li>
+			</ul>
+		</div>
+    <div class="nav-wrapper">
+      <h4 class="nav-heading">Browse categories</h4 class="nav-heading">
+      <ul id="nav-main" class="nav" aria-label="Main navigation">
+        <li class="nav-item">
+          <a class="nav-link" href="/books">
+            <img class="nav-icon" src="/assets/icons/book.png" alt="" />
+            Books
+          </a>
+          <span class="item-count">192</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/authors">
+            <img class="nav-icon" src="/assets/icons/pen.png" alt="" />
+            Authors
+          </a>
+          <span class="item-count">32</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/genres">
+            <img class="nav-icon" src="/assets/icons/theatre.png" alt="" />
+            Genres
+          </a>
+          <span class="item-count">28</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/decades">
+            <img class="nav-icon" src="/assets/icons/calendar.png" alt="" />
+            Decades
+          </a>
+          <span class="item-count">21</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/countries">
+            <img class="nav-icon" src="/assets/icons/globe.png" alt="" />
+            Countries
+          </a>
+          <span class="item-count">17</span>
+        </li>
+        <% if (typeof backAnchor !== "undefined" && backAnchor) { %>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="back-anchor"
+            href="javascript:void(0)"
+            onclick="window.history.back()"
+          >
+            <img class="nav-icon" src="/assets/icons/back.png" alt="" />
+            Back
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="nav-wrapper">
+      <h4 class="nav-heading">Add items</h4 class="nav-heading">
+      <ul id="nav-secondary" class="nav" aria-label="Add new items">
+        <li class="nav-item">
+          <a class="nav-link" href="/books/new">
+            <img class="nav-icon" src="/assets/icons/add.png" alt="" />
+            New book
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/authors/new">
+            <img class="nav-icon" src="/assets/icons/add.png" alt="" />
+            New author
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/genres/new">
+            <img class="nav-icon" src="/assets/icons/add.png" alt="" />
+            New genre
+          </a>
+        </li>
+      </ul>
+    </div>
 	</nav>
 </header>

@@ -38,7 +38,19 @@ nav > .dialogue-wrapper {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	gap: 1rem;
+}
+
+#nav .nav-wrapper:nth-child(2) {
+	flex: 1;
+}
+
+.nav-heading {
+	border-top: solid var(--cl-background-shade-2) 2px;
+	padding: 1rem 0;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	color: var(--cl-midground);
 }
 
 .nav {
@@ -78,13 +90,4 @@ nav > .dialogue-wrapper {
 	width: 2ch;
 	height: 2ch;
 	opacity: 0.5;
-}
-
-h4 {
-	margin-bottom: 0.5rem;
-	border-top: solid var(--cl-background-shade-2) 1px;
-	padding-top: 1rem;
-	font-size: 0.75rem;
-	text-transform: uppercase;
-	color: var(--cl-midground);
 }
