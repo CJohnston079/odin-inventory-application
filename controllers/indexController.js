@@ -27,6 +27,16 @@ exports.getIndex = async function (req, res) {
 	});
 };
 
+exports.getItemCounts = async function (req, res) {
+	try {
+		const itemCounts = (await db.getItemCounts())[0];
+		res.json({ itemCounts });
+	} catch (err) {
+		console.error(`Error getting item counts`, err);
+		res.status(500).json({ error: "Server error" });
+	}
+};
+
 exports.getPageNotFound = function (req, res) {
 	res.render("page-not-found");
 };

@@ -1,4 +1,6 @@
-const itemCounts = { books: 192, authors: 32, genres: 28, decades: 21, countries: 17 };
+const itemCounts = await fetch("/get-item-counts")
+	.then(response => response.json())
+	.then(data => data.itemCounts);
 
 document.querySelectorAll(".item-count").forEach(span => {
 	const item = span.getAttribute("data-item");
