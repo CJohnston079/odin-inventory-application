@@ -7,7 +7,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/">
 						<img class="nav-icon" src="/assets/icons/home.png" alt="" />
-						Home
+            <span class="nav-text">Home</span>
 					</a>
 				</li>
 			</ul>
@@ -18,37 +18,37 @@
         <li class="nav-item">
           <a class="nav-link" href="/books">
             <img class="nav-icon" src="/assets/icons/book.png" alt="" />
-            Books
+            <span class="nav-text">Books</span>
+            <span class="item-count" data-item="books">--</span>
           </a>
-          <span class="item-count" data-item="books">--</span>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/authors">
             <img class="nav-icon" src="/assets/icons/pen.png" alt="" />
-            Authors
+            <span class="nav-text">Authors</span>
+            <span class="item-count" data-item="authors">--</span>
           </a>
-          <span class="item-count" data-item="authors">--</span>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/genres">
             <img class="nav-icon" src="/assets/icons/theatre.png" alt="" />
-            Genres
+            <span class="nav-text">Genres</span>
+            <span class="item-count" data-item="genres">--</span>
           </a>
-          <span class="item-count" data-item="genres">--</span>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/decades">
             <img class="nav-icon" src="/assets/icons/calendar.png" alt="" />
-            Decades
+            <span class="nav-text">Decades</span>
+            <span class="item-count" data-item="decades">--</span>
           </a>
-          <span class="item-count" data-item="decades">--</span>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/countries">
             <img class="nav-icon" src="/assets/icons/globe.png" alt="" />
-            Countries
+            <span class="nav-text">Countries</span>
+            <span class="item-count" data-item="countries">--</span>
           </a>
-          <span class="item-count" data-item="countries">--</span>
         </li>
         <% if (typeof backAnchor !== "undefined" && backAnchor) { %>
         <li class="nav-item">
@@ -59,7 +59,7 @@
             onclick="window.history.back()"
           >
             <img class="nav-icon" src="/assets/icons/back.png" alt="" />
-            Back
+            <span class="nav-text">Back</span>
           </a>
         </li>
         <% } %>
@@ -71,19 +71,19 @@
         <li class="nav-item">
           <a class="nav-link" href="/books/new">
             <img class="nav-icon" src="/assets/icons/add.png" alt="" />
-            New book
+            <span class="nav-text">New book</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/authors/new">
             <img class="nav-icon" src="/assets/icons/add.png" alt="" />
-            New author
+            <span class="nav-text">New author</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/genres/new">
             <img class="nav-icon" src="/assets/icons/add.png" alt="" />
-            New genre
+            <span class="nav-text">New genre</span>
           </a>
         </li>
       </ul>

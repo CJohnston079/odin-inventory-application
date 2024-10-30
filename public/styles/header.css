@@ -61,10 +61,7 @@ nav > .dialogue-wrapper {
 }
 
 .nav-item {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 3rem;
+	list-style: none;
 
 	padding: 0.25rem;
 	padding-right: 0.5rem;
@@ -103,14 +100,22 @@ nav > .dialogue-wrapper {
 	cursor: pointer;
 }
 
-.item-count {
-	font-size: 0.75rem;
-	font-weight: 700;
-	color: var(--cl-midground);
-}
-
 .nav-icon {
 	width: 2ch;
 	height: 2ch;
 	opacity: 0.5;
+}
+
+.nav-text {
+	flex: 1;
+	min-width: 6rem;
+}
+
+.item-count {
+	min-width: 4ch;
+
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-align: right;
+	color: var(--cl-midground);
 }
