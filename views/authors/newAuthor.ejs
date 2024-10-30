@@ -9,45 +9,47 @@
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
-		<h2><%= title %></h2>
-		<form action="/authors" method="post" id="new-author">
-			<div class="field">
-				<label for="first-name">First name</label>
-				<input type="text" name="firstName" id="first-name" required />
-				<span class="field-message"></span>
-				<label style="margin-top: 1rem" for="last-name">Surname</label>
-				<input type="text" name="lastName" id="last-name" required />
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<label for="birth-year">Birth year</label>
-				<input
-					type="number"
-					name="birthYear"
-					id="birth-year"
-					max="<%= new Date().getFullYear() %>"
-				/>
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<label for="nationality">Nationality</label>
-				<input
-					type="text"
-					name="nationality"
-					id="nationality"
-					placeholder="Start typing to show suggestions"
-					required
-				/>
-				<ul id="nationality-suggestions" class="suggestions"></ul>
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<label for="biography">Biography</label>
-				<textarea name="biography" id="biography" cols="40" rows="8"></textarea>
-				<span class="field-message"></span>
-				<span class="char-count">0/280</span>
-			</div>
-			<button type="submit">Add author</button>
-		</form>
+		<main>
+			<h2><%= title %></h2>
+			<form action="/authors" method="post" id="new-author">
+				<div class="field">
+					<label for="first-name">First name</label>
+					<input type="text" name="firstName" id="first-name" required />
+					<span class="field-message"></span>
+					<label style="margin-top: 1rem" for="last-name">Surname</label>
+					<input type="text" name="lastName" id="last-name" required />
+					<span class="field-message"></span>
+				</div>
+				<div class="field">
+					<label for="birth-year">Birth year</label>
+					<input
+						type="number"
+						name="birthYear"
+						id="birth-year"
+						max="<%= new Date().getFullYear() %>"
+					/>
+					<span class="field-message"></span>
+				</div>
+				<div class="field">
+					<label for="nationality">Nationality</label>
+					<input
+						type="text"
+						name="nationality"
+						id="nationality"
+						placeholder="Start typing to show suggestions"
+						required
+					/>
+					<ul id="nationality-suggestions" class="suggestions"></ul>
+					<span class="field-message"></span>
+				</div>
+				<div class="field">
+					<label for="biography">Biography</label>
+					<textarea name="biography" id="biography" cols="40" rows="8"></textarea>
+					<span class="field-message"></span>
+					<span class="char-count">0/280</span>
+				</div>
+				<button type="submit">Add author</button>
+			</form>
+		</main>
 	</body>
 </html>

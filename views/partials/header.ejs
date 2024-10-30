@@ -1,26 +1,89 @@
-<header>
-	<h1>Inventory Application</h1>
-	<div>
-		<nav>
-			<ul aria-label="Main navigation">
-				<li><a href="/">Home</a></li>
-				<li><a href="/books">Books</a></li>
-				<li><a href="/authors">Authors</a></li>
-				<li><a href="/genres">Genres</a></li>
-				<li><a href="/decades">Decades</a></li>
-				<li><a href="/countries">Countries</a></li>
-				<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
-				<li>
-					<a id="back-anchor" href="javascript:void(0)" onclick="window.history.back()">Back</a>
+<link rel="stylesheet" href="/styles/header.css" />
+<header id="header">
+	<h1>Inventory</h1>
+	<nav id="nav">
+		<div class="nav-wrapper">
+			<ul>
+				<li class="nav-item">
+					<a class="nav-link" href="/">
+						<img class="nav-icon" src="/assets/icons/home.png" alt="" />
+            <span class="nav-text">Home</span>
+					</a>
 				</li>
-				<% } %>
 			</ul>
-			<ul aria-label="Add new items">
-        <li><a href="/books/new">New book</a></li>
-				<li><a href="/authors/new">New author</a></li>
-				<li><a href="/genres/new">New genre</a></li>
-			</ul>
-		</nav>
-	</div>
-	<hr />
+		</div>
+    <div class="nav-wrapper">
+      <h4 class="nav-heading">Browse categories</h4 class="nav-heading">
+      <ul id="nav-main" class="nav" aria-label="Main navigation">
+        <li class="nav-item">
+          <a class="nav-link" href="/books">
+            <img class="nav-icon" src="/assets/icons/book.png" alt="" />
+            <span class="nav-text">Books</span>
+            <span class="item-count" data-item="books">--</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/authors">
+            <img class="nav-icon" src="/assets/icons/pen.png" alt="" />
+            <span class="nav-text">Authors</span>
+            <span class="item-count" data-item="authors">--</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/genres">
+            <img class="nav-icon" src="/assets/icons/theatre.png" alt="" />
+            <span class="nav-text">Genres</span>
+            <span class="item-count" data-item="genres">--</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/decades">
+            <img class="nav-icon" src="/assets/icons/calendar.png" alt="" />
+            <span class="nav-text">Decades</span>
+            <span class="item-count" data-item="decades">--</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/countries">
+            <img class="nav-icon" src="/assets/icons/globe.png" alt="" />
+            <span class="nav-text">Countries</span>
+            <span class="item-count" data-item="countries">--</span>
+          </a>
+        </li>
+        <% if (typeof backAnchor !== "undefined" && backAnchor) { %>
+        <li class="nav-item">
+          <button class="nav-link" id="back-anchor" onclick="window.history.back()">
+            <img class="nav-icon" src="/assets/icons/back.png" alt="" />
+            <span class="nav-text">Back</span>
+          </button>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <div class="nav-wrapper">
+      <h4 class="nav-heading">Add items</h4 class="nav-heading">
+      <ul id="nav-secondary" class="nav" aria-label="Add new items">
+        <li class="nav-item">
+          <a class="nav-link" href="/books/new">
+            <img class="nav-icon" src="/assets/icons/add.png" alt="" />
+            <span class="nav-text">New book</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/authors/new">
+            <img class="nav-icon" src="/assets/icons/add.png" alt="" />
+            <span class="nav-text">New author</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/genres/new">
+            <img class="nav-icon" src="/assets/icons/add.png" alt="" />
+            <span class="nav-text">New genre</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+	</nav>
 </header>
+<script type="module" src="/scripts/activeLinkHandler.js"></script>
+<script type="module" src="/scripts/getItemCounts.js"></script>

@@ -48,6 +48,14 @@
 		--cl-foreground-shade: hsl(0, 0%, 95%);
 		--cl-foreground-shade-2: hsl(0, 0%, 90%);
 	}
+
+	.nav-icon {
+		filter: invert();
+	}
+}
+
+* {
+	margin: 0;
 }
 
 .method-override-wrapper,
@@ -57,23 +65,6 @@
 
 .dialogue-actions {
 	text-align: right;
-}
-
-ul {
-	padding-inline-start: 1rem;
-}
-
-nav > ul {
-	margin: 0;
-	padding-inline-start: 0;
-}
-
-nav > ul li {
-	display: inline;
-}
-
-nav > .dialogue-wrapper {
-	display: inline;
 }
 
 dl div {

@@ -9,64 +9,66 @@
 	</head>
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
-		<h2><%= title %></h2>
-		<form action="/books" method="post" id="new-book">
-			<div class="field">
-				<label for="title">Book title*</label>
-				<input type="text" name="title" id="title" required />
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<label for="author">Author*</label>
-				<input
-					type="text"
-					name="author"
-					id="author"
-					placeholder="Start typing to show suggestions"
-					required
-				/>
-				<ul id="author-suggestions" class="suggestions"></ul>
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<label for="genres">Genre(s)*</label>
-				<input
-					type="text"
-					name="genres"
-					id="genres"
-					placeholder="Start typing to show suggestions"
-					required
-				/>
-				<ul id="genre-suggestions" class="suggestions"></ul>
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<label for="publication-year">Publication year</label>
-				<input
-					type="number"
-					name="publicationYear"
-					id="publication-year"
-					max="<%= new Date().getFullYear() %>"
-				/>
-				<span class="field-message"></span>
-			</div>
-			<div class="field">
-				<div class="radio-option">
-					<input type="radio" id="fiction" name="isFiction" value="true" checked />
-					<label for="fiction">Fiction</label>
-				</div>
-				<div class="radio-option">
-					<input type="radio" id="non-fiction" name="isFiction" value="false" />
-					<label for="non-fiction">Non-fiction</label>
-				</div>
-			</div>
-			<div class="field">
-				<label for="description">Blurb</label>
-				<textarea name="description" id="description" cols="40" rows="8"></textarea>
-				<span class="char-count">0/280</span>
-				<span class="field-message"></span>
-			</div>
-			<button type="submit">Add book</button>
-		</form>
+    <main>
+      <h2><%= title %></h2>
+      <form action="/books" method="post" id="new-book">
+        <div class="field">
+          <label for="title">Book title*</label>
+          <input type="text" name="title" id="title" required />
+          <span class="field-message"></span>
+        </div>
+        <div class="field">
+          <label for="author">Author*</label>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Start typing to show suggestions"
+            required
+          />
+          <ul id="author-suggestions" class="suggestions"></ul>
+          <span class="field-message"></span>
+        </div>
+        <div class="field">
+          <label for="genres">Genre(s)*</label>
+          <input
+            type="text"
+            name="genres"
+            id="genres"
+            placeholder="Start typing to show suggestions"
+            required
+          />
+          <ul id="genre-suggestions" class="suggestions"></ul>
+          <span class="field-message"></span>
+        </div>
+        <div class="field">
+          <label for="publication-year">Publication year</label>
+          <input
+            type="number"
+            name="publicationYear"
+            id="publication-year"
+            max="<%= new Date().getFullYear() %>"
+          />
+          <span class="field-message"></span>
+        </div>
+        <div class="field">
+          <div class="radio-option">
+            <input type="radio" id="fiction" name="isFiction" value="true" checked />
+            <label for="fiction">Fiction</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="non-fiction" name="isFiction" value="false" />
+            <label for="non-fiction">Non-fiction</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">Blurb</label>
+          <textarea name="description" id="description" cols="40" rows="8"></textarea>
+          <span class="char-count">0/280</span>
+          <span class="field-message"></span>
+        </div>
+        <button type="submit">Add book</button>
+      </form>
+    </main>
 	</body>
 </html>
