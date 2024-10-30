@@ -52,15 +52,10 @@
         </li>
         <% if (typeof backAnchor !== "undefined" && backAnchor) { %>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            id="back-anchor"
-            href="javascript:void(0)"
-            onclick="window.history.back()"
-          >
+          <button class="nav-link" id="back-anchor" onclick="window.history.back()">
             <img class="nav-icon" src="/assets/icons/back.png" alt="" />
             <span class="nav-text">Back</span>
-          </a>
+          </button>
         </li>
         <% } %>
       </ul>

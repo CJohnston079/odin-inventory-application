@@ -125,6 +125,10 @@ nav > .dialogue-wrapper {
 	gap: 1ch;
 
 	border: solid 2px transparent;
+	padding: 0;
+
+	font-size: inherit;
+	line-height: inherit;
 	cursor: pointer;
 }
 
@@ -137,6 +141,7 @@ nav > .dialogue-wrapper {
 .nav-text {
 	flex: 1;
 	min-width: 6rem;
+	text-align: left;
 }
 
 .item-count {
