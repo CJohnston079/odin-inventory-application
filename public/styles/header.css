@@ -46,8 +46,9 @@ nav > .dialogue-wrapper {
 }
 
 .nav-heading {
-	border-top: solid var(--cl-background-shade-2) 2px;
+	border-top: solid 2px var(--cl-background-shade-2);
 	padding: 1rem 0;
+	margin: 0 0.5rem;
 	font-size: 0.75rem;
 	text-transform: uppercase;
 	color: var(--cl-midground);
@@ -63,6 +64,28 @@ nav > .dialogue-wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 3rem;
+
+	padding: 0.25rem;
+	padding-right: 0.5rem;
+
+	border: 1px solid transparent;
+	border-radius: var(--br-mid);
+}
+
+.nav-item.active {
+	border: 1px solid var(--cl-background-shade-2);
+	background-color: var(--cl-background);
+	box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
+}
+.nav-item.active .nav-link {
+	color: var(--foreground);
+}
+.nav-item.active .item-count {
+	color: var(--cl-foreground-shade-2);
+}
+.nav-item.active .nav-icon {
+	opacity: 0.8;
 }
 
 .nav-link,
