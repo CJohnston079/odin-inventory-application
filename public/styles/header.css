@@ -9,10 +9,6 @@ h1 {
 	margin-bottom: 2rem;
 }
 
-main {
-	padding: var(--header-padding);
-}
-
 nav ul {
 	padding-inline-start: 0;
 }
@@ -78,7 +74,8 @@ nav > .dialogue-wrapper {
 }
 
 .nav-item:hover {
-	border: 1px solid var(--cl-midground);
+	/* border: 1px solid var(--cl-midground); */
+	background-color: var(--cl-background-shade-2);
 	transition: 200ms;
 }
 .nav-item:hover .nav-link {
@@ -97,7 +94,7 @@ nav > .dialogue-wrapper {
 .nav-item.active {
 	border: 1px solid var(--cl-background-shade-2);
 	background-color: var(--cl-background);
-	box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
+	box-shadow: 0px 1px 2px hsl(0, 0%, 0%, 0.2);
 	transition: 0ms;
 }
 .nav-item.active .nav-link {
