@@ -9,7 +9,7 @@
 	<body>
 		<%- include("../partials/header", { backAnchor: true }) %>
     <main>
-      <h2><%= country %></h2>
+      <h1><%= country %></h1>
       <%- include("../partials/booksTable", { books, caption: `Books from ${country}` }) %>
     </main>
 	</body>

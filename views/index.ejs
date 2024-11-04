@@ -9,9 +9,9 @@
 	<body>
 		<%- include("partials/header") %>
     <main>
-      <h2><%= title %></h2>
+      <h1><%= title %></h1>
       <section>
-        <h3>Featured books</h3>
+        <h1>Featured books</h1>
         <ul>
           <% featuredBooks.map(book => { %>
           <li>
@@ -22,7 +22,7 @@
       </section>
       <hr>
       <section>
-        <h3>Featured authors</h3>
+        <h1>Featured authors</h1>
         <ul>
           <% featuredAuthors.map(author => { %>
           <li>
@@ -34,7 +34,7 @@
       <hr>
       <% featuredGenres.map(genre => { %>
       <section>
-        <h3>Featured <%= genre.name %> books</h3>
+        <h1>Featured <%= genre.name %> books</h1>
         <ul>
           <% genre.books.map(book => { %>
           <li>
@@ -47,7 +47,7 @@
       <hr>
       <% }) %> <% featuredDecades.map(decade => { %>
       <section>
-        <h3>Featured <%= decade.decade %>s books</h3>
+        <h1>Featured <%= decade.decade %>s books</h1>
         <ul>
           <% decade.books.map(book => { %>
           <li>
