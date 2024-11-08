@@ -58,8 +58,17 @@ table a {
 	transition: 400ms;
 }
 
-table a:hover {
+table a:not(.genre-link):hover {
 	border-bottom: solid 1px var(--cl-foreground);
+}
+
+tr {
+	transition: 800ms;
+}
+
+tr:hover {
+	background-color: var(--cl-background-shade);
+	transition: 200ms;
 }
 
 .genre-link {
