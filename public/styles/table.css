@@ -82,6 +82,7 @@ tr:not(thead tr):hover {
 .genre-link {
 	border: 1px solid var(--cl-background-shade-2);
 	border-radius: var(--br-heavy);
+	margin: 0.1rem 0;
 	padding: 0.25rem 0.75rem;
 
 	font-size: 0.75rem;
@@ -95,7 +96,8 @@ tr:not(thead tr):hover {
 }
 
 .genre-link:hover {
-	width: auto;
+	border: 1px solid var(--cl-midground);
+	background-color: var(--cl-background-shade-2);
 }
 
 tr td:first-child a {
