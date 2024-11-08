@@ -14,7 +14,7 @@
 		<% genres.map((genre) => { %>
 		<tr>
 			<td><a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a></td>
-			<td><%= genre.number_of_books %></td>
+      <td class="text-centre"><%= genre.number_of_books %></td>
 		</tr>
 		<% }) %>
 	</tbody>

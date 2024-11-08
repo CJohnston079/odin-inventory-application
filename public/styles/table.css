@@ -122,3 +122,7 @@ tr td:first-child a {
 .col-genres {
 	width: auto;
 }
+
+.text-centre {
+	text-align: center;
+}

@@ -26,7 +26,7 @@
 			<td>
 				<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>"> <%= book.author %> </a>
 			</td>
-			<td>
+			<td class="text-centre">
 				<a href="/decades/<%= Math.floor(book.publication_year / 10) + '0s' %>">
 					<%= book.publication_year %>
 				</a>

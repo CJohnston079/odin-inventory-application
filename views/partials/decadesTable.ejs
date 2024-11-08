@@ -17,7 +17,7 @@
 		<% centuries[century].map((decade) => { %>
 		<tr>
 			<td><a href="decades/<%= decade.decade %>s"><%= decade.decade %>s</a></td>
-			<td><%= decade.number_of_books %></td>
+      <td class="text-centre"><%= decade.number_of_books %></td>
 		</tr>
 		<% }) %>
 	</tbody>

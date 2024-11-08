@@ -22,10 +22,10 @@
 			<td>
 				<a href="authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a>
 			</td>
-			<td>
+			<td class="text-centre">
         <%= author.number_of_books %>
       </td>
-			<td>
+			<td class="text-centre">
 				<a href="decades/<%= Math.floor(author.birth_year / 10) %>0s"><%= author.birth_year %></a>
 			</td>
 			<td>
