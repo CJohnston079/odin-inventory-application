@@ -13,12 +13,12 @@
 		<main>
 			<article>
 				<header>
-					<h2 id="title"><%= author.name %></h2>
+					<h1 id="title"><%= author.name %></h1>
 					<nav aria-label="Author actions">
 						<div class="dialogue-wrapper">
 							<dialog id="edit-author-dialog" aria-labelledby="edit-author-title">
 								<header>
-									<h3 id="edit-author-title">Editing <%= author.name %></h3>
+									<h2 id="edit-author-title">Editing <%= author.name %></h2>
 								</header>
 								<section>
 									<form
@@ -96,7 +96,7 @@
 								aria-describedby="delete-author-description"
 							>
 								<header>
-									<h3 id="delete-author-title">Delete <%= author.name %>?</h3>
+									<h2 id="delete-author-title">Delete <%= author.name %>?</h2>
 								</header>
 								<section>
 									<p id="delete-author-description">

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
 :root {
 	--emphasis-hue: 0;
 
@@ -21,7 +23,7 @@
 
 	color-scheme: light dark;
 
-	font-family: sans-serif;
+	font-family: "Manrope", sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	font-optical-sizing: auto;
@@ -56,6 +58,22 @@
 
 * {
 	margin: 0;
+}
+
+body {
+	background-color: var(--cl-background-shade);
+}
+
+main {
+	overflow: scroll;
+	padding: 2rem;
+	margin: 0.5rem 0 0.5rem 0.5rem;
+	border: 1px solid var(--cl-background-shade-2);
+	border-radius: var(--br-heavy) 0 0 var(--br-heavy);
+	height: calc(100vh - calc(5rem + 2px));
+
+	background-color: var(--cl-background);
+	box-shadow: 0px 1px 2px hsl(0, 0%, 0%, 0.2);
 }
 
 .method-override-wrapper,
