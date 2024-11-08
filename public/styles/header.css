@@ -46,6 +46,7 @@ nav > .dialogue-wrapper {
 	padding: 1rem 0;
 	margin: 0 0.5rem;
 	font-size: 0.75rem;
+	font-weight: 900;
 	text-transform: uppercase;
 	color: var(--cl-midground);
 }
@@ -138,6 +139,9 @@ nav > .dialogue-wrapper {
 .nav-text {
 	flex: 1;
 	min-width: 6rem;
+
+	font-weight: 500;
+	font-size: 0.9rem;
 	text-align: left;
 }
 
@@ -145,7 +149,7 @@ nav > .dialogue-wrapper {
 	min-width: 4ch;
 
 	font-size: 0.75rem;
-	font-weight: 700;
+	font-weight: 900;
 	text-align: right;
 	color: var(--cl-midground);
 }

@@ -13,7 +13,7 @@
       <main>
       <article>
         <header>
-          <h2 id="book-title"><%= book.title %></h2>
+          <h1 id="book-title"><%= book.title %></h1>
           <nav aria-label="Book actions">
             <div class="dialogue-wrapper">
               <dialog
@@ -21,7 +21,7 @@
                 aria-labelledby="edit-book-title"
               >
                 <header>
-                  <h3 id="edit-book-title">Editing <%= book.title %></h3>
+                  <h2 id="edit-book-title">Editing <%= book.title %></h2>
                 </header>
                 <section>
                   <form
@@ -104,7 +104,7 @@
                 aria-describedby="delete-book-description"
               >
                 <header>
-                  <h3 id="delete-book-title">Delete <%= book.title %>?</h3>
+                  <h2 id="delete-book-title">Delete <%= book.title %>?</h2>
                 </header>
                 <section>
                   <p id="delete-book-description">This will permanently delete <%= book.title %>.</p>
@@ -158,7 +158,7 @@
       </article>
       <hr />
       <section>
-        <h3>More books by <%= book.author %></h3>
+        <h2>More books by <%= book.author %></h2>
         <ul>
           <% moreBooksByAuthor.map(book => { %>
           <li>
@@ -169,7 +169,7 @@
       </section>
       <hr>
       <section>
-        <h3>More <%= featuredGenre.name %> books</h3>
+        <h2>More <%= featuredGenre.name %> books</h2>
         <ul>
           <% moreBooksByGenre.map(book => { %>
           <li>
@@ -180,7 +180,7 @@
       </section>
       <hr>
       <section>
-        <h3>More books from the <%= decade %>s</h3>
+        <h2>More books from the <%= decade %>s</h2>
         <ul>
           <% moreBooksByDecade.map(book => { %>
           <li>

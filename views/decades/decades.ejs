@@ -9,7 +9,7 @@
 	<body>
 		<%- include("../partials/header") %>
     <main>
-      <h2><%= title %></h2>
+      <h1><%= title %></h1>
       <div class="tables-container">
         <% Object.keys(centuries).forEach((century) => { %> <%- include("../partials/decadesTable", {
           century, decades: centuries[century], caption: `${century}s` }) %> <% }) %>

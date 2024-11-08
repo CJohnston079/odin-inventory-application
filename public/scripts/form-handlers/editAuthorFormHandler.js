@@ -25,7 +25,7 @@ const lastNameInput = document.querySelector("#last-name");
 const yearInput = document.querySelector("#birth-year");
 const nationalityInput = document.querySelector("#nationality");
 const biographyInput = document.querySelector("#biography");
-const authorName = document.querySelector("h2").textContent;
+const authorName = document.querySelector("h1").textContent;
 
 const validationState = { name: null, year: null, nationality: null, biography: null };
 
