@@ -1,3 +1,54 @@
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+}
+
+thead::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+
+	border: solid 1px var(--cl-background-shade-2);
+	border-radius: var(--br-mid);
+	margin: 0 -0.5rem;
+
+	background-color: var(--cl-background-shade);
+	/* box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2); */
+	box-shadow: 0 8px 8px var(--cl-background);
+}
+
+th {
+	padding: 0.75rem 1rem;
+
+	font-weight: 400;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	color: var(--cl-foreground-shade-2);
+}
+
+th:not(th:first-child) {
+	border-left: solid 1px var(--cl-background-shade-2);
+}
+
+tbody {
+	overflow: scroll;
+}
+
+td {
+	padding: 0.5rem 1rem;
+}
+
+tr {
+	margin: 0.5rem;
+}
+
 table a {
 	display: inline-block;
 	border-bottom: solid 1px transparent;
