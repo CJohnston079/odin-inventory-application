@@ -1,4 +1,5 @@
 table {
+	width: 100%;
 	table-layout: auto;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -87,5 +88,33 @@ tr:hover {
 }
 
 .genre-link:hover {
-	background-color: var(--cl-background-shade-2);
+	width: auto;
+}
+
+.col-title {
+	width: 16rem;
+}
+
+.col-count {
+	width: 4rem;
+}
+
+.col-author {
+	width: 12rem;
+}
+
+.col-year {
+	width: 4rem;
+}
+
+.col-country {
+	width: auto;
+}
+
+.col-genre {
+	width: auto;
+}
+
+.col-genres {
+	width: auto;
 }
