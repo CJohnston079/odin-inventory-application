@@ -91,6 +91,10 @@ tr:not(thead tr):hover {
 	width: auto;
 }
 
+tr td:first-child a {
+	font-weight: 600;
+}
+
 .col-title {
 	width: 16rem;
 }
