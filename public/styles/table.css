@@ -67,7 +67,7 @@ tr {
 	transition: 800ms;
 }
 
-tr:hover {
+tr:not(thead tr):hover {
 	background-color: var(--cl-background-shade);
 	transition: 200ms;
 }
