@@ -1,6 +1,8 @@
 table {
+	table-layout: auto;
 	border-collapse: separate;
 	border-spacing: 0;
+	text-align: left;
 }
 
 thead {
@@ -43,10 +45,7 @@ tbody {
 
 td {
 	padding: 0.5rem 1rem;
-}
-
-tr {
-	margin: 0.5rem;
+	border-bottom: 1px solid var(--cl-background-shade-2);
 }
 
 table a {
@@ -63,6 +62,7 @@ table a:not(.genre-link):hover {
 }
 
 tr {
+	margin: 0.5rem;
 	transition: 800ms;
 }
 

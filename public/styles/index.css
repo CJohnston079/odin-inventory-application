@@ -95,22 +95,6 @@ dd {
 	margin: 0;
 }
 
-caption {
-	text-align: left;
-}
-
-table {
-	table-layout: auto;
-	border-collapse: collapse;
-	text-align: left;
-}
-
-td {
-	padding: 0.25rem 0;
-	padding-right: 1rem;
-	border-bottom: 1px solid var(--cl-background-shade-2);
-}
-
 .tables-container {
 	display: flex;
 	gap: 2rem;
