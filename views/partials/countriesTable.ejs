@@ -1,4 +1,9 @@
+<link rel="stylesheet" href="/styles/table.css">
 <table>
+  <colgroup>
+    <col class="col-country">
+    <col class="col-count">
+  </colgroup>
 	<thead>
 		<tr>
 			<th>Country</th>
@@ -9,7 +14,7 @@
 		<% countries.map(country => { %>
 		<tr>
 			<td><a href="countries/<%= country.id %>/<%= country.slug %>"><%= country.name %></a></td>
-			<td><%= country.books %></td>
+      <td class="text-centre"><%= country.books %></td>
 		</tr>
 		<% }) %>
 	</tbody>

@@ -1,7 +1,14 @@
+<link rel="stylesheet" href="/styles/table.css">
 <table>
 	<caption>
 		<%= typeof caption !== 'undefined' ? caption : "" %>
 	</caption>
+  <colgroup>
+    <col class="col-title">
+    <col class="col-author">
+    <col class="col-year">
+    <col class="col-genres">
+  </colgroup>
 	<thead>
 		<tr>
 			<th>Title</th>
@@ -19,7 +26,7 @@
 			<td>
 				<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>"> <%= book.author %> </a>
 			</td>
-			<td>
+			<td class="text-centre">
 				<a href="/decades/<%= Math.floor(book.publication_year / 10) + '0s' %>">
 					<%= book.publication_year %>
 				</a>

@@ -1,0 +1,137 @@
+table {
+	width: 100%;
+	table-layout: auto;
+	border-collapse: separate;
+	border-spacing: 0;
+	text-align: left;
+}
+
+caption {
+	font-size: 1.5rem;
+	font-weight: 900;
+	text-align: left;
+	margin: 1rem 0;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+}
+
+thead::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+
+	border: solid 1px var(--cl-background-shade-2);
+	border-radius: var(--br-mid);
+	margin: 0 -0.5rem;
+
+	background-color: var(--cl-background-shade);
+	/* box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2); */
+	box-shadow: 0 8px 8px var(--cl-background);
+}
+
+th {
+	padding: 0.75rem 1rem;
+
+	font-weight: 400;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	color: var(--cl-foreground-shade-2);
+}
+
+th:not(th:first-child) {
+	border-left: solid 1px var(--cl-background-shade-2);
+}
+
+tbody {
+	overflow: scroll;
+}
+
+td {
+	padding: 0.5rem 1rem;
+	border-bottom: 1px solid var(--cl-background-shade-2);
+}
+
+table a {
+	display: inline-block;
+	border-bottom: solid 1px transparent;
+	border-top: solid 1px transparent;
+	text-decoration: none;
+	color: var(--cl-foreground);
+	transition: 400ms;
+}
+
+table a:not(.genre-link):hover {
+	border-bottom: solid 1px var(--cl-foreground);
+}
+
+tr {
+	margin: 0.5rem;
+	transition: 800ms;
+}
+
+tr:not(thead tr):hover {
+	background-color: var(--cl-background-shade);
+	transition: 200ms;
+}
+
+.genre-link {
+	border: 1px solid var(--cl-background-shade-2);
+	border-radius: var(--br-heavy);
+	margin: 0.1rem 0;
+	padding: 0.25rem 0.75rem;
+
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-decoration: none;
+	text-wrap: nowrap;
+	color: var(--cl-foreground-shade);
+	background-color: var(--cl-background-shade);
+
+	transition: 400ms;
+}
+
+.genre-link:hover {
+	border: 1px solid var(--cl-midground);
+	background-color: var(--cl-background-shade-2);
+}
+
+tr td:first-child a {
+	font-weight: 600;
+}
+
+.col-title {
+	width: 16rem;
+}
+
+.col-count {
+	width: 4rem;
+}
+
+.col-author {
+	width: 12rem;
+}
+
+.col-year {
+	width: 4rem;
+}
+
+.col-country {
+	width: auto;
+}
+
+.col-genre {
+	width: auto;
+}
+
+.col-genres {
+	width: auto;
+}
+
+.text-centre {
+	text-align: center;
+}
