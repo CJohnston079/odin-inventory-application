@@ -60,9 +60,6 @@ nav > .dialogue-wrapper {
 .nav-item {
 	list-style: none;
 
-	padding: 0.25rem;
-	padding-right: 0.5rem;
-
 	border: 1px solid transparent;
 	border-radius: var(--br-mid);
 }
@@ -123,7 +120,8 @@ nav > .dialogue-wrapper {
 	gap: 1ch;
 
 	border: solid 2px transparent;
-	padding: 0;
+	padding: 0.25rem;
+	padding-right: 0.5rem;
 
 	font-size: inherit;
 	line-height: inherit;
