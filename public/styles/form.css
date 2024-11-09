@@ -1,19 +1,27 @@
-.field > input,
-.field > label {
-	display: block;
+input,
+button,
+textarea,
+.suggestions,
+.field-message,
+.char-count {
+	font-family: inherit;
+	font-size: 0.85em;
 }
 
-.field {
-	margin-bottom: 1rem;
+.field input,
+.field textarea {
+	display: block;
 }
 
 .field textarea {
 	resize: none;
 }
 
-.field input,
-.field textarea {
-	display: block;
+.field {
+	margin-bottom: 1rem;
+}
+
+.input-alphanum {
 	border: solid 1px var(--cl-background-shade-3);
 	border-radius: var(--br-mid);
 	padding: 1rem;
@@ -26,7 +34,7 @@
 	transition: border-color 400ms, box-shadow 800ms;
 }
 
-.field label {
+.input-label {
 	display: inline-block;
 	padding: 0 0.5rem;
 
@@ -41,27 +49,17 @@
 	transition: color 400ms, transform 200ms ease-out;
 }
 
-.field input:focus,
-.field textarea:focus-visible {
+.input-alphanum:focus,
+.input-alphanum:focus-visible {
 	outline: none;
 	border-color: var(--cl-emphasis);
 	box-shadow: 0 1px 4px hsl(0, 0%, 0%, 0.3);
 }
 
-.field:has(input:focus) label,
-.field:has(textarea:focus-visible) label {
+.field:has(.input-alphanum:focus) label,
+.field:has(.input-alphanum:focus-visible) .input-label {
 	color: var(--cl-emphasis);
 	transform: translate(0.5rem);
-}
-
-input,
-button,
-textarea,
-.suggestions,
-.field-message,
-.char-count {
-	font-family: inherit;
-	font-size: 0.85em;
 }
 
 .suggestions {

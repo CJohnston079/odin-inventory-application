@@ -32,13 +32,14 @@
                     method="POST"
                   >
                     <div class="field">
-                      <label for="title">Book title*</label>
-                      <input value="<%= book.title %>" type="text" name="title" id="title" required />
+                      <label class="input-label" for="title">Book title*</label>
+                      <input class="input-alphanum" value="<%= book.title %>" type="text" name="title" id="title" required />
                       <span class="field-message"></span>
                     </div>
                     <div class="field">
-                      <label for="author">Author*</label>
+                      <label class="input-label" for="author">Author*</label>
                       <input
+                        class="input-alphanum"
                         value="<%= book.author %>"
                         type="text"
                         name="author"
@@ -50,8 +51,9 @@
                       <ul id="author-suggestions"></ul>
                     </div>
                     <div class="field">
-                      <label for="genres">Genre(s)*</label>
+                      <label class="input-label" for="genres">Genre(s)*</label>
                       <input
+                        class="input-alphanum"
                         value="<%= book.genres.map(genre => genre.name).join(", ") %>"
                         type="text"
                         name="genres"
@@ -63,8 +65,9 @@
                       <ul id="genre-suggestions"></ul>
                     </div>
                     <div class="field">
-                      <label for="publication-year">Publication year</label>
+                      <label class="input-label" for="publication-year">Publication year</label>
                       <input
+                        class="input-alphanum"
                         value="<%= book.publication_year %>"
                         type="number"
                         name="publicationYear"
@@ -84,8 +87,8 @@
                       </div>
                     </div>
                     <div class="field">
-                      <label for="description">Blurb</label>
-                      <textarea name="description" id="description" cols="40" rows="8"><%= book.blurb %></textarea>
+                      <label class="input-label" for="description">Blurb</label>
+                      <textarea class="input-alphanum" name="description" id="description" cols="40" rows="8"><%= book.blurb %></textarea>
                       <span class="field-message"></span>
                       <span class="char-count"><%= book.blurb.length %>/280</span>
                     </div>

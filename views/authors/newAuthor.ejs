@@ -14,16 +14,16 @@
 			<h1><%= title %></h1>
 			<form action="/authors" method="post" id="new-author">
 				<div class="field">
-					<label for="first-name">First name</label>
-					<input type="text" name="firstName" id="first-name" required />
+					<label class="input-label" for="first-name">First name</label>
+					<input class="input-alphanum" type="text" name="firstName" id="first-name" required />
 					<span class="field-message"></span>
-					<label style="margin-top: 1rem" for="last-name">Surname</label>
-					<input type="text" name="lastName" id="last-name" required />
+					<label class="input-label" style="margin-top: 1rem" for="last-name">Surname</label>
+					<input class="input-alphanum" type="text" name="lastName" id="last-name" required />
 					<span class="field-message"></span>
 				</div>
 				<div class="field">
-					<label for="birth-year">Birth year</label>
-					<input
+					<label class="input-label" for="birth-year">Birth year</label>
+					<input class="input-alphanum"
 						type="number"
 						name="birthYear"
 						id="birth-year"
@@ -32,8 +32,8 @@
 					<span class="field-message"></span>
 				</div>
 				<div class="field">
-					<label for="nationality">Nationality</label>
-					<input
+					<label class="input-label" for="nationality">Nationality</label>
+					<input class="input-alphanum"
 						type="text"
 						name="nationality"
 						id="nationality"
@@ -44,8 +44,8 @@
 					<span class="field-message"></span>
 				</div>
 				<div class="field">
-					<label for="biography">Biography</label>
-					<textarea name="biography" id="biography" cols="40" rows="8"></textarea>
+					<label class="input-label" for="biography">Biography</label>
+					<textarea class="input-alphanum" name="biography" id="biography" cols="40" rows="8"></textarea>
 					<span class="field-message"></span>
 					<span class="char-count">0/280</span>
 				</div>

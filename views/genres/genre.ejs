@@ -32,13 +32,14 @@
                     method="POST"
                   >
                     <div class="field">
-                      <label for="genre">Genre name</label>
-                      <input type="text" name="genre" id="genre" value="<%= genre.name %>" required />
+                      <label class="input-label" for="genre">Genre name</label>
+                      <input class="input-alphanum" type="text" name="genre" id="genre" value="<%= genre.name %>" required />
                       <span class="field-message"></span>
                     </div>
                     <div class="field">
-                      <label for="description">Desciption</label>
+                      <label class="input-label" for="description">Desciption</label>
                       <textarea
+                        class="input-alphanum"
                         name="description"
                         id="description"
                         cols="40"

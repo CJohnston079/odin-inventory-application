@@ -29,8 +29,9 @@
 										method="POST"
 									>
 										<div class="field">
-											<label for="first-name">First name:</label>
+											<label class="input-label" for="first-name">First name:</label>
 											<input
+                        class="input-alphanum"
 												value="<%= author.first_name %>"
 												type="text"
 												name="firstName"
@@ -38,8 +39,9 @@
 												required
 											/>
 											<span class="field-message"></span>
-											<label style="margin-top: 1rem" for="last-name">Surname</label>
+											<label class="input-label" style="margin-top: 1rem" for="last-name">Surname</label>
 											<input
+                        class="input-alphanum"
 												value="<%= author.last_name %>"
 												type="text"
 												name="lastName"
@@ -49,8 +51,9 @@
 											<span class="field-message"></span>
 										</div>
 										<div class="field">
-											<label for="birth-year">Birth year:</label>
+											<label class="input-label" for="birth-year">Birth year:</label>
 											<input
+                        class="input-alphanum"
 												value="<%= author.birth_year %>"
 												type="number"
 												name="birthYear"
@@ -60,8 +63,9 @@
 											<span class="field-message"></span>
 										</div>
 										<div class="field">
-											<label for="nationality">Nationality:</label>
+											<label class="input-label" for="nationality">Nationality:</label>
 											<input
+                        class="input-alphanum"
 												value="<%= author.nationality %>"
 												type="text"
 												name="nationality"
@@ -72,10 +76,8 @@
 											<ul id="nationality-suggestions"></ul>
 										</div>
 										<div class="field">
-											<label for="biography">Biography</label>
-											<textarea name="biography" id="biography" cols="40" rows="8">
-<%= author.biography %></textarea
-											>
+											<label class="input-label" for="biography">Biography</label>
+											<textarea class="input-alphanum" name="biography" id="biography" cols="40" rows="8"><%= author.biography %></textarea>
 											<span class="field-message"></span>
 											<span class="char-count"><%= author.biography.length %>/280</span>
 										</div>
