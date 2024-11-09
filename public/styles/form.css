@@ -14,8 +14,44 @@
 .field input,
 .field textarea {
 	display: block;
-	padding: 0.25rem;
+	border: solid 1px var(--cl-background-shade-3);
+	border-radius: var(--br-mid);
+	padding: 1rem;
 	width: calc(40ch - 0.5rem);
+
+	font-size: 1rem;
+
+	background-color: var(--cl-background);
+	box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
+	transition: border-color 400ms, box-shadow 800ms;
+}
+
+.field label {
+	display: inline-block;
+	padding: 0 0.5rem;
+
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	color: var(--cl-foreground-shade-2);
+	background-color: var(--cl-background);
+	transform: translate(0.5rem, 0.75rem);
+
+	transition: color 400ms, transform 200ms ease-out;
+}
+
+.field input:focus,
+.field textarea:focus-visible {
+	outline: none;
+	border-color: var(--cl-emphasis);
+	box-shadow: 0 1px 4px hsl(0, 0%, 0%, 0.3);
+}
+
+.field:has(input:focus) label,
+.field:has(textarea:focus-visible) label {
+	color: var(--cl-emphasis);
+	transform: translate(0.5rem);
 }
 
 input,
