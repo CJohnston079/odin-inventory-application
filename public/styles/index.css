@@ -4,7 +4,7 @@
 	--emphasis-hue: 200;
 
 	--cl-emphasis: hsl(var(--emphasis-hue), 50%, 40%);
-	--cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 85%);
+	--cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 95%);
 	--cl-background: #ffffff;
 	--cl-background-shade: hsl(0, 0%, 95%);
 	--cl-background-shade-2: hsl(0, 0%, 90%);

@@ -70,35 +70,49 @@ textarea {
 	transform: translate(0.5rem);
 }
 
-.suggestions {
+.field:has(.suggestions) {
 	position: relative;
-	padding: 0 1rem;
-	margin: 0rem;
-	background-color: var(--cl-background-shade);
-	border-radius: 0 0 2px 2px;
-	transform: translateY(-8px);
-	/* z-index: -1; */
+}
+
+.suggestions:not(:has(li)) {
+	display: none;
+}
+
+.suggestions {
+	position: absolute;
+	z-index: 1;
+	overflow: hidden;
+
+	box-sizing: border-box;
+	border: solid 1px var(--cl-emphasis);
+	border-radius: var(--br-mid);
+	margin-top: 0.5rem;
+	padding: 0;
+	width: 100%;
+
+	background-color: var(--cl-background);
+	box-shadow: 0 1px 4px hsl(0, 0%, 0%, 0.3);
 }
 
 .suggestions li {
-	margin-left: 0.5rem;
-}
-
-.suggestions li:first-child {
-	padding-top: 1rem;
-}
-
-.suggestions li:last-child {
-	padding-bottom: 0.5rem;
+	list-style: none;
+	padding: 0.5rem 1rem;
 }
 
 .suggestion {
-	opacity: 0.5;
+	color: var(--cl-midground);
 	cursor: pointer;
+	transition: 400ms;
 }
 
 .selected {
-	opacity: 1;
+	color: var(--cl-foreground);
+	background-color: var(--cl-emphasis-shade);
+	transition: 100ms;
+}
+
+.suggestions a {
+	color: var(--cl-emphasis);
 }
 
 .field-message {
