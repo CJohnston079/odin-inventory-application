@@ -1,11 +1,20 @@
+form {
+	width: 51ch;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+form input,
+form textarea {
+	box-sizing: border-box;
+	width: 100%;
+}
+
 input,
 button,
-textarea,
-.suggestions,
-.field-message,
-.char-count {
+textarea {
 	font-family: inherit;
-	font-size: 0.85em;
 }
 
 .field input,
@@ -17,15 +26,10 @@ textarea,
 	resize: none;
 }
 
-.field {
-	margin-bottom: 1rem;
-}
-
 .input-alphanum,
 .field-radio {
 	border-radius: var(--br-mid);
 	padding: 1rem;
-	width: calc(40ch - 0.5rem);
 }
 
 .input-alphanum {
@@ -70,11 +74,10 @@ textarea,
 	position: relative;
 	padding: 0 1rem;
 	margin: 0rem;
-	width: calc(40ch - 1.75rem);
 	background-color: var(--cl-background-shade);
 	border-radius: 0 0 2px 2px;
 	transform: translateY(-8px);
-	z-index: -1;
+	/* z-index: -1; */
 }
 
 .suggestions li {
@@ -113,14 +116,13 @@ textarea,
 }
 
 .field-radio {
-	margin-top: 2rem;
+	margin-top: 1rem;
 	display: grid;
 	grid-template-columns: auto auto;
 	gap: 0.2rem;
 
 	padding: 0.2rem;
 	border: solid 1px var(--cl-background-shade-2);
-	width: calc(40ch - 0.5rem + 1.6rem);
 
 	background-color: var(--cl-background-shade);
 }
