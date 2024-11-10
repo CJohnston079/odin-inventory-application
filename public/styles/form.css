@@ -21,11 +21,15 @@ textarea,
 	margin-bottom: 1rem;
 }
 
-.input-alphanum {
-	border: solid 1px var(--cl-background-shade-3);
+.input-alphanum,
+.field-radio {
 	border-radius: var(--br-mid);
 	padding: 1rem;
 	width: calc(40ch - 0.5rem);
+}
+
+.input-alphanum {
+	border: solid 1px var(--cl-background-shade-3);
 
 	font-size: 1rem;
 
@@ -108,11 +112,46 @@ textarea,
 	font-weight: 700;
 }
 
-.radio-option {
-	display: inline;
+.field-radio {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 0.2rem;
+
+	padding: 0.2rem;
+	border: solid 1px var(--cl-background-shade-2);
+	width: calc(40ch - 0.5rem + 1.6rem);
+
+	background-color: var(--cl-background-shade);
 }
 
-.radio-option > input {
-	display: inline;
-	width: auto;
+.option-label {
+	border: solid 1px transparent;
+	color: var(--cl-midground);
+	transition: 900ms;
+}
+
+.option-label:hover {
+	background-color: var(--cl-background-shade-2);
+	color: var(--cl-foreground-shade-2);
+	transition: 300ms;
+}
+
+.option-input:checked + .option-label {
+	border: solid 1px var(--cl-background-shade-3);
+	color: var(--cl-foreground);
+	background-color: var(--cl-background);
+	box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
+}
+
+.radio-option .option-input {
+	display: none;
+}
+
+.option-label {
+	display: block;
+	text-align: center;
+	border-radius: 0.4rem;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
 }
