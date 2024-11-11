@@ -35,9 +35,9 @@
                       <label class="input-label" for="title">Book title*</label>
                       <input class="input-alphanum" value="<%= book.title %>" type="text" name="title" id="title" required />
                       <div class="field-message display-none">
-            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-            <span class="message-content"></span>
-          </div>
+                      <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                      <span class="message-content"></span>
+                    </div>
                     </div>
                     <div class="field">
                       <label class="input-label" for="author">Author*</label>
@@ -51,9 +51,9 @@
                         required
                       />
                       <div class="field-message display-none">
-            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-            <span class="message-content"></span>
-          </div>
+                      <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                      <span class="message-content"></span>
+                    </div>
                       <ul id="author-suggestions"></ul>
                     </div>
                     <div class="field">
@@ -68,9 +68,9 @@
                         required
                       />
                       <div class="field-message display-none">
-            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-            <span class="message-content"></span>
-          </div>
+                      <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                      <span class="message-content"></span>
+                    </div>
                       <ul id="genre-suggestions"></ul>
                     </div>
                     <div class="field">
@@ -84,9 +84,9 @@
                         max="<%= new Date().getFullYear() %>"
                       />
                       <div class="field-message display-none">
-            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-            <span class="message-content"></span>
-          </div>
+                      <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                      <span class="message-content"></span>
+                    </div>
                     </div>
                     <div class="field">
                       <div class="radio-option">
@@ -102,9 +102,9 @@
                       <label class="input-label" for="description">Blurb</label>
                       <textarea class="input-alphanum" name="description" id="description" cols="40" rows="5"><%= book.blurb %></textarea>
                       <div class="field-message display-none">
-            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-            <span class="message-content"></span>
-          </div>
+                      <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                      <span class="message-content"></span>
+                    </div>
                       <span class="char-count"><%= book.blurb.length %>/280</span>
                     </div>
                   </form>

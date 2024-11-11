@@ -44,7 +44,6 @@ export const formatGenreStr = function (str) {
 };
 
 export const strToNameCase = function (str, options = {}) {
-	console.log(str);
 	const { isSurname = false } = options;
 
 	const nobility = ["al", "bin", "bint", "ibn", "van", "von"];
