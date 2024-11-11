@@ -70,7 +70,8 @@ textarea {
 	transform: translate(0.5rem);
 }
 
-.field:has(.suggestions) {
+.field:has(.suggestions),
+.field:has(.char-count) {
 	position: relative;
 }
 
@@ -144,8 +145,19 @@ textarea {
 	color: hsl(0, 70%, 60%);
 }
 
+.field:has(.char-count) {
+	margin-bottom: 3rem;
+}
+
+.char-count {
+	position: absolute;
+	right: 1rem;
+	padding: 0.5rem 0;
+	font-size: 0.8rem;
+}
+
 .limit-exceeded {
-	font-weight: 700;
+	font-weight: 900;
 }
 
 .field-radio {
