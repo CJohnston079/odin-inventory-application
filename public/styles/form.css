@@ -116,13 +116,32 @@ textarea {
 }
 
 .field-message {
-	display: inline;
-	font-weight: bold;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0.5rem 0.5rem;
+	font-size: 0.8rem;
+	font-weight: 900;
+
+	transition: max-height 4000ms;
+}
+
+.field-message > * {
+	display: inline-block;
 }
 
 .field-message a {
-	display: inline-block;
-	margin-left: 1ch;
+	margin-left: 0.25rem;
+	color: var(--cl-emphasis);
+}
+
+.warning-icon {
+	width: 2ch;
+	height: 2ch;
+}
+
+.field-message .message-content {
+	color: hsl(0, 70%, 60%);
 }
 
 .limit-exceeded {

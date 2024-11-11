@@ -38,7 +38,10 @@
 												id="first-name"
 												required
 											/>
-											<span class="field-message"></span>
+											<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 											<label class="input-label" style="margin-top: 1rem" for="last-name">Surname</label>
 											<input
                         class="input-alphanum"
@@ -48,7 +51,10 @@
 												id="last-name"
 												required
 											/>
-											<span class="field-message"></span>
+											<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 										</div>
 										<div class="field">
 											<label class="input-label" for="birth-year">Birth year:</label>
@@ -60,7 +66,10 @@
 												id="birth-year"
 												max="<%= new Date().getFullYear() %>"
 											/>
-											<span class="field-message"></span>
+											<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 										</div>
 										<div class="field">
 											<label class="input-label" for="nationality">Nationality:</label>
@@ -72,13 +81,19 @@
 												id="nationality"
 												required
 											/>
-											<span class="field-message"></span>
+											<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 											<ul id="nationality-suggestions"></ul>
 										</div>
 										<div class="field">
 											<label class="input-label" for="biography">Biography</label>
 											<textarea class="input-alphanum" name="biography" id="biography" cols="40" rows="5"><%= author.biography %></textarea>
-											<span class="field-message"></span>
+											<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 											<span class="char-count"><%= author.biography.length %>/280</span>
 										</div>
 									</form>

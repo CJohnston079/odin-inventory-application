@@ -16,7 +16,10 @@
 				<div class="field">
 					<label class="input-label" for="title">Book title*</label>
 					<input class="input-alphanum" type="text" name="title" id="title" required />
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field">
 					<label class="input-label" for="author">Author*</label>
@@ -29,7 +32,10 @@
 						required
 					/>
 					<ul id="author-suggestions" class="suggestions"></ul>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field">
 					<label class="input-label" for="genres">Genre(s)*</label>
@@ -42,7 +48,10 @@
 						required
 					/>
 					<ul id="genre-suggestions" class="suggestions"></ul>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field">
 					<label class="input-label" for="publication-year">Publication year</label>
@@ -53,7 +62,10 @@
 						id="publication-year"
 						max="<%= new Date().getFullYear() %>"
 					/>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field field-radio">
 					<div class="radio-option">
@@ -69,7 +81,10 @@
 					<label class="input-label" for="description">Blurb</label>
 					<textarea class="input-alphanum" name="description" id="description" cols="40" rows="5"></textarea>
 					<span class="char-count">0/280</span>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<button type="submit">Add book</button>
 			</form>

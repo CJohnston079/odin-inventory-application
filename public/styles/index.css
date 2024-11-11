@@ -107,3 +107,7 @@ dd {
 .tables-container table {
 	height: fit-content;
 }
+
+.display-none {
+	display: none !important;
+}

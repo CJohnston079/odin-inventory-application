@@ -16,10 +16,16 @@
 				<div class="field">
 					<label class="input-label" for="first-name">First name</label>
 					<input class="input-alphanum" type="text" name="firstName" id="first-name" required />
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 					<label class="input-label" style="margin-top: 1rem" for="last-name">Surname</label>
 					<input class="input-alphanum" type="text" name="lastName" id="last-name" required />
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field">
 					<label class="input-label" for="birth-year">Birth year</label>
@@ -29,7 +35,10 @@
 						id="birth-year"
 						max="<%= new Date().getFullYear() %>"
 					/>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field">
 					<label class="input-label" for="nationality">Nationality</label>
@@ -41,12 +50,18 @@
 						required
 					/>
 					<ul id="nationality-suggestions" class="suggestions"></ul>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 				</div>
 				<div class="field">
 					<label class="input-label" for="biography">Biography</label>
 					<textarea class="input-alphanum" name="biography" id="biography" cols="40" rows="5"></textarea>
-					<span class="field-message"></span>
+					<div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
 					<span class="char-count">0/280</span>
 				</div>
 				<button type="submit">Add author</button>

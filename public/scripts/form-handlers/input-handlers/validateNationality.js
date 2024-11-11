@@ -1,13 +1,16 @@
 import { checkNationalityExists } from "../../validateInputs.js";
 
 const validateNationality = async function (nationalityInput) {
-	const nationalityMessage = document.querySelector(`#${nationalityInput.id} ~ .field-message`);
+	const validationElement = document.querySelector(`#${nationalityInput.id} ~ .field-message`);
+	const validationMessage = validationElement.querySelector(".message-content");
 	const isNationalityValid = await checkNationalityExists(nationalityInput.value);
 
 	if (isNationalityValid) {
-		nationalityMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none");
 	} else {
-		nationalityMessage.textContent = `Nationality ${nationalityInput.value} not found.`;
+		validationElement.classList.remove("display-none");
+		validationMessage.textContent = `Nationality ${nationalityInput.value} not found.`;
 	}
 
 	return isNationalityValid;
