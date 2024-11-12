@@ -3,7 +3,7 @@ const validateFieldLength = function (input, { maxLength, minLength = 0 }) {
 
 	if (!input.value) {
 		inputMessage.textContent = "";
-		return false;
+		return true;
 	}
 
 	const isTooLong = input.value.length > maxLength;
