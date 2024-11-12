@@ -3,9 +3,7 @@ import { checkAuthorExists } from "../../validateInputs.js";
 import { strToNameCase } from "../../utils.js";
 
 const validateName = async function (firstNameInput, lastNameInput, currentName = null) {
-	const validationElement = document.querySelector(
-		`#${firstNameInput.id} ~ .field-message:last-child`
-	);
+	const validationElement = document.querySelector(`#name > .field-message`);
 	const validationMessage = validationElement.querySelector(".message-content");
 	const firstNameTooLong = !validateFieldLength(firstNameInput, { maxLength: 32 });
 	const lastNameTooLong = !validateFieldLength(lastNameInput, { maxLength: 32 });

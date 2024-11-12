@@ -121,10 +121,10 @@ textarea {
 	align-items: center;
 	gap: 0.25rem;
 	padding: 0.5rem 0.5rem;
+
 	font-size: 0.8rem;
 	font-weight: 900;
-
-	transition: max-height 4000ms;
+	line-height: 0.85rem;
 }
 
 .field-message > * {
@@ -158,6 +158,19 @@ textarea {
 
 .limit-exceeded {
 	font-weight: 900;
+}
+
+.fieldset {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: flex-start;
+	column-gap: 1rem;
+	padding: 0;
+	border: none;
+}
+
+.fieldset > .field-message {
+	grid-column: span 2;
 }
 
 .field-radio {
