@@ -6,6 +6,7 @@
 		<title>Inventory | <%= genre.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/modal.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
     <script type="module" src="/scripts/form-handlers/editGenreFormHandler.js"></script>
 	</head>
@@ -17,49 +18,48 @@
           <h1 id="title"><%= genre.name %></h1>
           <nav aria-label="Genre actions">
             <div class="dialogue-wrapper">
-              <dialog
-                id="edit-genre-dialog"
-                aria-labelledby="edit-genre-title"
-              >
-                <header>
-                  <h2 id="edit-genre-title">Editing <%= genre.name %></h2>
-                </header>
-                <section>
-                  <form
-                    id="edit-genre"
-                    class="method-override-wrapper"
-                    action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=PUT"
-                    method="POST"
-                  >
-                    <div class="field">
-                      <label class="input-label" for="genre">Genre name</label>
-                      <input class="input-alphanum" type="text" name="genre" id="genre" value="<%= genre.name %>" required />
-                      <div class="field-message display-none">
-                        <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-                        <span class="message-content"></span>
+              <dialog id="edit-genre-dialog"aria-labelledby="edit-genre-title">
+                <div class="dialogue-content">
+                  <header>
+                    <h2 id="edit-genre-title">Editing <%= genre.name %></h2>
+                  </header>
+                  <section>
+                    <form
+                      id="edit-genre"
+                      class="method-override-wrapper"
+                      action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=PUT"
+                      method="POST"
+                    >
+                      <div class="field">
+                        <label class="input-label" for="genre">Genre name</label>
+                        <input class="input-alphanum" type="text" name="genre" id="genre" value="<%= genre.name %>" required />
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
                       </div>
-                    </div>
-                    <div class="field">
-                      <label class="input-label" for="description">Desciption</label>
-                      <textarea
-                        class="input-alphanum"
-                        name="description"
-                        id="description"
-                        cols="40"
-                        rows="5"
-                      ><%= genre.description %></textarea>
-                      <span class="char-count"><%= genre.description.length %>/280</span>
-                      <div class="field-message display-none">
-                        <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-                        <span class="message-content"></span>
+                      <div class="field">
+                        <label class="input-label" for="description">Desciption</label>
+                        <textarea
+                          class="input-alphanum"
+                          name="description"
+                          id="description"
+                          cols="40"
+                          rows="5"
+                        ><%= genre.description %></textarea>
+                        <span class="char-count"><%= genre.description.length %>/280</span>
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
                       </div>
-                    </div>
-                  </form>
-                </section>
-                <footer class="dialogue-actions">
-                  <button autofocus aria-label="Close dialog">Close</button>
-                  <button form="edit-genre" type="submit" aria-label="Save changes">Save</button>
-                </footer>
+                    </form>
+                  </section>
+                  <footer class="dialogue-actions">
+                    <button autofocus aria-label="Close dialog">Close</button>
+                    <button form="edit-genre" type="submit" aria-label="Save changes">Save</button>
+                  </footer>
+                </div>
               </dialog>
               <button aria-haspopup="dialog" aria-controls="edit-genre-dialog">Edit</button>
             </div>
@@ -69,24 +69,26 @@
                 aria-labelledby="delete-genre-title"
                 aria-describedby="delete-genre-description"
               >
-                <header>
-                  <h2 id="delete-genre-title">Delete <%= genre.name %>?</h2>
-                </header>
-                <section>
-                  <p id="delete-genre-description">
-                    This will remove the <%= genre.name %> genre from <%= books.length %> books.
-                  </p>
-                </section>
-                <footer class="dialogue-actions">
-                  <button autofocus aria-label="Close dialog">Close</button>
-                  <form
-                    class="method-override-wrapper"
-                    action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
-                    method="POST"
-                  >
-                    <button type="submit" aria-label="Delete genre">Delete</button>
-                  </form>
-                </footer>
+                <div class="dialogue-content">
+                  <header>
+                    <h2 id="delete-genre-title">Delete <%= genre.name %>?</h2>
+                  </header>
+                  <section>
+                    <p id="delete-genre-description">
+                      This will remove the <%= genre.name %> genre from <%= books.length %> books.
+                    </p>
+                  </section>
+                  <footer class="dialogue-actions">
+                    <button autofocus aria-label="Close dialog">Close</button>
+                    <form
+                      class="method-override-wrapper"
+                      action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
+                      method="POST"
+                    >
+                      <button type="submit" aria-label="Delete genre">Delete</button>
+                    </form>
+                  </footer>
+                </div>
               </dialog>
               <button aria-haspopup="dialog" aria-controls="delete-genre-dialog">Delete</button>
             </div>
