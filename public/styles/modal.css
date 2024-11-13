@@ -11,9 +11,41 @@ dialog {
 }
 
 .dialogue-content {
+	overflow: hidden;
+
 	border: solid 1px var(--cl-background-shade-2);
 	border-radius: var(--br-heavy);
-	padding: 2rem;
+	max-width: 600px;
+
 	background-color: var(--cl-background);
 	box-shadow: 0 2px 16px hsl(0, 0%, 0%, 0.4);
+}
+
+.dialogue-content > * {
+	padding: 1rem 2rem;
+}
+
+.dialogue-content header,
+.dialogue-content .dialogue-actions {
+	background-color: var(--cl-background-shade);
+}
+
+.dialogue-content header {
+	border-bottom: solid 1px var(--cl-background-shade-2);
+	box-shadow: 0 -1px 4px -3px hsl(0, 0%, 0%, 0.9) inset;
+}
+
+.dialogue-content .dialogue-actions {
+	border-top: solid 1px var(--cl-background-shade-2);
+	box-shadow: 0 1px 4px -3px hsl(0, 0%, 0%, 0.9) inset;
+}
+
+.dialogue-content h2 {
+	font-size: 1.25rem;
+	text-wrap: balance;
+}
+
+.dialogue-content section {
+	margin: auto auto;
+	overflow-y: scroll;
 }
