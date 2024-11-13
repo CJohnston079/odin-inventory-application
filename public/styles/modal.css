@@ -1,0 +1,19 @@
+dialog::backdrop {
+	background-color: hsl(0, 0%, 50%, 0.5);
+	background-image: linear-gradient(hsl(0, 0%, 50%, 0.05), hsl(0, 0%, 0%, 0.3));
+	backdrop-filter: blur(2px);
+}
+
+dialog {
+	margin: auto;
+	border: none;
+	background: none;
+}
+
+.dialogue-content {
+	border: solid 1px var(--cl-background-shade-2);
+	border-radius: var(--br-heavy);
+	padding: 2rem;
+	background-color: var(--cl-background);
+	box-shadow: 0 2px 16px hsl(0, 0%, 0%, 0.4);
+}
