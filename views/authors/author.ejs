@@ -109,8 +109,8 @@
                     </form>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
-                    <button form="edit-author" type="submit" aria-label="Save author edits">
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
+                    <button class="form-button submit-button" form="edit-author" type="submit" aria-label="Save author edits">
                       Save
                     </button>
                   </footer>
@@ -141,13 +141,13 @@
                     </ul>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
                     <form
                       class="method-override-wrapper"
                       action="/authors/<%= author.id %>/<%= author.slug %>?_method=DELETE"
                       method="POST"
                     >
-                      <button type="submit" aria-label="Delete author">Delete</button>
+                      <button type="submit" class="form-button delete-button" aria-label="Delete author">Delete</button>
                     </form>
                   </footer>
                 </div>

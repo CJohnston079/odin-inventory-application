@@ -56,8 +56,8 @@
                     </form>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
-                    <button form="edit-genre" type="submit" aria-label="Save changes">Save</button>
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
+                    <button class="form-button submit-button" form="edit-genre" type="submit" aria-label="Save changes">Save changes</button>
                   </footer>
                 </div>
               </dialog>
@@ -79,13 +79,13 @@
                     </p>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
                     <form
                       class="method-override-wrapper"
                       action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
                       method="POST"
                     >
-                      <button type="submit" aria-label="Delete genre">Delete</button>
+                      <button type="submit" class="form-button delete-button" aria-label="Delete genre">Delete</button>
                     </form>
                   </footer>
                 </div>
