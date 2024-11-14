@@ -52,6 +52,16 @@ dialog {
 	overflow-y: scroll;
 }
 
+.dialogue-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 1rem;
+}
+
+.dialogue-actions > * {
+	flex: 0;
+}
+
 @keyframes shrink {
 	from {
 		transform: scale(1.05);
