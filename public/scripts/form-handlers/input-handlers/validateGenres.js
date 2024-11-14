@@ -8,7 +8,7 @@ const validateGenres = async function (genresInput) {
 
 	if (!genresInput.value) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -16,10 +16,10 @@ const validateGenres = async function (genresInput) {
 
 	if (doAllGenresExist) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
 		const genreMessageStr = joinArrWithConjunctions(notFoundGenres);
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = formatGenreStr(genreMessageStr);
 
 		const newGenreAnchor = document.createElement("a");

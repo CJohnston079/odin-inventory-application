@@ -7,7 +7,7 @@ const validateAuthor = async function (authorInput) {
 
 	if (!authorInput.value) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -15,9 +15,9 @@ const validateAuthor = async function (authorInput) {
 
 	if (authorExists) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `Author ${strToNameCase(authorInput.value)} not found.`;
 
 		const newAuthorAnchor = document.createElement("a");

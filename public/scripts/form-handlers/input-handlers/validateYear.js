@@ -9,9 +9,9 @@ const validateYear = function (yearInput) {
 
 	if (isYearValid) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		validationMessage.textContent = `${fieldName} cannot be in the future.`;
 	}
 

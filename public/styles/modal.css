@@ -61,21 +61,3 @@ dialog {
 .dialogue-actions > * {
 	flex: 0;
 }
-
-@keyframes shrink {
-	from {
-		transform: scale(1.05);
-	}
-	to {
-		transform: scale(1);
-	}
-}
-
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}

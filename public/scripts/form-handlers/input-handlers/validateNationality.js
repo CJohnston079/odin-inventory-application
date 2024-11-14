@@ -7,9 +7,9 @@ const validateNationality = async function (nationalityInput) {
 
 	if (isNationalityValid) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `Nationality ${nationalityInput.value} not found.`;
 	}
 

@@ -14,7 +14,7 @@ const validateTitle = async function (titleInput, authorInput, currentTitle = nu
 
 	if (!authorInput.value) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -23,13 +23,13 @@ const validateTitle = async function (titleInput, authorInput, currentTitle = nu
 		!(await checkBookByAuthorExists(titleInput.value, authorInput.value));
 
 	if (!bookAvailable) {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `
       ${strToTitleCase(titleInput.value)} by ${strToNameCase(authorInput.value)} is already added.
     `;
 	} else {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	}
 
 	return bookAvailable;

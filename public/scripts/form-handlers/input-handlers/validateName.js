@@ -14,7 +14,7 @@ const validateName = async function (firstNameInput, lastNameInput, currentName 
 
 	if (!firstNameInput.value || !lastNameInput.value) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -23,9 +23,9 @@ const validateName = async function (firstNameInput, lastNameInput, currentName 
 
 	if (nameAvailable) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `${strToNameCase(name)} already added.`;
 	}
 

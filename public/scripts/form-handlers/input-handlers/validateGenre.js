@@ -13,7 +13,7 @@ const validateGenre = async function (genreInput, currentName = null) {
 
 	if (!genreInput.value) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -22,9 +22,9 @@ const validateGenre = async function (genreInput, currentName = null) {
 
 	if (genreAvailable) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `${strToTitleCase(genreInput.value)} is already added.`;
 	}
 

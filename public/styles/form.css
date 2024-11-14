@@ -116,7 +116,17 @@ textarea {
 	color: var(--cl-emphasis);
 }
 
+.field:has(.field-message):not(:has(.field-message.display-none)) {
+	margin-bottom: 2rem;
+	transition: margin-bottom 400ms 200ms ease-in;
+}
+
+.field {
+	transition: margin-bottom 200ms ease-out;
+}
+
 .field-message {
+	position: absolute;
 	display: flex;
 	align-items: center;
 	gap: 0.25rem;
@@ -125,6 +135,9 @@ textarea {
 	font-size: 0.8rem;
 	font-weight: 900;
 	line-height: 0.85rem;
+
+	animation: fade 400ms linear 200ms;
+	animation-fill-mode: backwards;
 }
 
 .field-message > * {

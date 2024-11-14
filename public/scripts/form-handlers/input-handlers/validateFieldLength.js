@@ -4,7 +4,7 @@ const validateFieldLength = function (input, { maxLength, minLength = 0 }) {
 
 	if (!input.value) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 		return true;
 	}
 
@@ -12,14 +12,14 @@ const validateFieldLength = function (input, { maxLength, minLength = 0 }) {
 	const isTooShort = input.value.length < minLength;
 
 	if (isTooLong) {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `Please enter a value of ${maxLength} or fewer characters.`;
 	} else if (isTooShort) {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = `Please enter a value of ${minLength} or more characters.`;
 	} else {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	}
 
 	return !isTooLong && !isTooShort;

@@ -10,9 +10,9 @@ const validateTextarea = function (descriptionInput, maxChars = 280) {
 
 	if (isDescriptionValid) {
 		validationMessage.textContent = "";
-		validationElement.classList.add("display-none");
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		validationElement.classList.remove("display-none");
+		validationElement.classList.remove("display-none", "animation-none");
 		validationMessage.textContent = "Character limit exceeded";
 	}
 
