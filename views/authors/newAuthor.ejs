@@ -15,7 +15,7 @@
 			<form action="/authors" method="post" id="new-author">
 				<fieldset id="name" class="fieldset">
           <div class="field">
-            <label class="input-label" for="first-name">First name</label>
+            <label class="input-label" for="first-name">First name*</label>
             <input class="input-alphanum" type="text" name="firstName" id="first-name" required />
             <div class="field-message display-none">
               <img src="/assets/icons/warning.png" alt="" class="warning-icon">
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div class="field">
-            <label class="input-label" for="last-name">Surname</label>
+            <label class="input-label" for="last-name">Surname*</label>
             <input class="input-alphanum" type="text" name="lastName" id="last-name" required />
             <div class="field-message display-none">
               <img src="/assets/icons/warning.png" alt="" class="warning-icon">
@@ -34,7 +34,22 @@
             <img src="/assets/icons/warning.png" alt="" class="warning-icon">
             <span class="message-content"></span>
           </div>
-          </fieldset>
+        </fieldset>
+        <div class="field">
+          <label class="input-label" for="nationality">Nationality*</label>
+          <input class="input-alphanum"
+            type="text"
+            name="nationality"
+            id="nationality"
+            placeholder="Start typing to show suggestions"
+            required
+          />
+          <ul id="nationality-suggestions" class="suggestions"></ul>
+          <div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
+        </div>
 				<div class="field">
 					<label class="input-label" for="birth-year">Birth year</label>
 					<input class="input-alphanum"
@@ -43,21 +58,6 @@
 						id="birth-year"
 						max="<%= new Date().getFullYear() %>"
 					/>
-					<div class="field-message display-none">
-            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
-            <span class="message-content"></span>
-          </div>
-				</div>
-				<div class="field">
-					<label class="input-label" for="nationality">Nationality</label>
-					<input class="input-alphanum"
-						type="text"
-						name="nationality"
-						id="nationality"
-						placeholder="Start typing to show suggestions"
-						required
-					/>
-					<ul id="nationality-suggestions" class="suggestions"></ul>
 					<div class="field-message display-none">
             <img src="/assets/icons/warning.png" alt="" class="warning-icon">
             <span class="message-content"></span>
