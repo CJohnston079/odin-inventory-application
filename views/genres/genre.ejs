@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= genre.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
     <link rel="stylesheet" href="/styles/modal.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
     <script type="module" src="/scripts/form-handlers/editGenreFormHandler.js"></script>
@@ -17,10 +18,7 @@
           <h1 id="title"><%= genre.name %></h1>
           <nav aria-label="Genre actions">
             <div class="dialogue-wrapper">
-              <dialog
-              id="edit-genre-dialog"
-              aria-labelledby="edit-genre-title"
-              >
+              <dialog id="edit-genre-dialog"aria-labelledby="edit-genre-title">
                 <div class="dialogue-content">
                   <header>
                     <h2 id="edit-genre-title">Editing <%= genre.name %></h2>
@@ -33,27 +31,34 @@
                       method="POST"
                     >
                       <div class="field">
-                        <label for="genre">Genre name</label>
-                        <input type="text" name="genre" id="genre" value="<%= genre.name %>" required />
-                        <span class="field-message"></span>
+                        <label class="input-label" for="genre">Genre name*</label>
+                        <input class="input-alphanum" type="text" name="genre" id="genre" value="<%= genre.name %>" required />
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
                       </div>
                       <div class="field">
-                        <label for="description">Desciption</label>
+                        <label class="input-label" for="description">Desciption</label>
                         <textarea
+                          class="input-alphanum"
                           name="description"
                           id="description"
                           cols="40"
-                          rows="8"
+                          rows="5"
                         ><%= genre.description %></textarea>
                         <span class="char-count"><%= genre.description.length %>/280</span>
-                        <span class="field-message"></span>
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
                       </div>
-                  </form>
-                </section>
-                <footer class="dialogue-actions">
-                  <button autofocus aria-label="Close dialog">Close</button>
-                  <button form="edit-genre" type="submit" aria-label="Save changes">Save</button>
-                </footer>
+                    </form>
+                  </section>
+                  <footer class="dialogue-actions">
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
+                    <button class="form-button submit-button" form="edit-genre" type="submit" aria-label="Save changes">Save changes</button>
+                  </footer>
                 </div>
               </dialog>
               <button aria-haspopup="dialog" aria-controls="edit-genre-dialog">Edit</button>
@@ -74,13 +79,13 @@
                     </p>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
                     <form
                       class="method-override-wrapper"
                       action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
                       method="POST"
                     >
-                      <button type="submit" aria-label="Delete genre">Delete</button>
+                      <button type="submit" class="form-button delete-button" aria-label="Delete genre">Delete</button>
                     </form>
                   </footer>
                 </div>

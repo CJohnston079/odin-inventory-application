@@ -4,7 +4,8 @@ import { strToNameCase } from "../../utils.js";
 import { strToTitleCase } from "../../utils.js";
 
 const validateTitle = async function (titleInput, authorInput, currentTitle = null) {
-	const titleMessage = document.querySelector(`#${titleInput.id} ~ .field-message`);
+	const validationElement = document.querySelector(`#${titleInput.id} ~ .field-message`);
+	const validationMessage = validationElement.querySelector(".message-content");
 	const isTooLong = !validateFieldLength(titleInput, { maxLength: 64 });
 
 	if (isTooLong) {
@@ -12,7 +13,8 @@ const validateTitle = async function (titleInput, authorInput, currentTitle = nu
 	}
 
 	if (!authorInput.value) {
-		titleMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -21,11 +23,13 @@ const validateTitle = async function (titleInput, authorInput, currentTitle = nu
 		!(await checkBookByAuthorExists(titleInput.value, authorInput.value));
 
 	if (!bookAvailable) {
-		titleMessage.textContent = `
+		validationElement.classList.remove("display-none", "animation-none");
+		validationMessage.textContent = `
       ${strToTitleCase(titleInput.value)} by ${strToNameCase(authorInput.value)} is already added.
     `;
 	} else {
-		titleMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 	}
 
 	return bookAvailable;

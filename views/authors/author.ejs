@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= author.name %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
     <link rel="stylesheet" href="/styles/modal.css" />
 		<script type="module" src="/scripts/dialogueController.js"></script>
 		<script type="module" src="/scripts/form-handlers/editAuthorFormHandler.js"></script>
@@ -29,60 +30,87 @@
                       action="/authors/<%= author.id %>/<%= author.slug %>?_method=PUT"
                       method="POST"
                     >
+                      <fieldset id="name" class="fieldset">
+                        <div class="field">
+                          <label class="input-label" for="first-name">First name*</label>
+                          <input
+                            class="input-alphanum"
+                            value="<%= author.first_name %>"
+                            type="text"
+                            name="firstName"
+                            id="first-name"
+                            required
+                          />
+                          <div class="field-message display-none">
+                            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                            <span class="message-content"></span>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="input-label" for="last-name">Surname*</label>
+                          <input
+                            class="input-alphanum"
+                            value="<%= author.last_name %>"
+                            type="text"
+                            name="lastName"
+                            id="last-name"
+                            required
+                          />
+                          <div class="field-message display-none">
+                            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                            <span class="message-content"></span>
+                          </div>
+                        </div>
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
+                      </fieldset>
                       <div class="field">
-                        <label for="first-name">First name:</label>
+                        <label class="input-label" for="nationality">Nationality*</label>
                         <input
-                          value="<%= author.first_name %>"
-                          type="text"
-                          name="firstName"
-                          id="first-name"
-                          required
-                        />
-                        <span class="field-message"></span>
-                        <label style="margin-top: 1rem" for="last-name">Surname</label>
-                        <input
-                          value="<%= author.last_name %>"
-                          type="text"
-                          name="lastName"
-                          id="last-name"
-                          required
-                        />
-                        <span class="field-message"></span>
-                      </div>
-                      <div class="field">
-                        <label for="birth-year">Birth year:</label>
-                        <input
-                          value="<%= author.birth_year %>"
-                          type="number"
-                          name="birthYear"
-                          id="birth-year"
-                          max="<%= new Date().getFullYear() %>"
-                        />
-                        <span class="field-message"></span>
-                      </div>
-                      <div class="field">
-                        <label for="nationality">Nationality:</label>
-                        <input
+                          class="input-alphanum"
                           value="<%= author.nationality %>"
                           type="text"
                           name="nationality"
                           id="nationality"
                           required
                         />
-                        <span class="field-message"></span>
-                        <ul id="nationality-suggestions"></ul>
+                        <ul id="nationality-suggestions" class="suggestions"></ul>
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
                       </div>
                       <div class="field">
-                        <label for="biography">Biography</label>
-                        <textarea name="biography" id="biography" cols="40" rows="8"><%= author.biography %></textarea>
-                        <span class="field-message"></span>
+                        <label class="input-label" for="birth-year">Birth year</label>
+                        <input
+                          class="input-alphanum"
+                          value="<%= author.birth_year %>"
+                          type="number"
+                          name="birthYear"
+                          id="birth-year"
+                          max="<%= new Date().getFullYear() %>"
+                        />
+                        <div class="field-message display-none">
+                        <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                        <span class="message-content"></span>
+                      </div>
+                      </div>
+                      <div class="field">
+                        <label class="input-label" for="biography">Biography</label>
+                        <textarea class="input-alphanum" name="biography" id="biography" cols="40" rows="5"><%= author.biography %></textarea>
                         <span class="char-count"><%= author.biography.length %>/280</span>
+                        <div class="field-message display-none">
+                          <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+                          <span class="message-content"></span>
+                        </div>
                       </div>
                     </form>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
-                    <button form="edit-author" type="submit" aria-label="Save author edits">
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
+                    <button class="form-button submit-button" form="edit-author" type="submit" aria-label="Save author edits">
                       Save
                     </button>
                   </footer>
@@ -113,13 +141,13 @@
                     </ul>
                   </section>
                   <footer class="dialogue-actions">
-                    <button autofocus aria-label="Close dialog">Close</button>
+                    <button autofocus class="form-button" aria-label="Close dialog">Close</button>
                     <form
                       class="method-override-wrapper"
                       action="/authors/<%= author.id %>/<%= author.slug %>?_method=DELETE"
                       method="POST"
                     >
-                      <button type="submit" aria-label="Delete author">Delete</button>
+                      <button type="submit" class="form-button delete-button" aria-label="Delete author">Delete</button>
                     </form>
                   </footer>
                 </div>

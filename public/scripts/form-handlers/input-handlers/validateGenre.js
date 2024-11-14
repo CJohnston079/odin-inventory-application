@@ -3,7 +3,8 @@ import { checkGenreExists } from "../../validateInputs.js";
 import { strToTitleCase } from "../../utils.js";
 
 const validateGenre = async function (genreInput, currentName = null) {
-	const genreMessage = document.querySelector(`#${genreInput.id} ~ .field-message`);
+	const validationElement = document.querySelector(`#${genreInput.id} ~ .field-message`);
+	const validationMessage = validationElement.querySelector(".message-content");
 	const isTooLong = !validateFieldLength(genreInput, { maxLength: 32 });
 
 	if (isTooLong) {
@@ -11,7 +12,8 @@ const validateGenre = async function (genreInput, currentName = null) {
 	}
 
 	if (!genreInput.value) {
-		genreMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -19,9 +21,11 @@ const validateGenre = async function (genreInput, currentName = null) {
 		currentName === genreInput.value || !(await checkGenreExists(genreInput.value));
 
 	if (genreAvailable) {
-		genreMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		genreMessage.textContent = `${strToTitleCase(genreInput.value)} is already added.`;
+		validationElement.classList.remove("display-none", "animation-none");
+		validationMessage.textContent = `${strToTitleCase(genreInput.value)} is already added.`;
 	}
 
 	return genreAvailable;

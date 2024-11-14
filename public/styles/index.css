@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 :root {
-	--emphasis-hue: 0;
+	--emphasis-hue: 200;
 
-	--cl-emphasis: hsl(var(--emphasis-hue), 30%, 50%);
-	--cl-emphasis-shade: hsl(var(--emphasis-hue), 30%, 85%);
-	--cl-background: white;
+	--cl-emphasis: hsl(var(--emphasis-hue), 50%, 40%);
+	--cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 95%);
+	--cl-background: #ffffff;
 	--cl-background-shade: hsl(0, 0%, 95%);
 	--cl-background-shade-2: hsl(0, 0%, 90%);
+	--cl-background-shade-3: hsl(0, 0%, 80%);
 	--cl-midground: hsl(0, 0%, 50%);
 	--cl-foreground: black;
 	--cl-foreground-shade: hsl(0, 0%, 15%);
@@ -45,6 +46,7 @@
 		--cl-background: hsl(0, 0%, 20%);
 		--cl-background-shade: hsl(0, 0%, 10%);
 		--cl-background-shade-2: hsl(0, 0%, 5%);
+		--cl-background-shade-3: hsl(0, 0%, 30%);
 		--cl-midground: hsl(0, 0%, 50%);
 		--cl-foreground: white;
 		--cl-foreground-shade: hsl(0, 0%, 95%);
@@ -76,13 +78,8 @@ main {
 	box-shadow: 0px 1px 2px hsl(0, 0%, 0%, 0.2);
 }
 
-.method-override-wrapper,
-.dialog-wrapper {
-	display: inline;
-}
-
-.dialogue-actions {
-	text-align: right;
+button {
+	cursor: pointer;
 }
 
 dl div {
@@ -106,87 +103,34 @@ dd {
 	height: fit-content;
 }
 
-.field > input,
-.field > label {
-	display: block;
+.display-none {
+	display: none !important;
 }
 
-.field {
-	margin-bottom: 1rem;
+.animation-none {
+	animation: none !important;
 }
 
-.field textarea {
-	resize: none;
+@keyframes shrink {
+	from {
+		transform: scale(1.05);
+	}
+	to {
+		transform: scale(1);
+	}
 }
 
-.field input,
-.field textarea {
-	display: block;
-	padding: 0.25rem;
-	width: calc(40ch - 0.5rem);
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-input,
-button,
-textarea,
-.suggestions,
-.field-message,
-.char-count {
-	font-family: inherit;
-	font-size: 0.85em;
-}
-
-.suggestions {
-	position: relative;
-	padding: 0 1rem;
-	margin: 0rem;
-	width: calc(40ch - 1.75rem);
-	background-color: var(--cl-background-shade);
-	border-radius: 0 0 2px 2px;
-	transform: translateY(-8px);
-	z-index: -1;
-}
-
-.suggestions li {
-	margin-left: 0.5rem;
-}
-
-.suggestions li:first-child {
-	padding-top: 1rem;
-}
-
-.suggestions li:last-child {
-	padding-bottom: 0.5rem;
-}
-
-.suggestion {
-	opacity: 0.5;
-	cursor: pointer;
-}
-
-.selected {
-	opacity: 1;
-}
-
-.field-message {
-	display: inline;
-	font-weight: bold;
-}
-
-.field-message a {
-	display: inline-block;
-	margin-left: 1ch;
-}
-
-.limit-exceeded {
-	font-weight: 700;
-}
-
-.radio-option {
-	display: inline;
-}
-
-.radio-option > input {
-	display: inline;
-	width: auto;
+@keyframes move-down {
+	from {
+		transform: translateY(1rem);
+	}
 }

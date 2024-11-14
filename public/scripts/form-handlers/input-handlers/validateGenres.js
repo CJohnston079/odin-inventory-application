@@ -3,25 +3,29 @@ import { joinArrWithConjunctions } from "../../utils.js";
 import { checkGenresExists } from "../../validateInputs.js";
 
 const validateGenres = async function (genresInput) {
-	const genresMessage = document.querySelector(`#${genresInput.id} ~ .field-message`);
+	const validationElement = document.querySelector(`#${genresInput.id} ~ .field-message`);
+	const validationMessage = validationElement.querySelector(".message-content");
 
 	if (!genresInput.value) {
-		genresMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
 	const { doAllGenresExist, notFoundGenres } = await checkGenresExists(genresInput.value);
 
 	if (doAllGenresExist) {
-		genresMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
 		const genreMessageStr = joinArrWithConjunctions(notFoundGenres);
-		genresMessage.textContent = formatGenreStr(genreMessageStr);
+		validationElement.classList.remove("display-none", "animation-none");
+		validationMessage.textContent = formatGenreStr(genreMessageStr);
 
 		const newGenreAnchor = document.createElement("a");
 		newGenreAnchor.href = "../genres/new";
-		newGenreAnchor.textContent = `Add genre +`;
-		genresMessage.appendChild(newGenreAnchor);
+		newGenreAnchor.textContent = `Add genre`;
+		validationMessage.appendChild(newGenreAnchor);
 	}
 
 	return doAllGenresExist;

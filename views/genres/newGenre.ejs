@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= title %></title>
 		<link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
 		<script type="module" src="/scripts/form-handlers/newGenreFormHandler.js"></script>
 	</head>
 	<body>
@@ -13,17 +14,23 @@
       <h1><%= title %></h1>
       <form action="/genres" method="post" id="new-genre">
         <div class="field">
-          <label for="genre">Genre name</label>
-          <input type="text" name="genre" id="genre" required />
-          <span class="field-message"></span>
+          <label class="input-label" for="genre">Genre name*</label>
+          <input class="input-alphanum" type="text" name="genre" id="genre" required />
+          <div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
         </div>
         <div class="field">
-          <label for="description">Description</label>
-          <textarea name="description" id="description" cols="40" rows="8"></textarea>
+          <label class="input-label" for="description">Description</label>
+          <textarea class="input-alphanum" name="description" id="description" cols="40" rows="5"></textarea>
           <span class="char-count">0/280</span>
-          <span class="field-message"></span>
+          <div class="field-message display-none">
+            <img src="/assets/icons/warning.png" alt="" class="warning-icon">
+            <span class="message-content"></span>
+          </div>
         </div>
-        <button type="submit">Add genre</button>
+        <button type="submit" class="form-button submit-button">Add genre</button>
       </form>
     </main>
 	</body>

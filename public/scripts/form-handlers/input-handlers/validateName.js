@@ -3,7 +3,8 @@ import { checkAuthorExists } from "../../validateInputs.js";
 import { strToNameCase } from "../../utils.js";
 
 const validateName = async function (firstNameInput, lastNameInput, currentName = null) {
-	const nameMessage = document.querySelector(`#${firstNameInput.id} ~ .field-message:last-child`);
+	const validationElement = document.querySelector(`#name > .field-message`);
+	const validationMessage = validationElement.querySelector(".message-content");
 	const firstNameTooLong = !validateFieldLength(firstNameInput, { maxLength: 32 });
 	const lastNameTooLong = !validateFieldLength(lastNameInput, { maxLength: 32 });
 
@@ -12,7 +13,8 @@ const validateName = async function (firstNameInput, lastNameInput, currentName 
 	}
 
 	if (!firstNameInput.value || !lastNameInput.value) {
-		nameMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 		return false;
 	}
 
@@ -20,9 +22,11 @@ const validateName = async function (firstNameInput, lastNameInput, currentName 
 	const nameAvailable = name === currentName || !(await checkAuthorExists(name));
 
 	if (nameAvailable) {
-		nameMessage.textContent = "";
+		validationMessage.textContent = "";
+		validationElement.classList.add("display-none", "animation-none");
 	} else {
-		nameMessage.textContent = `${strToNameCase(name)} already added.`;
+		validationElement.classList.remove("display-none", "animation-none");
+		validationMessage.textContent = `${strToNameCase(name)} already added.`;
 	}
 
 	return nameAvailable;

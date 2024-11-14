@@ -52,20 +52,12 @@ dialog {
 	overflow-y: scroll;
 }
 
-@keyframes shrink {
-	from {
-		transform: scale(1.05);
-	}
-	to {
-		transform: scale(1);
-	}
+.dialogue-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 1rem;
 }
 
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+.dialogue-actions > * {
+	flex: 0;
 }
