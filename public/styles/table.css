@@ -1,3 +1,12 @@
+.tables-container {
+	display: flex;
+	gap: 2rem;
+}
+
+.tables-container table {
+	height: fit-content;
+}
+
 table {
 	width: 100%;
 	table-layout: auto;
