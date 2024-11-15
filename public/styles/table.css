@@ -1,17 +1,31 @@
+main {
+	display: flex;
+	flex-direction: column;
+}
+
 .tables-container {
 	display: flex;
 	gap: 2rem;
 }
 
-.tables-container table {
+.tables-container .table-wrapper {
 	height: fit-content;
 }
 
+.table-wrapper {
+	position: sticky;
+	inset: 0;
+	overflow: scroll;
+	border: solid 1px var(--cl-background-shade-2);
+	border-radius: var(--br-mid);
+	box-shadow: 0 1px 2px hsl(0, 50%, 50%, 0.2);
+}
+
 table {
-	width: 100%;
 	table-layout: auto;
 	border-collapse: separate;
 	border-spacing: 0;
+	width: 100%;
 	text-align: left;
 }
 
@@ -25,25 +39,12 @@ caption {
 thead {
 	position: sticky;
 	top: 0;
-}
-
-thead::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	z-index: -1;
-
-	border: solid 1px var(--cl-background-shade-2);
-	border-radius: var(--br-mid);
-	margin: 0 -0.5rem;
-
 	background-color: var(--cl-background-shade);
-	/* box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2); */
-	box-shadow: 0 8px 8px var(--cl-background);
 }
 
 th {
 	padding: 0.75rem 1rem;
+	border-bottom: solid 1px var(--cl-background-shade-2);
 
 	font-weight: 400;
 	font-size: 0.9rem;
@@ -52,16 +53,16 @@ th {
 	color: var(--cl-foreground-shade-2);
 }
 
-th:not(th:first-child) {
-	border-left: solid 1px var(--cl-background-shade-2);
-}
-
 tbody {
 	overflow: scroll;
 }
 
 td {
 	padding: 0.5rem 1rem;
+	/* border-bottom: 1px solid var(--cl-background-shade-2); */
+}
+
+tr:not(:last-child) td {
 	border-bottom: 1px solid var(--cl-background-shade-2);
 }
 
@@ -116,31 +117,21 @@ tr td:first-child a {
 .col-title {
 	width: 16rem;
 }
-
 .col-count {
 	width: 4rem;
 }
-
 .col-author {
 	width: 12rem;
 }
-
 .col-year {
 	width: 4rem;
 }
-
 .col-country {
 	width: auto;
 }
-
 .col-genre {
 	width: auto;
 }
-
 .col-genres {
 	width: auto;
-}
-
-.text-centre {
-	text-align: center;
 }
