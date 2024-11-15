@@ -12,6 +12,7 @@
       <script type="module" src="/scripts/form-handlers/editBookFormHandler.js"></script>
     </head>
     <body>
+<div id="root">
       <%- include("../partials/header", { backAnchor: true }) %>
       <main>
         <h2><%= book.is_fiction %></h2>
@@ -214,5 +215,6 @@
       </section>
       <hr>
     </main>
-	</body>
+	</div>
+</body>
 </html>
