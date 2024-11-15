@@ -4,14 +4,16 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= title %></title>
-<link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/logo.svg" type="image/x-icon">
 		<link rel="stylesheet" href="/styles/index.css" />
 	</head>
 	<body>
-		<%- include("../partials/header") %>
-    <main>
-      <h1><%= title %></h1>
-      <%- include("../partials/booksTable", { books }) %>
-    </main>
-	</body>
+    <div id="root">
+      <%- include("../partials/header") %>
+      <main>
+        <h1><%= title %></h1>
+        <%- include("../partials/booksTable", { books }) %>
+      </main>
+    </div>
+  </body>
 </html>

@@ -12,6 +12,7 @@
     <script type="module" src="/scripts/form-handlers/editGenreFormHandler.js"></script>
 	</head>
 	<body>
+<div id="root">
 		<%- include("../partials/header", { backAnchor: true }) %>
     <main>
       <article>
@@ -100,5 +101,6 @@
       <hr />
       <%- include("../partials/booksTable", { caption: `${genre.name} books`, books }) %>
     </main>
-	</body>
+	</div>
+</body>
 </html>
