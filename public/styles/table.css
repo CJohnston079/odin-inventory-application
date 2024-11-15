@@ -30,10 +30,8 @@ table {
 }
 
 caption {
-	font-size: 1.5rem;
-	font-weight: 900;
-	text-align: left;
-	margin: 1rem 0;
+	position: absolute;
+	opacity: 0;
 }
 
 thead {
