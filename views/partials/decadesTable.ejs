@@ -1,24 +1,26 @@
 <link rel="stylesheet" href="/styles/table.css">
-<table>
-  <caption>
-		<%= typeof caption !== 'undefined' ? caption : "" %>
-	</caption>
-  <colgroup>
-    <col class="col-year">
-    <col class="col-count">
-  </colgroup>
-	<thead>
-		<tr>
-			<th>Decade</th>
-			<th>Books</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% centuries[century].map((decade) => { %>
-		<tr>
-			<td><a href="decades/<%= decade.decade %>s"><%= decade.decade %>s</a></td>
-      <td class="text-centre"><%= decade.number_of_books %></td>
-		</tr>
-		<% }) %>
-	</tbody>
-</table>
+<div class="table-wrapper">
+  <table>
+    <caption>
+      <%= typeof caption !== 'undefined' ? caption : "" %>
+    </caption>
+    <colgroup>
+      <col class="col-year">
+      <col class="col-count">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Decade</th>
+        <th>Books</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% centuries[century].map((decade) => { %>
+      <tr>
+        <td><a href="decades/<%= decade.decade %>s"><%= decade.decade %>s</a></td>
+        <td class="text-centre"><%= decade.number_of_books %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

@@ -69,10 +69,10 @@ body {
 
 main {
 	overflow: scroll;
-	padding: 2rem;
 	margin: 0.5rem 0 0.5rem 0.5rem;
 	border: 1px solid var(--cl-background-shade-2);
 	border-radius: var(--br-heavy) 0 0 var(--br-heavy);
+	padding: 2rem;
 	height: calc(100vh - calc(5rem + 2px));
 
 	background-color: var(--cl-background);
@@ -95,17 +95,12 @@ dd {
 	margin: 0;
 }
 
-.tables-container {
-	display: flex;
-	gap: 2rem;
-}
-
-.tables-container table {
-	height: fit-content;
-}
-
 .display-none {
 	display: none !important;
+}
+
+.text-centre {
+	text-align: center;
 }
 
 .animation-none {
