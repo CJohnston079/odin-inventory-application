@@ -1,10 +1,3 @@
-body {
-	--header-padding: 2rem;
-
-	display: grid;
-	grid-template-columns: auto 1fr;
-}
-
 h1 {
 	margin-bottom: 2rem;
 }
@@ -14,16 +7,14 @@ nav ul {
 }
 
 #header {
+	box-sizing: border-box;
 	position: sticky;
 	inset: 0;
 
 	display: flex;
 	flex-direction: column;
 
-	padding: var(--header-padding);
-	height: calc(100vh - calc(var(--header-padding) * 2));
-
-	background-color: var(--cl-background-shade);
+	padding: 2rem 1rem;
 }
 
 #nav {
@@ -45,12 +36,10 @@ nav ul {
 	margin-bottom: 2rem;
 	text-decoration: none;
 }
-
 #logo-img {
 	height: 3ch;
 	width: 3ch;
 }
-
 .logo-text {
 	font-size: 1.4rem;
 	font-weight: 900;
@@ -89,7 +78,7 @@ nav ul {
 }
 
 .nav-item:hover {
-	/* border: 1px solid var(--cl-midground); */
+	border: 1px solid var(--cl-background-shade-3);
 	background-color: var(--cl-background-shade-2);
 	transition: 200ms;
 }
