@@ -53,7 +53,8 @@
 		--cl-foreground-shade-2: hsl(0, 0%, 90%);
 	}
 
-	.nav-icon {
+	.nav-icon,
+	#logo-img {
 		filter: invert();
 	}
 }
