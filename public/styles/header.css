@@ -12,10 +12,6 @@ h1 {
 nav ul {
 	padding-inline-start: 0;
 }
-/* 
-nav > .dialogue-wrapper {
-	display: inline;
-} */
 
 #header {
 	position: sticky;
@@ -39,6 +35,27 @@ nav > .dialogue-wrapper {
 
 #nav .nav-wrapper:nth-child(2) {
 	flex: 1;
+}
+
+#logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-left: 0.5rem;
+	margin-bottom: 2rem;
+	text-decoration: none;
+}
+
+#logo-img {
+	height: 3ch;
+	width: 3ch;
+}
+
+.logo-text {
+	font-size: 1.4rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: var(--cl-foreground);
 }
 
 .nav-heading {
