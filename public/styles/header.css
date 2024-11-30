@@ -132,6 +132,8 @@ nav ul {
 	font-size: inherit;
 	line-height: inherit;
 	cursor: pointer;
+
+	background-color: transparent;
 }
 
 .nav-icon {
