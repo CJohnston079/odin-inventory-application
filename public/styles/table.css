@@ -133,3 +133,16 @@ tr td:first-child a {
 .col-genres {
 	width: auto;
 }
+
+@media (width <= 56rem) {
+	tr th,
+	tr td {
+		display: none;
+	}
+
+	tr th:first-child,
+	tr td:first-child {
+		display: table-cell;
+		width: 100%;
+	}
+}
