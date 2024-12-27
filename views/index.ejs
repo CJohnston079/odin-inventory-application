@@ -4,64 +4,64 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= title %></title>
-<link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
-		<link rel="stylesheet" href="/styles/index.css" />
+		<link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="/sass/main.css" />
 	</head>
 	<body>
-<div id="root">
-		<%- include("partials/header") %>
-    <main>
-      <h1><%= title %></h1>
-      <section>
-        <h1>Featured books</h1>
-        <ul>
-          <% featuredBooks.map(book => { %>
-          <li>
-            <a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-          </li>
-          <% }) %>
-        </ul>
-      </section>
-      <hr>
-      <section>
-        <h1>Featured authors</h1>
-        <ul>
-          <% featuredAuthors.map(author => { %>
-          <li>
-            <a href="/authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a>
-          </li>
-          <% }) %>
-        </ul>
-      </section>
-      <hr>
-      <% featuredGenres.map(genre => { %>
-      <section>
-        <h1>Featured <%= genre.name %> books</h1>
-        <ul>
-          <% genre.books.map(book => { %>
-          <li>
-            <a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-          </li>
-          <% }) %>
-        </ul>
-        <a href="/genres/<%= genre.id %>/<%= genre.slug %>">More <%= genre.name %> books</a>
-      </section>
-      <hr>
-      <% }) %> <% featuredDecades.map(decade => { %>
-      <section>
-        <h1>Featured <%= decade.decade %>s books</h1>
-        <ul>
-          <% decade.books.map(book => { %>
-          <li>
-            <a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-          </li>
-          <% }) %>
-        </ul>
-        <a href="/decades/<%= decade.decade %>">More books from the <%= decade.decade %>s</a>
-      </section>
-      <hr>
-      <% }) %>
-  </main>
-	</div>
-</body>
+		<div id="root">
+			<%- include("partials/header") %>
+			<main>
+				<h1><%= title %></h1>
+				<section>
+					<h1>Featured books</h1>
+					<ul>
+						<% featuredBooks.map(book => { %>
+						<li>
+							<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+						</li>
+						<% }) %>
+					</ul>
+				</section>
+				<hr />
+				<section>
+					<h1>Featured authors</h1>
+					<ul>
+						<% featuredAuthors.map(author => { %>
+						<li>
+							<a href="/authors/<%= author.id %>/<%= author.slug %>"><%= author.name %></a>
+						</li>
+						<% }) %>
+					</ul>
+				</section>
+				<hr />
+				<% featuredGenres.map(genre => { %>
+				<section>
+					<h1>Featured <%= genre.name %> books</h1>
+					<ul>
+						<% genre.books.map(book => { %>
+						<li>
+							<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+						</li>
+						<% }) %>
+					</ul>
+					<a href="/genres/<%= genre.id %>/<%= genre.slug %>">More <%= genre.name %> books</a>
+				</section>
+				<hr />
+				<% }) %> <% featuredDecades.map(decade => { %>
+				<section>
+					<h1>Featured <%= decade.decade %>s books</h1>
+					<ul>
+						<% decade.books.map(book => { %>
+						<li>
+							<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+						</li>
+						<% }) %>
+					</ul>
+					<a href="/decades/<%= decade.decade %>">More books from the <%= decade.decade %>s</a>
+				</section>
+				<hr />
+				<% }) %>
+			</main>
+		</div>
+	</body>
 </html>

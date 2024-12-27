@@ -1,23 +1,22 @@
-<link rel="stylesheet" href="/styles/table.css">
 <div class="table-wrapper">
-  <table>
-    <colgroup>
-      <col class="col-genre">
-      <col class="col-count">
-    </colgroup>
-    <thead>
-      <tr>
-        <th>Genre</th>
-        <th>Books</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% genres.map((genre) => { %>
-      <tr>
-        <td><a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a></td>
-        <td class="text-centre"><%= genre.number_of_books %></td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
+	<table>
+		<colgroup>
+			<col class="col-genre" />
+			<col class="col-count" />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>Genre</th>
+				<th>Books</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% genres.map((genre) => { %>
+			<tr>
+				<td><a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a></td>
+				<td class="text-centre"><%= genre.number_of_books %></td>
+			</tr>
+			<% }) %>
+		</tbody>
+	</table>
 </div>

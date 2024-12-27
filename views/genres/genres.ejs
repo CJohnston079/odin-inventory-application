@@ -4,16 +4,16 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Inventory | <%= title %></title>
-<link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
-		<link rel="stylesheet" href="/styles/index.css" />
+		<link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="/sass/main.css" />
 	</head>
 	<body>
-<div id="root">
-		<%- include("../partials/header") %>
-		<main>
-			<h1><%= title %></h1>
-			<%- include("../partials/genresTable", { genres }) %>
-		</main>
-	</div>
-</body>
+		<div id="root">
+			<%- include("../partials/header") %>
+			<main>
+				<h1><%= title %></h1>
+				<%- include("../partials/genresTable", { genres }) %>
+			</main>
+		</div>
+	</body>
 </html>

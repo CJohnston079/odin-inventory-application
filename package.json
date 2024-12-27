@@ -8,7 +8,9 @@
 		"start": "node app.js",
 		"dev": "node --watch app.js",
 		"seed": "node db/seed/seed.js",
-		"queryDb": "psql -d odin_inventory_app -c \"$QUERY\" > query.txt"
+		"queryDb": "psql -d odin_inventory_app -c \"$QUERY\" > query.txt",
+		"build:sass": "sass public/sass/style.scss public/sass/main.css",
+		"watch:sass": "sass --watch public/sass/style.scss public/sass/main.css"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,6 +20,7 @@
 		"ejs": "^3.1.10",
 		"express": "^4.19.2",
 		"method-override": "^3.0.0",
-		"pg": "^8.12.0"
+		"pg": "^8.12.0",
+		"sass": "^1.83.0"
 	}
 }
