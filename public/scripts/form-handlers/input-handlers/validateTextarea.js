@@ -1,12 +1,14 @@
 const validateTextarea = function (descriptionInput, maxChars = 280) {
-	const validationElement = document.querySelector(`#${descriptionInput.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
-	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .char-count`);
+	const validationElement = document.querySelector(
+		`#${descriptionInput.id} ~ .form__field-message`
+	);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
+	const charCountElement = document.querySelector(`#${descriptionInput.id} ~ .form__char-count`);
 	const charCount = descriptionInput.value.length;
 	const isDescriptionValid = charCount <= maxChars;
 
 	charCountElement.textContent = `${charCount}/${maxChars}`;
-	charCountElement.classList.toggle("limit-exceeded", !isDescriptionValid);
+	charCountElement.classList.toggle("form__char-count--limit-exceeded", !isDescriptionValid);
 
 	if (isDescriptionValid) {
 		validationMessage.textContent = "";

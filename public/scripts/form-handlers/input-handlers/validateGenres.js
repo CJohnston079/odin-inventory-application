@@ -3,8 +3,8 @@ import { joinArrWithConjunctions } from "../../utils.js";
 import { checkGenresExists } from "../../validateInputs.js";
 
 const validateGenres = async function (genresInput) {
-	const validationElement = document.querySelector(`#${genresInput.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
+	const validationElement = document.querySelector(`#${genresInput.id} ~ .form__field-message`);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
 
 	if (!genresInput.value) {
 		validationMessage.textContent = "";

@@ -1,8 +1,10 @@
 import { checkNationalityExists } from "../../validateInputs.js";
 
 const validateNationality = async function (nationalityInput) {
-	const validationElement = document.querySelector(`#${nationalityInput.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
+	const validationElement = document.querySelector(
+		`#${nationalityInput.id} ~ .form__field-message`
+	);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
 	const isNationalityValid = await checkNationalityExists(nationalityInput.value);
 
 	if (isNationalityValid) {

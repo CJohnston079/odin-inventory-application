@@ -2,8 +2,8 @@ import { checkAuthorExists } from "../../validateInputs.js";
 import { strToNameCase } from "../../utils.js";
 
 const validateAuthor = async function (authorInput) {
-	const validationElement = document.querySelector(`#${authorInput.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
+	const validationElement = document.querySelector(`#${authorInput.id} ~ .form__field-message`);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
 
 	if (!authorInput.value) {
 		validationMessage.textContent = "";

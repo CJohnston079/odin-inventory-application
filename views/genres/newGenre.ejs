@@ -13,31 +13,37 @@
 			<%- include("../partials/header", { backAnchor: true }) %>
 			<main>
 				<h1><%= title %></h1>
-				<form action="/genres" method="post" id="new-genre">
-					<div class="field">
-						<label class="input-label" for="genre">Genre name*</label>
-						<input class="input-alphanum" type="text" name="genre" id="genre" required />
-						<div class="field-message display-none">
-							<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-							<span class="message-content"></span>
+				<form action="/genres" method="post" id="new-genre" class="form">
+					<div class="form__field">
+						<label class="form__label" for="genre">Genre name*</label>
+						<input
+							class="form__input form__input--alphanum"
+							type="text"
+							name="genre"
+							id="genre"
+							required
+						/>
+						<div class="form__field-message display-none">
+							<img src="/assets/icons/warning.png" alt="" class="icon icon--warning" />
+							<span class="form__field-message-content"></span>
 						</div>
 					</div>
-					<div class="field">
-						<label class="input-label" for="description">Description</label>
+					<div class="form__field">
+						<label class="form__label" for="description">Description</label>
 						<textarea
-							class="input-alphanum"
+							class="form__input form__input--alphanum form__input---textarea"
 							name="description"
 							id="description"
 							cols="40"
 							rows="5"
 						></textarea>
-						<span class="char-count">0/280</span>
-						<div class="field-message display-none">
-							<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-							<span class="message-content"></span>
+						<span class="form__char-count">0/280</span>
+						<div class="form__field-message display-none">
+							<img src="/assets/icons/warning.png" alt="" class="icon icon--warning" />
+							<span class="form__field-message-content"></span>
 						</div>
 					</div>
-					<button type="submit" class="form-button submit-button">Add genre</button>
+					<button type="submit" class="form__button form__button--submit">Add genre</button>
 				</form>
 			</main>
 		</div>

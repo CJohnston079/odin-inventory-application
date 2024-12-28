@@ -1,6 +1,6 @@
 const validateFieldLength = function (input, { maxLength, minLength = 0 }) {
-	const validationElement = document.querySelector(`#${input.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
+	const validationElement = document.querySelector(`#${input.id} ~ .form__field-message`);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
 
 	if (!input.value) {
 		validationMessage.textContent = "";
