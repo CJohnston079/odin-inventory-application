@@ -1,33 +1,38 @@
-<div class="table-wrapper">
-	<table>
-		<caption>
+<div class="table">
+	<table class="table__element">
+		<caption class="table__caption">
 			<%= typeof caption !== 'undefined' ? caption : "" %>
 		</caption>
 		<colgroup>
-			<col class="col-title" />
-			<col class="col-author" />
-			<col class="col-year" />
-			<col class="col-genres" />
+			<col class="table__col table__col-title" />
+			<col class="table__col table__col-author" />
+			<col class="table__col table__col-year" />
+			<col class="table__col table__col-genres" />
 		</colgroup>
-		<thead>
-			<tr>
-				<th>Title</th>
-				<th>Author</th>
-				<th>Published</th>
-				<th>Genres</th>
+		<thead class="table__header">
+			<tr class="table__row table__row--header">
+				<th class="table__header-cell">Title</th>
+				<th class="table__header-cell">Author</th>
+				<th class="table__header-cell">Published</th>
+				<th class="table__header-cell">Genres</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="table__body">
 			<% books.map((book) => { %>
-			<tr>
-				<td>
-					<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+			<tr class="table__row">
+				<td class="table__cell">
+					<a href="/books/<%= book.id %>/<%= book.slug %>" class="table__link"><%= book.title %></a>
 				</td>
-				<td>
-					<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>"> <%= book.author %> </a>
+				<td class="table__cell">
+					<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>" class="table__link">
+						<%= book.author %>
+					</a>
 				</td>
-				<td class="text-centre">
-					<a href="/decades/<%= Math.floor(book.publication_year / 10) + '0s' %>">
+				<td class="table__cell text-centre">
+					<a
+						href="/decades/<%= Math.floor(book.publication_year / 10) + '0s' %>"
+						class="table__link"
+					>
 						<%= book.publication_year %>
 					</a>
 				</td>

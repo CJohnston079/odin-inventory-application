@@ -1,5 +1,7 @@
-<td class="data-genre">
+<td class="table__cell table__cell--genre">
 	<% if (genres) {%> <% genres.map(genre => { %>
-	<a class="genre-link" href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a>
+	<a class="table__link table__link--genre" href="/genres/<%= genre.id %>/<%= genre.slug %>"
+		><%= genre.name %></a
+	>
 	<% }) %> <% }%>
 </td>
