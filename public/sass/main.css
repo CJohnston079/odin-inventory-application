@@ -168,17 +168,17 @@ dd {
   border: solid 1px var(--cl-background-shade-2);
   background-color: var(--cl-background-shade);
 }
-.form__field--radio:has(.form__input--alphanum:focus) .form__label, .form__field--radio:has(.form__input--alphanum:focus-visible) .form__label {
+.form__field:has(.form__input--alphanum:focus) .form__label, .form__field:has(.form__input--alphanum:focus-visible) .form__label {
   color: var(--cl-emphasis);
   transform: translate(0.5rem);
 }
-.form__field--radio:has(.form__input-suggestions), .form__field--radio:has(.form__char-count) {
+.form__field:has(.form__input-suggestions), .form__field:has(.form__char-count) {
   position: relative;
 }
-.form__field--radio:has(.form__char-count) {
+.form__field:has(.form__char-count) {
   margin-bottom: 1.25rem;
 }
-.form__field--radio:has(.form__field-message):not(:has(.form__field-message.display-none)) {
+.form__field:has(.form__field-message):not(:has(.form__field-message.display-none)) {
   margin-bottom: 2rem;
   transition: margin-bottom 400ms 200ms ease-in;
 }
@@ -236,6 +236,9 @@ dd {
   display: block;
   width: 100%;
 }
+.form__input--textarea {
+  resize: none;
+}
 .form__input--alphanum {
   border: solid 1px var(--cl-background-shade-3);
   border-radius: var(--br-mid);
@@ -249,9 +252,6 @@ dd {
   outline: none;
   border-color: var(--cl-emphasis);
   box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.3);
-}
-.form__input--textarea {
-  resize: none;
 }
 .form__input--radio {
   position: absolute;
