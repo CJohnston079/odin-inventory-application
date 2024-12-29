@@ -1,22 +1,22 @@
 const currentPath = window.location.pathname;
 const linkItems = {
-	home: document.querySelector(".nav-item:first-child"),
-	categories: document.querySelectorAll("#nav-main .nav-item"),
-	add: document.querySelectorAll("#nav-secondary .nav-item"),
+	home: document.querySelector(".nav-bar__nav-item:first-child"),
+	categories: document.querySelectorAll("#nav-main .nav-bar__nav-item"),
+	add: document.querySelectorAll("#nav-secondary .nav-bar__nav-item"),
 };
 
 const setActiveLink = function (linkItems) {
 	linkItems.forEach(link => {
-		if (!currentPath.includes(link.querySelector(".nav-link").getAttribute("href"))) {
+		if (!currentPath.includes(link.querySelector(".nav-bar__nav-link").getAttribute("href"))) {
 			return;
 		}
 
-		link.classList.add("active");
+		link.classList.add("nav-bar__nav-item--active");
 	});
 };
 
 if (currentPath === "/") {
-	linkItems.home.classList.add("active");
+	linkItems.home.classList.add("nav-bar__nav-item--active");
 } else if (currentPath.includes("new")) {
 	setActiveLink(linkItems.add);
 } else {

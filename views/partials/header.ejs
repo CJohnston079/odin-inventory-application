@@ -1,90 +1,95 @@
-<header id="header">
-  <a id="logo" href="https://www.theodinproject.com/lessons/node-path-nodejs-inventory-application" target="_blank" rel="noopener noreferrer">
-    <img id="logo-img" src="/assets/logo.svg" alt="Inventory logo" />
-    <span class="logo-text">Inventory</span>
-  </a>
-	<nav id="nav">
-		<div class="nav-wrapper">
-			<ul>
-				<li class="nav-item">
-					<a class="nav-link" href="/">
-						<img class="nav-icon" src="/assets/icons/home.png" alt="" />
-            <span class="nav-text">Home</span>
+<header class="nav-bar">
+	<a
+		class="nav-bar__logo"
+		href="https://www.theodinproject.com/lessons/node-path-nodejs-inventory-application"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		<img class="nav-bar__logo-img" src="/assets/logo.svg" alt="Inventory logo" />
+		<span class="nav-bar__logo-text">Inventory</span>
+	</a>
+	<nav id="nav" class="nav-bar__nav">
+		<div class="nav-bar__nav-items-wrapper">
+			<ul class="nav-bar__nav-items">
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/">
+						<img class="nav-bar__nav-icon" src="/assets/icons/home.png" alt="" />
+						<span class="nav-bar__nav-content">Home</span>
 					</a>
 				</li>
 			</ul>
 		</div>
-    <div class="nav-wrapper">
-      <h3 class="nav-heading">Browse categories</h3 class="nav-heading">
-      <ul id="nav-main" class="nav" aria-label="Main navigation">
-        <li class="nav-item">
-          <a class="nav-link" href="/books">
-            <img class="nav-icon" src="/assets/icons/book.png" alt="" />
-            <span class="nav-text">Books</span>
-            <span class="item-count" data-item="books">--</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/authors">
-            <img class="nav-icon" src="/assets/icons/pen.png" alt="" />
-            <span class="nav-text">Authors</span>
-            <span class="item-count" data-item="authors">--</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/genres">
-            <img class="nav-icon" src="/assets/icons/theatre.png" alt="" />
-            <span class="nav-text">Genres</span>
-            <span class="item-count" data-item="genres">--</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/decades">
-            <img class="nav-icon" src="/assets/icons/calendar.png" alt="" />
-            <span class="nav-text">Decades</span>
-            <span class="item-count" data-item="decades">--</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/countries">
-            <img class="nav-icon" src="/assets/icons/globe.png" alt="" />
-            <span class="nav-text">Countries</span>
-            <span class="item-count" data-item="countries">--</span>
-          </a>
-        </li>
-        <% if (typeof backAnchor !== "undefined" && backAnchor) { %>
-        <li class="nav-item">
-          <button class="nav-link" id="back-anchor" onclick="window.history.back()">
-            <img class="nav-icon" src="/assets/icons/back.png" alt="" />
-            <span class="nav-text">Back</span>
-          </button>
-        </li>
-        <% } %>
-      </ul>
-    </div>
-    <div class="nav-wrapper">
-      <h3 class="nav-heading">Add items</h3 class="nav-heading">
-      <ul id="nav-secondary" class="nav" aria-label="Add new items">
-        <li class="nav-item">
-          <a class="nav-link" href="/books/new">
-            <img class="nav-icon" src="/assets/icons/add-book.png" alt="" />
-            <span class="nav-text">New book</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/authors/new">
-            <img class="nav-icon" src="/assets/icons/add-author.png" alt="" />
-            <span class="nav-text">New author</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/genres/new">
-            <img class="nav-icon" src="/assets/icons/add-genre.png" alt="" />
-            <span class="nav-text">New genre</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+		<div class="nav-bar__nav-items-wrapper">
+			<h3 class="nav-bar__nav-items-heading">Browse categories</h3>
+			<ul id="nav-main" class="nav-bar__nav-items" aria-label="Main navigation">
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/books">
+						<img class="nav-bar__nav-icon" src="/assets/icons/book.png" alt="" />
+						<span class="nav-bar__nav-content">Books</span>
+						<span class="nav-bar__item-count" data-item="books">--</span>
+					</a>
+				</li>
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/authors">
+						<img class="nav-bar__nav-icon" src="/assets/icons/pen.png" alt="" />
+						<span class="nav-bar__nav-content">Authors</span>
+						<span class="nav-bar__item-count" data-item="authors">--</span>
+					</a>
+				</li>
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/genres">
+						<img class="nav-bar__nav-icon" src="/assets/icons/theatre.png" alt="" />
+						<span class="nav-bar__nav-content">Genres</span>
+						<span class="nav-bar__item-count" data-item="genres">--</span>
+					</a>
+				</li>
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/decades">
+						<img class="nav-bar__nav-icon" src="/assets/icons/calendar.png" alt="" />
+						<span class="nav-bar__nav-content">Decades</span>
+						<span class="nav-bar__item-count" data-item="decades">--</span>
+					</a>
+				</li>
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/countries">
+						<img class="nav-bar__nav-icon" src="/assets/icons/globe.png" alt="" />
+						<span class="nav-bar__nav-content">Countries</span>
+						<span class="nav-bar__item-count" data-item="countries">--</span>
+					</a>
+				</li>
+				<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
+				<li class="nav-bar__nav-item">
+					<button class="nav-bar__nav-link" id="back-anchor" onclick="window.history.back()">
+						<img class="nav-bar__nav-icon" src="/assets/icons/back.png" alt="" />
+						<span class="nav-bar__nav-content">Back</span>
+					</button>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+		<div class="nav-bar__nav-items-wrapper">
+			<h3 class="nav-bar__nav-items-heading">Add items</h3>
+			<ul id="nav-secondary" class="nav-bar__nav-items" aria-label="Add new items">
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/books/new">
+						<img class="nav-bar__nav-icon" src="/assets/icons/add-book.png" alt="" />
+						<span class="nav-bar__nav-content">New book</span>
+					</a>
+				</li>
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/authors/new">
+						<img class="nav-bar__nav-icon" src="/assets/icons/add-author.png" alt="" />
+						<span class="nav-bar__nav-content">New author</span>
+					</a>
+				</li>
+				<li class="nav-bar__nav-item">
+					<a class="nav-bar__nav-link" href="/genres/new">
+						<img class="nav-bar__nav-icon" src="/assets/icons/add-genre.png" alt="" />
+						<span class="nav-bar__nav-content">New genre</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 </header>
 <script type="module" src="/scripts/activeLinkHandler.js"></script>
