@@ -18,12 +18,14 @@
 						<h1 id="title"><%= genre.name %></h1>
 						<nav aria-label="Genre actions">
 							<div class="dialogue-wrapper">
-								<dialog id="edit-genre-dialog" aria-labelledby="edit-genre-title">
-									<div class="dialogue-content">
-										<header>
-											<h2 id="edit-genre-title">Editing <%= genre.name %></h2>
+								<dialog id="edit-genre-dialog" aria-labelledby="edit-genre-title" class="dialogue">
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="edit-genre-title" class="dialogue__heading">
+												Editing <%= genre.name %>
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<form
 												id="edit-genre"
 												class="method-override-wrapper"
@@ -73,7 +75,7 @@
 												</div>
 											</form>
 										</section>
-										<footer class="dialogue-actions">
+										<footer class="dialogue__actions">
 											<button autofocus class="form__button" aria-label="Close dialog">
 												Close
 											</button>
@@ -95,17 +97,20 @@
 									id="delete-genre-dialog"
 									aria-labelledby="delete-genre-title"
 									aria-describedby="delete-genre-description"
+									class="dialogue"
 								>
-									<div class="dialogue-content">
-										<header>
-											<h2 id="delete-genre-title">Delete <%= genre.name %>?</h2>
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="delete-genre-title" class="dialogue__heading">
+												Delete <%= genre.name %>?
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<p id="delete-genre-description">
 												This will remove the <%= genre.name %> genre from <%= books.length %> books.
 											</p>
 										</section>
-										<footer class="dialogue-actions">
+										<footer class="dialogue__actions">
 											<button autofocus class="form__button" aria-label="Close dialog">
 												Close
 											</button>

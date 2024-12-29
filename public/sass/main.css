@@ -479,21 +479,19 @@ dd {
   color: var(--cl-midground);
 }
 
-dialog::backdrop {
-  background-color: hsla(0, 0%, 50%, 0.5);
-  background-image: linear-gradient(hsla(0, 0%, 50%, 0.05), hsla(0, 0%, 0%, 0.3));
-  backdrop-filter: blur(2px);
-  animation: fade 1600ms;
-}
-
-dialog {
+.dialogue {
   margin: auto;
   border: none;
   background: none;
   animation: shrink 400ms, fade 600ms;
 }
-
-.dialogue-content {
+.dialogue::backdrop {
+  background-color: hsla(0, 0%, 50%, 0.5);
+  background-image: linear-gradient(hsla(0, 0%, 50%, 0.05), hsla(0, 0%, 0%, 0.3));
+  backdrop-filter: blur(2px);
+  animation: fade 1600ms;
+}
+.dialogue__container {
   overflow: hidden;
   border: solid 1px var(--cl-background-shade-2);
   border-radius: var(--br-heavy);
@@ -501,44 +499,33 @@ dialog {
   background-color: var(--cl-background);
   box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.4);
 }
-
-.dialogue-content > * {
+.dialogue__container > * {
   padding: 1rem 2rem;
 }
-
-.dialogue-content header,
-.dialogue-content .dialogue-actions {
+.dialogue__header, .dialogue__actions {
   background-color: var(--cl-background-shade);
 }
-
-.dialogue-content header {
+.dialogue__header {
   border-bottom: solid 1px var(--cl-background-shade-2);
   box-shadow: 0 -1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
 }
-
-.dialogue-content .dialogue-actions {
-  border-top: solid 1px var(--cl-background-shade-2);
-  box-shadow: 0 1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
-}
-
-.dialogue-content h2 {
+.dialogue__heading {
   font-size: 1.25rem;
   text-wrap: balance;
 }
-
-.dialogue-content section {
-  margin: auto auto;
-  overflow-y: scroll;
-}
-
-.dialogue-actions {
+.dialogue__actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  border-top: solid 1px var(--cl-background-shade-2);
+  box-shadow: 0 1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
 }
-
-.dialogue-actions > * {
+.dialogue__actions > * {
   flex: 0;
+}
+.dialogue__content {
+  margin: auto auto;
+  overflow-y: scroll;
 }
 
 main {

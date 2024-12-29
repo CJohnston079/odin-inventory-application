@@ -1,0 +1,61 @@
+.dialogue {
+	margin: auto;
+	border: none;
+	background: none;
+	animation: shrink 400ms, fade 600ms;
+
+	&::backdrop {
+		background-color: hsl(0, 0%, 50%, 0.5);
+		background-image: linear-gradient(hsl(0, 0%, 50%, 0.05), hsl(0, 0%, 0%, 0.3));
+		backdrop-filter: blur(2px);
+		animation: fade 1600ms;
+	}
+
+	&__container {
+		overflow: hidden;
+
+		border: solid 1px var(--cl-background-shade-2);
+		border-radius: var(--br-heavy);
+		max-width: 600px;
+
+		background-color: var(--cl-background);
+		box-shadow: 0 2px 16px hsl(0, 0%, 0%, 0.4);
+
+		& > * {
+			padding: 1rem 2rem;
+		}
+	}
+
+	&__header,
+	&__actions {
+		background-color: var(--cl-background-shade);
+	}
+
+	&__header {
+		border-bottom: solid 1px var(--cl-background-shade-2);
+		box-shadow: 0 -1px 4px -3px hsl(0, 0%, 0%, 0.9) inset;
+	}
+
+	&__heading {
+		font-size: 1.25rem;
+		text-wrap: balance;
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: flex-end;
+		gap: 1rem;
+
+		border-top: solid 1px var(--cl-background-shade-2);
+		box-shadow: 0 1px 4px -3px hsl(0, 0%, 0%, 0.9) inset;
+
+		& > * {
+			flex: 0;
+		}
+	}
+
+	&__content {
+		margin: auto auto;
+		overflow-y: scroll;
+	}
+}

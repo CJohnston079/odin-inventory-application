@@ -19,12 +19,14 @@
 						<h1 id="book-title"><%= book.title %></h1>
 						<nav aria-label="Book actions">
 							<div class="dialogue-wrapper">
-								<dialog id="edit-book-dialog" aria-labelledby="edit-book-title">
-									<div class="dialogue-content">
-										<header>
-											<h2 id="edit-book-title">Editing <%= book.title %></h2>
+								<dialog id="edit-book-dialog" aria-labelledby="edit-book-title" class="dialogue">
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="edit-book-title" class="dialogue__heading">
+												Editing <%= book.title %>
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<form
 												id="edit-book"
 												class="form method-override-wrapper"
@@ -143,7 +145,7 @@
 												</div>
 											</form>
 										</section>
-										<footer class="dialogue-actions">
+										<footer class="dialogue__actions">
 											<button autofocus class="form__button" aria-label="Close dialog">
 												Close
 											</button>
@@ -165,17 +167,20 @@
 									id="delete-book-dialog"
 									aria-labelledby="delete-book-title"
 									aria-describedby="delete-book-description"
+									class="dialogue"
 								>
-									<div class="dialogue-content">
-										<header>
-											<h2 id="delete-book-title">Delete <%= book.title %>?</h2>
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="delete-book-title" class="dialogue__heading">
+												Delete <%= book.title %>?
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<p id="delete-book-description">
 												This will permanently delete <%= book.title %>.
 											</p>
 										</section>
-										<footer class="dialogue-actions">
+										<footer class="dialogue__actions">
 											<button autofocus class="form__button" aria-label="Close dialog">
 												Close
 											</button>
