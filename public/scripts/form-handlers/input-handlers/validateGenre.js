@@ -3,8 +3,8 @@ import { checkGenreExists } from "../../validateInputs.js";
 import { strToTitleCase } from "../../utils.js";
 
 const validateGenre = async function (genreInput, currentName = null) {
-	const validationElement = document.querySelector(`#${genreInput.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
+	const validationElement = document.querySelector(`#${genreInput.id} ~ .form__field-message`);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
 	const isTooLong = !validateFieldLength(genreInput, { maxLength: 32 });
 
 	if (isTooLong) {

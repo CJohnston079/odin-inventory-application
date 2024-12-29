@@ -18,37 +18,44 @@
 						<h1 id="title"><%= genre.name %></h1>
 						<nav aria-label="Genre actions">
 							<div class="dialogue-wrapper">
-								<dialog id="edit-genre-dialog" aria-labelledby="edit-genre-title">
-									<div class="dialogue-content">
-										<header>
-											<h2 id="edit-genre-title">Editing <%= genre.name %></h2>
+								<dialog id="edit-genre-dialog" aria-labelledby="edit-genre-title" class="dialogue">
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="edit-genre-title" class="dialogue__heading">
+												Editing <%= genre.name %>
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<form
 												id="edit-genre"
 												class="method-override-wrapper"
 												action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=PUT"
 												method="POST"
+												class="form"
 											>
-												<div class="field">
-													<label class="input-label" for="genre">Genre name*</label>
+												<div class="form__field">
+													<label class="form__label" for="genre">Genre name*</label>
 													<input
-														class="input-alphanum"
+														class="form__input form__input--alphanum"
 														type="text"
 														name="genre"
 														id="genre"
 														value="<%= genre.name %>"
 														required
 													/>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
-												<div class="field">
-													<label class="input-label" for="description">Desciption</label>
+												<div class="form__field">
+													<label class="form__label" for="description">Desciption</label>
 													<textarea
-														class="input-alphanum"
+														class="form__input form__input--alphanum form__input--textarea"
 														name="description"
 														id="description"
 														cols="40"
@@ -56,18 +63,24 @@
 													>
 <%= genre.description %></textarea
 													>
-													<span class="char-count"><%= genre.description.length %>/280</span>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+													<span class="form__char-count"><%= genre.description.length %>/280</span>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
 											</form>
 										</section>
-										<footer class="dialogue-actions">
-											<button autofocus class="form-button" aria-label="Close dialog">Close</button>
+										<footer class="dialogue__actions">
+											<button autofocus class="form__button" aria-label="Close dialog">
+												Close
+											</button>
 											<button
-												class="form-button submit-button"
+												class="form__button form__button--submit"
 												form="edit-genre"
 												type="submit"
 												aria-label="Save changes"
@@ -84,26 +97,31 @@
 									id="delete-genre-dialog"
 									aria-labelledby="delete-genre-title"
 									aria-describedby="delete-genre-description"
+									class="dialogue"
 								>
-									<div class="dialogue-content">
-										<header>
-											<h2 id="delete-genre-title">Delete <%= genre.name %>?</h2>
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="delete-genre-title" class="dialogue__heading">
+												Delete <%= genre.name %>?
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<p id="delete-genre-description">
 												This will remove the <%= genre.name %> genre from <%= books.length %> books.
 											</p>
 										</section>
-										<footer class="dialogue-actions">
-											<button autofocus class="form-button" aria-label="Close dialog">Close</button>
+										<footer class="dialogue__actions">
+											<button autofocus class="form__button" aria-label="Close dialog">
+												Close
+											</button>
 											<form
-												class="method-override-wrapper"
 												action="/genres/<%= genre.id %>/<%= genre.slug %>?_method=DELETE"
 												method="POST"
+												class="form method-override-wrapper"
 											>
 												<button
 													type="submit"
-													class="form-button delete-button"
+													class="form__button form__button--delete"
 													aria-label="Delete genre"
 												>
 													Delete

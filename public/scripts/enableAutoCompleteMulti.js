@@ -43,6 +43,7 @@ const enableAutoCompleteMulti = function ({
 		anchorWrapper.classList.add("add-new");
 
 		const addNewAnchor = document.createElement("a");
+		addNewAnchor.classList.add("form__input-suggestion--link");
 		addNewAnchor.href = `/${addNewRoute}/new`;
 		addNewAnchor.textContent = `Add new ${addNewRoute.slice(0, -1)}`;
 
@@ -72,7 +73,7 @@ const enableAutoCompleteMulti = function ({
 		}
 
 		if (suggestions.length > 0) {
-			suggestionList.firstChild.classList.add("selected");
+			suggestionList.firstChild.classList.add("form__input-suggestion--selected");
 		}
 	};
 
@@ -98,7 +99,7 @@ const enableAutoCompleteMulti = function ({
 		}
 
 		suggestions.forEach((suggestion, i) => {
-			suggestion.classList.toggle("selected", i === selectedIndex);
+			suggestion.classList.toggle("form__input-suggestion--selected", i === selectedIndex);
 		});
 	};
 

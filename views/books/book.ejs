@@ -19,37 +19,44 @@
 						<h1 id="book-title"><%= book.title %></h1>
 						<nav aria-label="Book actions">
 							<div class="dialogue-wrapper">
-								<dialog id="edit-book-dialog" aria-labelledby="edit-book-title">
-									<div class="dialogue-content">
-										<header>
-											<h2 id="edit-book-title">Editing <%= book.title %></h2>
+								<dialog id="edit-book-dialog" aria-labelledby="edit-book-title" class="dialogue">
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="edit-book-title" class="dialogue__heading">
+												Editing <%= book.title %>
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<form
 												id="edit-book"
-												class="method-override-wrapper"
+												class="form method-override-wrapper"
 												action="/books/<%= book.id %>/<%= book.slug %>?_method=PUT"
 												method="POST"
+												class="form"
 											>
-												<div class="field">
-													<label class="input-label" for="title">Book title*</label>
+												<div class="form__field">
+													<label class="form__label" for="title">Book title*</label>
 													<input
-														class="input-alphanum"
+														class="form__input form__input--alphanum"
 														value="<%= book.title %>"
 														type="text"
 														name="title"
 														id="title"
 														required
 													/>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
-												<div class="field">
-													<label class="input-label" for="author">Author*</label>
+												<div class="form__field">
+													<label class="form__label" for="author">Author*</label>
 													<input
-														class="input-alphanum"
+														class="form__input form__input--alphanum"
 														value="<%= book.author %>"
 														type="text"
 														name="author"
@@ -57,54 +64,68 @@
 														placeholder="Start typing to show suggestions"
 														required
 													/>
-													<ul id="author-suggestions" class="suggestions"></ul>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+													<ul id="author-suggestions" class="form__input-suggestions"></ul>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
-												<div class="field">
-													<label class="input-label" for="genres">Genre(s)*</label>
-													<input class="input-alphanum" value="<%= book.genres.map(genre =>
-													genre.name).join(", ") %>" type="text" name="genres" id="genres"
-													placeholder="Start typing to show suggestions" required />
-													<ul id="genre-suggestions" class="suggestions"></ul>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+												<div class="form__field">
+													<label class="form__label" for="genres">Genre(s)*</label>
+													<input class="form__input form__input--alphanum" value="<%=
+													book.genres.map(genre => genre.name).join(", ") %>" type="text"
+													name="genres" id="genres" placeholder="Start typing to show suggestions"
+													required />
+													<ul id="genre-suggestions" class="form__input-suggestions"></ul>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
-												<div class="field">
-													<label class="input-label" for="publication-year">Publication year</label>
+												<div class="form__field">
+													<label class="form__label" for="publication-year">Publication year</label>
 													<input
-														class="input-alphanum"
+														class="form__input form__input--alphanum"
 														value="<%= book.publication_year %>"
 														type="number"
 														name="publicationYear"
 														id="publication-year"
 														max="<%= new Date().getFullYear() %>"
 													/>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
-												<div class="field field-radio">
-													<div class="radio-option">
-														<input class="option-input" type="radio" id="fiction" name="isFiction"
-														value="true" <%= book.is_fiction ? "checked" : ""%> />
-														<label class="option-label" for="fiction">Fiction</label>
+												<div class="form__field form__field--radio">
+													<div class="form__radio-option-wrapper">
+														<input class="form__input form__input--radio" type="radio" id="fiction"
+														name="isFiction" value="true" <%= book.is_fiction ? "checked" : ""%> />
+														<label class="form__label--radio" for="fiction">Fiction</label>
 													</div>
-													<div class="radio-option">
-														<input class="option-input" type="radio" id="non-fiction"
-														name="isFiction" value="false" <%= !book.is_fiction ? "checked" : ""%>/>
-														<label class="option-label" for="non-fiction">Non-fiction</label>
+													<div class="form__radio-option-wrapper">
+														<input class="form__input form__input--radio" type="radio"
+														id="non-fiction" name="isFiction" value="false" <%= !book.is_fiction ?
+														"checked" : ""%>/>
+														<label class="form__label--radio" for="non-fiction">Non-fiction</label>
 													</div>
 												</div>
-												<div class="field">
-													<label class="input-label" for="description">Blurb</label>
+												<div class="form__field">
+													<label class="form__label" for="description">Blurb</label>
 													<textarea
-														class="input-alphanum"
+														class="form__input form__input--alphanum form__input--textarea"
 														name="description"
 														id="description"
 														cols="40"
@@ -112,18 +133,24 @@
 													>
 <%= book.blurb %></textarea
 													>
-													<span class="char-count"><%= book.blurb.length %>/280</span>
-													<div class="field-message display-none">
-														<img src="/assets/icons/warning.png" alt="" class="warning-icon" />
-														<span class="message-content"></span>
+													<span class="form__char-count"><%= book.blurb.length %>/280</span>
+													<div class="form__field-message display-none">
+														<img
+															src="/assets/icons/warning.png"
+															alt=""
+															class="icon icon--warning"
+														/>
+														<span class="form__field-message-content"></span>
 													</div>
 												</div>
 											</form>
 										</section>
-										<footer class="dialogue-actions">
-											<button autofocus class="form-button" aria-label="Close dialog">Close</button>
+										<footer class="dialogue__actions">
+											<button autofocus class="form__button" aria-label="Close dialog">
+												Close
+											</button>
 											<button
-												class="form-button submit-button"
+												class="form__button form__button--submit"
 												form="edit-book"
 												type="submit"
 												aria-label="Save changes"
@@ -140,26 +167,31 @@
 									id="delete-book-dialog"
 									aria-labelledby="delete-book-title"
 									aria-describedby="delete-book-description"
+									class="dialogue"
 								>
-									<div class="dialogue-content">
-										<header>
-											<h2 id="delete-book-title">Delete <%= book.title %>?</h2>
+									<div class="dialogue__container">
+										<header class="dialogue__header">
+											<h2 id="delete-book-title" class="dialogue__heading">
+												Delete <%= book.title %>?
+											</h2>
 										</header>
-										<section>
+										<section class="dialog__content">
 											<p id="delete-book-description">
 												This will permanently delete <%= book.title %>.
 											</p>
 										</section>
-										<footer class="dialogue-actions">
-											<button autofocus class="form-button" aria-label="Close dialog">Close</button>
+										<footer class="dialogue__actions">
+											<button autofocus class="form__button" aria-label="Close dialog">
+												Close
+											</button>
 											<form
-												class="method-override-wrapper"
 												action="/books/<%= book.id %>/<%= book.slug %>?_method=DELETE"
 												method="POST"
+												class="form method-override-wrapper"
 											>
 												<button
 													type="submit"
-													class="form-button delete-button"
+													class="form__button form__button--delete"
 													aria-label="Delete book"
 												>
 													Delete

@@ -4,8 +4,8 @@ import { strToNameCase } from "../../utils.js";
 import { strToTitleCase } from "../../utils.js";
 
 const validateTitle = async function (titleInput, authorInput, currentTitle = null) {
-	const validationElement = document.querySelector(`#${titleInput.id} ~ .field-message`);
-	const validationMessage = validationElement.querySelector(".message-content");
+	const validationElement = document.querySelector(`#${titleInput.id} ~ .form__field-message`);
+	const validationMessage = validationElement.querySelector(".form__field-message-content");
 	const isTooLong = !validateFieldLength(titleInput, { maxLength: 64 });
 
 	if (isTooLong) {

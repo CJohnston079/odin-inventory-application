@@ -1,20 +1,24 @@
-<div class="table-wrapper">
-	<table>
+<div class="table">
+	<table class="table__element">
 		<colgroup>
-			<col class="col-country" />
-			<col class="col-count" />
+			<col class="table__col table__col-country" />
+			<col class="table__col table__col-count" />
 		</colgroup>
-		<thead>
-			<tr>
-				<th>Country</th>
-				<th>Books</th>
+		<thead class="table__header">
+			<tr class="table__row table__row--header">
+				<th class="table__header-cell">Country</th>
+				<th class="table__header-cell">Books</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="table__body">
 			<% countries.map(country => { %>
-			<tr>
-				<td><a href="countries/<%= country.id %>/<%= country.slug %>"><%= country.name %></a></td>
-				<td class="text-centre"><%= country.books %></td>
+			<tr class="table__row">
+				<td class="table__cell">
+					<a href="countries/<%= country.id %>/<%= country.slug %>" class="table__link"
+						><%= country.name %></a
+					>
+				</td>
+				<td class="table__cell text-centre"><%= country.books %></td>
 			</tr>
 			<% }) %>
 		</tbody>
