@@ -153,6 +153,15 @@ dd {
 }
 .form__fieldset > .form__field-message {
   grid-column: span 2;
+  top: 100%;
+}
+.form__fieldset:has(> .form__field-message) {
+  position: relative;
+  transition: margin-bottom 200ms ease-out;
+}
+.form__fieldset:has(> .form__field-message):not(:has(> .form__field-message.display-none)) {
+  margin-bottom: 1.6rem;
+  transition: margin-bottom 400ms 200ms ease-in;
 }
 .form__field {
   transition: margin-bottom 200ms ease-out;
