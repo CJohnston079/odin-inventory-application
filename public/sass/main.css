@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 :root {
-  --emphasis-hue: 200;
-  --cl-emphasis: hsl(var(--emphasis-hue), 50%, 40%);
-  --cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 95%);
-  --cl-background: #ffffff;
-  --cl-background-shade: hsl(0, 0%, 95%);
-  --cl-background-shade-2: hsl(0, 0%, 90%);
-  --cl-background-shade-3: hsl(0, 0%, 80%);
-  --cl-midground: hsl(0, 0%, 50%);
-  --cl-foreground: black;
-  --cl-foreground-shade: hsl(0, 0%, 15%);
-  --cl-foreground-shade-2: hsl(0, 0%, 30%);
   --box-shadow-dark: 2px 2px 8px hsl(0, 0%, 0%, 0.1);
   --box-shadow-light: 2px 2px 8px hsl(0, 0%, 0%, 0.5);
   --box-shadow: var(--box-shadow-dark);
@@ -31,24 +20,6 @@
   background-color: var(--cl-background);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cl-emphasis: var(--cl-emphasis-vivid);
-    --cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 5%);
-    --cl-background: hsl(0, 0%, 20%);
-    --cl-background-shade: hsl(0, 0%, 10%);
-    --cl-background-shade-2: hsl(0, 0%, 5%);
-    --cl-background-shade-3: hsl(0, 0%, 30%);
-    --cl-midground: hsl(0, 0%, 50%);
-    --cl-foreground: white;
-    --cl-foreground-shade: hsl(0, 0%, 95%);
-    --cl-foreground-shade-2: hsl(0, 0%, 90%);
-  }
-  .nav-bar__nav-icon,
-  #logo-img {
-    filter: invert(1);
-  }
-}
 * {
   margin: 0;
 }
@@ -132,6 +103,38 @@ dd {
 @keyframes move-down {
   from {
     transform: translateY(1rem);
+  }
+}
+:root {
+  --emphasis-hue: 200;
+  --cl-emphasis: hsl(var(--emphasis-hue), 50%, 40%);
+  --cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 95%);
+  --cl-background: #ffffff;
+  --cl-background-shade: hsl(0, 0%, 95%);
+  --cl-background-shade-2: hsl(0, 0%, 90%);
+  --cl-background-shade-3: hsl(0, 0%, 80%);
+  --cl-midground: hsl(0, 0%, 50%);
+  --cl-foreground: black;
+  --cl-foreground-shade: hsl(0, 0%, 15%);
+  --cl-foreground-shade-2: hsl(0, 0%, 30%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cl-emphasis: var(--cl-emphasis-vivid);
+    --cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 5%);
+    --cl-background: hsl(0, 0%, 20%);
+    --cl-background-shade: hsl(0, 0%, 10%);
+    --cl-background-shade-2: hsl(0, 0%, 5%);
+    --cl-background-shade-3: hsl(0, 0%, 30%);
+    --cl-midground: hsl(0, 0%, 50%);
+    --cl-foreground: white;
+    --cl-foreground-shade: hsl(0, 0%, 95%);
+    --cl-foreground-shade-2: hsl(0, 0%, 90%);
+  }
+  .nav-bar__nav-icon,
+  #logo-img {
+    filter: invert(1);
   }
 }
 .form {
