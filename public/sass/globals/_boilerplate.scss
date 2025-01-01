@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@use "../util" as u;
 
 :root {
 	--box-shadow-dark: 2px 2px 8px hsl(0, 0%, 0%, 0.1);
@@ -11,7 +11,7 @@
 
 	color-scheme: light dark;
 
-	font-family: "Manrope", sans-serif;
+	font-family: u.$font;
 	font-style: normal;
 	font-weight: 400;
 	font-optical-sizing: auto;
@@ -40,6 +40,12 @@ body {
 	height: 100vh;
 
 	background-image: linear-gradient(115deg, var(--cl-background), var(--cl-emphasis-shade));
+}
+
+input,
+textarea,
+button {
+	font-family: inherit;
 }
 
 #root {

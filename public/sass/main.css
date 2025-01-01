@@ -34,6 +34,12 @@ body {
   background-image: linear-gradient(115deg, var(--cl-background), var(--cl-emphasis-shade));
 }
 
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
 #root {
   display: flex;
   border: solid 1px var(--cl-background-shade-3);
@@ -116,14 +122,22 @@ dd {
     filter: invert(1);
   }
 }
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+h2.small {
+  font-size: 1.25rem;
+}
+
 .form {
   width: 51ch;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-.form * {
-  font-family: inherit;
 }
 .form__fieldset {
   display: grid;
@@ -501,7 +515,6 @@ dd {
   box-shadow: 0 -1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
 }
 .dialogue__heading {
-  font-size: 1.25rem;
   text-wrap: balance;
 }
 .dialogue__actions {
