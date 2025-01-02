@@ -1,19 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@use "../util" as u;
 
 :root {
-	--emphasis-hue: 200;
-
-	--cl-emphasis: hsl(var(--emphasis-hue), 50%, 40%);
-	--cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 95%);
-	--cl-background: #ffffff;
-	--cl-background-shade: hsl(0, 0%, 95%);
-	--cl-background-shade-2: hsl(0, 0%, 90%);
-	--cl-background-shade-3: hsl(0, 0%, 80%);
-	--cl-midground: hsl(0, 0%, 50%);
-	--cl-foreground: black;
-	--cl-foreground-shade: hsl(0, 0%, 15%);
-	--cl-foreground-shade-2: hsl(0, 0%, 30%);
-
 	--box-shadow-dark: 2px 2px 8px hsl(0, 0%, 0%, 0.1);
 	--box-shadow-light: 2px 2px 8px hsl(0, 0%, 0%, 0.5);
 	--box-shadow: var(--box-shadow-dark);
@@ -24,7 +11,7 @@
 
 	color-scheme: light dark;
 
-	font-family: "Manrope", sans-serif;
+	font-family: u.$font;
 	font-style: normal;
 	font-weight: 400;
 	font-optical-sizing: auto;
@@ -37,26 +24,6 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	background-color: var(--cl-background);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--cl-emphasis: var(--cl-emphasis-vivid);
-		--cl-emphasis-shade: hsl(var(--emphasis-hue), 50%, 5%);
-		--cl-background: hsl(0, 0%, 20%);
-		--cl-background-shade: hsl(0, 0%, 10%);
-		--cl-background-shade-2: hsl(0, 0%, 5%);
-		--cl-background-shade-3: hsl(0, 0%, 30%);
-		--cl-midground: hsl(0, 0%, 50%);
-		--cl-foreground: white;
-		--cl-foreground-shade: hsl(0, 0%, 95%);
-		--cl-foreground-shade-2: hsl(0, 0%, 90%);
-	}
-
-	.nav-bar__nav-icon,
-	#logo-img {
-		filter: invert(1);
-	}
 }
 
 * {
@@ -73,6 +40,12 @@ body {
 	height: 100vh;
 
 	background-image: linear-gradient(115deg, var(--cl-background), var(--cl-emphasis-shade));
+}
+
+input,
+textarea,
+button {
+	font-family: inherit;
 }
 
 #root {
@@ -127,28 +100,4 @@ dd {
 
 .animation-none {
 	animation: none !important;
-}
-
-@keyframes shrink {
-	from {
-		transform: scale(1.05);
-	}
-	to {
-		transform: scale(1);
-	}
-}
-
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes move-down {
-	from {
-		transform: translateY(1rem);
-	}
 }

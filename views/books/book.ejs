@@ -13,7 +13,6 @@
 		<div id="root">
 			<%- include("../partials/header", { backAnchor: true }) %>
 			<main>
-				<h2><%= book.is_fiction %></h2>
 				<article>
 					<header>
 						<h1 id="book-title"><%= book.title %></h1>
@@ -22,7 +21,7 @@
 								<dialog id="edit-book-dialog" aria-labelledby="edit-book-title" class="dialogue">
 									<div class="dialogue__container">
 										<header class="dialogue__header">
-											<h2 id="edit-book-title" class="dialogue__heading">
+											<h2 id="edit-book-title" class="dialogue__heading small">
 												Editing <%= book.title %>
 											</h2>
 										</header>
@@ -171,7 +170,7 @@
 								>
 									<div class="dialogue__container">
 										<header class="dialogue__header">
-											<h2 id="delete-book-title" class="dialogue__heading">
+											<h2 id="delete-book-title" class="dialogue__heading small">
 												Delete <%= book.title %>?
 											</h2>
 										</header>

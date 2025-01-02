@@ -1,0 +1,13 @@
+@use "../util" as u;
+
+h1 {
+	font-size: u.rem(32);
+}
+
+h2 {
+	font-size: u.rem(24);
+
+	&.small {
+		font-size: u.rem(20);
+	}
+}

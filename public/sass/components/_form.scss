@@ -4,10 +4,6 @@
 	flex-direction: column;
 	gap: 0.5rem;
 
-	& * {
-		font-family: inherit;
-	}
-
 	&__fieldset {
 		display: grid;
 		grid-template-columns: 1fr 1fr;

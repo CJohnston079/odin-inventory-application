@@ -13,7 +13,7 @@
 			<main>
 				<h1><%= title %></h1>
 				<section>
-					<h1>Featured books</h1>
+					<h2>Featured books</h2>
 					<ul>
 						<% featuredBooks.map(book => { %>
 						<li>
@@ -24,7 +24,7 @@
 				</section>
 				<hr />
 				<section>
-					<h1>Featured authors</h1>
+					<h2>Featured authors</h2>
 					<ul>
 						<% featuredAuthors.map(author => { %>
 						<li>
@@ -36,7 +36,7 @@
 				<hr />
 				<% featuredGenres.map(genre => { %>
 				<section>
-					<h1>Featured <%= genre.name %> books</h1>
+					<h2>Featured <%= genre.name %> books</h2>
 					<ul>
 						<% genre.books.map(book => { %>
 						<li>
@@ -49,7 +49,7 @@
 				<hr />
 				<% }) %> <% featuredDecades.map(decade => { %>
 				<section>
-					<h1>Featured <%= decade.decade %>s books</h1>
+					<h2>Featured <%= decade.decade %>s books</h2>
 					<ul>
 						<% decade.books.map(book => { %>
 						<li>
