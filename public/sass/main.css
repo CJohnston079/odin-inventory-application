@@ -133,6 +133,27 @@ h2.small {
   font-size: 1.25rem;
 }
 
+button {
+  border: solid 1px var(--cl-background-shade-3);
+  border-radius: var(--br-mid);
+  padding: 0.75rem 1.25rem;
+  width: fit-content;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  letter-spacing: 0.05rem;
+  background-color: var(--cl-background-shade-2);
+  transition: 800ms;
+}
+button:hover, button:focus-visible {
+  outline: none;
+  border: solid 1px var(--cl-emphasis);
+  color: var(--cl-emphasis);
+  background-color: var(--cl-background);
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  transition: 200ms;
+}
+
 .form {
   width: 51ch;
   display: flex;
@@ -316,26 +337,6 @@ h2.small {
 }
 .form__char-count--limit-exceeded {
   font-weight: 900;
-}
-.form__button {
-  border: solid 1px var(--cl-background-shade-3);
-  border-radius: var(--br-mid);
-  padding: 0.75rem 1.25rem;
-  width: fit-content;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-wrap: nowrap;
-  letter-spacing: 0.05rem;
-  background-color: var(--cl-background-shade-2);
-  transition: 800ms;
-}
-.form__button:hover, .form__button:focus-visible {
-  outline: none;
-  border: solid 1px var(--cl-emphasis);
-  color: var(--cl-emphasis);
-  background-color: var(--cl-background);
-  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.2);
-  transition: 200ms;
 }
 .form__button--submit {
   border: solid 1px var(--cl-emphasis);
