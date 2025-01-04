@@ -44,10 +44,14 @@ button {
 }
 
 #root {
-  border: solid 1px var(--cl-background-shade-3);
-  border-radius: 24px;
   background: linear-gradient(45deg, var(--cl-background-shade), var(--cl-background-shade-2) 80%);
-  box-shadow: 0 0.25rem 1.5rem hsla(0, 0%, 0%, 0.2);
+}
+@media (min-width: 43.75em) {
+  #root {
+    border: solid 1px var(--cl-background-shade-3);
+    border-radius: 24px;
+    box-shadow: 0 0.25rem 1.5rem hsla(0, 0%, 0%, 0.2);
+  }
 }
 
 main {
@@ -133,10 +137,15 @@ h2.small {
 }
 
 body {
-  --body-padding: 16px;
+  --body-padding: 0;
   box-sizing: border-box;
   padding: var(--body-padding);
   height: 100vh;
+}
+@media (min-width: 43.75em) {
+  body {
+    --body-padding: 16px;
+  }
 }
 
 #root {
@@ -144,7 +153,12 @@ body {
   margin: 0 auto;
   padding: 0.5rem;
   max-width: 1440px;
-  height: calc(100vh - 2 * var(--body-padding));
+  height: 100%;
+}
+@media (min-width: 43.75em) {
+  #root {
+    height: calc(100vh - 2 * var(--body-padding));
+  }
 }
 
 main {
