@@ -1,6 +1,8 @@
 body {
+	--body-padding: 16px;
+
 	box-sizing: border-box;
-	padding: 1.5rem;
+	padding: var(--body-padding);
 	height: 100vh;
 }
 
@@ -8,8 +10,8 @@ body {
 	display: flex;
 	margin: 0 auto;
 	padding: 0.5rem;
-	max-width: 1280px;
-	height: calc(100vh - 3rem);
+	max-width: 1440px;
+	height: calc(100vh - 2 * var(--body-padding));
 }
 
 main {
