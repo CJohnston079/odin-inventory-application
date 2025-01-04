@@ -1,0 +1,19 @@
+body {
+	box-sizing: border-box;
+	padding: 1.5rem;
+	height: 100vh;
+}
+
+#root {
+	display: flex;
+	margin: 0 auto;
+	padding: 0.5rem;
+	max-width: 1280px;
+	height: calc(100vh - 3rem);
+}
+
+main {
+	flex: 1;
+	overflow: scroll;
+	padding: 2rem;
+}
