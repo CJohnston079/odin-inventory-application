@@ -8,10 +8,10 @@
 		<link rel="stylesheet" href="/sass/main.css" />
 		<script type="module" src="/scripts/form-handlers/newGenreFormHandler.js"></script>
 	</head>
-	<body>
-		<div id="root">
+	<body class="site">
+		<div id="root" class="site__wrapper">
 			<%- include("../partials/header", { backAnchor: true }) %>
-			<main>
+			<main class="site__content">
 				<h1><%= title %></h1>
 				<form action="/genres" method="post" id="new-genre" class="form">
 					<div class="form__field">

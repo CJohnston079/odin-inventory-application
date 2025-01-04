@@ -9,10 +9,10 @@
 		<script type="module" src="/scripts/dialogueController.js"></script>
 		<script type="module" src="/scripts/form-handlers/editBookFormHandler.js"></script>
 	</head>
-	<body>
-		<div id="root">
+	<body class="site">
+		<div id="root" class="site__wrapper">
 			<%- include("../partials/header", { backAnchor: true }) %>
-			<main>
+			<main class="site__content">
 				<article>
 					<header>
 						<h1 id="book-title"><%= book.title %></h1>
