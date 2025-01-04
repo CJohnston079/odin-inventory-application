@@ -1,5 +1,11 @@
 @use "../util" as u;
 
+h1,
+h2,
+h3 {
+	margin-top: 0;
+}
+
 h1 {
 	font-size: u.rem(32);
 }
