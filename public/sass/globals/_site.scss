@@ -1,0 +1,47 @@
+@use "../util/" as u;
+
+.site {
+	--body-padding: 0;
+
+	padding: var(--body-padding);
+	height: 100vh;
+	background-image: linear-gradient(115deg, var(--cl-background), var(--cl-emphasis-shade));
+
+	@include u.breakpoint(medium) {
+		--body-padding: 16px;
+	}
+
+	&__wrapper {
+		display: flex;
+		margin: 0 auto;
+		padding: 0.5rem;
+		max-width: 1440px;
+		height: 100%;
+
+		background: linear-gradient(
+			45deg,
+			var(--cl-background-shade),
+			var(--cl-background-shade-2) 80%
+		);
+
+		@include u.breakpoint(medium) {
+			border: solid 1px var(--cl-background-shade-3);
+			border-radius: 24px;
+			height: calc(100vh - 2 * var(--body-padding));
+
+			box-shadow: 0 0.25rem 1.5rem hsl(0, 0%, 0%, 0.2);
+		}
+	}
+
+	&__content {
+		flex: 1;
+		overflow: scroll;
+
+		border: 1px solid var(--cl-background-shade-2);
+		border-radius: var(--br-heavy);
+		padding: 2rem;
+
+		background-color: var(--cl-background);
+		box-shadow: 0px 1px 2px hsl(0, 0%, 0%, 0.2);
+	}
+}
