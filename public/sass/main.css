@@ -104,7 +104,7 @@ dd {
   }
   .nav-bar__nav-icon,
   #logo-img {
-    filter: invert(1);
+    fill: white;
   }
 }
 h1,
@@ -384,6 +384,7 @@ button:hover, button:focus-visible {
 .icon--warning {
   width: 2ch;
   height: 2ch;
+  fill: hsl(0, 70%, 60%);
 }
 
 .nav-bar {
