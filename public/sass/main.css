@@ -124,7 +124,7 @@ h2.small {
   font-size: 1.25rem;
 }
 
-button {
+.btn {
   border: solid 1px var(--cl-background-shade-3);
   border-radius: var(--br-mid);
   padding: 0.75rem 1.25rem;
@@ -136,7 +136,7 @@ button {
   background-color: var(--cl-background-shade-2);
   transition: 800ms;
 }
-button:hover, button:focus-visible {
+.btn:hover, .btn:focus-visible {
   outline: none;
   border: solid 1px var(--cl-emphasis);
   color: var(--cl-emphasis);
