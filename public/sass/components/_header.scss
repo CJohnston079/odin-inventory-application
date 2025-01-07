@@ -1,3 +1,5 @@
+@use "../util" as u;
+
 .nav-bar {
 	display: flex;
 	flex-direction: column;
@@ -149,5 +151,34 @@
 		font-weight: 900;
 		text-align: right;
 		color: var(--cl-midground);
+	}
+
+	@include u.breakpoint-down(small) {
+		padding: 2rem 0;
+		margin: 0.5rem 0 0.5rem 0.5rem !important;
+		justify-content: center;
+
+		&__logo {
+			margin: 0 auto;
+			margin-bottom: 2rem;
+		}
+
+		&__logo-text,
+		&__close-button,
+		&__nav-items-heading,
+		&__nav-content,
+		&__item-count {
+			display: none;
+		}
+
+		&__nav-link {
+			justify-content: center;
+			padding: 0.25rem;
+		}
+
+		&__nav-icon {
+			width: 2.5ch;
+			height: 2.5ch;
+		}
 	}
 }

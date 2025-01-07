@@ -8,22 +8,6 @@
 	--br-light: 0.25rem;
 	--br-mid: 0.5rem;
 	--br-heavy: 1rem;
-
-	color-scheme: light dark;
-
-	font-family: u.$font;
-	font-style: normal;
-	font-weight: 400;
-	font-optical-sizing: auto;
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	line-height: 1.5;
-	color: var(--cl-foreground);
-
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	background-color: var(--cl-background);
 }
 
 html {
@@ -47,10 +31,6 @@ input,
 textarea,
 button {
 	font-family: inherit;
-}
-
-button {
-	cursor: pointer;
 }
 
 hr {

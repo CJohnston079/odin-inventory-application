@@ -1,5 +1,9 @@
 @use "../util" as u;
 
+button {
+	cursor: pointer;
+}
+
 .btn {
 	border: solid 1px var(--cl-background-shade-3);
 	border-radius: var(--br-mid);

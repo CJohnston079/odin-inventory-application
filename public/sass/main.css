@@ -6,18 +6,6 @@
   --br-light: 0.25rem;
   --br-mid: 0.5rem;
   --br-heavy: 1rem;
-  color-scheme: light dark;
-  font-family: "Manrope", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-optical-sizing: auto;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  line-height: 1.5;
-  color: var(--cl-foreground);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--cl-background);
 }
 
 html {
@@ -41,10 +29,6 @@ input,
 textarea,
 button {
   font-family: inherit;
-}
-
-button {
-  cursor: pointer;
 }
 
 hr {
@@ -87,6 +71,8 @@ dd {
   --cl-foreground: black;
   --cl-foreground-shade: hsl(0, 0%, 15%);
   --cl-foreground-shade-2: hsl(0, 0%, 30%);
+  color-scheme: light dark;
+  background-color: var(--cl-background);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -107,6 +93,19 @@ dd {
     fill: white;
   }
 }
+:root {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  color: var(--cl-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1,
 h2,
 h3 {
@@ -122,6 +121,10 @@ h2 {
 }
 h2.small {
   font-size: 1.25rem;
+}
+
+button {
+  cursor: pointer;
 }
 
 .btn {
@@ -157,12 +160,16 @@ h2.small {
   }
 }
 .site__wrapper {
+  --wrapper-child-margin: 8px;
   display: flex;
+  overflow-x: hidden;
   margin: 0 auto;
-  padding: 0.5rem;
   max-width: 1440px;
   height: 100%;
   background: linear-gradient(45deg, var(--cl-background-shade), var(--cl-background-shade-2) 80%);
+}
+.site__wrapper > * {
+  margin: var(--wrapper-child-margin);
 }
 @media (min-width: 43.75em) {
   .site__wrapper {
@@ -170,6 +177,12 @@ h2.small {
     border-radius: 24px;
     height: calc(100vh - 2 * var(--body-padding));
     box-shadow: 0 0.25rem 1.5rem hsla(0, 0%, 0%, 0.2);
+  }
+}
+@media (max-width: 43.74875em) {
+  .site__header {
+    flex-shrink: 1;
+    width: auto;
   }
 }
 .site__content {
@@ -509,6 +522,28 @@ h2.small {
   font-weight: 900;
   text-align: right;
   color: var(--cl-midground);
+}
+@media (max-width: 43.74875em) {
+  .nav-bar {
+    padding: 2rem 0;
+    margin: 0.5rem 0 0.5rem 0.5rem !important;
+    justify-content: center;
+  }
+  .nav-bar__logo {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  .nav-bar__logo-text, .nav-bar__close-button, .nav-bar__nav-items-heading, .nav-bar__nav-content, .nav-bar__item-count {
+    display: none;
+  }
+  .nav-bar__nav-link {
+    justify-content: center;
+    padding: 0.25rem;
+  }
+  .nav-bar__nav-icon {
+    width: 2.5ch;
+    height: 2.5ch;
+  }
 }
 
 .dialogue {
