@@ -11,6 +11,9 @@
 	--cl-foreground: black;
 	--cl-foreground-shade: hsl(0, 0%, 15%);
 	--cl-foreground-shade-2: hsl(0, 0%, 30%);
+
+	color-scheme: light dark;
+	background-color: var(--cl-background);
 }
 
 @media (prefers-color-scheme: dark) {

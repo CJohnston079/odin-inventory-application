@@ -1,5 +1,19 @@
 @use "../util" as u;
 
+:root {
+	font-family: u.$font;
+	font-style: normal;
+	font-weight: 400;
+	font-optical-sizing: auto;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	line-height: 1.5;
+	color: var(--cl-foreground);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 h1,
 h2,
 h3 {
