@@ -41,14 +41,14 @@
 			margin-top: 1rem;
 
 			padding: 0.2rem;
-			border: solid 1px var(--cl-background-shade-2);
+			border: solid 1px var(--background-secondary);
 
-			background-color: var(--cl-background-shade);
+			background-color: var(--background-primary-shade);
 		}
 
 		&:has(.form__input--alphanum:focus) .form__label,
 		&:has(.form__input--alphanum:focus-visible) .form__label {
-			color: var(--cl-emphasis);
+			color: var(--cl-primary);
 			transform: translate(0.5rem);
 		}
 
@@ -87,12 +87,12 @@
 
 		& a {
 			margin-left: 0.25rem;
-			color: var(--cl-emphasis);
+			color: var(--cl-primary);
 		}
 	}
 
 	&__field-message-content {
-		color: hsl(0, 70%, 60%);
+		color: var(--cl-error);
 	}
 
 	&__label {
@@ -103,8 +103,8 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.05rem;
-		color: var(--cl-foreground-shade-2);
-		background-color: var(--cl-background);
+		color: var(--foreground-tint);
+		background-color: var(--background-primary);
 		transform: translate(0.5rem, 0.75rem);
 
 		transition: color 400ms, transform 200ms ease-out;
@@ -116,14 +116,14 @@
 			padding: 0.5rem 1rem;
 
 			text-align: center;
-			color: var(--cl-midground);
+			color: var(--midground);
 
 			transition: 900ms;
 			cursor: pointer;
 
 			&:hover {
-				background-color: var(--cl-background-shade-2);
-				color: var(--cl-foreground-shade-2);
+				background-color: var(--background-secondary);
+				color: var(--foreground-tint);
 				transition: 300ms;
 			}
 		}
@@ -139,13 +139,13 @@
 		}
 
 		&--alphanum {
-			border: solid 1px var(--cl-background-shade-3);
+			border: solid 1px var(--background-secondary);
 			border-radius: var(--br-mid);
 			padding: 1rem;
 
 			font-size: 1rem;
 
-			background-color: var(--cl-background);
+			background-color: var(--background-primary);
 			box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
 
 			transition: border-color 400ms, box-shadow 800ms;
@@ -153,7 +153,7 @@
 			&:focus,
 			&:focus-visible {
 				outline: none;
-				border-color: var(--cl-emphasis);
+				border-color: var(--cl-primary);
 				box-shadow: 0 1px 4px hsl(0, 0%, 0%, 0.3);
 			}
 		}
@@ -163,16 +163,16 @@
 			opacity: 0;
 
 			&:checked + .form__label--radio {
-				border: solid 1px var(--cl-background-shade-3);
-				color: var(--cl-foreground);
-				background-color: var(--cl-background);
+				border: solid 1px var(--background-secondary-shade);
+				color: var(--foreground);
+				background-color: var(--background-primary);
 				box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
 				transition: 200ms;
 			}
 
 			&:focus-visible + .form__label--radio {
-				border: solid 1px var(--cl-emphasis);
-				color: var(--cl-emphasis);
+				border: solid 1px var(--cl-primary);
+				color: var(--cl-primary);
 				text-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2);
 				box-shadow: 0 1px 2px hsl(0, 0%, 0%, 0.2), 0 1px 2px hsl(0, 0%, 0%, 0.4) inset;
 			}
@@ -185,13 +185,13 @@
 		overflow: hidden;
 
 		box-sizing: border-box;
-		border: solid 1px var(--cl-emphasis);
+		border: solid 1px var(--cl-primary);
 		border-radius: var(--br-mid);
 		margin-top: 0.5rem;
 		padding: 0;
 		width: 100%;
 
-		background-color: var(--cl-background);
+		background-color: var(--background-primary);
 		box-shadow: 0 1px 4px hsl(0, 0%, 0%, 0.3);
 
 		&:not(:has(li)) {
@@ -205,17 +205,17 @@
 	}
 
 	&__input-suggestion {
-		color: var(--cl-midground);
+		color: var(--midground);
 		transition: 400ms;
 		cursor: pointer;
 
 		& a {
-			color: var(--cl-emphasis);
+			color: var(--cl-primary);
 		}
 
 		&--selected {
-			color: var(--cl-foreground);
-			background-color: var(--cl-emphasis-shade);
+			color: var(--background-primary);
+			background-color: var(--cl-primary);
 			transition: 100ms;
 		}
 	}
@@ -233,20 +233,20 @@
 
 	&__button {
 		&--submit {
-			border: solid 1px var(--cl-emphasis);
-			color: var(--cl-background);
-			background-color: var(--cl-emphasis);
+			border: solid 1px var(--cl-primary);
+			color: var(--background-primary);
+			background-color: var(--cl-primary);
 		}
 
 		&--delete {
-			border: solid 1px var(--cl-emphasis);
-			color: var(--cl-background);
-			background-color: hsl(0, 70%, 60%);
+			border: solid 1px var(--cl-primary);
+			color: var(--background-primary);
+			background-color: var(--cl-error);
 
 			&:hover,
 			&:focus-visible {
-				border: solid 1px hsl(0, 70%, 60%);
-				color: hsl(0, 70%, 60%);
+				border: solid 1px var(--cl-error);
+				color: var(--cl-error);
 			}
 		}
 	}
@@ -255,5 +255,5 @@
 .icon--warning {
 	width: 2ch;
 	height: 2ch;
-	fill: hsl(0, 70%, 60%);
+	fill: var(--cl-error);
 }

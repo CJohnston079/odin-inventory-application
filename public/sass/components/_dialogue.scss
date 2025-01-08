@@ -14,11 +14,11 @@
 	&__container {
 		overflow: hidden;
 
-		border: solid 1px var(--cl-background-shade-2);
+		border: solid 1px var(--background-secondary);
 		border-radius: var(--br-heavy);
 		max-width: 600px;
 
-		background-color: var(--cl-background);
+		background-color: var(--background-primary);
 		box-shadow: 0 2px 16px hsl(0, 0%, 0%, 0.4);
 
 		& > * {
@@ -28,11 +28,11 @@
 
 	&__header,
 	&__actions {
-		background-color: var(--cl-background-shade);
+		background-color: var(--background-primary-shade);
 	}
 
 	&__header {
-		border-bottom: solid 1px var(--cl-background-shade-2);
+		border-bottom: solid 1px var(--background-secondary);
 		box-shadow: 0 -1px 4px -3px hsl(0, 0%, 0%, 0.9) inset;
 	}
 
@@ -45,7 +45,7 @@
 		justify-content: flex-end;
 		gap: 1rem;
 
-		border-top: solid 1px var(--cl-background-shade-2);
+		border-top: solid 1px var(--background-secondary);
 		box-shadow: 0 1px 4px -3px hsl(0, 0%, 0%, 0.9) inset;
 
 		& > * {

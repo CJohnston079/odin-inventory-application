@@ -16,7 +16,7 @@ main {
 	position: sticky;
 	inset: 0;
 	overflow: scroll;
-	border: solid 1px var(--cl-background-shade-2);
+	border: solid 1px var(--background-secondary);
 	border-radius: var(--br-mid);
 	box-shadow: 0 1px 2px hsl(0, 50%, 50%, 0.2);
 
@@ -36,18 +36,18 @@ main {
 	&__header {
 		position: sticky;
 		top: 0;
-		background-color: var(--cl-background-shade);
+		background-color: var(--background-primary-shade);
 	}
 
 	&__header-cell {
 		padding: 0.75rem 1rem;
-		border-bottom: solid 1px var(--cl-background-shade-2);
+		border-bottom: solid 1px var(--background-secondary);
 
 		font-weight: 400;
 		font-size: 0.9rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05rem;
-		color: var(--cl-foreground-shade-2);
+		color: var(--foreground-tint);
 	}
 
 	&__body {
@@ -59,12 +59,12 @@ main {
 		transition: 800ms;
 
 		&:not(.table__row--header):hover {
-			background-color: var(--cl-background-shade);
+			background-color: var(--background-primary-shade);
 			transition: 200ms;
 		}
 
 		&:not(:last-child) .table__cell {
-			border-bottom: 1px solid var(--cl-background-shade-2);
+			border-bottom: 1px solid var(--background-secondary);
 		}
 
 		& .table__cell:first-child {
@@ -81,15 +81,15 @@ main {
 		border-bottom: solid 1px transparent;
 		border-top: solid 1px transparent;
 		text-decoration: none;
-		color: var(--cl-foreground);
+		color: var(--foreground);
 		transition: 400ms;
 
 		&:not(.table__link--genre):hover {
-			border-bottom: solid 1px var(--cl-foreground);
+			border-bottom: solid 1px var(--foreground);
 		}
 
 		&--genre {
-			border: 1px solid var(--cl-background-shade-2);
+			border: 1px solid var(--background-secondary);
 			border-radius: var(--br-heavy);
 			margin: 0.1rem 0;
 			padding: 0.25rem 0.75rem;
@@ -98,14 +98,14 @@ main {
 			font-weight: 700;
 			text-decoration: none;
 			text-wrap: nowrap;
-			color: var(--cl-foreground-shade);
-			background-color: var(--cl-background-shade);
+			color: var(--foreground);
+			background-color: var(--background-primary-shade);
 
 			transition: 400ms;
 
 			&:hover {
-				border: 1px solid var(--cl-midground);
-				background-color: var(--cl-background-shade-2);
+				border: 1px solid var(--midground);
+				background-color: var(--background-secondary);
 			}
 		}
 	}
