@@ -513,6 +513,54 @@ button {
   fill: var(--cl-error);
 }
 
+.dialogue {
+  margin: auto;
+  border: none;
+  background: none;
+  animation: shrink 400ms, fade 600ms;
+}
+.dialogue::backdrop {
+  background-color: hsla(0, 0%, 50%, 0.5);
+  background-image: linear-gradient(hsla(0, 0%, 50%, 0.05), hsla(0, 0%, 0%, 0.3));
+  backdrop-filter: blur(2px);
+  animation: fade 1600ms;
+}
+.dialogue__container {
+  overflow: hidden;
+  border: solid 1px var(--background-secondary);
+  border-radius: var(--br-heavy);
+  max-width: 600px;
+  background-color: var(--background-primary);
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.4);
+}
+.dialogue__container > * {
+  padding: 1rem 2rem;
+}
+.dialogue__header, .dialogue__actions {
+  background-color: var(--background-primary-shade);
+}
+.dialogue__header {
+  border-bottom: solid 1px var(--background-secondary);
+  box-shadow: 0 -1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
+}
+.dialogue__heading {
+  text-wrap: balance;
+}
+.dialogue__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: solid 1px var(--background-secondary);
+  box-shadow: 0 1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
+}
+.dialogue__actions > * {
+  flex: 0;
+}
+.dialogue__content {
+  margin: auto auto;
+  overflow-y: scroll;
+}
+
 .nav-bar {
   display: flex;
   flex-direction: column;
@@ -657,54 +705,6 @@ button {
     width: 2.5ch;
     height: 2.5ch;
   }
-}
-
-.dialogue {
-  margin: auto;
-  border: none;
-  background: none;
-  animation: shrink 400ms, fade 600ms;
-}
-.dialogue::backdrop {
-  background-color: hsla(0, 0%, 50%, 0.5);
-  background-image: linear-gradient(hsla(0, 0%, 50%, 0.05), hsla(0, 0%, 0%, 0.3));
-  backdrop-filter: blur(2px);
-  animation: fade 1600ms;
-}
-.dialogue__container {
-  overflow: hidden;
-  border: solid 1px var(--background-secondary);
-  border-radius: var(--br-heavy);
-  max-width: 600px;
-  background-color: var(--background-primary);
-  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.4);
-}
-.dialogue__container > * {
-  padding: 1rem 2rem;
-}
-.dialogue__header, .dialogue__actions {
-  background-color: var(--background-primary-shade);
-}
-.dialogue__header {
-  border-bottom: solid 1px var(--background-secondary);
-  box-shadow: 0 -1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
-}
-.dialogue__heading {
-  text-wrap: balance;
-}
-.dialogue__actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  border-top: solid 1px var(--background-secondary);
-  box-shadow: 0 1px 4px -3px hsla(0, 0%, 0%, 0.9) inset;
-}
-.dialogue__actions > * {
-  flex: 0;
-}
-.dialogue__content {
-  margin: auto auto;
-  overflow-y: scroll;
 }
 
 main {

@@ -9,7 +9,7 @@
 	</head>
 	<body class="site">
 		<div id="root" class="site__wrapper">
-			<%- include("../partials/header", { backAnchor: true }) %>
+			<%- include("../partials/navigation", { backAnchor: true }) %>
 			<main class="site__content">
 				<h1><%= decade %></h1>
 				<%- include("../partials/booksTable", { books, caption: `Books written in the ${decade}` })
