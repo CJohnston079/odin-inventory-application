@@ -10,9 +10,11 @@
 	</head>
 	<body class="site">
 		<div id="root" class="site__wrapper">
-			<%- include("../partials/header", { backAnchor: true }) %>
+			<%- include("../partials/navigation", { backAnchor: true }) %>
 			<main class="site__content">
-				<h1><%= title %></h1>
+				<header class="page-header">
+					<h1 class="page-header__heading"><%= title %></h1>
+				</header>
 				<form action="/authors" method="post" id="new-author" class="form">
 					<fieldset id="name" class="form__fieldset">
 						<div class="form__field">

@@ -11,12 +11,12 @@
 	</head>
 	<body class="site">
 		<div id="root" class="site__wrapper">
-			<%- include("../partials/header", { backAnchor: true }) %>
+			<%- include("../partials/navigation", { backAnchor: true }) %>
 			<main class="site__content">
 				<article>
-					<header>
-						<h1 id="book-title"><%= book.title %></h1>
-						<nav aria-label="Book actions">
+					<header class="page-header">
+						<h1 id="book-title" class="page-header__heading"><%= book.title %></h1>
+						<nav aria-label="Book actions" class="page-header__actions">
 							<div class="dialogue-wrapper">
 								<dialog id="edit-book-dialog" aria-labelledby="edit-book-title" class="dialogue">
 									<div class="dialogue__container">
