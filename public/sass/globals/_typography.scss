@@ -22,12 +22,16 @@ h3 {
 }
 
 h1 {
-	font-size: u.rem(32);
+	font-size: u.rem(24);
+	font-size: clamp(u.rem(24), 1.21rem + 1.14vw, u.rem(32));
+	font-weight: 900;
 	line-height: 1.2;
+	letter-spacing: -1px;
 }
 
 h2 {
-	font-size: u.rem(24);
+	font-size: u.rem(18);
+	font-size: clamp(u.rem(18), 1.03rem + 0.69vw, u.rem(24));
 
 	&.small {
 		font-size: u.rem(20);
