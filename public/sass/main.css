@@ -314,7 +314,7 @@ button {
 }
 
 .form {
-  width: 51ch;
+  max-width: 51ch;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -326,6 +326,11 @@ button {
   column-gap: 1rem;
   padding: 0;
   border: none;
+}
+@media (max-width: 28.31125em) {
+  .form__fieldset {
+    grid-template-columns: 1fr;
+  }
 }
 .form__fieldset > .form__field-message {
   grid-column: span 2;
@@ -344,13 +349,12 @@ button {
 }
 .form__field--radio {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   gap: 0.2rem;
-  border-radius: var(--br-mid);
-  padding: 1rem;
   margin-top: 1rem;
-  padding: 0.2rem;
   border: solid 1px var(--background-secondary);
+  border-radius: var(--br-mid);
+  padding: 0.2rem;
   background-color: var(--background-primary-shade);
 }
 .form__field:has(.form__input--alphanum:focus) .form__label, .form__field:has(.form__input--alphanum:focus-visible) .form__label {
@@ -402,10 +406,13 @@ button {
   transition: color 400ms, transform 200ms ease-out;
 }
 .form__label--radio {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid 1px transparent;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
+  height: 100%;
   text-align: center;
   color: var(--midground);
   transition: 900ms;
@@ -423,6 +430,11 @@ button {
 }
 .form__input--textarea {
   resize: none;
+}
+@media (max-width: 28.31125em) {
+  .form__input--textarea {
+    min-height: 12.5rem;
+  }
 }
 .form__input--alphanum {
   border: solid 1px var(--background-secondary);

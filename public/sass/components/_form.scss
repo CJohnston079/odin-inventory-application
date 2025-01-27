@@ -1,5 +1,7 @@
+@use "../util" as u;
+
 .form {
-	width: 51ch;
+	max-width: 51ch;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
@@ -11,6 +13,10 @@
 		column-gap: 1rem;
 		padding: 0;
 		border: none;
+
+		@include u.breakpoint-down(xsmall) {
+			grid-template-columns: 1fr;
+		}
 
 		& > .form__field-message {
 			grid-column: span 2;
@@ -33,15 +39,13 @@
 
 		&--radio {
 			display: grid;
-			grid-template-columns: auto auto;
+			grid-template-columns: 1fr 1fr;
 			gap: 0.2rem;
 
-			border-radius: var(--br-mid);
-			padding: 1rem;
 			margin-top: 1rem;
-
-			padding: 0.2rem;
 			border: solid 1px var(--background-secondary);
+			border-radius: var(--br-mid);
+			padding: 0.2rem;
 
 			background-color: var(--background-primary-shade);
 		}
@@ -110,10 +114,14 @@
 		transition: color 400ms, transform 200ms ease-out;
 
 		&--radio {
-			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
 			border: solid 1px transparent;
 			border-radius: 0.4rem;
 			padding: 0.5rem 1rem;
+			height: 100%;
 
 			text-align: center;
 			color: var(--midground);
@@ -136,6 +144,10 @@
 
 		&--textarea {
 			resize: none;
+
+			@include u.breakpoint-down(xsmall) {
+				min-height: u.rem(200);
+			}
 		}
 
 		&--alphanum {
