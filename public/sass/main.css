@@ -276,6 +276,11 @@ button {
   height: 100vh;
   background-image: linear-gradient(115deg, var(--background-primary), var(--background-primary-shade));
 }
+@media (prefers-color-scheme: dark) {
+  .site {
+    background-image: linear-gradient(115deg, var(--background-secondary) 70%, var(--background-secondary-tint));
+  }
+}
 @media (min-width: 43.75em) {
   .site {
     --body-padding: 16px;

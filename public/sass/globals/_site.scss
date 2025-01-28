@@ -11,6 +11,14 @@
 		var(--background-primary-shade)
 	);
 
+	@media (prefers-color-scheme: dark) {
+		background-image: linear-gradient(
+			115deg,
+			var(--background-secondary) 70%,
+			var(--background-secondary-tint)
+		);
+	}
+
 	@include u.breakpoint(medium) {
 		--body-padding: 16px;
 	}
