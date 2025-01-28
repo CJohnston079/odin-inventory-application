@@ -124,17 +124,29 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--cl-neutral-saturation: 30%;
+		--cl-primary-lightness: 42%;
+		--cl-neutral-saturation: 40%;
+
+		--cl-neutral-000: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 90%);
+		--cl-neutral-100: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 85%);
+		--cl-neutral-200: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 80%);
+		--cl-neutral-300: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 85%);
+		--cl-neutral-400: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 80%);
+		--cl-neutral-500: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 50%);
+		--cl-neutral-600: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 15%);
+		--cl-neutral-700: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 10%);
+		--cl-neutral-800: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 5%);
+		--cl-neutral-900: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 0%);
 
 		--heading-primary: var(--cl-neutral-200);
 		--text-primary: var(--cl-neutral-100);
 		--text-primary-shade: var(--cl-neutral-200);
 		--text-secondary: var(--cl-neutral-400);
-		--background-primary: var(--cl-neutral-800);
-		--background-primary-shade: var(--cl-neutral-900);
-		--background-secondary: var(--cl-neutral-700);
-		--background-secondary-tint: var(--cl-neutral-600);
-		--background-secondary-shade: var(--cl-neutral-800);
+		--background-primary: var(--cl-neutral-600);
+		--background-primary-shade: var(--cl-neutral-700);
+		--background-secondary: var(--cl-neutral-800);
+		--background-secondary-tint: var(--cl-neutral-700);
+		--background-secondary-shade: var(--cl-neutral-900);
 		--midground: var(--cl-neutral-500);
 		--foreground: var(--cl-neutral-100);
 		--foreground-tint: var(--cl-neutral-000);
