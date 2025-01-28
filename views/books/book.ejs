@@ -207,37 +207,39 @@
 							</div>
 						</nav>
 					</header>
-					<dl class="description-list">
-						<div class="description-list__item">
-							<dt class="description-list__term">Author</dt>
-							<dd class="description-list__description">
-								<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>">
-									<%= book.author %>
-								</a>
-							</dd>
-						</div>
-						<div class="description-list__item">
-							<dt class="description-list__term">Published</dt>
-							<dd class="description-list__description">
-								<% if (book.publication_year) { %>
-								<a href="/decades/<%= Math.floor(book.publication_year / 10) %>0s">
-									<%= book.publication_year %>
-								</a>
-								<% } else { %>
-								<span>Unknown</span>
-								<% } %>
-							</dd>
-						</div>
-						<div class="description-list__item">
-							<dt class="description-list__term">Genre</dt>
-							<dd class="description-list__description">
-								<% book.genres.map((genre) => { %>
-								<a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a>
-								<% }) %>
-							</dd>
-						</div>
-					</dl>
-					<p><%= book.blurb %></p>
+					<div class="item-info">
+						<dl class="item-info__metadata description-list">
+							<div class="description-list__item">
+								<dt class="description-list__term">Author</dt>
+								<dd class="description-list__description">
+									<a href="/authors/<%= book.author_id %>/<%= book.author_slug %>">
+										<%= book.author %>
+									</a>
+								</dd>
+							</div>
+							<div class="description-list__item">
+								<dt class="description-list__term">Published</dt>
+								<dd class="description-list__description">
+									<% if (book.publication_year) { %>
+									<a href="/decades/<%= Math.floor(book.publication_year / 10) %>0s">
+										<%= book.publication_year %>
+									</a>
+									<% } else { %>
+									<span>Unknown</span>
+									<% } %>
+								</dd>
+							</div>
+							<div class="description-list__item">
+								<dt class="description-list__term">Genres</dt>
+								<dd class="description-list__description">
+									<% book.genres.map((genre) => { %>
+									<a href="/genres/<%= genre.id %>/<%= genre.slug %>"><%= genre.name %></a>
+									<% }) %>
+								</dd>
+							</div>
+						</dl>
+						<p class="item-info__description"><%= book.blurb %></p>
+					</div>
 				</article>
 				<hr />
 				<section>

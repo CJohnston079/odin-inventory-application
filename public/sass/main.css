@@ -26,6 +26,8 @@ body {
   padding: 0;
 }
 
+p,
+dl,
 dd {
   margin: 0;
 }
@@ -604,6 +606,25 @@ button {
 .dialogue__content {
   margin: auto auto;
   overflow-y: scroll;
+}
+
+.item-info {
+  display: flex;
+  gap: 0.5rem;
+  margin-block: 2rem;
+}
+.item-info > * {
+  flex: 1;
+}
+@media (max-width: 56.24875em) {
+  .item-info {
+    flex-direction: column;
+  }
+}
+.item-info__description {
+  border: solid 1px var(--background-secondary);
+  border-radius: var(--br-light);
+  padding: 0.5rem;
 }
 
 .page-header {
