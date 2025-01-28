@@ -24,7 +24,7 @@
 						<% }) %>
 					</ul>
 				</section>
-				<hr />
+
 				<section>
 					<h2>Featured authors</h2>
 					<ul>
@@ -35,7 +35,7 @@
 						<% }) %>
 					</ul>
 				</section>
-				<hr />
+
 				<% featuredGenres.map(genre => { %>
 				<section>
 					<h2>Featured <%= genre.name %> books</h2>
@@ -48,7 +48,7 @@
 					</ul>
 					<a href="/genres/<%= genre.id %>/<%= genre.slug %>">More <%= genre.name %> books</a>
 				</section>
-				<hr />
+
 				<% }) %> <% featuredDecades.map(decade => { %>
 				<section>
 					<h2>Featured <%= decade.decade %>s books</h2>
@@ -61,7 +61,7 @@
 					</ul>
 					<a href="/decades/<%= decade.decade %>">More books from the <%= decade.decade %>s</a>
 				</section>
-				<hr />
+
 				<% }) %>
 			</main>
 		</div>
