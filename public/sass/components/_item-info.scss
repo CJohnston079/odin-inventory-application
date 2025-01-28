@@ -1,0 +1,22 @@
+@use "../util/" as u;
+
+.item-info {
+	display: flex;
+	gap: u.rem(8);
+
+	margin-block: u.rem(32);
+
+	& > * {
+		flex: 1;
+	}
+
+	@include u.breakpoint-down(medium) {
+		flex-direction: column;
+	}
+
+	&__description {
+		border: solid 1px var(--background-secondary);
+		border-radius: var(--br-light);
+		padding: u.rem(8);
+	}
+}

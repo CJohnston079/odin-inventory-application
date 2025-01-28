@@ -29,6 +29,12 @@ body {
 	padding: 0;
 }
 
+p,
+dl,
+dd {
+	margin: 0;
+}
+
 input,
 textarea,
 button {
@@ -37,18 +43,6 @@ button {
 
 hr {
 	width: 100%;
-}
-
-dl div {
-	margin-bottom: 1rem;
-}
-
-dt {
-	font-weight: 700;
-}
-
-dd {
-	margin: 0;
 }
 
 .display-none {
