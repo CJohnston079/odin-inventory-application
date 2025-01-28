@@ -28,7 +28,8 @@ body {
 
 p,
 dl,
-dd {
+dd,
+ul {
   margin: 0;
 }
 
@@ -709,7 +710,7 @@ button {
   padding: 1rem 0;
   margin: 0 0.5rem;
   font-size: 0.75rem;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--midground);
 }
@@ -810,6 +811,11 @@ button {
     width: 2.5ch;
     height: 2.5ch;
   }
+}
+
+#back-anchor.inactive {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 main {
