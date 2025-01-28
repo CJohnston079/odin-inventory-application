@@ -57,6 +57,39 @@
 						<span class="nav-bar__nav-content">Home</span>
 					</a>
 				</li>
+				<li class="nav-bar__nav-item">
+					<button
+            id="back-anchor"
+						class="nav-bar__nav-link <%= (typeof backAnchor !== "undefined" && backAnchor) ? "" : "inactive" %>"
+            <%= (typeof backAnchor !== "undefined" && backAnchor) ? onclick="window.history.back()" : "" %>
+            onclick="<%= (typeof backAnchor !== "undefined" && backAnchor) ? "window.history.back()" : "return" %>"
+          >
+						<svg
+							class="nav-bar__nav-icon"
+							width="100%"
+							height="100%"
+							viewBox="0 0 96 96"
+							version="1.1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							xml:space="preserve"
+							xmlns:serif="http://www.serif.com/"
+							style="
+								fill-rule: evenodd;
+								clip-rule: evenodd;
+								stroke-linejoin: round;
+								stroke-miterlimit: 2;
+							"
+						>
+							<g transform="matrix(1.30085,0,0,0.931389,-26.4967,3.77024)">
+								<path
+									d="M37.543,36.699L48.826,52.458C49.726,53.715 49.726,55.756 48.826,57.013C47.926,58.27 46.465,58.27 45.565,57.013L30.345,35.756C29.444,34.498 29.444,32.458 30.345,31.201L45.565,9.943C46.465,8.686 47.926,8.686 48.826,9.943C49.726,11.2 49.726,13.241 48.826,14.498C48.826,14.498 41.42,24.842 37.543,30.257L65.074,30.257C76.103,30.257 85.058,42.764 85.058,58.168C85.058,73.573 76.103,86.079 65.074,86.079L53.341,86.079C52.068,86.079 51.035,84.636 51.035,82.858C51.035,81.08 52.068,79.637 53.341,79.637L65.074,79.637C73.558,79.637 80.445,70.017 80.445,58.168C80.445,46.319 73.558,36.699 65.074,36.699L37.543,36.699Z"
+								/>
+							</g>
+						</svg>
+						<span class="nav-bar__nav-content">Back</span>
+					</button>
+				</li>
 			</ul>
 		</div>
 		<div class="nav-bar__nav-items-wrapper">
@@ -203,36 +236,6 @@
 						<span class="nav-bar__item-count" data-item="countries">--</span>
 					</a>
 				</li>
-				<% if (typeof backAnchor !== "undefined" && backAnchor) { %>
-				<li class="nav-bar__nav-item">
-					<button class="nav-bar__nav-link" id="back-anchor" onclick="window.history.back()">
-						<svg
-							class="nav-bar__nav-icon"
-							width="100%"
-							height="100%"
-							viewBox="0 0 96 96"
-							version="1.1"
-							xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink"
-							xml:space="preserve"
-							xmlns:serif="http://www.serif.com/"
-							style="
-								fill-rule: evenodd;
-								clip-rule: evenodd;
-								stroke-linejoin: round;
-								stroke-miterlimit: 2;
-							"
-						>
-							<g transform="matrix(1.30085,0,0,0.931389,-26.4967,3.77024)">
-								<path
-									d="M37.543,36.699L48.826,52.458C49.726,53.715 49.726,55.756 48.826,57.013C47.926,58.27 46.465,58.27 45.565,57.013L30.345,35.756C29.444,34.498 29.444,32.458 30.345,31.201L45.565,9.943C46.465,8.686 47.926,8.686 48.826,9.943C49.726,11.2 49.726,13.241 48.826,14.498C48.826,14.498 41.42,24.842 37.543,30.257L65.074,30.257C76.103,30.257 85.058,42.764 85.058,58.168C85.058,73.573 76.103,86.079 65.074,86.079L53.341,86.079C52.068,86.079 51.035,84.636 51.035,82.858C51.035,81.08 52.068,79.637 53.341,79.637L65.074,79.637C73.558,79.637 80.445,70.017 80.445,58.168C80.445,46.319 73.558,36.699 65.074,36.699L37.543,36.699Z"
-								/>
-							</g>
-						</svg>
-						<span class="nav-bar__nav-content">Back</span>
-					</button>
-				</li>
-				<% } %>
 			</ul>
 		</div>
 		<div class="nav-bar__nav-items-wrapper">

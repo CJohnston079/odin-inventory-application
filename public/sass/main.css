@@ -802,6 +802,11 @@ button {
   }
 }
 
+#back-anchor.inactive {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 main {
   display: flex;
   flex-direction: column;
