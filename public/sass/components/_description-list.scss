@@ -1,0 +1,51 @@
+@use "../util/" as u;
+
+.description-list {
+	display: grid;
+	gap: 8px;
+
+	@include u.breakpoint-down(small) {
+	}
+
+	&__item {
+		flex: 1;
+
+		border: solid 1px var(--background-secondary-tint);
+		border-radius: var(--br-light);
+		padding: u.rem(8);
+		min-width: 16ch;
+
+		background-color: var(--background-primary-shade);
+	}
+
+	&__term {
+		margin-block-end: u.rem(4);
+
+		font-size: u.rem(12);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--text-secondary);
+	}
+
+	&__description {
+		font-weight: 900;
+		line-height: 1.1;
+
+		& > a {
+			color: var(--cl-primary);
+			text-decoration: none;
+			transition: 200ms;
+			transition-property: opacity;
+
+			&:not(:last-child)::after {
+				color: var(--text-secondary);
+				content: ",";
+			}
+
+			&:hover {
+				opacity: 0.7;
+				transition: 400ms;
+			}
+		}
+	}
+}

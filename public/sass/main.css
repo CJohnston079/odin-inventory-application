@@ -26,6 +26,10 @@ body {
   padding: 0;
 }
 
+dd {
+  margin: 0;
+}
+
 input,
 textarea,
 button {
@@ -34,18 +38,6 @@ button {
 
 hr {
   width: 100%;
-}
-
-dl div {
-  margin-bottom: 1rem;
-}
-
-dt {
-  font-weight: 700;
-}
-
-dd {
-  margin: 0;
 }
 
 .display-none {
@@ -61,13 +53,11 @@ dd {
 }
 
 :root {
+  --cl-tint-multiplier: 2.1;
+  --cl-shade-multiplier: 0.4;
   --cl-primary-hue: 200;
-  --cl-tint-multiplier: 2.3;
-  --cl-shade-multiplier: 0.5;
-  --test: hsl(50, 50%, 50%);
-  --cl-primary-hue: 200;
-  --cl-primary-saturation: 50%;
-  --cl-primary-lightness: 40%;
+  --cl-primary-saturation: 64%;
+  --cl-primary-lightness: 32%;
   --cl-primary: hsl(
   	var(--cl-primary-hue),
   	var(--cl-primary-saturation),
@@ -154,7 +144,7 @@ dd {
   --cl-neutral-hue: 200;
   --cl-neutral-saturation: 20%;
   --cl-neutral-000: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 100%);
-  --cl-neutral-100: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 95%);
+  --cl-neutral-100: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 96%);
   --cl-neutral-200: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 90%);
   --cl-neutral-300: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 85%);
   --cl-neutral-400: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 80%);
@@ -528,6 +518,44 @@ button {
   width: 2ch;
   height: 2ch;
   fill: var(--cl-error);
+}
+
+.description-list {
+  display: grid;
+  gap: 8px;
+}
+.description-list__item {
+  flex: 1;
+  border: solid 1px var(--background-secondary-tint);
+  border-radius: var(--br-light);
+  padding: 0.5rem;
+  min-width: 16ch;
+  background-color: var(--background-primary-shade);
+}
+.description-list__term {
+  margin-block-end: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.description-list__description {
+  font-weight: 900;
+  line-height: 1.1;
+}
+.description-list__description > a {
+  color: var(--cl-primary);
+  text-decoration: none;
+  transition: 200ms;
+  transition-property: opacity;
+}
+.description-list__description > a:not(:last-child)::after {
+  color: var(--text-secondary);
+  content: ",";
+}
+.description-list__description > a:hover {
+  opacity: 0.7;
+  transition: 400ms;
 }
 
 .dialogue {

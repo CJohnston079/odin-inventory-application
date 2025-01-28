@@ -1,14 +1,10 @@
 :root {
-	--cl-primary-hue: 200;
-
-	--cl-tint-multiplier: 2.3;
-	--cl-shade-multiplier: 0.5;
-
-	--test: hsl(50, 50%, 50%);
+	--cl-tint-multiplier: 2.1;
+	--cl-shade-multiplier: 0.4;
 
 	--cl-primary-hue: 200;
-	--cl-primary-saturation: 50%;
-	--cl-primary-lightness: 40%;
+	--cl-primary-saturation: 64%;
+	--cl-primary-lightness: 32%;
 	--cl-primary: hsl(
 		var(--cl-primary-hue),
 		var(--cl-primary-saturation),
@@ -100,7 +96,7 @@
 	--cl-neutral-hue: 200;
 	--cl-neutral-saturation: 20%;
 	--cl-neutral-000: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 100%);
-	--cl-neutral-100: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 95%);
+	--cl-neutral-100: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 96%);
 	--cl-neutral-200: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 90%);
 	--cl-neutral-300: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 85%);
 	--cl-neutral-400: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 80%);
