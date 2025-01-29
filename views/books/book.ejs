@@ -241,38 +241,37 @@
 						<p class="item-info__description"><%= book.blurb %></p>
 					</div>
 				</article>
-
-				<section>
-					<h2>More books by <%= book.author %></h2>
-					<ul>
-						<% moreBooksByAuthor.map(book => { %>
-						<li>
-							<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-						</li>
-						<% }) %>
-					</ul>
-				</section>
-
-				<section>
-					<h2>More <%= featuredGenre.name %> books</h2>
-					<ul>
-						<% moreBooksByGenre.map(book => { %>
-						<li>
-							<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-						</li>
-						<% }) %>
-					</ul>
-				</section>
-
-				<section>
-					<h2>More books from the <%= decade %>s</h2>
-					<ul>
-						<% moreBooksByDecade.map(book => { %>
-						<li>
-							<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
-						</li>
-						<% }) %>
-					</ul>
+				<section class="featured">
+					<div class="featured__feature">
+						<h2 class="featured__heading">More books by <%= book.author %></h2>
+						<ul class="featured__list">
+							<% moreBooksByAuthor.map(book => { %>
+							<li class="featured__list-item">
+								<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+							</li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="featured__feature">
+						<h2 class="featured__heading">More <%= featuredGenre.name %> books</h2>
+						<ul class="featured__list">
+							<% moreBooksByGenre.map(book => { %>
+							<li class="featured__list-item">
+								<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+							</li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="featured__feature">
+						<h2 class="featured__heading">More books from the <%= decade %>s</h2>
+						<ul class="featured__list">
+							<% moreBooksByDecade.map(book => { %>
+							<li class="featured__list-item">
+								<a href="/books/<%= book.id %>/<%= book.slug %>"><%= book.title %></a>
+							</li>
+							<% }) %>
+						</ul>
+					</div>
 				</section>
 			</main>
 		</div>

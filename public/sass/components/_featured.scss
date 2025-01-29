@@ -1,0 +1,67 @@
+@use "../util" as u;
+
+.featured {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 16px;
+
+	&__feature {
+		display: flex;
+		flex-direction: column;
+		gap: u.rem(8);
+
+		border: solid 1px var(--background-secondary);
+		border-radius: var(--br-light);
+		padding: u.rem(16);
+		background-color: var(--background-primary-shade);
+	}
+
+	&__list {
+		flex-grow: 1;
+	}
+
+	&__list-item {
+		list-style: none;
+
+		& a {
+			font-weight: 500;
+			text-decoration: none;
+			color: var(--text-secondary);
+
+			transition-property: color;
+			transition: 400ms;
+
+			&:hover {
+				color: var(--text-primary);
+				transition: 200ms;
+			}
+		}
+	}
+
+	&__more {
+		font-weight: 900;
+		text-decoration: none;
+		color: var(--cl-primary);
+
+		transition-property: opacity;
+		transition: 600ms;
+
+		&::after {
+			content: "➞";
+			display: inline-block;
+			margin-inline-start: u.rem(4);
+
+			transition-property: transform;
+			transition: 600ms;
+		}
+
+		&:hover {
+			opacity: 0.8;
+
+			&::after {
+				transform: translateX(4px);
+				transition: 200ms;
+			}
+		}
+	}
+}

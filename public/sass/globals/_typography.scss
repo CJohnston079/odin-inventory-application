@@ -31,7 +31,10 @@ h1 {
 
 h2 {
 	font-size: u.rem(18);
-	font-size: clamp(u.rem(18), 1.03rem + 0.69vw, u.rem(24));
+	font-size: clamp(u.rem(18), 1.03rem + 0.69vw, u.rem(20));
+	font-weight: 800;
+	line-height: 1.2;
+	color: var(--heading-secondary);
 
 	&.small {
 		font-size: u.rem(20);

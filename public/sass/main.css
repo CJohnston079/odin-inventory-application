@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 :root {
   --box-shadow-dark: 2px 2px 8px hsl(0, 0%, 0%, 0.1);
@@ -27,10 +28,11 @@ body {
 }
 
 p,
-dl,
 dd,
+dl,
 ul {
   margin: 0;
+  padding: 0;
 }
 
 input,
@@ -157,6 +159,7 @@ hr {
   --cl-neutral-800: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 15%);
   --cl-neutral-900: hsl(var(--cl-neutral-hue), var(--cl-neutral-saturation), 0%);
   --heading-primary: var(--cl-neutral-900);
+  --heading-primary: var(--cl-neutral-700);
   --text-primary: var(--cl-neutral-800);
   --text-secondary: var(--cl-neutral-600);
   --background-primary: var(--cl-neutral-000);
@@ -234,7 +237,10 @@ h1 {
 
 h2 {
   font-size: 1.125rem;
-  font-size: clamp(1.125rem, 1.03rem + 0.69vw, 1.5rem);
+  font-size: clamp(1.125rem, 1.03rem + 0.69vw, 1.25rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--heading-secondary);
 }
 h2.small {
   font-size: 1.25rem;
@@ -623,6 +629,59 @@ button {
 .dialogue__content {
   margin: auto auto;
   overflow-y: scroll;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.featured__feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: solid 1px var(--background-secondary);
+  border-radius: var(--br-light);
+  padding: 1rem;
+  background-color: var(--background-primary-shade);
+}
+.featured__list {
+  flex-grow: 1;
+}
+.featured__list-item {
+  list-style: none;
+}
+.featured__list-item a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition-property: color;
+  transition: 400ms;
+}
+.featured__list-item a:hover {
+  color: var(--text-primary);
+  transition: 200ms;
+}
+.featured__more {
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--cl-primary);
+  transition-property: opacity;
+  transition: 600ms;
+}
+.featured__more::after {
+  content: "➞";
+  display: inline-block;
+  margin-inline-start: 0.25rem;
+  transition-property: transform;
+  transition: 600ms;
+}
+.featured__more:hover {
+  opacity: 0.8;
+}
+.featured__more:hover::after {
+  transform: translateX(4px);
+  transition: 200ms;
 }
 
 .item-info {
